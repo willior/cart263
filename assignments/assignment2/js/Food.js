@@ -34,6 +34,13 @@ class Food extends Agent {
 
   update() {
 
+    // food gradually disappears upon loss
+    if (!avatar.active) {
+      this.size--;
+      this.size = constrain(this.size,0,this.maxSize);
+      return;
+    }
+
     // movement
     this.tx += 0.01;
     this.vx = this.maxSpeed * (noise(this.tx) * 2 - 1);

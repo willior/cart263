@@ -54,6 +54,11 @@ class Agent {
   display() {
     // Don't display if not active
     if (!this.active) {
+
+      // draws death screen
+      background(death,0,0);
+      death++;
+      death = constrain(death, 0, 200);
       return;
     }
 

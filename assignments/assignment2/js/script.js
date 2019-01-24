@@ -14,7 +14,7 @@ The player circle shrinks over time, but grows when it eats.
 
 // Constants for key quantities
 const AVATAR_MAX_SIZE = 64;
-const AVATAR_SIZE_LOSS_PER_FRAME = 0.4;
+const AVATAR_SIZE_LOSS_PER_FRAME = 0.8;
 const FOOD_MIN_SIZE = 20;
 const FOOD_MAX_SIZE = 100;
 
@@ -31,6 +31,9 @@ let avatar;
 
 // foods array
 let foods = [];
+
+// variable for death screen
+let death = 0;
 
 // setup()
 //
