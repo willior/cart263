@@ -37,3 +37,19 @@ div {
 .found {
   background-color: yellow;
 }
+
+.victory1 {
+  color: red;
+}
+
+.victory2 {
+  color: yellow;
+}
+
+.victory3 {
+  color: green;
+}
+
+.victory4 {
+  color: blue;
+}

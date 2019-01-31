@@ -63,6 +63,9 @@ function spanHover() {
 function update() {
   $("#secretsFound").text(secretsFound);
   $('span.redacted').each(updateSpan);
+  if (secretsFound === 5) {
+    $("#victory").text("YOU'RE WINNER!");
+  }
 }
 
 // updateSpan()
