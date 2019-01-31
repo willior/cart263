@@ -52,6 +52,7 @@ function spanHover() {
   $(this).removeClass('secret');
   $(this).addClass('found');
   secretsFound++;
+  $(this).off('mouseover');
 }
 
 // update()
