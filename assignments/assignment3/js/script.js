@@ -28,6 +28,7 @@ function setup() {
   // sets the number of secrets found to 0, total secrets to 5
   secretsFound = 0;
   secretsTotal = 5;
+  $("#secretsTotal").text(secretsTotal);
   // Save the selection of all spans (since we do stuff to them multiple times)
   $spans = $('span');
   // Set an interval of 500 milliseconds to update the state of the page
