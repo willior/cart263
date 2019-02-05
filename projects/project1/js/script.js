@@ -11,10 +11,12 @@ let powerLevel;
 $(document).ready(setup);
 
 function setup() {
-  powerLevel = 0;
+  powerLevel = 1;
   rockDistance = 0;
+  $spans = $('span');
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
+  setInterval(update,100);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
 
