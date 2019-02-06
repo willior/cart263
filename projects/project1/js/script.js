@@ -44,10 +44,12 @@ function pushClick() {
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
+    if (slipDistance > rockDistance) {
+      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to push the rock. " + log;
+    } else {
+      log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to push the rock. " + log;
+    }
     rockSlip();
-    // $("#log").fadeIn(1);
-    // $("#log").fadeOut(1000,textReset());
-    log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to push the rock. " + log;
   }
 }
 
@@ -56,10 +58,16 @@ function powerClick() {
   fatigueLevel++;
   let f = Math.floor(Math.random() * (100-1)+1);
   if (f < fatigueLevel) {
+    if (rockDistance <= 0) {
+      log = "\n" + "staring at the rock gives you strength. " + log;
+      return;
+    }
+    if (slipDistance > rockDistance) {
+      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to power up. " + log;
+    } else {
+      log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to power up. " + log;
+    }
     rockSlip();
-    // $("#log").fadeIn(1);
-    // $("#log").fadeOut(1000,textReset());
-    log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to power up. " + log;
   }
 }
 
@@ -79,8 +87,12 @@ function rockSlip() {
 
 function rockSlipCheck() {
   if (rockDistance > 0) {
+    if (slipDistance > rockDistance) {
+      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground. " + log;
+    } else {
+      log = "\n" + "the rock slipped " + slipDistance + " centimeters." + log;
+    }
     rockSlip();
-    log = "\n" + "the rock slipped " + slipDistance + " centimeters." + log;
   } else {
     log = "you thought about pushing the rock. " + log;
   }
