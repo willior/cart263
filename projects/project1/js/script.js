@@ -47,7 +47,7 @@ function pushClick() {
     rockSlip();
     // $("#log").fadeIn(1);
     // $("#log").fadeOut(1000,textReset());
-    log = "\n the rock slipped " + slipDistance + " centimeters due to fatigue." + log;
+    log = "\n" + "the rock slipped " + slipDistance + " centimeters due to fatigue." + log;
     console.log(slipDistance);
   }
 }
@@ -60,7 +60,7 @@ function powerClick() {
     rockSlip();
     // $("#log").fadeIn(1);
     // $("#log").fadeOut(1000,textReset());
-    log = "\n the rock slipped " + slipDistance + " centimeters due to fatigue." + log;
+    log = "\n" + "the rock slipped " + slipDistance + " centimeters due to fatigue." + log;
     console.log(slipDistance);
   }
 }
