@@ -18,7 +18,7 @@ $(document).ready(setup);
 
 function setup() {
   rockDistance = 0;
-  powerLevel = 1;
+  powerLevel = 0;
   powerLevelDrain = 1;
   fatigueLevel = 0;
   fatigued = false;
@@ -33,8 +33,8 @@ function setup() {
   $("#slip").text(slip);
   setInterval(update,100);
   setInterval(powerDrain,1000);
-  setInterval(rockSlip,5000);
-  setInterval(fatigueUpdate,500);
+  setInterval(rockSlipCheck,5000);
+  setInterval(fatigueUpdate,300);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
 }
@@ -47,8 +47,7 @@ function pushClick() {
     rockSlip();
     // $("#log").fadeIn(1);
     // $("#log").fadeOut(1000,textReset());
-    log = "\n" + "the rock slipped " + slipDistance + " centimeters due to fatigue." + log;
-    console.log(slipDistance);
+    log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to push the rock. " + log;
   }
 }
 
@@ -60,13 +59,13 @@ function powerClick() {
     rockSlip();
     // $("#log").fadeIn(1);
     // $("#log").fadeOut(1000,textReset());
-    log = "\n" + "the rock slipped " + slipDistance + " centimeters due to fatigue." + log;
-    console.log(slipDistance);
+    log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to power up. " + log;
   }
 }
 
 function powerDrain() {
   powerLevel -= powerLevelDrain;
+  powerLevel = Math.min(100, Math.max(0, powerLevel));
 }
 
 function rockSlip() {
@@ -76,6 +75,15 @@ function rockSlip() {
     slipDistance = Math.floor(Math.random() * (20-1)+1);
   }
   rockDistance -= slipDistance;
+}
+
+function rockSlipCheck() {
+  if (rockDistance > 0) {
+    rockSlip();
+    log = "\n" + "the rock slipped " + slipDistance + " centimeters." + log;
+  } else {
+    log = "you thought about pushing the rock. " + log;
+  }
 }
 
 function fatigueUpdate() {
