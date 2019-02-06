@@ -17,7 +17,8 @@ function setup() {
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
   setInterval(update,100);
-  setInterval(powerDrain,500);
+  setInterval(powerDrain,1000);
+  setInterval(rockSlip,1000);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
 
@@ -33,6 +34,11 @@ function powerClick() {
 
 function powerDrain() {
   powerLevel--;
+}
+
+function rockSlip() {
+  let r = Math.random() * (10-1)+1;
+  rockDistance -= Math.floor(r);;
 }
 
 function update() {
