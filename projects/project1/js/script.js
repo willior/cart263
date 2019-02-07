@@ -43,6 +43,7 @@ let updateInt;
 let powerDrainInt;
 let rockSlipCheckInt;
 let fatigueUpdateInt;
+let summitReachedInt;
 
 $(document).ready(setup);
 
@@ -168,16 +169,15 @@ function textReset() {
 }
 
 function summit() {
-
   _end.play();
-
   while (rockDistance > 0) {
-    rockDistance--;
+    summitReachedInt = setInterval(rockDistance--,50);
   }
-    summitCount++;
-    summitReached = false;
-    setup();
-    return;
+  summitCount++;
+  summitReached = false;
+  clearInterval(summitReachedInt);
+  setup();
+  return;
 }
 
 function update() {
