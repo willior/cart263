@@ -109,7 +109,7 @@ function pushClick() {
     playAudio();
     audioPlay = true;
   }
-  rockDistance += powerLevel*5;
+  rockDistance += powerLevel*2;
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
