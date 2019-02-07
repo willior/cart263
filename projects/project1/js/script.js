@@ -12,7 +12,7 @@ let powerLevelDrain;
 let fatigueLevel = 0;
 let fatigued;
 let slipDistance;
-let log = " ";
+let textLog = " ";
 let slip = " ";
 let summitReached;
 let audioPlay;
@@ -29,19 +29,23 @@ let fatigueUpdateInt;
 let summitReachedInt;
 let rockX;
 let rockY;
+let canvas;
+let c1, c2;
 
 window.addEventListener('load', setup);
 
 // setup()
-// draws the canvas
+// draws the canvas, sets colour for background
 // sets necessary values for variables
 // displays text
 // calls the other functions regularly
 // turns the buttons on
 function setup() {
-  let canvas = createCanvas(600, 200);
+  canvas = createCanvas(600, 200);
   canvas.parent("mountain");
   background(153);
+  c1 = color(25, 84, 123);
+  c2 = color(255, 216, 155);
   rockDistance = 0;
   powerLevel = 0;
   powerLevelDrain = 1;
@@ -60,7 +64,7 @@ function setup() {
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
   $("#fatigueLevel").text(fatigueLevel);
-  $("#log").text(log);
+  $("#textLog").text(textLog);
   $("#slip").text(slip);
   updateInt = setInterval(update,100);
   powerDrainInt = setInterval(powerDrain,1000);
@@ -105,14 +109,14 @@ function pushClick() {
     playAudio();
     audioPlay = true;
   }
-  rockDistance += powerLevel*20;
+  rockDistance += powerLevel*5;
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
     if (slipDistance > rockDistance) {
-      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when sisyphus tried to push the rock. " + log;
+      textLog = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when sisyphus tried to push the rock. " + textLog;
     } else {
-      log = "\n" + "the rock slipped " + slipDistance + " centimeters when sisyphus tried to push the rock. " + log;
+      textLog = "\n" + "the rock slipped " + slipDistance + " centimeters when sisyphus tried to push the rock. " + textLog;
     }
     rockSlip();
   }
@@ -128,13 +132,13 @@ function powerClick() {
   let f = Math.floor(Math.random() * (100-1)+1);
   if (f < fatigueLevel) {
     if (rockDistance <= 0) {
-      log = "\n" + "staring at the rock gives sisyphus strength. " + log;
+      textLog = "\n" + "staring at the rock gives sisyphus strength. " + textLog;
       return;
     }
     if (slipDistance > rockDistance) {
-      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to power up. " + log;
+      textLog = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to power up. " + textLog;
     } else {
-      log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to power up. " + log;
+      textLog = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to power up. " + textLog;
     }
     rockSlip();
   }
@@ -169,13 +173,13 @@ function rockSlip() {
 function rockSlipCheck() {
   if (rockDistance > 0) {
     if (slipDistance > rockDistance) {
-      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground. " + log;
+      textLog = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground. " + textLog;
     } else {
-      log = "\n" + "the rock slipped " + slipDistance + " centimeters." + log;
+      textLog = "\n" + "the rock slipped " + slipDistance + " centimeters." + textLog;
     }
     rockSlip();
   } else {
-    log = "sisyphus thought about pushing the rock. " + log;
+    textLog = "sisyphus thought about pushing the rock. " + textLog;
   }
 }
 
@@ -193,9 +197,7 @@ function fatigueUpdate() {
 // resets the intervals at which the primary functions are regularly called and runs setup()
 function summit() {
   if (rockDistance > 0) {
-    rockDistance--;
-    rockDistance--;
-    rockDistance--;
+    rockDistance -= 3;
     $("#rockDistance").text(rockDistance);
     $("#powerLevel").text(powerLevel);
     $("#fatigueLevel").text(fatigueLevel);
@@ -234,8 +236,7 @@ function update() {
   // displays an alert with an honest message
   // keeps track of how many times sisyphus has reached the summitCount
   // runs the summit() function
-  if (rockDistance >= 6000) {
-    _end.play();
+  if (rockDistance >= 5800) {
     _1.pause();
     _2.pause();
     _3.pause();
@@ -248,6 +249,7 @@ function update() {
     clearInterval(rockSlipCheckInt);
     alert("the rock rolled down the hill and there was nothing sisyphus could do about it");
     summitCount++;
+    _end.play();
     summitReached = true;
     summitReachedInt = setInterval(summit,1);
   }
@@ -283,21 +285,35 @@ function update() {
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
   $("#fatigueLevel").text(fatigueLevel);
-  $("#log").text(log);
+  $("#textLog").text(textLog);
+}
+
+// gradient()
+// function for displaying the sunrise
+// math based off that found in the p5 reference
+function gradient(x, y, w, h, c1, c2) {
+  push();
+  noFill();
+  for (let i = y; i <= y + h; i++) {
+    let inter = map(i, y, y+h, 0, 1);
+    let c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(x, i, x+w, i);
+  }
+  pop();
 }
 
 // draw()
-// displays the beautiful hillside and suspiciously round rock
+// displays the beautiful hillside and suspiciously round rock against a perfect sunrise
 // moves rock based on rockDistance and some simple math
 function draw() {
   clear();
-  background(160,200,255)
+  gradient(0, 0, 600, 200, c1, c2);
   rockX = (rockDistance/10)+10;
   rockY = (rockDistance/32)*-1+190;
   strokeWeight(3);
   fill(127);
   ellipse(rockX,rockY,20);
-  fill(161,64,5);
+  fill(92,64,32);
   triangle(20,200,600,20,600,200);
-
 }
