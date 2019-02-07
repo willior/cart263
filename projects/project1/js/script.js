@@ -16,14 +16,12 @@ let log = " ";
 let slip = " ";
 let summitReached;
 let audioPlay;
-
 let volume1;
 let volume2;
 let volume3;
 let volume4;
 let volume5;
 let volume6;
-
 let updateInt;
 let powerDrainInt;
 let rockSlipCheckInt;
@@ -32,17 +30,25 @@ let summitReachedInt;
 
 window.addEventListener('load', setup);
 
+// setup()
+// sets necessary values for variables
+// displays text
+// calls the other functions regularly
+// turns the buttons on
 function setup() {
   rockDistance = 0;
   powerLevel = 0;
   powerLevelDrain = 1;
-  // fatigueLevel = 0;
   fatigued = false;
   slipDistance = 0;
   summitReached = false;
   audioPlay = false;
-  // log = " ";
-  // slip = " ";
+  volume1 = 0;
+  volume2 = 0;
+  volume3 = 0;
+  volume4 = 0;
+  volume5 = 0;
+  volume6 = 0;
   $spans = $('span');
   $("#summitCount").text(summitCount);
   $("#rockDistance").text(rockDistance);
@@ -56,15 +62,11 @@ function setup() {
   fatigueUpdateInt = setInterval(fatigueUpdate,300);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
-
-  volume1 = 0;
-  volume2 = 0;
-  volume3 = 0;
-  volume4 = 0;
-  volume5 = 0;
-  volume6 = 0;
 }
 
+// playAudio()
+// called when sisyphus first attempts to push the rock
+// this was necessary as a bug was encountered when audio was played from setup()
 function playAudio() {
   _1.play();
   _1.loop = true;
@@ -86,6 +88,12 @@ function playAudio() {
   document.getElementById("_6").volume = volume6;
 }
 
+// pushClick ()
+// a function that defines what happens when "push the rock" is pressed
+// plays audio files (one time)
+// pushes the rock a distance based on a factor of powerLevel
+// increases fatigue each time the rock is pushed
+// the more fatigue, the higher chance the rock has of slipping
 function pushClick() {
   if (!audioPlay) {
     playAudio();
@@ -104,6 +112,10 @@ function pushClick() {
   }
 }
 
+// powerClick()
+// a function that defines what happens when "focus power" is pressed
+// increases both powerLevel and fatigue each time sisyphus focuses powerLevel
+// as with pushClick(), the more fatigue, the higher chance the rock has of slipping
 function powerClick() {
   powerLevel++;
   fatigueLevel++;
@@ -122,11 +134,20 @@ function powerClick() {
   }
 }
 
+// powerDrain()
+// a function that defines the loss of sisyphus's strength over time
+// constrains the value to remain within 0 to 100
 function powerDrain() {
   powerLevel -= powerLevelDrain;
   powerLevel = Math.min(100, Math.max(0, powerLevel));
 }
 
+// rockSlip()
+// a function that defines how far the rock slipDistance
+// the rock can slip every time one of the buttons is pressed
+// the rock also slips on its own at regular intervals
+// if sisyphus's fatigue goes beyond 50%, he becomes "fatigued"
+// being fatigued doubles the range at which the rock randomly slips from 20 to 40
 function rockSlip() {
   if (fatigued = true) {
     slipDistance = Math.floor(Math.random() * (40-1)+1);
@@ -136,6 +157,9 @@ function rockSlip() {
   rockDistance -= slipDistance;
 }
 
+// rockSlipCheck()
+// a function that defines regular slipping of the rockSlip
+// if the rock hasn't moved, reflects that accurately
 function rockSlipCheck() {
   if (rockDistance > 0) {
     if (slipDistance > rockDistance) {
@@ -149,38 +173,19 @@ function rockSlipCheck() {
   }
 }
 
+// fatigueUpdate()
+// a function that defines the regular loss of fatigued
+// constrains the value to remain within 0 to 100
 function fatigueUpdate() {
   fatigueLevel--;
   fatigueLevel = Math.min(100, Math.max(0, fatigueLevel));
 }
 
-function textReset() {
-  // don't know how to properly reset text after fadeOut
-  // $("#log").fadeIn(1);
-  log = " ";
-}
-
+// summit()
+// a function that defines what happens when sisyphus reaches the summitCount
+// rolls the rock back down to 0, updates text accurately, and returns
+// resets the intervals at which the primary functions are regularly called and runs setup()
 function summit() {
-
-  // FIRST ATTEMPT
-  // for (let i = 6000; i > 0; i--) {
-  //   rockDistance--;
-  // setTimeout(rockDistance--,100);
-  //   $("#rockDistance").text(i);
-  //   console.log(rockDistance);
-  // }
-
-  // SECOND ATTEMPT
-  // while (summitReached){
-  //   $("#rockDistance").text(rockDistance);
-  //   rockDistance--;
-  //   console.log(rockDistance);
-  //   if (rockDistance == 0){
-  //     summitReached = false;
-  //   }
-  // }
-
-  // THIRD ATTEMPT
   if (rockDistance > 0) {
     rockDistance--;
     rockDistance--;
@@ -199,7 +204,12 @@ function summit() {
   }
 }
 
+// update()
+// a function that is reguarly called to check if certain events have occured
+// also handles volume changes and displays text
 function update() {
+  // prevents the rock from rolling through the ground
+  // applies the "fatigued" status if fatigue exceeds 50%
   if (rockDistance < 0) {
     rockDistance = 0;
   }
@@ -210,6 +220,14 @@ function update() {
     fatigued = false;
   }
 
+  // when sisyphus reaches the top of the hill (6000cm)...
+  // plays the ending audio
+  // pauses all other audio
+  // turns off the buttons
+  // stops calling the update() and rockSlipCheck() functions
+  // displays an alert with an honest message
+  // keeps track of how many times sisyphus has reached the summitCount
+  // runs the summit() function
   if (rockDistance >= 6000) {
     _end.play();
     _1.pause();
@@ -221,19 +239,19 @@ function update() {
     $('span.push').off('click',pushClick);
     $('span.focus').off('click',powerClick);
     clearInterval(updateInt);
-
     clearInterval(rockSlipCheckInt);
-
     alert("the rock rolled down the hill and there was nothing sisyphus could do about it");
     summitCount++;
     summitReached = true;
     summitReachedInt = setInterval(summit,1);
   }
 
+  // fades in the individual notes of a chord as sisyphus climbs the hill
+  // the first note's volume increases from 0.0 to 1.0 as sisyphus climbs from 0 to 1000 centimeters
   volume1 = rockDistance/1000;
   volume1 = Math.min(1, Math.max(0, volume1));
   document.getElementById("_1").volume = volume1;
-
+  // the second note's volume increases from 0.0 to 1.0 as sisyphus climbs from 1000 to 2000 centimeters, etc.
   volume2 = ((rockDistance-1000)/1000);
   volume2 = Math.min(1, Math.max(0, volume2));
   document.getElementById("_2").volume = volume2;
@@ -254,6 +272,7 @@ function update() {
   volume6 = Math.min(1, Math.max(0, volume6));
   document.getElementById("_6").volume = volume6;
 
+  // updates text
   $("#summitCount").text(summitCount);
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
