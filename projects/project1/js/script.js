@@ -95,7 +95,6 @@ function setup() {
   _6.play();
   _6.loop = true;
   document.getElementById("_6").volume = volume6;
-
 }
 
 function pushClick() {
@@ -169,13 +168,23 @@ function textReset() {
 }
 
 function summit() {
-  _end.play();
-  while (rockDistance > 0) {
-    summitReachedInt = setInterval(rockDistance--,50);
+
+  while (summitReached){
+    rockDistance--;
+    $("#rockDistance").text(rockDistance);
+    console.log(rockDistance);
+    if (rockDistance == 0){
+      summitReached = false;
+    }
   }
+
+  // for (let i = 6000; i > 0; i--) {
+  //   rockDistance--;
+  //   $("#rockDistance").text(i);
+  //   console.log(rockDistance);
+  // }
+
   summitCount++;
-  summitReached = false;
-  clearInterval(summitReachedInt);
   setup();
   return;
 }
@@ -192,20 +201,21 @@ function update() {
   }
 
   if (rockDistance >= 6000) {
-    $('span.push').off('click',pushClick);
-    $('span.focus').off('click',powerClick);
-    clearInterval(updateInt);
-    clearInterval(powerDrainInt);
-    clearInterval(rockSlipCheckInt);
-    clearInterval(fatigueUpdateInt);
+    _end.play();
     _1.pause();
     _2.pause();
     _3.pause();
     _4.pause();
     _5.pause();
     _6.pause();
+    $('span.push').off('click',pushClick);
+    $('span.focus').off('click',powerClick);
+    clearInterval(updateInt);
+    clearInterval(powerDrainInt);
+    clearInterval(rockSlipCheckInt);
+    clearInterval(fatigueUpdateInt);
     summitReached = true;
-    summit();
+    setTimeout(summit() ,1000);
   }
 
   volume1 = rockDistance/1000;
