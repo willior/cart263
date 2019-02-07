@@ -180,6 +180,7 @@ function summit() {
 
   // for (let i = 6000; i > 0; i--) {
   //   rockDistance--;
+  // setTimeout(rockDistance--,100);
   //   $("#rockDistance").text(i);
   //   console.log(rockDistance);
   // }
@@ -215,7 +216,7 @@ function update() {
     clearInterval(rockSlipCheckInt);
     clearInterval(fatigueUpdateInt);
     summitReached = true;
-    setTimeout(summit() ,1000);
+    setTimeout(summit(), 1000);
   }
 
   volume1 = rockDistance/1000;
