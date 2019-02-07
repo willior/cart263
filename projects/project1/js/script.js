@@ -15,22 +15,7 @@ let slipDistance;
 let log = " ";
 let slip = " ";
 let summitReached;
-
-// let _1 = new Audio("assets/sounds/1_E.wav");
-// let _2 = new Audio("assets/sounds/2_A.wav");
-// let _3 = new Audio("assets/sounds/3_D.wav");
-// let _4 = new Audio("assets/sounds/4_G.wav");
-// let _5 = new Audio("assets/sounds/5_C.wav");
-// let _6 = new Audio("assets/sounds/6_F.wav");
-// let _end = new Audio("assets/sounds/end.wav");
-
-// let _1 = document.createElement("assets/sounds/1_E.wav");
-// let _2 = document.createElement("assets/sounds/2_A.wav");
-// let _3 = document.createElement("assets/sounds/3_D.wav");
-// let _4 = document.createElement("assets/sounds/4_G.wav");
-// let _5 = document.createElement("assets/sounds/5_C.wav");
-// let _6 = document.createElement("assets/sounds/6_F.wav");
-// let _end = document.createElement("assets/sounds/end.wav");
+let audioPlay;
 
 let volume1;
 let volume2;
@@ -45,7 +30,7 @@ let rockSlipCheckInt;
 let fatigueUpdateInt;
 let summitReachedInt;
 
-$(document).ready(setup);
+window.addEventListener('load', setup);
 
 function setup() {
   rockDistance = 0;
@@ -55,6 +40,7 @@ function setup() {
   fatigued = false;
   slipDistance = 0;
   summitReached = false;
+  audioPlay = false;
   // log = " ";
   // slip = " ";
   $spans = $('span');
@@ -77,6 +63,9 @@ function setup() {
   volume4 = 0;
   volume5 = 0;
   volume6 = 0;
+}
+
+function playAudio() {
   _1.play();
   _1.loop = true;
   document.getElementById("_1").volume = volume1;
@@ -98,6 +87,10 @@ function setup() {
 }
 
 function pushClick() {
+  if (!audioPlay) {
+    playAudio();
+    audioPlay = true;
+  }
   rockDistance += powerLevel*20;
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
@@ -189,6 +182,8 @@ function summit() {
 
   // THIRD ATTEMPT
   if (rockDistance > 0) {
+    rockDistance--;
+    rockDistance--;
     rockDistance--;
     $("#rockDistance").text(rockDistance);
     $("#powerLevel").text(powerLevel);
