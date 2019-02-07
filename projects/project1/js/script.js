@@ -27,15 +27,21 @@ let powerDrainInt;
 let rockSlipCheckInt;
 let fatigueUpdateInt;
 let summitReachedInt;
+let rockX;
+let rockY;
 
 window.addEventListener('load', setup);
 
 // setup()
+// draws the canvas
 // sets necessary values for variables
 // displays text
 // calls the other functions regularly
 // turns the buttons on
 function setup() {
+  let canvas = createCanvas(600, 200);
+  canvas.parent("mountain");
+  background(153);
   rockDistance = 0;
   powerLevel = 0;
   powerLevelDrain = 1;
@@ -278,4 +284,20 @@ function update() {
   $("#powerLevel").text(powerLevel);
   $("#fatigueLevel").text(fatigueLevel);
   $("#log").text(log);
+}
+
+// draw()
+// displays the beautiful hillside and suspiciously round rock
+// moves rock based on rockDistance and some simple math
+function draw() {
+  clear();
+  background(160,200,255)
+  rockX = (rockDistance/10)+10;
+  rockY = (rockDistance/32)*-1+190;
+  strokeWeight(3);
+  fill(127);
+  ellipse(rockX,rockY,20);
+  fill(161,64,5);
+  triangle(20,200,600,20,600,200);
+
 }
