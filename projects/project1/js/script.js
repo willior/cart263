@@ -5,14 +5,15 @@ Will Graham-Simpkins
 
 ******************/
 let $spans;
+let summitCount = 0;
 let rockDistance;
 let powerLevel;
 let powerLevelDrain;
 let fatigueLevel;
 let fatigued;
 let slipDistance;
-let log;
-let slip;
+let log = " ";
+let slip = " ";
 let summitReached;
 
 // let _1 = new Audio("assets/sounds/1_E.wav");
@@ -53,9 +54,10 @@ function setup() {
   fatigued = false;
   slipDistance = 0;
   summitReached = false;
-  log = " ";
-  slip = " ";
+  // log = " ";
+  // slip = " ";
   $spans = $('span');
+  $("#summitCount").text(summitCount);
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
   $("#fatigueLevel").text(fatigueLevel);
@@ -115,7 +117,7 @@ function powerClick() {
   let f = Math.floor(Math.random() * (100-1)+1);
   if (f < fatigueLevel) {
     if (rockDistance <= 0) {
-      log = "\n" + "staring at the rock gives you strength. " + log;
+      log = "\n" + "staring at the rock gives sisyphus strength. " + log;
       return;
     }
     if (slipDistance > rockDistance) {
@@ -150,7 +152,7 @@ function rockSlipCheck() {
     }
     rockSlip();
   } else {
-    log = "you thought about pushing the rock. " + log;
+    log = "sisyphus thought about pushing the rock. " + log;
   }
 }
 
@@ -172,6 +174,7 @@ function summit() {
   while (rockDistance > 0) {
     rockDistance--;
   }
+    summitCount++;
     summitReached = false;
     setup();
     return;
@@ -229,6 +232,7 @@ function update() {
   volume6 = Math.min(1, Math.max(0, volume6));
   document.getElementById("_6").volume = volume6;
 
+  $("#summitCount").text(summitCount);
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
   $("#fatigueLevel").text(fatigueLevel);
