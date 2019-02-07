@@ -30,6 +30,13 @@ let slip;
 // let _6 = document.createElement("assets/sounds/6_F.wav");
 // let _end = document.createElement("assets/sounds/end.wav");
 
+let volume1;
+let volume2;
+let volume3;
+let volume4;
+let volume5;
+let volume6;
+
 $(document).ready(setup);
 
 function setup() {
@@ -54,9 +61,15 @@ function setup() {
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
 
+  volume1 = 0;
+  volume2 = 0;
+  volume3 = 0;
+  volume4 = 0;
+  volume5 = 0;
+  volume6 = 0;
   _1.play();
   _1.loop = true;
-  document.getElementById("_1").volume = 0.1;
+  document.getElementById("_1").volume = volume1;
 
 }
 
@@ -140,6 +153,9 @@ function update() {
   } else {
     fatigued = false;
   }
+  volume1 = rockDistance/1000;
+  volume1 = Math.min(1, Math.max(0, volume1));
+  document.getElementById("_1").volume = volume1;
 
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
