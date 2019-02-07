@@ -38,6 +38,11 @@ let volume4;
 let volume5;
 let volume6;
 
+let updateInt;
+let powerDrainInt;
+let rockSlipCheckInt;
+let fatigueUpdateInt;
+
 $(document).ready(setup);
 
 function setup() {
@@ -56,10 +61,10 @@ function setup() {
   $("#fatigueLevel").text(fatigueLevel);
   $("#log").text(log);
   $("#slip").text(slip);
-  setInterval(update,100);
-  setInterval(powerDrain,1000);
-  setInterval(rockSlipCheck,5000);
-  setInterval(fatigueUpdate,300);
+  updateInt = setInterval(update,100);
+  powerDrainInt = setInterval(powerDrain,1000);
+  rockSlipCheckInt = setInterval(rockSlipCheck,5000);
+  fatigueUpdateInt = setInterval(fatigueUpdate,300);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
 
@@ -167,9 +172,9 @@ function summit() {
   while (rockDistance > 0) {
     rockDistance--;
   }
-  summitReached = false;
-  setup();
-  return;
+    summitReached = false;
+    setup();
+    return;
 }
 
 function update() {
@@ -186,10 +191,10 @@ function update() {
   if (rockDistance >= 6000) {
     $('span.push').off('click',pushClick);
     $('span.focus').off('click',powerClick);
-    clearInterval(update);
-    clearInterval(powerDrain);
-    clearInterval(rockSlipCheck);
-    clearInterval(fatigueUpdate);
+    clearInterval(updateInt);
+    clearInterval(powerDrainInt);
+    clearInterval(rockSlipCheckInt);
+    clearInterval(fatigueUpdateInt);
     _1.pause();
     _2.pause();
     _3.pause();
