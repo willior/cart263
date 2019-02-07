@@ -70,11 +70,26 @@ function setup() {
   _1.play();
   _1.loop = true;
   document.getElementById("_1").volume = volume1;
+  _2.play();
+  _2.loop = true;
+  document.getElementById("_2").volume = volume2;
+  _3.play();
+  _3.loop = true;
+  document.getElementById("_3").volume = volume3;
+  _4.play();
+  _4.loop = true;
+  document.getElementById("_4").volume = volume4;
+  _5.play();
+  _5.loop = true;
+  document.getElementById("_5").volume = volume5;
+  _6.play();
+  _6.loop = true;
+  document.getElementById("_6").volume = volume6;
 
 }
 
 function pushClick() {
-  rockDistance += powerLevel;
+  rockDistance += powerLevel*10;
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
@@ -153,9 +168,15 @@ function update() {
   } else {
     fatigued = false;
   }
+
   volume1 = rockDistance/1000;
   volume1 = Math.min(1, Math.max(0, volume1));
   document.getElementById("_1").volume = volume1;
+
+  volume2 = ((rockDistance-1000)/1000);
+  volume2 = Math.min(1, Math.max(0, volume2));
+  document.getElementById("_2").volume = volume2;
+  console.log(volume2);
 
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
