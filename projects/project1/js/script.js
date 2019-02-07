@@ -103,9 +103,9 @@ function pushClick() {
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
     if (slipDistance > rockDistance) {
-      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to push the rock. " + log;
+      log = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when sisyphus tried to push the rock. " + log;
     } else {
-      log = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to push the rock. " + log;
+      log = "\n" + "the rock slipped " + slipDistance + " centimeters when sisyphus tried to push the rock. " + log;
     }
     rockSlip();
   }
@@ -169,15 +169,7 @@ function textReset() {
 
 function summit() {
 
-  while (summitReached){
-    rockDistance--;
-    $("#rockDistance").text(rockDistance);
-    console.log(rockDistance);
-    if (rockDistance == 0){
-      summitReached = false;
-    }
-  }
-
+  // FIRST ATTEMPT
   // for (let i = 6000; i > 0; i--) {
   //   rockDistance--;
   // setTimeout(rockDistance--,100);
@@ -185,9 +177,31 @@ function summit() {
   //   console.log(rockDistance);
   // }
 
-  summitCount++;
-  setup();
-  return;
+  // SECOND ATTEMPT
+  // while (summitReached){
+  //   $("#rockDistance").text(rockDistance);
+  //   rockDistance--;
+  //   console.log(rockDistance);
+  //   if (rockDistance == 0){
+  //     summitReached = false;
+  //   }
+  // }
+
+  // THIRD ATTEMPT
+  if (rockDistance > 0) {
+    rockDistance--;
+    $("#rockDistance").text(rockDistance);
+    $("#powerLevel").text(powerLevel);
+    $("#fatigueLevel").text(fatigueLevel);
+    return;
+  }
+  else {
+    clearInterval(summitReachedInt);
+    clearInterval(powerDrainInt);
+    clearInterval(fatigueUpdateInt);
+    setup();
+    return;
+  }
 }
 
 function update() {
@@ -212,11 +226,13 @@ function update() {
     $('span.push').off('click',pushClick);
     $('span.focus').off('click',powerClick);
     clearInterval(updateInt);
-    clearInterval(powerDrainInt);
+
     clearInterval(rockSlipCheckInt);
-    clearInterval(fatigueUpdateInt);
+
+    alert("the rock rolled down the hill and there was nothing sisyphus could do about it");
+    summitCount++;
     summitReached = true;
-    setTimeout(summit(), 1000);
+    summitReachedInt = setInterval(summit,1);
   }
 
   volume1 = rockDistance/1000;
