@@ -7,9 +7,9 @@ Will Graham-Simpkins
 let $spans;
 let summitCount = 0;
 let rockDistance;
-let powerLevel;
+let powerLevel = 0;
 let powerLevelDrain;
-let fatigueLevel;
+let fatigueLevel = 0;
 let fatigued;
 let slipDistance;
 let log = " ";
@@ -51,7 +51,7 @@ function setup() {
   rockDistance = 0;
   powerLevel = 0;
   powerLevelDrain = 1;
-  fatigueLevel = 0;
+  // fatigueLevel = 0;
   fatigued = false;
   slipDistance = 0;
   summitReached = false;
