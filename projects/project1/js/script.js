@@ -13,6 +13,7 @@ let fatigued;
 let slipDistance;
 let log;
 let slip;
+let summitReached;
 
 // let _1 = new Audio("assets/sounds/1_E.wav");
 // let _2 = new Audio("assets/sounds/2_A.wav");
@@ -46,6 +47,7 @@ function setup() {
   fatigueLevel = 0;
   fatigued = false;
   slipDistance = 0;
+  summitReached = false;
   log = " ";
   slip = " ";
   $spans = $('span');
@@ -89,7 +91,7 @@ function setup() {
 }
 
 function pushClick() {
-  rockDistance += powerLevel*10;
+  rockDistance += powerLevel*20;
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
@@ -158,6 +160,18 @@ function textReset() {
   log = " ";
 }
 
+function summit() {
+
+  _end.play();
+
+  while (rockDistance > 0) {
+    rockDistance--;
+  }
+  summitReached = false;
+  setup();
+  return;
+}
+
 function update() {
   if (rockDistance < 0) {
     rockDistance = 0;
@@ -169,6 +183,23 @@ function update() {
     fatigued = false;
   }
 
+  if (rockDistance >= 6000) {
+    $('span.push').off('click',pushClick);
+    $('span.focus').off('click',powerClick);
+    clearInterval(update);
+    clearInterval(powerDrain);
+    clearInterval(rockSlipCheck);
+    clearInterval(fatigueUpdate);
+    _1.pause();
+    _2.pause();
+    _3.pause();
+    _4.pause();
+    _5.pause();
+    _6.pause();
+    summitReached = true;
+    summit();
+  }
+
   volume1 = rockDistance/1000;
   volume1 = Math.min(1, Math.max(0, volume1));
   document.getElementById("_1").volume = volume1;
@@ -176,7 +207,22 @@ function update() {
   volume2 = ((rockDistance-1000)/1000);
   volume2 = Math.min(1, Math.max(0, volume2));
   document.getElementById("_2").volume = volume2;
-  console.log(volume2);
+
+  volume3 = ((rockDistance-2000)/1000);
+  volume3 = Math.min(1, Math.max(0, volume3));
+  document.getElementById("_3").volume = volume3;
+
+  volume4 = ((rockDistance-3000)/1000);
+  volume4 = Math.min(1, Math.max(0, volume4));
+  document.getElementById("_4").volume = volume4;
+
+  volume5 = ((rockDistance-4000)/1000);
+  volume5 = Math.min(1, Math.max(0, volume5));
+  document.getElementById("_5").volume = volume5;
+
+  volume6 = ((rockDistance-5000)/1000);
+  volume6 = Math.min(1, Math.max(0, volume6));
+  document.getElementById("_6").volume = volume6;
 
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
