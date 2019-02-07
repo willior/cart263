@@ -14,13 +14,21 @@ let slipDistance;
 let log;
 let slip;
 
-let _1E = new Audio("assets/sounds/1_E.wav");
-let _2A = new Audio("assets/sounds/2_A.wav");
-let _3D = new Audio("assets/sounds/3_D.wav");
-let _4G = new Audio("assets/sounds/4_G.wav");
-let _5C = new Audio("assets/sounds/5_C.wav");
-let _6F = new Audio("assets/sounds/6_F.wav");
-let _end = new Audio("assets/sounds/end.wav");
+// let _1 = new Audio("assets/sounds/1_E.wav");
+// let _2 = new Audio("assets/sounds/2_A.wav");
+// let _3 = new Audio("assets/sounds/3_D.wav");
+// let _4 = new Audio("assets/sounds/4_G.wav");
+// let _5 = new Audio("assets/sounds/5_C.wav");
+// let _6 = new Audio("assets/sounds/6_F.wav");
+// let _end = new Audio("assets/sounds/end.wav");
+
+// let _1 = document.createElement("assets/sounds/1_E.wav");
+// let _2 = document.createElement("assets/sounds/2_A.wav");
+// let _3 = document.createElement("assets/sounds/3_D.wav");
+// let _4 = document.createElement("assets/sounds/4_G.wav");
+// let _5 = document.createElement("assets/sounds/5_C.wav");
+// let _6 = document.createElement("assets/sounds/6_F.wav");
+// let _end = document.createElement("assets/sounds/end.wav");
 
 $(document).ready(setup);
 
@@ -45,6 +53,11 @@ function setup() {
   setInterval(fatigueUpdate,300);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
+
+  _1.play();
+  _1.loop = true;
+  document.getElementById("_1").volume = 0.1;
+
 }
 
 function pushClick() {
