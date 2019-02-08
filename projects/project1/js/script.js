@@ -9,6 +9,8 @@ let summitCount = 0;
 let rockDistance;
 let powerLevel = 0;
 let powerLevelDrain;
+// increase this value to make the game easier
+let powerMultiplier = 1.5;
 let fatigueLevel = 0;
 let fatigued;
 let slipDistance;
@@ -110,7 +112,9 @@ function pushClick() {
     playAudio();
     audioPlay = true;
   }
-  rockDistance += powerLevel*2;
+
+  //
+  rockDistance += powerLevel*powerMultiplier;
   fatigueLevel++;
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
