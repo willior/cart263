@@ -71,7 +71,7 @@ function setup() {
   $("#slip").text(slip);
   updateInt = setInterval(update,100);
   powerDrainInt = setInterval(powerDrain,1000);
-  rockSlipCheckInt = setInterval(rockSlipCheck,5000);
+  rockSlipCheckInt = setInterval(rockSlipCheck,4000);
   fatigueUpdateInt = setInterval(fatigueUpdate,300);
   $('span.push').on('click',pushClick);
   $('span.focus').on('click',powerClick);
