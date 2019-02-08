@@ -60,6 +60,7 @@ function setup() {
   volume5 = 0;
   volume6 = 0;
   $spans = $('span');
+  textLog = textLog + "sisyphus looked at the rock. "
   $("#summitCount").text(summitCount);
   $("#rockDistance").text(rockDistance);
   $("#powerLevel").text(powerLevel);
@@ -114,9 +115,9 @@ function pushClick() {
   let p = Math.floor(Math.random() * (100-1)+1);
   if (p < fatigueLevel) {
     if (slipDistance > rockDistance) {
-      textLog = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when sisyphus tried to push the rock. " + textLog;
+      textLog = textLog + "the rock slipped " + rockDistance + " centimeters and hit the ground when sisyphus tried to push the rock. ";
     } else {
-      textLog = "\n" + "the rock slipped " + slipDistance + " centimeters when sisyphus tried to push the rock. " + textLog;
+      textLog = textLog + "the rock slipped " + slipDistance + " centimeters when sisyphus tried to push the rock. ";
     }
     rockSlip();
   }
@@ -132,13 +133,13 @@ function powerClick() {
   let f = Math.floor(Math.random() * (100-1)+1);
   if (f < fatigueLevel) {
     if (rockDistance <= 0) {
-      textLog = "\n" + "staring at the rock gives sisyphus strength. " + textLog;
+      textLog = textLog + "staring at the rock gives sisyphus strength. ";
       return;
     }
     if (slipDistance > rockDistance) {
-      textLog = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to power up. " + textLog;
+      textLog = textLog + "the rock slipped " + rockDistance + " centimeters and hit the ground when you tried to power up. ";
     } else {
-      textLog = "\n" + "the rock slipped " + slipDistance + " centimeters when you tried to power up. " + textLog;
+      textLog = textLog + "the rock slipped " + slipDistance + " centimeters when you tried to power up. ";
     }
     rockSlip();
   }
@@ -173,13 +174,13 @@ function rockSlip() {
 function rockSlipCheck() {
   if (rockDistance > 0) {
     if (slipDistance > rockDistance) {
-      textLog = "\n" + "the rock slipped " + rockDistance + " centimeters and hit the ground. " + textLog;
+      textLog = textLog + "the rock slipped " + rockDistance + " centimeters and hit the ground. ";
     } else {
-      textLog = "\n" + "the rock slipped " + slipDistance + " centimeters." + textLog;
+      textLog = textLog + "the rock slipped " + slipDistance + " centimeters. ";
     }
     rockSlip();
   } else {
-    textLog = "sisyphus thought about pushing the rock. " + textLog;
+    textLog = textLog + "sisyphus thought about pushing the rock. ";
   }
 }
 
@@ -207,6 +208,7 @@ function summit() {
     clearInterval(summitReachedInt);
     clearInterval(powerDrainInt);
     clearInterval(fatigueUpdateInt);
+    textLog = textLog + "the rock hit the ground with an unsanctimonious thud. "
     setup();
     return;
   }
@@ -247,6 +249,7 @@ function update() {
     $('span.focus').off('click',powerClick);
     clearInterval(updateInt);
     clearInterval(rockSlipCheckInt);
+    textLog = textLog + "he had done it. sisyphus had reached the summit. "
     alert("the rock rolled down the hill and there was nothing sisyphus could do about it");
     summitCount++;
     _end.play();
