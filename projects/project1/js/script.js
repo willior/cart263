@@ -165,7 +165,7 @@ function powerDrain() {
 // being fatigued doubles the range at which the rock randomly slips from 20 to 40
 function rockSlip() {
   if (fatigued = true) {
-    slipDistance = Math.floor(Math.random() * (40-1)+1);
+    slipDistance = Math.floor(Math.random() * (20-1)+1)+20;
   } else if (fatigued = false) {
     slipDistance = Math.floor(Math.random() * (20-1)+1);
   }
