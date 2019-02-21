@@ -2,29 +2,22 @@
 
 /*****************
 
-Eat Up
-Pippin Barr
+Eat Up: God Hand edition
+Will Graham-Simpkins
 
-Using jQuery UI's draggable and droppable methods to
-feed a hungry mouth!
-
-Sounds:
-Buzzing: https://freesound.org/people/soundmary/sounds/194931/
-Chewing: https://freesound.org/people/InspectorJ/sounds/412068/
+Music, sound effects, and the character Gene taken from the video game God Hand.
+A beat em up game directed by Shinji Mikami, God Hand was developed by Clover Studio and released on the PS2 in 2006.
 
 ******************/
 
 // Sound effects for the experience
 let bgm1 = new Audio("assets/sounds/theme1.mp3");
 let bgm2 = new Audio("assets/sounds/theme2.mp3");
-
 let whistleSFX = new Audio("assets/sounds/Whistle.wav");
 let eat1SFX = new Audio("assets/sounds/Awesome!.wav");
 let eat2SFX = new Audio("assets/sounds/Great!.wav");
 let eat3SFX = new Audio("assets/sounds/I love it!.wav");
 let eat4SFX = new Audio("assets/sounds/Wow!.wav");
-
-
 let pain1SFX = new Audio("assets/sounds/Pain.wav");
 let pain2SFX = new Audio("assets/sounds/Pain 2.wav");
 
@@ -42,7 +35,6 @@ let eatCount;
 let random;
 
 $(document).ready(setup);
-
 function setup() {
   eatCount = 0;
   // Get the Gene element from the page
@@ -54,12 +46,11 @@ function setup() {
     drop: dropped
   });
 
-  // page elements
+  // page elements:
+  //
   // reverts fly's position when trying to feed to Gene
   // has Gene utter disgustingly when fly is picked up
-  $fly = $('#fly').draggable({revert: "valid"}).on("mousedown", function() {
-    pain1SFX.play();
-  });
+  $fly = $('#fly').draggable({revert: "valid"}).on("mousedown", function() {pain1SFX.play();});
   // Gene whistles in anticipation of delicious fruit
   $strawberry = $('#strawberry').draggable().on("mousedown", function() {whistleSFX.play()});
   $banana = $('#banana').draggable().on("mousedown", function() {whistleSFX.play()});
@@ -74,51 +65,41 @@ function setup() {
 function dropped (event,ui) {
 
   // if the fly is dropped on Gene, he utters more disgustingly
-  // then returns so that the rest of the function does not run
+  // then breaks out of the function so that the rest does not run
   if(event.toElement === document.getElementById('fly')){
     pain2SFX.play();
     return;
   }
-
-  // runs if fruit was fed to Gene
+  // if something other than the fly is dropped onto Gene...
+  // removes the element
   ui.draggable.remove();
-
+  // visually showcases Gene's opinion on fruit
   $(this).attr('src','assets/images/Gene2.png');
-
   // picks a sound to play when Gene eats a fruit
   random = Math.floor(Math.random() * (4 - 1)) + 1;
   if (random === 1) {eat1SFX.play()}
   if (random === 2) {eat2SFX.play()}
   if (random === 3) {eat3SFX.play()}
   if (random === 4) {eat4SFX.play()}
-
   // keeps track of how much fruit Gene has consumed
   eatCount++;
   console.log(eatCount);
-  setTimeout(function(){
-    $(this).attr('src','assets/images/Gene.png');}
-    ,400);
-  if (eatCount === 4) {
-    setInterval(chew,250);
+  // reverts Gene back to his default state
+  setTimeout(function(){$gene.attr('src','assets/images/Gene.png');},400);
+  // runs when Gene is full
+  if (eatCount === 4) {setInterval(full,250);
   }
 }
 
-// chew()
-//
-// Swaps the mouth image between closed and open and plays the crunching SFX
-function chew () {
-  // We can use .attr() to check the value of an attribute to
-  // In this case we check if the image is the open mouth
+// alternates between default Gene and satisfied Gene
+// plays different music
+function full () {
   if ($gene.attr('src') === 'assets/images/Gene.png') {
-    // If it is, we set the 'src' attribute to the closed mouth
     $gene.attr('src','assets/images/Gene2.png');
-    // and play the crunching
     bgm1.pause();
     bgm2.play();
   }
   else {
-    // Otherwise the 'src' attribute must have been the closed mouth
-    // so we swap it for the open mouth
     $gene.attr('src','assets/images/Gene.png');
   }
 }
