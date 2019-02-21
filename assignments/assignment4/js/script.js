@@ -82,6 +82,7 @@ function dropped (event,ui) {
 
   // runs if fruit was fed to Gene
   ui.draggable.remove();
+
   $(this).attr('src','assets/images/Gene2.png');
 
   // picks a sound to play when Gene eats a fruit
@@ -94,10 +95,10 @@ function dropped (event,ui) {
   // keeps track of how much fruit Gene has consumed
   eatCount++;
   console.log(eatCount);
-  if (eatCount < 4) {
-    return;
-  }
-  else {
+  setTimeout(function(){
+    $(this).attr('src','assets/images/Gene.png');}
+    ,400);
+  if (eatCount === 4) {
     setInterval(chew,250);
   }
 }
