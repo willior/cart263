@@ -32,6 +32,8 @@ let pain2SFX = new Audio("assets/sounds/Pain 2.wav");
 let $gene;
 let $fly;
 let $strawberry;
+let $banana;
+let $orange;
 let $cherry;
 
 // counter
@@ -48,7 +50,7 @@ function setup() {
   // Make it droppable
   $gene.droppable({
     // The drop option specifies a function to call when a drop is completed
-    accept: "#strawberry, #cherry, #fly",
+    accept: "#strawberry, #banana, #orange, #cherry, #fly",
     drop: dropped
   });
 
@@ -60,6 +62,8 @@ function setup() {
   });
   // Gene whistles in anticipation of delicious fruit
   $strawberry = $('#strawberry').draggable().on("mousedown", function() {whistleSFX.play()});
+  $banana = $('#banana').draggable().on("mousedown", function() {whistleSFX.play()});
+  $orange = $('#orange').draggable().on("mousedown", function() {whistleSFX.play()});
   $cherry = $('#cherry').draggable().on("mousedown", function() {whistleSFX.play()});
 
   // Start up the music
