@@ -170,7 +170,15 @@ function clickJukebox() {
 function full () {
   if ($gene.attr('src') === 'assets/images/Gene.png') {
     $gene.attr('src','assets/images/Gene2.png');
-    bgm1.pause();
+    if (trackCount === 1){
+      bgm1.pause();
+    }
+    if (trackCount === 2){
+      bgm3.pause()
+    }
+    if (trackCount === 3){
+      bgm4.pause();
+    }
     trackCount = 5;
     bgm2.play();
   }
