@@ -11,8 +11,10 @@ A beat em up game directed by Shinji Mikami, God Hand was developed by Clover St
 ******************/
 
 // Sound effects for the experience
-let bgm1 = new Audio("assets/sounds/theme1.mp3");
-let bgm2 = new Audio("assets/sounds/theme2.mp3");
+let bgm1 = new Audio("assets/sounds/rock_a_bay.mp3");
+let bgm2 = new Audio("assets/sounds/broncobuster.mp3");
+let bgm3 = new Audio("assets/sounds/smoking_rolliste.mp3")
+let bgm4 = new Audio("assets/sounds/god_hand.mp3")
 let whistleSFX = new Audio("assets/sounds/Whistle.wav");
 let eat1SFX = new Audio("assets/sounds/Awesome!.wav");
 let eat2SFX = new Audio("assets/sounds/Great!.wav");
@@ -22,9 +24,11 @@ let pain1SFX = new Audio("assets/sounds/Pain.wav");
 let pain2SFX = new Audio("assets/sounds/Pain 2.wav");
 let niceSFX = new Audio("assets/sounds/Nice!.wav");
 let gahSFX = new Audio("assets/sounds/gah.wav");
+let hahahSFX = new Audio("assets/sounds/Hahah!.wav")
 let buzzSFX = new Audio("assets/sounds/buzz.mp3");
 let boringSFX = new Audio("assets/sounds/boring.wav");
 let coinSFX = new Audio("assets/sounds/coin.mp3");
+let tapSFX = new Audio("assets/sounds/tap.mp3");
 
 // element variables
 let $gene;
@@ -36,16 +40,21 @@ let $orange;
 let $cherry;
 let $dollar;
 
-// counter
+// counter for number of fruits consumed
 let eatCount;
 // variable used to randomly select an eat sound
 let random;
+// counter for music track played by the Jukebox
+let trackCount;
+// boolean to keep track of whether Gene is satisfied or not
 let satisfied;
 
 $(document).ready(setup);
 function setup() {
+
   eatCount = 0;
   satisfied = false;
+  trackCount = 0;
   // Get the Gene element from the page and make it droppable for the appropriate items
   $gene = $('#gene');
   $gene.droppable({
@@ -58,6 +67,10 @@ function setup() {
     accept: "#strawberry, #banana, #orange, #cherry, #fly, #dollar",
     drop: dropJukebox
   });
+
+  document.getElementById('gene').addEventListener("click", clickGene);
+  document.getElementById('jukebox').addEventListener("click", clickJukebox);
+
 
   // page elements:
   //
@@ -122,16 +135,43 @@ function dropJukebox(event, ui) {
   }
   // if neither fly or fruit was dropped onto the juke box...
   coinSFX.play();
+  trackCount++;
   ui.draggable.remove();
   bgm1.play();
 }
 
-// alternates between default Gene and satisfied Gene
+function clickGene() {
+  hahahSFX.play();
+}
+
+function clickJukebox() {
+  if (trackCount === 0){
+    tapSFX.play();
+  }
+  else if (trackCount === 1){
+    bgm1.pause();
+    bgm3.play();
+    trackCount++;
+  }
+  else if (trackCount === 2){
+    bgm3.pause();
+    bgm4.play();
+    trackCount++;
+  }
+  else if (trackCount === 3){
+    bgm4.pause();
+    bgm1.play();
+    trackCount = 1;
+  }
+}
+
+// alternates between displaying default Gene and satisfied Gene
 // plays different music
 function full () {
   if ($gene.attr('src') === 'assets/images/Gene.png') {
     $gene.attr('src','assets/images/Gene2.png');
     bgm1.pause();
+    trackCount = 5;
     bgm2.play();
   }
   else {
