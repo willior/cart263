@@ -22,6 +22,9 @@ let pain1SFX = new Audio("assets/sounds/Pain.wav");
 let pain2SFX = new Audio("assets/sounds/Pain 2.wav");
 let niceSFX = new Audio("assets/sounds/Nice!.wav");
 let gahSFX = new Audio("assets/sounds/gah.wav");
+let buzzSFX = new Audio("assets/sounds/buzz.mp3");
+let boringSFX = new Audio("assets/sounds/boring.wav");
+let coinSFX = new Audio("assets/sounds/coin.mp3");
 
 // element variables
 let $gene;
@@ -47,13 +50,13 @@ function setup() {
   $gene = $('#gene');
   $gene.droppable({
     accept: "#strawberry, #banana, #orange, #cherry, #fly, #dollar",
-    drop: fed
+    drop: dropGene
   });
   // same for the jukebox
   $jukebox = $('#jukebox');
   $jukebox.droppable({
-    accept: "#dollar",
-    drop: coinInsert
+    accept: "#strawberry, #banana, #orange, #cherry, #fly, #dollar",
+    drop: dropJukebox
   });
 
   // page elements:
@@ -62,14 +65,14 @@ function setup() {
   // has Gene utter disgustingly when fly is picked up
   $fly = $('#fly').draggable({revert: "valid"}).on("mousedown", function() {pain1SFX.play();});
   // Gene whistles in anticipation of delicious fruit
-  $strawberry = $('#strawberry').draggable().on("mousedown", function() {whistleSFX.play()});
-  $banana = $('#banana').draggable().on("mousedown", function() {whistleSFX.play()});
-  $orange = $('#orange').draggable().on("mousedown", function() {whistleSFX.play()});
-  $cherry = $('#cherry').draggable().on("mousedown", function() {whistleSFX.play()});
+  $strawberry = $('#strawberry').draggable({revert: "valid"}).on("mousedown", function() {whistleSFX.play()});
+  $banana = $('#banana').draggable({revert: "valid"}).on("mousedown", function() {whistleSFX.play()});
+  $orange = $('#orange').draggable({revert: "valid"}).on("mousedown", function() {whistleSFX.play()});
+  $cherry = $('#cherry').draggable({revert: "valid"}).on("mousedown", function() {whistleSFX.play()});
   $dollar = $('#dollar').draggable({revert: "valid"}).on("mousedown", function() {niceSFX.play()});
 }
 
-function fed (event,ui) {
+function dropGene (event,ui) {
 
   // if the fly is dropped on Gene, he utters more disgustingly
   // then breaks out of the function so that the rest does not run
@@ -104,7 +107,18 @@ function fed (event,ui) {
   }
 }
 
-function coinInsert(event, ui) {
+function dropJukebox(event, ui) {
+
+  if(event.toElement === document.getElementById('fly')){
+    buzzSFX.play();
+    return;
+  }
+  if((event.toElement === document.getElementById('strawberry'))||(event.toElement === document.getElementById('banana'))||(event.toElement === document.getElementById('orange'))||(event.toElement === document.getElementById('cherry'))){
+    boringSFX.play();
+    return;
+
+  }
+  coinSFX.play();
   ui.draggable.remove();
   bgm1.play();
 }
