@@ -20,30 +20,40 @@ let eat3SFX = new Audio("assets/sounds/I love it!.wav");
 let eat4SFX = new Audio("assets/sounds/Wow!.wav");
 let pain1SFX = new Audio("assets/sounds/Pain.wav");
 let pain2SFX = new Audio("assets/sounds/Pain 2.wav");
+let niceSFX = new Audio("assets/sounds/Nice!.wav");
+let gahSFX = new Audio("assets/sounds/gah.wav");
 
 // element variables
 let $gene;
+let $jukebox;
 let $fly;
 let $strawberry;
 let $banana;
 let $orange;
 let $cherry;
+let $dollar;
 
 // counter
 let eatCount;
 // variable used to randomly select an eat sound
 let random;
+let satisfied;
 
 $(document).ready(setup);
 function setup() {
   eatCount = 0;
-  // Get the Gene element from the page
+  satisfied = false;
+  // Get the Gene element from the page and make it droppable for the appropriate items
   $gene = $('#gene');
-  // Make it droppable
   $gene.droppable({
-    // The drop option specifies a function to call when a drop is completed
-    accept: "#strawberry, #banana, #orange, #cherry, #fly",
-    drop: dropped
+    accept: "#strawberry, #banana, #orange, #cherry, #fly, #dollar",
+    drop: fed
+  });
+  // same for the jukebox
+  $jukebox = $('#jukebox');
+  $jukebox.droppable({
+    accept: "#dollar",
+    drop: coinInsert
   });
 
   // page elements:
@@ -56,18 +66,19 @@ function setup() {
   $banana = $('#banana').draggable().on("mousedown", function() {whistleSFX.play()});
   $orange = $('#orange').draggable().on("mousedown", function() {whistleSFX.play()});
   $cherry = $('#cherry').draggable().on("mousedown", function() {whistleSFX.play()});
-
-  // Start up the music
-  bgm1.loop = true;
-  setTimeout(function(){bgm1.play();},100);
+  $dollar = $('#dollar').draggable({revert: "valid"}).on("mousedown", function() {niceSFX.play()});
 }
 
-function dropped (event,ui) {
+function fed (event,ui) {
 
   // if the fly is dropped on Gene, he utters more disgustingly
   // then breaks out of the function so that the rest does not run
   if(event.toElement === document.getElementById('fly')){
     pain2SFX.play();
+    return;
+  }
+  if(event.toElement === document.getElementById('dollar')){
+    gahSFX.play();
     return;
   }
   // if something other than the fly is dropped onto Gene...
@@ -76,19 +87,26 @@ function dropped (event,ui) {
   // visually showcases Gene's opinion on fruit
   $(this).attr('src','assets/images/Gene2.png');
   // picks a sound to play when Gene eats a fruit
-  random = Math.floor(Math.random() * (4 - 1)) + 1;
+  random = Math.floor(Math.random() * (5 - 1)) + 1;
+  console.log(random);
   if (random === 1) {eat1SFX.play()}
   if (random === 2) {eat2SFX.play()}
   if (random === 3) {eat3SFX.play()}
   if (random === 4) {eat4SFX.play()}
   // keeps track of how much fruit Gene has consumed
   eatCount++;
-  console.log(eatCount);
   // reverts Gene back to his default state
   setTimeout(function(){$gene.attr('src','assets/images/Gene.png');},400);
   // runs when Gene is full
-  if (eatCount === 4) {setInterval(full,250);
+  if (eatCount === 4) {
+    satisfied = true;
+    setInterval(full,250);
   }
+}
+
+function coinInsert(event, ui) {
+  ui.draggable.remove();
+  bgm1.play();
 }
 
 // alternates between default Gene and satisfied Gene
