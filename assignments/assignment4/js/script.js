@@ -59,7 +59,7 @@ function setup() {
 
   // Start up the music
   bgm1.loop = true;
-  bgm1.play();
+  setTimeout(function(){bgm1.play();},100);
 }
 
 function dropped (event,ui) {
