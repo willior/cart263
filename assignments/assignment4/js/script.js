@@ -72,6 +72,7 @@ function setup() {
   $dollar = $('#dollar').draggable({revert: "valid"}).on("mousedown", function() {niceSFX.play()});
 }
 
+// the function for when an element is dropped onto Gene
 function dropGene (event,ui) {
 
   // if the fly is dropped on Gene, he utters more disgustingly
@@ -107,17 +108,19 @@ function dropGene (event,ui) {
   }
 }
 
+// the function for when an element is dropped onto the Jukebox
 function dropJukebox(event, ui) {
-
+  // fly buzzes off
   if(event.toElement === document.getElementById('fly')){
     buzzSFX.play();
     return;
   }
+  // if any of the fruit is dropped onto the jukebox, Gene lets you know what he thinks
   if((event.toElement === document.getElementById('strawberry'))||(event.toElement === document.getElementById('banana'))||(event.toElement === document.getElementById('orange'))||(event.toElement === document.getElementById('cherry'))){
     boringSFX.play();
     return;
-
   }
+  // if neither fly or fruit was dropped onto the juke box...
   coinSFX.play();
   ui.draggable.remove();
   bgm1.play();
