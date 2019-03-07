@@ -217,7 +217,7 @@ function setup() {
         console.log("i think it is");
         console.log(tag);
         // checks if *tag = correctAnimal
-        if (tag === correctAnimal){
+        if (tag.toLowerCase() === correctAnimal){
           // Remove all the buttons
           $('.guess').remove();
           // updates score
