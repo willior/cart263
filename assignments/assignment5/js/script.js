@@ -186,6 +186,7 @@ function setup() {
         // give up function goes here
         // start new newRound
         console.log("give up");
+        $('.guess').remove();
         newRound();
         score = 0;
       },
@@ -199,8 +200,13 @@ function setup() {
         console.log("i think it is");
         console.log(tag);
         if (tag === correctAnimal){
+          // Remove all the buttons
+          $('.guess').remove();
           setTimeout(newRound, 1000);
           score++;
+        }
+        else {
+          $('.guess').effect('shake');
         }
       }
     };
