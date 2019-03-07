@@ -177,6 +177,7 @@ $(document).ready(setup);
 function setup() {
   $('#click-to-begin').on('click',startGame);
   score = 0;
+  $('.score').text(score);
 
   // annyang stuff
   if (annyang) {
@@ -189,6 +190,7 @@ function setup() {
         $('.guess').remove();
         newRound();
         score = 0;
+        $('.score').text(score);
       },
       'say it again': function() {
         speakAnimal(correctAnimal);
@@ -204,6 +206,7 @@ function setup() {
           $('.guess').remove();
           setTimeout(newRound, 1000);
           score++;
+          $('.score').text(score);
         }
         else {
           $('.guess').effect('shake');
@@ -299,6 +302,8 @@ function addButton(label) {
       // Remove all the buttons
       $('.guess').remove();
       // Start a new round
+      score++;
+      $('.score').text(score);
       setTimeout(newRound,1000);
     }
     else {
