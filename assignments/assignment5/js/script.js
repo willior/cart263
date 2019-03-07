@@ -170,34 +170,6 @@ const NUM_OPTIONS = 5;
 // Get setup!
 $(document).ready(setup);
 
-// annyang stuff
-if (annyang) {
-  // Let's define our first command. First the text we expect, and then the function it should call
-  var commands = {
-    'i give up': function() {
-      // give up function goes here
-      // start new newRound
-      newRound();
-      score = 0;
-    },
-    'say it again': function() {
-      speakAnimal(correctAnimal);
-    },
-    'i think it is *tag': function(tag) {
-      // speech recognition goes here
-      if (tag === correctAnimal){
-        setTimeout(newRound, 1000);
-        score++;
-      }
-    }
-  };
-
-  // Add our commands to annyang
-  annyang.addCommands(commands);
-
-  // Start listening. You can call this here, or attach this call to an event, button, etc.
-  annyang.start();
-}
 // setup()
 //
 // In order to be able to play sound, our setup involves clicking once
@@ -205,6 +177,40 @@ if (annyang) {
 function setup() {
   $('#click-to-begin').on('click',startGame);
   score = 0;
+
+  // annyang stuff
+  if (annyang) {
+    // Let's define our first command. First the text we expect, and then the function it should call
+    var commands = {
+      'i give up': function() {
+        // give up function goes here
+        // start new newRound
+        console.log("give up");
+        newRound();
+        score = 0;
+      },
+      'say it again': function() {
+        speakAnimal(correctAnimal);
+        console.log("repeating");
+        console.log(correctAnimal);
+      },
+      'i think it is *tag': function(tag) {
+        // speech recognition goes here
+        console.log("i think it is");
+        console.log(tag);
+        if (tag === correctAnimal){
+          setTimeout(newRound, 1000);
+          score++;
+        }
+      }
+    };
+
+    // Add our commands to annyang
+    annyang.addCommands(commands);
+
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+    annyang.start();
+  }
 
 }
 
