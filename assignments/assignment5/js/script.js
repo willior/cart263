@@ -183,39 +183,51 @@ function setup() {
   if (annyang) {
     // Let's define our first command. First the text we expect, and then the function it should call
     var commands = {
+      // i give up voice command
       'i give up': function() {
-        // give up function goes here
-        // start new newRound
         console.log("give up");
+        // targets guess class
         $('.guess').each(function() {
+          // shakes if text = correctAnimal
           if($(this).text() === correctAnimal) {
             $(this).effect('shake');
           }
         });
         setTimeout(function() {
+          // removes buttons
           $('.guess').remove();
+          // resets score
           score = 0;
+          // displays score
           $('.score').text(score);
+          // begins newRound
           newRound();
         }, 1000);
 
       },
+      // say it again voice command
       'say it again': function() {
+        // repeats the hint out load
         speakAnimal(correctAnimal);
         console.log("repeating");
         console.log(correctAnimal);
       },
+      // i think it is X voice command
       'i think it is *tag': function(tag) {
-        // speech recognition goes here
         console.log("i think it is");
         console.log(tag);
+        // checks if *tag = correctAnimal
         if (tag === correctAnimal){
           // Remove all the buttons
           $('.guess').remove();
-          setTimeout(newRound, 1000);
+          // updates score
           score++;
+          // displays score
           $('.score').text(score);
+          // runs newRound after a second
+          setTimeout(newRound, 1000);
         }
+        // shakes buttons if *tag != correct animal
         else {
           $('.guess').effect('shake');
         }
