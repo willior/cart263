@@ -177,14 +177,18 @@ if (annyang) {
     'i give up': function() {
       // give up function goes here
       // start new newRound
-      // reset score
+      newRound();
+      score = 0;
     },
     'say it again': function() {
-      // say it again function goes here
-      // speaks the animal again
+      speakAnimal(correctAnimal);
     },
-    'i think it is X': function() {
+    'i think it is *tag': function(tag) {
       // speech recognition goes here
+      if (tag === correctAnimal){
+        setTimeout(newRound, 1000);
+        score++;
+      }
     }
   };
 
