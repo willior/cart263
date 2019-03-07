@@ -187,8 +187,11 @@ function setup() {
         // give up function goes here
         // start new newRound
         console.log("give up");
-        $('#' + correctAnimal).effect('shake');
-
+        $('.guess').each(function() {
+          if($(this).text() === correctAnimal) {
+            $(this).effect('shake');
+          }
+        });
         setTimeout(function() {
           $('.guess').remove();
           score = 0;
