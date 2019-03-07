@@ -187,10 +187,15 @@ function setup() {
         // give up function goes here
         // start new newRound
         console.log("give up");
-        $('.guess').remove();
-        newRound();
-        score = 0;
-        $('.score').text(score);
+        $('#' + correctAnimal).effect('shake');
+
+        setTimeout(function() {
+          $('.guess').remove();
+          score = 0;
+          $('.score').text(score);
+          newRound();
+        }, 1000);
+
       },
       'say it again': function() {
         speakAnimal(correctAnimal);
@@ -315,5 +320,5 @@ function addButton(label) {
   });
 
   // Finally, add the button to the page so we can see it
-  $('body').append($button);
+  $('body').prepend($button);
 }
