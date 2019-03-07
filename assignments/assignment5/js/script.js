@@ -162,6 +162,7 @@ let animals = [
 let correctAnimal;
 // We also track all the possibly answers (mostly so we can switch their order around)
 let answers = [];
+let score;
 
 // How many possible answers there are per round
 const NUM_OPTIONS = 5;
@@ -169,12 +170,38 @@ const NUM_OPTIONS = 5;
 // Get setup!
 $(document).ready(setup);
 
+// annyang stuff
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'i give up': function() {
+      // give up function goes here
+      // start new newRound
+      // reset score
+    },
+    'say it again': function() {
+      // say it again function goes here
+      // speaks the animal again
+    },
+    'i think it is X': function() {
+      // speech recognition goes here
+    }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
 // setup()
 //
 // In order to be able to play sound, our setup involves clicking once
 // to actually start the game.
 function setup() {
   $('#click-to-begin').on('click',startGame);
+  score = 0;
+
 }
 
 // startGame()
