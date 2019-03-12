@@ -13,6 +13,7 @@ let cash;
 let traceLevel;
 let traceLevelString;
 let traceFactor;
+let traceFactorString;
 let time;
 
 let procPrice;
@@ -68,11 +69,26 @@ function actionClick() {
 
 function bounceClick() {
   console.log("signal bounced!");
-
+  if (memory <= 0) {
+    textLog = "Not enough memory to bounce signal.";
+  }
+  else {
+    traceLevel -= 10;
+    memory--;
+  }
+  textUpdate();
 }
 
 function proxyClick() {
   console.log("proxy installed!");
+  if (memory <= 0) {
+    textLog = "Not enough memory to install proxy.";
+  }
+  else {
+    traceFactor--;
+    memory--;
+  }
+  textUpdate();
 }
 
 function procPowerUpgrade() {
@@ -119,8 +135,8 @@ function textUpdate() {
 
   traceLevelString = traceLevel.toFixed(2);
   $("#traceLevel").text(traceLevelString);
-
-  $("#traceFactor").text(traceFactor);
+  traceFactorString = traceFactor.toFixed(2);
+  $("#traceFactor").text(traceFactorString);
 
   $("#textLog").text(textLog);
   $("#procPrice").text(procPrice);
