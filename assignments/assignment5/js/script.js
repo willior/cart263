@@ -165,7 +165,7 @@ let answers = [];
 let score;
 
 // How many possible answers there are per round
-const NUM_OPTIONS = 5;
+const NUM_OPTIONS = 12;
 
 // Get setup!
 $(document).ready(setup);
