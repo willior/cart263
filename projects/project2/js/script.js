@@ -10,7 +10,9 @@ let textLog = " ";
 let procPower;
 let memory;
 let cash;
+let cashString;
 let cashEarned;
+let cashEarnedString;
 let traceLevel;
 let traceLevelString;
 let traceFactor;
@@ -18,7 +20,9 @@ let traceFactorString;
 let time;
 
 let procPrice;
+let procPriceString;
 let memoryPrice;
+let memoryPriceString;
 let bouncePrice;
 let proxyPrice;
 
@@ -49,28 +53,30 @@ function setup() {
   bouncePrice = 1;
   proxyPrice = 1;
 
-  $("#cash").text(cash);
-  $("#cashEarned").text(cashEarned);
-  $("#procPower").text(procPower);
-  $("#procPrice").text(procPrice);
+  textUpdate();
 
-  $("#memory").text(memory);
-  $("#memoryPrice").text(memoryPrice);
-
-  $("#traceLevel").text(traceLevel);
-  $("#traceFactor").text(traceFactor);
-
-  $("#bouncePrice").text(bouncePrice);
-  $("#proxyPrice").text(proxyPrice);
-
-  $("#time").text(time);
-  $("#textLog").text(textLog);
-
-  $('span.action').on('click',actionClick);
-  $('span.bounce').on('click',bounceClick);
-  $('span.proxy').on('click',proxyClick);
-  $('span.upProcPower').on('click',procPowerUpgrade);
-  $('span.upMemory').on('click',memoryUpgrade);
+  // $("#cash").text(cash);
+  // $("#cashEarned").text(cashEarned);
+  // $("#procPower").text(procPower);
+  // $("#procPrice").text(procPrice);
+  //
+  // $("#memory").text(memory);
+  // $("#memoryPrice").text(memoryPrice);
+  //
+  // $("#traceLevel").text(traceLevel);
+  // $("#traceFactor").text(traceFactor);
+  //
+  // $("#bouncePrice").text(bouncePrice);
+  // $("#proxyPrice").text(proxyPrice);
+  //
+  // $("#time").text(time);
+  // $("#textLog").text(textLog);
+  //
+  // $('span.action').on('click',actionClick);
+  // $('span.bounce').on('click',bounceClick);
+  // $('span.proxy').on('click',proxyClick);
+  // $('span.upProcPower').on('click',procPowerUpgrade);
+  // $('span.upMemory').on('click',memoryUpgrade);
 
   setInterval(timer,1000);
   setInterval(update,1000);
@@ -121,7 +127,7 @@ function procPowerUpgrade() {
   else {
     procPower += 100;
     cash -= procPrice;
-    procPrice = procPrice * 2;
+    procPrice = procPrice * 1.5;
     textLog = "Processing power upgraded."
     cashEarned = procPower/10;
     textUpdate();
@@ -141,25 +147,32 @@ function memoryUpgrade() {
   else {
     memory += 4;
     cash -= memoryPrice;
-    memoryPrice = memoryPrice * 2;
+    memoryPrice = memoryPrice * 1.2;
     textLog = "Memory expanded."
     textUpdate();
   }
 }
 
 function textUpdate() {
-  $("#cash").text(cash);
-  $("#cashEarned").text(cashEarned);
+
+  cashString = cash.toFixed(2);
+  $("#cash").text(cashString);
+  cashEarnedString = cashEarned.toFixed(2);
+  $("#cashEarned").text(cashEarnedString);
+
   $("#procPower").text(procPower);
+  procPriceString = procPrice.toFixed(2);
+  $("#procPrice").text(procPriceString);
+
   $("#memory").text(memory);
+  memoryPriceString = memoryPrice.toFixed(2);
+  $("#memoryPrice").text(memoryPriceString);
 
   traceLevelString = traceLevel.toFixed(2);
   $("#traceLevel").text(traceLevelString);
   traceFactorString = traceFactor.toFixed(2);
   $("#traceFactor").text(traceFactorString);
 
-  $("#procPrice").text(procPrice);
-  $("#memoryPrice").text(memoryPrice);
   $("#bouncePrice").text(bouncePrice);
   $("#proxyPrice").text(proxyPrice);
 
@@ -174,6 +187,7 @@ function update() {
     traceLevel = 100;
     traced();
   }
+  traceLevel -= 0.1;
   if (traceLevel < 0) {
     traceLevel = 0;
   }
