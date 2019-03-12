@@ -13,6 +13,7 @@ let cash;
 let traceLevel;
 let traceLevelString;
 let traceFactor;
+let time;
 
 let procPrice;
 let memoryPrice;
@@ -32,6 +33,9 @@ function setup() {
   cash = 1000;
   traceLevel = 0;
   traceFactor = 0;
+
+  time = 0;
+
   procPrice = 100;
   memoryPrice = 100;
 
@@ -40,15 +44,19 @@ function setup() {
   $("#cash").text(cash);
   $("#traceLevel").text(traceLevel);
   $("#traceFactor").text(traceFactor);
+  $("#time").text(time);
   $("#textLog").text(textLog);
   $("#procPrice").text(procPrice);
   $("#memoryPrice").text(memoryPrice);
-
   $('span.action').on('click',actionClick);
+  $('span.bounce').on('click',bounceClick);
+  $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
 
+  setInterval(timer,1000);
   setInterval(update,1000);
+
 }
 
 function actionClick() {
@@ -56,6 +64,15 @@ function actionClick() {
   cash = cash + (procPower/10);
   traceFactor += 0.1;
   textUpdate();
+}
+
+function bounceClick() {
+  console.log("signal bounced!");
+
+}
+
+function proxyClick() {
+  console.log("proxy installed!");
 }
 
 function procPowerUpgrade() {
@@ -108,12 +125,12 @@ function textUpdate() {
   $("#textLog").text(textLog);
   $("#procPrice").text(procPrice);
   $("#memoryPrice").text(memoryPrice);
+  $("#time").text(time);
 }
 
 function update() {
   console.log("updating...");
   traceLevel = (traceLevel + traceFactor);
-
   if (traceLevel > 100) {
     traceLevel = 100;
     traced();
@@ -121,7 +138,7 @@ function update() {
   if (traceLevel < 0) {
     traceLevel = 0;
   }
-  traceFactor = (traceFactor - 0.2);
+  traceFactor = (traceFactor - 0.1);
   if (traceFactor < 0){
     traceFactor = 0;
   }
@@ -132,6 +149,10 @@ function update() {
 
 function traced() {
   console.log("traced!");
+}
+
+function timer() {
+  time++;
 }
 
 
