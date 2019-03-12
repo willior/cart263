@@ -45,6 +45,8 @@ function setup() {
   cashEarned = 0;
   traceLevel = 0;
   traceFactor = 0;
+  bounceCount = 0;
+  proxyCount = 0;
 
   time = 0;
 
@@ -55,28 +57,11 @@ function setup() {
 
   textUpdate();
 
-  // $("#cash").text(cash);
-  // $("#cashEarned").text(cashEarned);
-  // $("#procPower").text(procPower);
-  // $("#procPrice").text(procPrice);
-  //
-  // $("#memory").text(memory);
-  // $("#memoryPrice").text(memoryPrice);
-  //
-  // $("#traceLevel").text(traceLevel);
-  // $("#traceFactor").text(traceFactor);
-  //
-  // $("#bouncePrice").text(bouncePrice);
-  // $("#proxyPrice").text(proxyPrice);
-  //
-  // $("#time").text(time);
-  // $("#textLog").text(textLog);
-  //
-  // $('span.action').on('click',actionClick);
-  // $('span.bounce').on('click',bounceClick);
-  // $('span.proxy').on('click',proxyClick);
-  // $('span.upProcPower').on('click',procPowerUpgrade);
-  // $('span.upMemory').on('click',memoryUpgrade);
+  $('span.action').on('click',actionClick);
+  $('span.bounce').on('click',bounceClick);
+  $('span.proxy').on('click',proxyClick);
+  $('span.upProcPower').on('click',procPowerUpgrade);
+  $('span.upMemory').on('click',memoryUpgrade);
 
   setInterval(timer,1000);
   setInterval(update,1000);
@@ -97,6 +82,7 @@ function bounceClick() {
     textLog = "Not enough memory to bounce signal.";
   }
   else {
+    bounceCount++;
     traceLevel -= 10;
     memory -= bouncePrice;
   }
@@ -109,6 +95,7 @@ function proxyClick() {
     textLog = "Not enough memory to install proxy.";
   }
   else {
+    proxyCount++;
     traceFactor--;
     memory -= proxyPrice;
   }
@@ -175,6 +162,9 @@ function textUpdate() {
 
   $("#bouncePrice").text(bouncePrice);
   $("#proxyPrice").text(proxyPrice);
+
+  $("#bounceCount").text(bounceCount);
+  $("#proxyCount").text(proxyCount);
 
   $("#time").text(time);
   $("#textLog").text(textLog);
