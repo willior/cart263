@@ -11,9 +11,15 @@ let procPower;
 let memory;
 let cash;
 let traceLevel;
+let traceLevelString;
+let traceFactor;
 
 let procPrice;
 let memoryPrice;
+
+let value;
+let min;
+let max;
 
 window.addEventListener('load', setup);
 
@@ -25,6 +31,7 @@ function setup() {
   memory = 0;
   cash = 1000;
   traceLevel = 0;
+  traceFactor = 0;
   procPrice = 100;
   memoryPrice = 100;
 
@@ -32,6 +39,7 @@ function setup() {
   $("#memory").text(memory);
   $("#cash").text(cash);
   $("#traceLevel").text(traceLevel);
+  $("#traceFactor").text(traceFactor);
   $("#textLog").text(textLog);
   $("#procPrice").text(procPrice);
   $("#memoryPrice").text(memoryPrice);
@@ -39,11 +47,15 @@ function setup() {
   $('span.action').on('click',actionClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
+
+  setInterval(update,1000);
 }
 
 function actionClick() {
   console.log("action!");
-
+  cash = cash + (procPower/10);
+  traceFactor += 0.1;
+  textUpdate();
 }
 
 function procPowerUpgrade() {
@@ -52,7 +64,7 @@ function procPowerUpgrade() {
 
   if (cash < procPrice) {
     textLog = "Not enough cash to upgrade processor.";
-    update();
+    textUpdate();
     return;
   }
   else {
@@ -60,7 +72,7 @@ function procPowerUpgrade() {
     cash -= procPrice;
     procPrice = procPrice * 2;
     textLog = "Processing power upgraded."
-    update();
+    textUpdate();
   }
 }
 
@@ -70,7 +82,7 @@ function memoryUpgrade() {
 
   if (cash < memoryPrice) {
   textLog = "Not enough cash to upgrade memory.";
-  update();
+  textUpdate();
   return;
   }
 
@@ -79,16 +91,60 @@ function memoryUpgrade() {
     cash -= memoryPrice;
     memoryPrice = memoryPrice * 2;
     textLog = "Memory expanded."
-    update();
+    textUpdate();
   }
 }
 
-function update() {
+function textUpdate() {
   $("#procPower").text(procPower);
   $("#memory").text(memory);
   $("#cash").text(cash);
-  $("#traceLevel").text(traceLevel);
+
+  traceLevelString = traceLevel.toFixed(2);
+  $("#traceLevel").text(traceLevelString);
+
+  $("#traceFactor").text(traceFactor);
+
   $("#textLog").text(textLog);
   $("#procPrice").text(procPrice);
   $("#memoryPrice").text(memoryPrice);
+}
+
+function update() {
+  console.log("updating...");
+  traceLevel = (traceLevel + traceFactor);
+
+  if (traceLevel > 100) {
+    traceLevel = 100;
+    traced();
+  }
+  if (traceLevel < 0) {
+    traceLevel = 0;
+  }
+  traceFactor = (traceFactor - 0.2);
+  if (traceFactor < 0){
+    traceFactor = 0;
+  }
+  textUpdate();
+}
+
+
+
+function traced() {
+  console.log("traced!");
+}
+
+
+
+// decimal truncator
+function decimal(num) {
+  var n = num.toFixed(2);
+  return n;
+}
+
+
+
+// constrain function
+function constrain(value, min, max) {
+    return Math.min(Math.max(value, min), max);
 }

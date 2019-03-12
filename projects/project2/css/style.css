@@ -1,9 +1,10 @@
 body {
   color: white;
   background-color: black;
-  font-size: 1.6em;
-  margin-left: 30%;
-  margin-right:30%;
+  font-size: 1em;
+  font-family: Courier, monospace;
+  margin-left: 10%;
+  margin-right:10%;
 }
 
 #images {
@@ -26,8 +27,9 @@ input {
 }
 
 button{
+  font-family: Courier, monospace;
   margin-left: 10px;
   margin-top: 15px;
-  height: 22px;
-  font-size: 14px;
+  height: 50px;
+  font-size: 1em;
 }
