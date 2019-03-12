@@ -10,6 +10,7 @@ let textLog = " ";
 let procPower;
 let memory;
 let cash;
+let cashEarned;
 let traceLevel;
 let traceLevelString;
 let traceFactor;
@@ -18,6 +19,11 @@ let time;
 
 let procPrice;
 let memoryPrice;
+let bouncePrice;
+let proxyPrice;
+
+let bounceCount;
+let proxyCount;
 
 let value;
 let min;
@@ -32,6 +38,7 @@ function setup() {
   procPower = 0;
   memory = 0;
   cash = 1000;
+  cashEarned = 0;
   traceLevel = 0;
   traceFactor = 0;
 
@@ -39,16 +46,26 @@ function setup() {
 
   procPrice = 100;
   memoryPrice = 100;
+  bouncePrice = 1;
+  proxyPrice = 1;
 
-  $("#procPower").text(procPower);
-  $("#memory").text(memory);
   $("#cash").text(cash);
+  $("#cashEarned").text(cashEarned);
+  $("#procPower").text(procPower);
+  $("#procPrice").text(procPrice);
+
+  $("#memory").text(memory);
+  $("#memoryPrice").text(memoryPrice);
+
   $("#traceLevel").text(traceLevel);
   $("#traceFactor").text(traceFactor);
+
+  $("#bouncePrice").text(bouncePrice);
+  $("#proxyPrice").text(proxyPrice);
+
   $("#time").text(time);
   $("#textLog").text(textLog);
-  $("#procPrice").text(procPrice);
-  $("#memoryPrice").text(memoryPrice);
+
   $('span.action').on('click',actionClick);
   $('span.bounce').on('click',bounceClick);
   $('span.proxy').on('click',proxyClick);
@@ -62,7 +79,8 @@ function setup() {
 
 function actionClick() {
   console.log("action!");
-  cash = cash + (procPower/10);
+  cashEarned = procPower/10;
+  cash += cashEarned;
   traceFactor += 0.1;
   textUpdate();
 }
@@ -74,7 +92,7 @@ function bounceClick() {
   }
   else {
     traceLevel -= 10;
-    memory--;
+    memory -= bouncePrice;
   }
   textUpdate();
 }
@@ -86,7 +104,7 @@ function proxyClick() {
   }
   else {
     traceFactor--;
-    memory--;
+    memory -= proxyPrice;
   }
   textUpdate();
 }
@@ -105,6 +123,7 @@ function procPowerUpgrade() {
     cash -= procPrice;
     procPrice = procPrice * 2;
     textLog = "Processing power upgraded."
+    cashEarned = procPower/10;
     textUpdate();
   }
 }
@@ -129,19 +148,23 @@ function memoryUpgrade() {
 }
 
 function textUpdate() {
+  $("#cash").text(cash);
+  $("#cashEarned").text(cashEarned);
   $("#procPower").text(procPower);
   $("#memory").text(memory);
-  $("#cash").text(cash);
 
   traceLevelString = traceLevel.toFixed(2);
   $("#traceLevel").text(traceLevelString);
   traceFactorString = traceFactor.toFixed(2);
   $("#traceFactor").text(traceFactorString);
 
-  $("#textLog").text(textLog);
   $("#procPrice").text(procPrice);
   $("#memoryPrice").text(memoryPrice);
+  $("#bouncePrice").text(bouncePrice);
+  $("#proxyPrice").text(proxyPrice);
+
   $("#time").text(time);
+  $("#textLog").text(textLog);
 }
 
 function update() {

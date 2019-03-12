@@ -1,20 +1,23 @@
 body {
   color: white;
   background-color: black;
-  font-size: 1em;
+  font-size: 1.2em;
   font-family: Courier, monospace;
   margin-left: 10%;
   margin-right:10%;
 }
 
 
-button{
+button {
   font-family: Courier, monospace;
+  width:100%;
   margin-left: 0px;
   margin-top: 0px;
   height: 2em;
   font-size: 1em;
 }
+
+button:hover {background-color: black; color: white; font-family: Courier, monospace;}
 
 table {
   border-collapse: collapse;
@@ -22,7 +25,7 @@ table {
 }
 
 th, td {
-  padding: 8px;
+  padding: 0.75em;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }

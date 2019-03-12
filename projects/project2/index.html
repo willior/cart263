@@ -27,58 +27,36 @@
   <table>
     <tr>
       <th>INFORMATION</th>
+      <th></th>
       <th>ACTIONS</th>
     </tr>
-      <td>processing power: <span id = "procPower"></span> MHz</td>
-      <td><span class = "upProcPower"><button id=upProcPowerButton>upgrade processing power</button></span></td>
+      <td>cash: </td>
+      <td>$<span id = "cash"></span></td>
+      <td><span class = "action"><button id=actionButton>HACK IT [+$<span id = "cashEarned"></span>]</button></span></td>
     <tr>
-
+      <td>processing power: </td>
+      <td><span id = "procPower"></span> MHz</td>
+      <td><span class = "upProcPower"><button id=upProcPowerButton>upgrade processing power [-$<span id = "procPrice"></span>]</button></span></td>
     </tr>
     <tr>
-
+      <td>traced: </td>
+      <td><span id = "traceLevel"></span>%</td>
+      <td><span class = "bounce"><button id=bounceButton>bounce signal [<span id = "bouncePrice"></span> MB]</button></span></td>
     </tr>
     <tr>
-
+      <td>trace factor: </td>
+      <td><span id = "traceFactor"></span></td>
+      <td><span class = "proxy"><button id=proxyButton>install proxy [<span id = "proxyPrice"></span> MB]</button></span></td>
     </tr>
-    <tr>
-
-    </tr>
+      <td>memory: </td>
+      <td><span id = "memory"></span> MB</td>
+      <td><span class = "upMemory"><button id=upMemoryButton>upgrade memory [-$<span id = "memoryPrice"></span>]</button></span></td>
   </table>
-
-
-  <br>
-  memory: <span id = "memory"></span> MB
-  <br>
-  cash: $<span id = "cash"></span>
-  <br>
-  traced: <span id = "traceLevel"></span>%
-  <br>
-  <br>
-  trace factor: <span id = "traceFactor"></span>
   <br>
   <br>
   time: <span id = "time"></span> sec
   <br>
   <br>
-  <!-- Buttons -->
-  <!-- <span class = "action"><button id=actionButton>ACTION</button></span>
-  <br>
-  <span class = "bounce"><button id=bounceButton>bounce signal</button></span>
-  <br>
-  <span class = "proxy"><button id=proxyButton>install proxy</button></span>
-  <br>
-  <span class = "upProcPower"><button id=upProcPowerButton>upgrade processing power</button></span>
-
-  $<span id = "procPrice"></span>
-  <br>
-  <span class = "upMemory"><button id=upMemoryButton>upgrade memory</button></span>
-
-  $<span id = "memoryPrice"></span> -->
-  <br>
-
-  <br>
   <span id = "textLog"><span id = "slip"></span></span>
-  <br>
 </body>
-
 </html>
