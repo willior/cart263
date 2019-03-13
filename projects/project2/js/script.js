@@ -4,9 +4,9 @@ Will Graham-Simpkins
 ******************/
 let $spans;
 let textLog = "Welcome back, USERNAME";
-let textLog1 = " ";
-let textLog2 = " ";
-let textLog3 = " ";
+let textLog1 = " \n ";
+let textLog2 = " \n ";
+let textLog3 = " \n ";
 let procPower;
 let memory;
 let cash;
@@ -207,8 +207,6 @@ function textUpdate() {
 
   $("#bounceCount").text(bounceCount);
   $("#proxyCount").text(proxyCount);
-
-  $("#time").text(time);
 }
 
 function textLogger()
@@ -280,9 +278,8 @@ function traced() {
 
 function timer() {
   time++;
+  $("#time").text(time);
 }
-
-
 
 // decimal truncator
 function decimal(num) {

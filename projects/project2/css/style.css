@@ -9,8 +9,11 @@ body {
 }
 
 #log2 {
+  color: silver;
+}
+
+#log3 {
   color: grey;
-  font-size: 3em;
 }
 
 button {
