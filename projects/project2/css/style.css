@@ -25,6 +25,10 @@ button {
   height: 2.4em;
 }
 
+#hackButton {
+  font-size: 1em;
+}
+
 button:hover {background-color: black; color: white; font-family: Courier, monospace;}
 
 table {

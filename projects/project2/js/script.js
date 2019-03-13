@@ -29,9 +29,7 @@ let proxyPrice;
 let bounceCount;
 let proxyCount;
 
-let value;
-let min;
-let max;
+let hacking;
 
 let canvas;
 
@@ -68,6 +66,7 @@ function setup() {
   traceFactor = 0;
   bounceCount = 0;
   proxyCount = 0;
+  hacking = 0;
 
   time = 0;
 
@@ -79,7 +78,8 @@ function setup() {
   textLogger();
   textUpdate();
 
-  $('span.action').on('click',actionClick);
+  $('span.action').on('click',cashClick);
+  $('span.hack').on('click',hackClick);
   $('span.bounce').on('click',bounceClick);
   $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
@@ -89,11 +89,20 @@ function setup() {
   setInterval(update,1000);
 }
 
-function actionClick() {
+function cashClick() {
   cashEarned = procPower/10;
   cash += cashEarned;
   traceFactor += 0.1;
   textLog = "$" + cashEarned + " earned from hacking."
+  textLogger();
+  textUpdate();
+}
+
+function hackClick() {
+  hacking = procPower/800;
+  traceFactor += 0.5;
+  hackBarX += ((procPower/100)*8);
+  textLog = "Central mainframe hacked by " + ((procPower/100)*8) + "%."
   textLogger();
   textUpdate();
 }
@@ -156,8 +165,8 @@ function bounceClick() {
     traceUpgrading = true;
     traceUpgradingInt = setInterval(bounceProgress,50);
   }
-
 }
+
 function bounceProgress() {
   if (bounceBarX < 798) {
     bounceBarX+=30;
@@ -202,11 +211,9 @@ function proxyClick() {
 }
 
 function proxyProgress() {
-
   if (proxyBarX < 798) {
     proxyBarX += 30;
   }
-
   else if(proxyBarX >= 798) {
     clearInterval(proxyUpgradingInt);
     proxyUpgrading = false;
@@ -218,12 +225,11 @@ function proxyProgress() {
 
 function memoryUpgrade() {
   if (cash < memoryPrice) {
-  textLog = "Not enough cash to upgrade memory.";
-  textLogger();
-  textUpdate();
-  return;
+    textLog = "Not enough cash to upgrade memory.";
+    textLogger();
+    textUpdate();
+    return;
   }
-
   else {
     cash -= memoryPrice;
     memoryPrice = memoryPrice * 1.2;
@@ -235,11 +241,9 @@ function memoryUpgrade() {
 }
 
 function memoryProgress() {
-
   if (memoryBarX < 798) {
     memoryBarX += 30;
   }
-
   else if(memoryBarX >= 798) {
     clearInterval(memoryUpgradingInt);
     memoryUpgrading = false;
@@ -249,7 +253,6 @@ function memoryProgress() {
     textLogger();
     textUpdate();
   }
-
 }
 
 function textUpdate() {
@@ -295,6 +298,9 @@ function update() {
     traceLevel = 100;
     traced();
   }
+  if (hacking >= 100) {
+    hacked();
+  }
   traceLevel -= 0.1;
   if (traceLevel < 0) {
     traceLevel = 0;
@@ -306,7 +312,6 @@ function update() {
     traceFactor += 0.1;
   }
   tracedBarX = traceLevel*8;
-
   textUpdate();
 }
 
@@ -318,21 +323,21 @@ function draw() {
   rect(0,0,800,10);
 
   fill(0);
-  rect(procBarX,1,798,8);
+  rect(procBarX,1,(798-procBarX),8);
 
   // bounceBar
   fill(255);
   rect(0,20,800,10);
 
   fill(0);
-  rect(bounceBarX,21,798,8);
+  rect(bounceBarX,21,(798-bounceBarX),8);
 
   // proxyBar
   fill(255);
   rect(0,40,800,10);
 
   fill(0);
-  rect(proxyBarX,41,798,8);
+  rect(proxyBarX,41,(798-proxyBarX),8);
 
 
   // memoryBar
@@ -340,21 +345,21 @@ function draw() {
   rect(0,60,800,10);
 
   fill(0);
-  rect(memoryBarX,61,798,8);
+  rect(memoryBarX,61,(798-memoryBarX),8);
 
   //tracedBar
   fill(255);
   rect(0,80,800,20);
 
   fill(0);
-  rect(tracedBarX+1,81,798,18);
+  rect(tracedBarX+1,81,(797-tracedBarX),18);
 
   //hackBar
   fill(255);
   rect(0,110,800,30);
 
   fill(0);
-  rect(hackBarX,111,798,28);
+  rect(hackBarX,111,(798-hackBarX),28);
 
 }
 
