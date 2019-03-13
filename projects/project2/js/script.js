@@ -92,6 +92,7 @@ function actionClick() {
 }
 
 function procPowerUpgrade() {
+  console.log("upgrading!");
   if (procUpgrading === true) {
     textLog = "Unable to comply. Processor upgrade in progress.";
     textUpdate();
@@ -102,7 +103,7 @@ function procPowerUpgrade() {
     textUpdate();
     return;
   }
-  else {
+  else if (procUpgrading === false){
     textLog = "Uprading processing power.";
     cash -= procPrice;
     procUpgrading = true;
@@ -111,20 +112,25 @@ function procPowerUpgrade() {
 }
 
 function procPowerUpgradeProgress() {
-  procBarX+=10;
-  console.log(procBarX);
-  if (procBarX >= 798) {
+
+  if (procBarX < 798) {
+    procBarX+=10;
+  }
+  if ((procBarX >= 798)&&(procUpgrading = true)) {
     console.log("procPowerUpgrade complete")
-    clearInterval(procPowerUpgradeProgress);
-    procBarX = 1;
-    procUpgrading = false;
-    procPower += 100;
-    procPrice = procPrice * 1.5;
-    textLog = "Processing power upgraded."
-    cashEarned = procPower/10;
-    textUpdate();
+    procPowerUpgradeComplete();
     return;
   }
+}
+function procPowerUpgradeComplete() {
+  clearInterval(procPowerUpgradeProgress);
+  procBarX = 1;
+  procUpgrading = false;
+  procPower += 100;
+  procPrice = procPrice * 1.5;
+  textLog = "Processing power upgraded."
+  cashEarned = procPower/10;
+  textUpdate();
 }
 
 function bounceClick() {
