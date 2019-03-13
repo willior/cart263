@@ -3,8 +3,9 @@ body {
   background-color: black;
   font-size: 1em;
   font-family: Courier, monospace;
-  margin-left: 10%;
-  margin-right:10%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right:5%;
 }
 
 
@@ -21,11 +22,11 @@ button:hover {background-color: black; color: white; font-family: Courier, monos
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 800px;
 }
 
 th, td {
-  padding: 0.75em;
+  padding: 0.2em;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }

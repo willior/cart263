@@ -1,9 +1,6 @@
 /*****************
-
 project2
 Will Graham-Simpkins
-
-
 ******************/
 let $spans;
 let textLog = " ";
@@ -33,9 +30,15 @@ let value;
 let min;
 let max;
 
+let canvas;
+
 window.addEventListener('load', setup);
 
 function setup() {
+
+  canvas = createCanvas(800,84);
+  canvas.parent("progressBars");
+  background(16);
 
   $spans = $('span');
 
@@ -188,7 +191,18 @@ function update() {
   textUpdate();
 }
 
+function draw() {
+  clear();
+  fill(255);
+  strokeWeight(0);
+  rect(0,0,800,10);
 
+  rect(0,20,800,10);
+
+  rect(0,40,800,10);
+
+  rect(0,60,800,10);
+}
 
 function traced() {
   console.log("traced!");
