@@ -32,6 +32,9 @@ let max;
 
 let canvas;
 
+let procBarX, traceBarX, proxyBarX, memoryBarX;
+let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading;
+
 window.addEventListener('load', setup);
 
 function setup() {
@@ -39,6 +42,15 @@ function setup() {
   canvas = createCanvas(800,84);
   canvas.parent("progressBars");
   background(16);
+
+  procBarX = 1;
+  traceBarX = 1;
+  proxyBarX = 1;
+  memoryBarX = 1;
+  procUpgrading = false;
+  traceUpgrading = false;
+  proxyUpgrading = false;
+  memoryUpgrading = false;
 
   $spans = $('span');
 
@@ -79,8 +91,28 @@ function actionClick() {
   textUpdate();
 }
 
+function procPowerUpgrade() {
+  if (procUpgrading === true) {
+    textLog = "Unable to comply. Processor upgrade in progress.";
+    textUpdate();
+    return;
+  }
+  if (cash < procPrice) {
+    textLog = "Not enough cash to upgrade processor.";
+    textUpdate();
+    return;
+  }
+  else {
+    procPower += 100;
+    cash -= procPrice;
+    procPrice = procPrice * 1.5;
+    textLog = "Processing power upgraded."
+    cashEarned = procPower/10;
+    textUpdate();
+  }
+}
+
 function bounceClick() {
-  console.log("signal bounced!");
   if (memory <= 0) {
     textLog = "Not enough memory to bounce signal.";
   }
@@ -103,25 +135,6 @@ function proxyClick() {
     memory -= proxyPrice;
   }
   textUpdate();
-}
-
-function procPowerUpgrade() {
-
-  console.log("processor upgrade");
-
-  if (cash < procPrice) {
-    textLog = "Not enough cash to upgrade processor.";
-    textUpdate();
-    return;
-  }
-  else {
-    procPower += 100;
-    cash -= procPrice;
-    procPrice = procPrice * 1.5;
-    textLog = "Processing power upgraded."
-    cashEarned = procPower/10;
-    textUpdate();
-  }
 }
 
 function memoryUpgrade() {
@@ -197,18 +210,21 @@ function draw() {
   // procBar
   fill(255);
   rect(0,0,800,10);
+
   fill(0);
-  rect(1,1,798,8);
+  rect(procBarX,1,798,8);
 
   // tracedBar
   fill(255);
   rect(0,20,800,10);
+
   fill(0);
   rect(1,21,798,8);
 
   // proxyBar
   fill(255);
   rect(0,40,800,10);
+
   fill(0);
   rect(1,41,798,8);
 
@@ -216,6 +232,7 @@ function draw() {
   // memoryBar
   fill(255);
   rect(0,60,800,10);
+
   fill(0);
   rect(1,61,798,8);
 
