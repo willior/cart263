@@ -32,12 +32,13 @@ let proxyCount;
 
 let hacking;
 let hackingString;
+let hackingProgress;
 
 let canvas;
 
-let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX;
-let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading;
-let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt;
+let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
+let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
+let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
 
 window.addEventListener('load', setup);
 
@@ -53,6 +54,7 @@ function setup() {
   memoryBarX = 1;
   tracedBarX = 0;
   hackBarX = 1;
+  downloadBarX = 0;
   procUpgrading = false;
   traceUpgrading = false;
   proxyUpgrading = false;
@@ -60,7 +62,7 @@ function setup() {
 
   $spans = $('span');
 
-  procPower = 100;
+  procPower = 2000;
   memory = 0;
   cash = 10000;
   cashEarned = 0;
@@ -69,6 +71,7 @@ function setup() {
   bounceCount = 0;
   proxyCount = 0;
   hacking = 0;
+  hackingProgress = 0;
 
   time = 0;
 
@@ -104,6 +107,8 @@ function cashClick() {
 
 function hackClick() {
   hacking = procPower/800;
+  hackingProgress += hacking;
+  console.log(hackingProgress);
   traceFactor += 0.5;
   hackBarX += hacking*8;
   hackingString = hacking.toFixed(2);
@@ -309,18 +314,22 @@ function update() {
     traceLevel = 100;
     traced();
   }
-  if (hacking >= 100) {
+  if (hackingProgress >= 100) {
     hacked();
+    if (downloadBarX >= 600) {
+      clearInterval(downloadingInt);
+      setInterval(download,256);
+    }
   }
-  traceLevel -= 0.1;
+  traceLevel -= 0.01;
   if (traceLevel < 0) {
     traceLevel = 0;
   }
   if (traceFactor >= 0.1){
-    traceFactor -= 0.1;
+    traceFactor -= 0.01;
   }
   else if (traceFactor <= 0.1){
-    traceFactor += 0.1;
+    traceFactor += 0.01;
   }
   tracedBarX = traceLevel*8;
   textUpdate();
@@ -372,14 +381,34 @@ function draw() {
   fill(0);
   rect(hackBarX,111,(798-hackBarX),28);
 
-}
+  //downloadBar
+  fill(2,13,123);
+  rect(0,111,downloadBarX,28);
 
-function traced() {
-  console.log("traced!");
 }
 
 function hacked() {
   console.log("central mainframe hacked!");
+  textLog = "Central mainframe hacked.";
+  textLog = "Downloading files...";
+  downloadingInt = setInterval(download,96);
+}
+
+function download() {
+  downloadBarX++;
+  console.log(downloadBarX);
+  if (downloadBarX >= 798) {
+    win();
+  }
+}
+
+function win() {
+  console.log("you're winner!");
+  clearInterval(downloadingInt);
+}
+
+function traced() {
+  console.log("traced!");
 }
 
 function timer() {
