@@ -8,6 +8,7 @@ let textLog1 = " \n ";
 let textLog2 = " \n ";
 let textLog3 = " \n ";
 let procPower;
+let procPowerString;
 let memory;
 let cash;
 let cashString;
@@ -30,6 +31,7 @@ let bounceCount;
 let proxyCount;
 
 let hacking;
+let hackingString;
 
 let canvas;
 
@@ -58,9 +60,9 @@ function setup() {
 
   $spans = $('span');
 
-  procPower = 0;
+  procPower = 100;
   memory = 0;
-  cash = 1000;
+  cash = 10000;
   cashEarned = 0;
   traceLevel = 0;
   traceFactor = 0;
@@ -93,16 +95,20 @@ function cashClick() {
   cashEarned = procPower/10;
   cash += cashEarned;
   traceFactor += 0.1;
-  textLog = "$" + cashEarned + " earned from hacking."
-  textLogger();
+  cashEarnedString = cashEarned.toFixed(2);
+  $("#cashEarned").text(cashEarnedString);
+  textLog = "$" + cashEarnedString + " earned from hacking."
   textUpdate();
+  textLogger();
 }
 
 function hackClick() {
   hacking = procPower/800;
   traceFactor += 0.5;
-  hackBarX += ((procPower/100)*8);
-  textLog = "Central mainframe hacked by " + ((procPower/100)*8) + "%."
+  hackBarX += hacking*8;
+  hackingString = hacking.toFixed(2);
+  $("#hack").text(hackingString);
+  textLog = "Central mainframe hacked by " + hackingString + "%."
   textLogger();
   textUpdate();
 }
@@ -136,7 +142,7 @@ function procPowerUpgradeProgress() {
     clearInterval(procUpgradingInt);
     procBarX = 1;
     procUpgrading = false;
-    procPower += 100;
+    procPower *= 1.4;
     procPrice = procPrice * 1.5;
     textLog = "Processing power upgraded.";
     textLogger();
@@ -224,19 +230,25 @@ function proxyProgress() {
 }
 
 function memoryUpgrade() {
+  if (memoryUpgrading === true) {
+    textLog = "Unable to comply. Memory expansion in progress.";
+    textLogger();
+    return;
+  }
   if (cash < memoryPrice) {
-    textLog = "Not enough cash to upgrade memory.";
+    textLog = "Not enough cash to expand memory.";
     textLogger();
     textUpdate();
     return;
   }
   else {
+    memoryUpgrading = true;
     cash -= memoryPrice;
     memoryPrice = memoryPrice * 1.2;
     textLog = "Expanding memory.";
     textLogger();
     textUpdate();
-    memoryUpgradingInt = setInterval (memoryProgress,50);
+    memoryUpgradingInt = setInterval(memoryProgress,50);
   }
 }
 
@@ -258,10 +270,9 @@ function memoryProgress() {
 function textUpdate() {
   cashString = cash.toFixed(2);
   $("#cash").text(cashString);
-  cashEarnedString = cashEarned.toFixed(2);
-  $("#cashEarned").text(cashEarnedString);
 
-  $("#procPower").text(procPower);
+  procPowerString = procPower.toFixed(0);
+  $("#procPower").text(procPowerString);
   procPriceString = procPrice.toFixed(2);
   $("#procPrice").text(procPriceString);
 
@@ -365,6 +376,10 @@ function draw() {
 
 function traced() {
   console.log("traced!");
+}
+
+function hacked() {
+  console.log("central mainframe hacked!");
 }
 
 function timer() {
