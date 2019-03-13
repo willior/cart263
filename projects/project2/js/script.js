@@ -35,7 +35,7 @@ let max;
 
 let canvas;
 
-let procBarX, traceBarX, proxyBarX, memoryBarX;
+let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading;
 let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt;
 
@@ -43,14 +43,16 @@ window.addEventListener('load', setup);
 
 function setup() {
 
-  canvas = createCanvas(800,84);
+  canvas = createCanvas(800,150);
   canvas.parent("progressBars");
   background(16);
 
   procBarX = 1;
-  traceBarX = 1;
+  bounceBarX = 1;
   proxyBarX = 1;
   memoryBarX = 1;
+  tracedBarX = 1;
+  hackBarX = 1;
   procUpgrading = false;
   traceUpgrading = false;
   proxyUpgrading = false;
@@ -88,10 +90,11 @@ function setup() {
 }
 
 function actionClick() {
-  console.log("action!");
   cashEarned = procPower/10;
   cash += cashEarned;
   traceFactor += 0.1;
+  textLog = "$" + cashEarned + " earned from hacking."
+  textLogger();
   textUpdate();
 }
 
@@ -108,7 +111,7 @@ function procPowerUpgrade() {
     textUpdate();
     return;
   }
-  else if (procUpgrading === false){
+  else {
     textLog = "Uprading processing power.";
     cash -= procPrice;
     textLogger();
@@ -135,16 +138,49 @@ function procPowerUpgradeProgress() {
 }
 
 function bounceClick() {
-  if (memory <= 0) {
+  if (traceUpgrading === true ){
+    textLog = "Unable to comply. Signal bouncing in progress.";
+    textLogger();
+    textUpdate();
+    return;
+  }
+
+  else if (memory <= 0) {
     textLog = "Not enough memory to bounce signal.";
     textLogger();
+    textUpdate();
+    return;
   }
   else {
+    textLog = "Bouncing signal.";
     bounceCount++;
-    traceLevel -= 10;
     memory -= bouncePrice;
+    textLogger();
+    textUpdate();
+    traceUpgrading = true;
+    traceUpgradingInt = setInterval(bounceProgress,50);
   }
-  textUpdate();
+
+}
+function bounceProgress() {
+  if (bounceBarX < 798) {
+    bounceBarX+=30;
+  }
+  else if (bounceBarX >= 798) {
+    clearInterval(traceUpgradingInt);
+    bounceBarX = 1;
+    traceUpgrading = false;
+    traceLevel -= 10;
+    if (traceLevel < 0){
+      traceLevel = 0;
+      traceLevelString = traceLevel.toFixed(2);
+      $("#traceLevel").text(traceLevelString);
+    }
+    textLog = "Signal bounced.";
+    textLogger();
+    textUpdate();
+    return;
+  }
 }
 
 function proxyClick() {
@@ -162,9 +198,6 @@ function proxyClick() {
 }
 
 function memoryUpgrade() {
-
-  console.log("memory upgrade");
-
   if (cash < memoryPrice) {
   textLog = "Not enough cash to upgrade memory.";
   textLogger();
@@ -183,7 +216,6 @@ function memoryUpgrade() {
 }
 
 function textUpdate() {
-
   cashString = cash.toFixed(2);
   $("#cash").text(cashString);
   cashEarnedString = cashEarned.toFixed(2);
@@ -217,7 +249,6 @@ function textLogger()
   $("#textLog2").text(textLog2);
   textLog1 = textLog;
   $("#textLog1").text(textLog1);
-
 }
 
 function update() {
@@ -247,19 +278,19 @@ function draw() {
   fill(0);
   rect(procBarX,1,798,8);
 
-  // tracedBar
+  // bounceBar
   fill(255);
   rect(0,20,800,10);
 
   fill(0);
-  rect(1,21,798,8);
+  rect(bounceBarX,21,798,8);
 
   // proxyBar
   fill(255);
   rect(0,40,800,10);
 
   fill(0);
-  rect(1,41,798,8);
+  rect(proxyBarX,41,798,8);
 
 
   // memoryBar
@@ -267,8 +298,21 @@ function draw() {
   rect(0,60,800,10);
 
   fill(0);
-  rect(1,61,798,8);
+  rect(memoryBarX,61,798,8);
 
+  //tracedBar
+  fill(255);
+  rect(0,80,800,20);
+
+  fill(0);
+  rect(tracedBarX,81,798,18);
+
+  //hackBar
+  fill(255);
+  rect(0,110,800,30);
+
+  fill(0);
+  rect(hackBarX,111,798,28);
 
 }
 
