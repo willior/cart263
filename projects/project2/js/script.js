@@ -51,7 +51,7 @@ function setup() {
   bounceBarX = 1;
   proxyBarX = 1;
   memoryBarX = 1;
-  tracedBarX = 1;
+  tracedBarX = 0;
   hackBarX = 1;
   procUpgrading = false;
   traceUpgrading = false;
@@ -225,13 +225,31 @@ function memoryUpgrade() {
   }
 
   else {
-    memory += 4;
     cash -= memoryPrice;
     memoryPrice = memoryPrice * 1.2;
+    textLog = "Expanding memory.";
+    textLogger();
+    textUpdate();
+    memoryUpgradingInt = setInterval (memoryProgress,50);
+  }
+}
+
+function memoryProgress() {
+
+  if (memoryBarX < 798) {
+    memoryBarX += 30;
+  }
+
+  else if(memoryBarX >= 798) {
+    clearInterval(memoryUpgradingInt);
+    memoryUpgrading = false;
+    memoryBarX = 1;
+    memory += 4;
     textLog = "Memory expanded."
     textLogger();
     textUpdate();
   }
+
 }
 
 function textUpdate() {
@@ -284,10 +302,12 @@ function update() {
   if (traceFactor >= 0.1){
     traceFactor -= 0.1;
   }
-  else if (traceFactor <= 0){
+  else if (traceFactor <= 0.1){
     traceFactor += 0.1;
   }
   tracedBarX = traceLevel*8;
+
+  textUpdate();
 }
 
 function draw() {
@@ -327,7 +347,7 @@ function draw() {
   rect(0,80,800,20);
 
   fill(0);
-  rect(tracedBarX,81,798,18);
+  rect(tracedBarX+1,81,798,18);
 
   //hackBar
   fill(255);
@@ -347,13 +367,13 @@ function timer() {
   $("#time").text(time);
 }
 
+
+
 // decimal truncator
 function decimal(num) {
   var n = num.toFixed(2);
   return n;
 }
-
-
 
 // constrain function
 function constrain(value, min, max) {
