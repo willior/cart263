@@ -116,6 +116,9 @@ function hackClick() {
   textLog = "Central mainframe hacked by " + hackingString + "%."
   textLogger();
   textUpdate();
+  if (hackingProgress >= 100) {
+    hacked();
+  }
 }
 
 function procPowerUpgrade() {
@@ -314,14 +317,7 @@ function update() {
     traceLevel = 100;
     traced();
   }
-  if (hackingProgress >= 100) {
-    hacked();
-    if (downloadBarX >= 600) {
-      clearInterval(downloadingInt);
-      setInterval(download,256);
-    }
-  }
-  traceLevel -= 0.01;
+  traceLevel -= 0.1;
   if (traceLevel < 0) {
     traceLevel = 0;
   }
@@ -329,7 +325,7 @@ function update() {
     traceFactor -= 0.01;
   }
   else if (traceFactor <= 0.1){
-    traceFactor += 0.01;
+    traceFactor += 0.1;
   }
   tracedBarX = traceLevel*8;
   textUpdate();
@@ -383,7 +379,7 @@ function draw() {
 
   //downloadBar
   fill(2,13,123);
-  rect(0,111,downloadBarX,28);
+  rect(1,111,downloadBarX,28);
 
 }
 
@@ -391,13 +387,14 @@ function hacked() {
   console.log("central mainframe hacked!");
   textLog = "Central mainframe hacked.";
   textLog = "Downloading files...";
+  textLogger();
   downloadingInt = setInterval(download,96);
 }
 
 function download() {
   downloadBarX++;
   console.log(downloadBarX);
-  if (downloadBarX >= 798) {
+  if (downloadBarX >= 797) {
     win();
   }
 }
