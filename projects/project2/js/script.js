@@ -193,15 +193,33 @@ function update() {
 
 function draw() {
   clear();
-  fill(255);
   strokeWeight(0);
+  // procBar
+  fill(255);
   rect(0,0,800,10);
+  fill(0);
+  rect(1,1,798,8);
 
+  // tracedBar
+  fill(255);
   rect(0,20,800,10);
+  fill(0);
+  rect(1,21,798,8);
 
+  // proxyBar
+  fill(255);
   rect(0,40,800,10);
+  fill(0);
+  rect(1,41,798,8);
 
+
+  // memoryBar
+  fill(255);
   rect(0,60,800,10);
+  fill(0);
+  rect(1,61,798,8);
+
+
 }
 
 function traced() {
