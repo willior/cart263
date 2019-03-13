@@ -3,7 +3,10 @@ project2
 Will Graham-Simpkins
 ******************/
 let $spans;
-let textLog = " ";
+let textLog = "Welcome back, USERNAME";
+let textLog1 = " ";
+let textLog2 = " ";
+let textLog3 = " ";
 let procPower;
 let memory;
 let cash;
@@ -71,6 +74,7 @@ function setup() {
   bouncePrice = 1;
   proxyPrice = 1;
 
+  textLogger();
   textUpdate();
 
   $('span.action').on('click',actionClick);
@@ -81,7 +85,6 @@ function setup() {
 
   setInterval(timer,1000);
   setInterval(update,1000);
-
 }
 
 function actionClick() {
@@ -93,51 +96,48 @@ function actionClick() {
 }
 
 function procPowerUpgrade() {
-  console.log("upgrading!");
   if (procUpgrading === true) {
     textLog = "Unable to comply. Processor upgrade in progress.";
+    textLogger();
     textUpdate();
     return;
   }
   else if (cash < procPrice) {
     textLog = "Not enough cash to upgrade processor.";
+    textLogger();
     textUpdate();
     return;
   }
   else if (procUpgrading === false){
     textLog = "Uprading processing power.";
     cash -= procPrice;
+    textLogger();
+    textUpdate();
     procUpgrading = true;
     procUpgradingInt = setInterval(procPowerUpgradeProgress,50);
   }
 }
 
 function procPowerUpgradeProgress() {
-
-  if (procBarX < 798) {
-    procBarX+=10;
-  }
-
-  if ((procBarX >= 798)&&(procUpgrading = true)) {
-    console.log("procPowerUpgrade complete")
-    procPowerUpgradeComplete();
+  if (procBarX < 798) {procBarX+=30;}
+  else if ((procBarX >= 798)&&(procUpgrading = true)) {
+    clearInterval(procUpgradingInt);
+    procBarX = 1;
+    procUpgrading = false;
+    procPower += 100;
+    procPrice = procPrice * 1.5;
+    textLog = "Processing power upgraded.";
+    textLogger();
+    cashEarned = procPower/10;
+    textUpdate();
     return;
   }
-}
-function procPowerUpgradeComplete() {
-  clearInterval(procUpgradingInt);
-  procBarX = 1;
-  procUpgrading = false;
-  procPower += 100;
-  procPrice = procPrice * 1.5;
-  textLog = "Processing power upgraded."
-  cashEarned = procPower/10;
-  textUpdate();
 }
 
 function bounceClick() {
   if (memory <= 0) {
     textLog = "Not enough memory to bounce signal.";
+    textLogger();
   }
   else {
     bounceCount++;
@@ -151,6 +151,7 @@ function proxyClick() {
   console.log("proxy installed!");
   if (memory <= 0) {
     textLog = "Not enough memory to install proxy.";
+    textLogger();
   }
   else {
     proxyCount++;
@@ -166,6 +167,7 @@ function memoryUpgrade() {
 
   if (cash < memoryPrice) {
   textLog = "Not enough cash to upgrade memory.";
+  textLogger();
   textUpdate();
   return;
   }
@@ -175,6 +177,7 @@ function memoryUpgrade() {
     cash -= memoryPrice;
     memoryPrice = memoryPrice * 1.2;
     textLog = "Memory expanded."
+    textLogger();
     textUpdate();
   }
 }
@@ -206,7 +209,17 @@ function textUpdate() {
   $("#proxyCount").text(proxyCount);
 
   $("#time").text(time);
-  $("#textLog").text(textLog);
+}
+
+function textLogger()
+{
+  textLog3 = textLog2;
+  $("#textLog3").text(textLog3);
+  textLog2 = textLog1;
+  $("#textLog2").text(textLog2);
+  textLog1 = textLog;
+  $("#textLog1").text(textLog1);
+
 }
 
 function update() {
@@ -224,7 +237,6 @@ function update() {
   if (traceFactor < 0){
     traceFactor = 0;
   }
-  textUpdate();
 }
 
 function draw() {

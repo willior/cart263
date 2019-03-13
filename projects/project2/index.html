@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <table>
+  <table id ="main">
     <tr>
       <th>INFORMATION</th>
       <!-- <th></th> -->
@@ -58,16 +58,23 @@
       <td><span id = "memory"></span> MB</td>
       <!-- <td></td> -->
       <td><span class = "upMemory"><button id=upMemoryButton>upgrade memory [-$<span id = "memoryPrice"></span>]</button></span></td>
-      <tr><td colspan="4">
-        <br>
-        <div id = "progressBars"></div>
-      </tr></td>
   </table>
+  <table id ="bars">
+    <tr><td colspan="4">
+      <br>
+      <div id = "progressBars"></div>
+    </tr></td>
+  </table>
+
+  <br>
+  <br>
+  <span id = "textLog1"><p id = "log1"></p></span>
+  <br>
+  <span id = "textLog2"><p id = "log2"></p></span>
+  <br>
+  <span id = "textLog3"><p id = "log3"></p></span>
   <br>
   <br>
   time: <span id = "time"></span> sec
-  <br>
-  <br>
-  <span id = "textLog"><span id = "slip"></span></span>
 </body>
 </html>
