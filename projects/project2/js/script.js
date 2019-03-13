@@ -97,18 +97,33 @@ function procPowerUpgrade() {
     textUpdate();
     return;
   }
-  if (cash < procPrice) {
+  else if (cash < procPrice) {
     textLog = "Not enough cash to upgrade processor.";
     textUpdate();
     return;
   }
   else {
-    procPower += 100;
+    textLog = "Uprading processing power.";
     cash -= procPrice;
+    procUpgrading = true;
+    setInterval(procPowerUpgradeProgress,50);
+  }
+}
+
+function procPowerUpgradeProgress() {
+  procBarX+=10;
+  console.log(procBarX);
+  if (procBarX >= 798) {
+    console.log("procPowerUpgrade complete")
+    clearInterval(procPowerUpgradeProgress);
+    procBarX = 1;
+    procUpgrading = false;
+    procPower += 100;
     procPrice = procPrice * 1.5;
     textLog = "Processing power upgraded."
     cashEarned = procPower/10;
     textUpdate();
+    return;
   }
 }
 
