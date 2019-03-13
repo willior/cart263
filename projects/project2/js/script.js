@@ -34,6 +34,7 @@ let canvas;
 
 let procBarX, traceBarX, proxyBarX, memoryBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading;
+let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt;
 
 window.addEventListener('load', setup);
 
@@ -107,7 +108,7 @@ function procPowerUpgrade() {
     textLog = "Uprading processing power.";
     cash -= procPrice;
     procUpgrading = true;
-    setInterval(procPowerUpgradeProgress,50);
+    procUpgradingInt = setInterval(procPowerUpgradeProgress,50);
   }
 }
 
@@ -116,6 +117,7 @@ function procPowerUpgradeProgress() {
   if (procBarX < 798) {
     procBarX+=10;
   }
+
   if ((procBarX >= 798)&&(procUpgrading = true)) {
     console.log("procPowerUpgrade complete")
     procPowerUpgradeComplete();
@@ -123,7 +125,7 @@ function procPowerUpgradeProgress() {
   }
 }
 function procPowerUpgradeComplete() {
-  clearInterval(procPowerUpgradeProgress);
+  clearInterval(procUpgradingInt);
   procBarX = 1;
   procUpgrading = false;
   procPower += 100;
@@ -208,7 +210,7 @@ function textUpdate() {
 }
 
 function update() {
-  console.log("updating...");
+  // console.log("updating...");
   traceLevel = (traceLevel + traceFactor);
   if (traceLevel > 100) {
     traceLevel = 100;
