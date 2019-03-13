@@ -141,19 +141,15 @@ function bounceClick() {
   if (traceUpgrading === true ){
     textLog = "Unable to comply. Signal bouncing in progress.";
     textLogger();
-    textUpdate();
     return;
   }
-
   else if (memory <= 0) {
     textLog = "Not enough memory to bounce signal.";
     textLogger();
-    textUpdate();
     return;
   }
   else {
     textLog = "Bouncing signal.";
-    bounceCount++;
     memory -= bouncePrice;
     textLogger();
     textUpdate();
@@ -167,6 +163,7 @@ function bounceProgress() {
     bounceBarX+=30;
   }
   else if (bounceBarX >= 798) {
+    bounceCount++;
     clearInterval(traceUpgradingInt);
     bounceBarX = 1;
     traceUpgrading = false;
@@ -184,17 +181,39 @@ function bounceProgress() {
 }
 
 function proxyClick() {
-  console.log("proxy installed!");
+  if (proxyUpgrading === true){
+    textLog = "Unable to comply. Proxy installation in progress.";
+    textLogger();
+    return;
+  }
   if (memory <= 0) {
     textLog = "Not enough memory to install proxy.";
     textLogger();
+    return;
   }
   else {
+    memory -= proxyPrice;
+    textLog = "Installing proxy.";
+    textLogger();
+    textUpdate();
+    proxyUpgrading = true;
+    proxyUpgradingInt = setInterval(proxyProgress,50);
+  }
+}
+
+function proxyProgress() {
+
+  if (proxyBarX < 798) {
+    proxyBarX += 30;
+  }
+
+  else if(proxyBarX >= 798) {
+    clearInterval(proxyUpgradingInt);
+    proxyUpgrading = false;
+    proxyBarX = 1;
     proxyCount++;
     traceFactor--;
-    memory -= proxyPrice;
   }
-  textUpdate();
 }
 
 function memoryUpgrade() {
@@ -262,10 +281,13 @@ function update() {
   if (traceLevel < 0) {
     traceLevel = 0;
   }
-  traceFactor = (traceFactor - 0.1);
-  if (traceFactor < 0){
-    traceFactor = 0;
+  if (traceFactor >= 0.1){
+    traceFactor -= 0.1;
   }
+  else if (traceFactor <= 0){
+    traceFactor += 0.1;
+  }
+  tracedBarX = traceLevel*8;
 }
 
 function draw() {
