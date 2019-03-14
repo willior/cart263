@@ -15,12 +15,14 @@ $(document).click(function () {
 });
 
 let vowels = 'aeiou';
+let first = true;
 
 function dataLoaded(data) {
   let condiment = getRandomElement(data.condiments);
   let cat = getRandomElement(data.cats);
   let room = getRandomElement(data.rooms);
   let verb = 'is';
+  let description;
   if (condiment.charAt(condiment.length - 1) === 's') {
     verb = 'are';
   }
@@ -31,10 +33,17 @@ function dataLoaded(data) {
     }
   }
   let country = getRandomElement(data.countries);
-  let description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
-
-  console.log(description);
-  $('body').append(description)
+  if (!first) {
+    condiment = condiment.toLowerCase();
+    let add = getRandomElement(data.additionals);
+    description = `${add}, ${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
+  }
+  if (first) {
+    description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
+    first = false;
+  }
+  $('body').append(description);
+  console.log(first);
 }
 
 function getRandomElement(array) {
