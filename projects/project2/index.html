@@ -18,11 +18,15 @@
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
-  <!-- My script(s) -->
+<script src='//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js'></script>
+
+  <!-- scripts -->
   <script src="js/script.js"></script>
   <script src="js/libraries/p5.min.js"></script>
 
+<!-- audio files -->
   <audio id="SFX">
     <source src="assets/sounds/bunker.mp3" type="audio/mp3">
   </audio>
@@ -36,7 +40,8 @@
 </head>
 
 <body>
-  <table id ="main">
+  <div id= "start">"I'm in."</div>
+  <div id= "everything"><table id ="main">
     <tr>
       <th>INFORMATION</th>
       <!-- <th></th> -->
@@ -87,5 +92,6 @@
   <br>
   <br>
   time: <span id = "time"></span> sec
+</div>
 </body>
 </html>

@@ -99,15 +99,27 @@ function setup() {
   $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
+  let s = document.getElementById("start");
+
+  let e = document.getElementById("everything");
+  e.style.display = "none";
 
   setInterval(timer,1000);
   setInterval(update,1000);
-  setTimeout(playSFX,1000);
-}
 
-function playSFX() {
-  SFX.play();
-  SFX.loop = true;
+  if (annyang) {
+    var commands = {
+      "I'm in": function() {
+        console.log("I'm in.");
+        e.style.display = "block";
+        s.style.display = "none";
+        SFX.play();
+        SFX.loop = true;
+      }
+    };
+    annyang.addCommands(commands);
+    annyang.start();
+  }
 }
 
 function playBGM() {

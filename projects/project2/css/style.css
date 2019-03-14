@@ -8,6 +8,12 @@ body {
   margin-right:5%;
 }
 
+#start {
+  padding: 2em;
+  font-size:4em;
+  text-align: center;
+}
+
 #log2 {
   color: silver;
 }
