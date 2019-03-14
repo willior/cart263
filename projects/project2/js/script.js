@@ -327,12 +327,21 @@ function update() {
   if (traceLevel < 0) {
     traceLevel = 0;
   }
+
   if (traceFactor >= 0.1){
+    traceFactor -= 0.1;
+  }
+  else if ((traceFactor < 0.1)&&(traceFactor > 0)){
     traceFactor -= 0.01;
   }
-  else if (traceFactor <= 0.1){
+
+  if (traceFactor <= -0.1){
     traceFactor += 0.1;
   }
+  else if ((traceFactor > -0.1)&&(traceFactor <= 0)){
+    traceFactor += 0.01;
+  }
+
   tracedBarX = traceLevel*8;
   traceColorB = 500 - (traceLevel*5);
   traceColorG = 500 - (traceLevel*5);
