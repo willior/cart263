@@ -388,7 +388,7 @@ function hacked() {
   textLog = "Central mainframe hacked.";
   textLog = "Downloading files...";
   textLogger();
-  downloadingInt = setInterval(download,96);
+  downloadingInt = setInterval(download,64);
 }
 
 function download() {
@@ -402,10 +402,27 @@ function download() {
 function win() {
   console.log("you're winner!");
   clearInterval(downloadingInt);
+  clearInterval(procUpgradingInt);
+  clearInterval(traceUpgradingInt);
+  clearInterval(proxyUpgradingInt);
+  clearInterval(memoryUpgradingInt);
 }
 
 function traced() {
   console.log("traced!");
+  clearInterval(procUpgradingInt);
+  clearInterval(traceUpgradingInt);
+  clearInterval(proxyUpgradingInt);
+  clearInterval(memoryUpgradingInt);
+  clearInterval(downloadingInt);
+  $('span.action').off('click',cashClick);
+  $('span.hack').off('click',hackClick);
+  $('span.bounce').off('click',bounceClick);
+  $('span.proxy').off('click',proxyClick);
+  $('span.upProcPower').off('click',procPowerUpgrade);
+  $('span.upMemory').off('click',memoryUpgrade);
+  textLog = "You have been traced.";
+  textLogger();
 }
 
 function timer() {
