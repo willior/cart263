@@ -539,6 +539,8 @@ function download() {
 }
 // function for the win state; disables button and clears function intervals
 function win() {
+  document.getElementById("everything").style.display = "none";
+  document.getElementById("winScreen").style.display = "block";
   SFX.pause();
   BGM.pause();
   console.log("you're winner!");
@@ -558,6 +560,8 @@ function win() {
 }
 // function for the lose state
 function traced() {
+  document.getElementById("everything").style.display = "none";
+  document.getElementById("loseScreen").style.display = "block";
   SFX.pause();
   BGM.pause();
   lose.play();
@@ -576,6 +580,17 @@ function traced() {
   $('span.upMemory').off('click',memoryUpgrade);
   textLog = "You have been traced.";
   textLogger();
+  setTimeout(function(){
+    spotlight.play();
+    document.body.style.backgroundColor = "white";
+    }, 4000);
+  setTimeout(function(){
+    responsiveVoice.speak("we know where you are. and we know who you are. and we know what you think you fear most.", "UK English Male", {pitch: 0.4}, {rate: 0.5}); end.play();
+  }, 6000);
+  setTimeout(function(){
+    responsiveVoice.speak("however. we know more than you do.", "UK English Male", {pitch: 0.25}, {rate: 0.01});
+  }, 14000);
+
 }
 
 // function timer() {
