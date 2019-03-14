@@ -4,7 +4,7 @@ Will Graham-Simpkins
 ******************/
 let $spans;
 let user;
-let textLog = "Welcome back, USERNAME";
+let textLog = " ";
 let textLog1 = " \n ";
 let textLog2 = " \n ";
 let textLog3 = " \n ";
@@ -100,9 +100,7 @@ function setup() {
   $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
-  // let s1 = document.getElementById("start1");
-  // let s2 = document.getElementById("start2");
-  // let e = document.getElementById("everything");
+
   document.getElementById("start2").style.display = "none";
   document.getElementById("everything").style.display = "none";
 
@@ -130,6 +128,8 @@ function userInput() {
 }
 
 function main() {
+  textLog = "Welcome back, " + user;
+  textLogger();
   document.getElementById("everything").style.display = "block";
   document.getElementById("start2").style.display = "none";
   playSFX();
