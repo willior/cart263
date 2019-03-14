@@ -67,7 +67,7 @@ function setup() {
 
   $spans = $('span');
 
-  procPower = 2000;
+  procPower = 10000;
   memory = 0;
   cash = 10000;
   cashEarned = 0;
@@ -122,6 +122,7 @@ function hackClick() {
   textLogger();
   textUpdate();
   if (hackingProgress >= 100) {
+    $('span.hack').off('click',hackClick);
     hacked();
   }
 }
@@ -393,16 +394,18 @@ function draw() {
 function hacked() {
   console.log("central mainframe hacked!");
   textLog = "Central mainframe hacked.";
+  textLogger();
   textLog = "Downloading files...";
   textLogger();
-  downloadingInt = setInterval(download,64);
+  downloadingInt = setInterval(download,32);
 }
 
 function download() {
   downloadBarX++;
   console.log(downloadBarX);
-  if (downloadBarX >= 797) {
+  if (downloadBarX >= 796) {
     win();
+    return;
   }
 }
 
@@ -413,6 +416,13 @@ function win() {
   clearInterval(traceUpgradingInt);
   clearInterval(proxyUpgradingInt);
   clearInterval(memoryUpgradingInt);
+  $('span.action').off('click',cashClick);
+  $('span.bounce').off('click',bounceClick);
+  $('span.proxy').off('click',proxyClick);
+  $('span.upProcPower').off('click',procPowerUpgrade);
+  $('span.upMemory').off('click',memoryUpgrade);
+  textLog = "You have successfully downloaded the files.";
+  textLogger();
 }
 
 function traced() {
