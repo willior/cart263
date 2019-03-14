@@ -36,7 +36,7 @@ function dataLoaded(data) {
   if (!first) {
     condiment = condiment.toLowerCase();
     let add = getRandomElement(data.additionals);
-    description = `${add}, ${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
+    description = `${add} ${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
   }
   if (first) {
     description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
