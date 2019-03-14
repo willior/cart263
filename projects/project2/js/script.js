@@ -100,11 +100,11 @@ function setup() {
   $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
-  let s1 = document.getElementById("start1");
-  let s2 = document.getElementById("start2");
-  let e = document.getElementById("everything");
-  s2.style.display = "none";
-  e.style.display = "none";
+  // let s1 = document.getElementById("start1");
+  // let s2 = document.getElementById("start2");
+  // let e = document.getElementById("everything");
+  document.getElementById("start2").style.display = "none";
+  document.getElementById("everything").style.display = "none";
 
   if (annyang) {
     var commands = {
@@ -117,7 +117,6 @@ function setup() {
     annyang.start();
   }
   annyang.addCallback('result', function(phrases) {
-    console.log("I think the user said: ", phrases[0]);
     user = phrases[0];
     console.log(user);
     userInput();
@@ -126,15 +125,14 @@ function setup() {
 function userInput() {
   console.log("user input!");
   annyang.removeCallback('result');
-  s1.style.display = "none";
-  s2.style.display = "block";
+  document.getElementById("start1").style.display = "none";
+  document.getElementById("start2").style.display = "block";
 }
 
 function main() {
-  e.style.display = "block";
-  s2.style.display = "none";
+  document.getElementById("everything").style.display = "block";
+  document.getElementById("start2").style.display = "none";
   playSFX();
-  clearInterval(userInputInt)
   setInterval(timer,1000);
   setInterval(update,1000);
 }
