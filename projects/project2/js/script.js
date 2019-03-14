@@ -45,7 +45,7 @@ let BGMplay;
 
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
-let userInputInt, procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
+let updateInt, userInputInt, procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
 
 window.addEventListener('load', setup);
 
@@ -138,8 +138,8 @@ function main() {
   document.getElementById("everything").style.display = "block";
   document.getElementById("start2").style.display = "none";
   playSFX();
-  setInterval(timer,1000);
-  setInterval(update,1000);
+  // setInterval(timer,1000);
+  updateInt = setInterval(update,1000);
 }
 
 function playSFX() {
@@ -168,18 +168,15 @@ function hackClick() {
   hack.play();
   hacking = procPower/1200;
   hackingProgress += hacking;
+  console.log("progress " + hackingProgress);
   traceFactor += 0.5;
   hackBarX += hacking*8;
+  console.log("hackbarx " + hackBarX);
   hackingString = hacking.toFixed(2);
   $("#hack").text(hackingString);
   textLog = "Central mainframe hacked by " + hackingString + "%."
   textLogger();
   textUpdate();
-  if (BGMplay){
-    amp = ((hackingProgress*2)-100);
-    amp = amp/100;
-    console.log(amp);
-  }
   document.getElementById("BGM").volume = amp;
   if ((hackingProgress >= 50)&&(!BGMplay)) {
     BGMplay = true;
@@ -188,6 +185,11 @@ function hackClick() {
   if (hackingProgress >= 100) {
     $('span.hack').off('click',hackClick);
     hacked();
+  }
+  else if (BGMplay){
+    amp = ((hackingProgress*2)-100);
+    amp = amp/100;
+    console.log("amp " + amp);
   }
 }
 
@@ -521,20 +523,20 @@ function traced() {
   textLogger();
 }
 
-function timer() {
-  time++;
-  $("#time").text(time);
-}
-
-
-
-// decimal truncator
-function decimal(num) {
-  var n = num.toFixed(2);
-  return n;
-}
-
-// constrain function
-function constrain(value, min, max) {
-    return Math.min(Math.max(value, min), max);
-}
+// function timer() {
+//   time++;
+//   $("#time").text(time);
+// }
+//
+//
+//
+// // decimal truncator
+// function decimal(num) {
+//   var n = num.toFixed(2);
+//   return n;
+// }
+//
+// // constrain function
+// function constrain(value, min, max) {
+//     return Math.min(Math.max(value, min), max);
+// }
