@@ -151,13 +151,21 @@ function playBGM() {
 
 // function for the 'hack banking establishments' button
 function cashClick() {
-  // alternates between 2 sound holders so sounds aren't lost on rapid presses
-  if (cashCount = 0){
+  // alternates between 4 sound holders so sounds aren't lost on rapid presses
+  if (cashCount === 0){
     hackCash1.play();
-    cashCount = 1;
+    cashCount++;
   }
-  else if (cashCount = 1){
+  else if (cashCount === 1){
     hackCash2.play();
+    cashCount++;
+  }
+  else if (cashCount === 2){
+    hackCash3.play();
+    cashCount++;
+  }
+  else if (cashCount === 3){
+    hackCash4.play();
     cashCount = 0;
   }
   // cashEarned is based off of procPower (processing power)
@@ -174,12 +182,20 @@ function cashClick() {
 }
 // function for the 'HACK CENTRAL MAINFRAME' button
 function hackClick() {
-  if (hackCount = 0){
+  if (hackCount === 0){
     hack1.play();
-    hackCount = 1;
+    hackCount++;
   }
-  else if (hackCount = 1){
+  else if (hackCount === 1){
     hack2.play();
+    hackCount++;
+  }
+  else if (hackCount === 2){
+    hack3.play();
+    hackCount++;
+  }
+  else if (hackCount === 3){
+    hack4.play();
     hackCount = 0;
   }
   hacking = procPower/1200;
