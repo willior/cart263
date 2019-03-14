@@ -52,6 +52,7 @@ function setup() {
   // volume for BGM/SFX
   amp = 0;
   BGMplay = false;
+  boolSFXplay = false;
   SFX.muted = true;
   // setting variable defaults
   procBarX = 1;
@@ -125,13 +126,19 @@ function userInput() {
 }
 // loads main screen
 function main() {
+  if (boolSFXplay === false) {
+    $(document).click(function () {
+    playSFX();
+    console.log("playing SFX");
+  });
+  }
   // creates text log
   textLog = "Welcome back, " + user;
   textLogger();
   // displays main screen, hides start screen2, plays background SFX
   document.getElementById("everything").style.display = "block";
   document.getElementById("start2").style.display = "none";
-  playSFX();
+  // playSFX();
   // setInterval(timer,1000);
   updateInt = setInterval(update,1000);
 }
@@ -140,6 +147,7 @@ function playSFX() {
   SFX.play();
   SFX.loop = true;
   SFX.muted = false;
+  boolSFXplay === true;
 }
 // function to start BGM
 function playBGM() {
@@ -560,6 +568,10 @@ function win() {
 }
 // function for the lose state
 function traced() {
+  let voice = {
+    pitch: 0.1,
+    rate: 0.3
+  };
   document.getElementById("everything").style.display = "none";
   document.getElementById("loseScreen").style.display = "block";
   SFX.pause();
@@ -585,11 +597,15 @@ function traced() {
     document.body.style.backgroundColor = "white";
     }, 4000);
   setTimeout(function(){
-    responsiveVoice.speak("we know where you are. and we know who you are. and we know what you think you fear most.", "UK English Male", {pitch: 0.4}, {rate: 0.5}); end.play();
-  }, 6000);
+    end.play();
+  }, 6500);
   setTimeout(function(){
-    responsiveVoice.speak("however. we know more than you do.", "UK English Male", {pitch: 0.25}, {rate: 0.01});
-  }, 14000);
+    responsiveVoice.speak("we know where you are. and we know who you are. and we know what you think you fear most.", "UK English Male", voice);
+  }, 9000);
+  // setTimeout(function() {end.play();},7000);
+  setTimeout(function(){
+    responsiveVoice.speak("and we know more than you.", "UK English Male", voice);
+  }, 22000);
 
 }
 
