@@ -36,6 +36,9 @@ let hackingProgress;
 
 let canvas;
 
+let traceColorG;
+let traceColorB;
+
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
 let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
@@ -47,6 +50,8 @@ function setup() {
   canvas = createCanvas(800,150);
   canvas.parent("progressBars");
   background(16);
+  traceColorG = 255;
+  traceColorB = 255;
 
   procBarX = 1;
   bounceBarX = 1;
@@ -328,6 +333,8 @@ function update() {
     traceFactor += 0.1;
   }
   tracedBarX = traceLevel*8;
+  traceColorB = 500 - (traceLevel*5);
+  traceColorG = 500 - (traceLevel*5);
   textUpdate();
 }
 
@@ -364,7 +371,7 @@ function draw() {
   rect(memoryBarX,61,(798-memoryBarX),8);
 
   //tracedBar
-  fill(255);
+  fill(255,traceColorG,traceColorB);
   rect(0,80,800,20);
 
   fill(0);
