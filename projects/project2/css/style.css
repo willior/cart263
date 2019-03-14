@@ -27,6 +27,7 @@ button {
 
 #hackButton {
   font-size: 1em;
+  width: 800px;
 }
 
 button:hover {background-color: black; color: white; font-family: Courier, monospace;}

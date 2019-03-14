@@ -39,6 +39,9 @@ let canvas;
 let traceColorG;
 let traceColorB;
 
+let amp;
+let BGMplay;
+
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
 let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
@@ -52,6 +55,8 @@ function setup() {
   background(16);
   traceColorG = 255;
   traceColorB = 255;
+  amp = 0;
+  BGMplay = false;
 
   procBarX = 1;
   bounceBarX = 1;
@@ -67,7 +72,7 @@ function setup() {
 
   $spans = $('span');
 
-  procPower = 100;
+  procPower = 10000;
   memory = 0;
   cash = 1000;
   cashEarned = 0;
@@ -97,6 +102,17 @@ function setup() {
 
   setInterval(timer,1000);
   setInterval(update,1000);
+  setTimeout(playSFX,1000);
+}
+
+function playSFX() {
+  SFX.play();
+  SFX.loop = true;
+}
+
+function playBGM() {
+  BGM.play();
+  BGM.loop = true;
 }
 
 function cashClick() {
@@ -111,9 +127,9 @@ function cashClick() {
 }
 
 function hackClick() {
+  hack.play();
   hacking = procPower/800;
   hackingProgress += hacking;
-  console.log(hackingProgress);
   traceFactor += 0.5;
   hackBarX += hacking*8;
   hackingString = hacking.toFixed(2);
@@ -121,6 +137,15 @@ function hackClick() {
   textLog = "Central mainframe hacked by " + hackingString + "%."
   textLogger();
   textUpdate();
+  if (BGMplay){
+    amp = ((hackingProgress*2)-100);
+    amp = amp/100;
+  }
+  document.getElementById("BGM").volume = amp;
+  if ((hackingProgress >= 50)&&(!BGMplay)) {
+    BGMplay = true;
+    playBGM();
+  }
   if (hackingProgress >= 100) {
     $('span.hack').off('click',hackClick);
     hacked();
