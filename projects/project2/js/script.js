@@ -58,6 +58,7 @@ function setup() {
   traceColorB = 255;
   amp = 0;
   BGMplay = false;
+  SFX.muted = true;
 
   procBarX = 1;
   bounceBarX = 1;
@@ -73,7 +74,7 @@ function setup() {
 
   $spans = $('span');
 
-  procPower = 10000;
+  procPower = 100;
   memory = 0;
   cash = 1000;
   cashEarned = 0;
@@ -140,6 +141,7 @@ function main() {
 function playSFX() {
   SFX.play();
   SFX.loop = true;
+  SFX.muted = false;
 }
 
 function playBGM() {
@@ -160,7 +162,7 @@ function cashClick() {
 
 function hackClick() {
   hack.play();
-  hacking = procPower/800;
+  hacking = procPower/1200;
   hackingProgress += hacking;
   traceFactor += 0.5;
   hackBarX += hacking*8;
@@ -172,6 +174,7 @@ function hackClick() {
   if (BGMplay){
     amp = ((hackingProgress*2)-100);
     amp = amp/100;
+    console.log(amp);
   }
   document.getElementById("BGM").volume = amp;
   if ((hackingProgress >= 50)&&(!BGMplay)) {
@@ -208,7 +211,7 @@ function procPowerUpgrade() {
 }
 
 function procPowerUpgradeProgress() {
-  if (procBarX < 798) {procBarX+=30;}
+  if (procBarX < 798) {procBarX+=10;}
   else if ((procBarX >= 798)&&(procUpgrading = true)) {
     clearInterval(procUpgradingInt);
     procBarX = 1;
