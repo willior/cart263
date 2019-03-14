@@ -2,12 +2,13 @@
 
 /*****************
 
-example of JSON syntax
+Will Graham-Simpkins
+assignment6
 
 ******************/
 
 $(document).ready(function () {
-  $.getJSON('data/data.JSON',dataLoaded);
+  $.getJSON('data/data.JSON','data/bestsellers.JSON',dataLoaded);
 });
 
 let vowels = 'aeiou';
@@ -27,16 +28,13 @@ function dataLoaded(data) {
       indefiniteArticle = 'an';
     }
   }
-    console.log(condiment);
-  console.log(verb);
-  console.log(cat);
-  console.log(room);
-  let description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room}`;
+  let country = getRandomElement(data.countries);
+  let description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}`;
+
   console.log(description);
   $('body').append(description)
 }
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
-
 }
