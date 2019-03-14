@@ -8,13 +8,15 @@ assignment6
 ******************/
 
 $(document).ready(function () {
-  $.getJSON('data/data.JSON','data/bestsellers.JSON',dataLoaded);
+  $.getJSON('data/data.JSON',dataLoaded);
+});
+$(document).click(function () {
+  $.getJSON('data/data.JSON',dataLoaded);
 });
 
 let vowels = 'aeiou';
 
 function dataLoaded(data) {
-
   let condiment = getRandomElement(data.condiments);
   let cat = getRandomElement(data.cats);
   let room = getRandomElement(data.rooms);
@@ -29,7 +31,7 @@ function dataLoaded(data) {
     }
   }
   let country = getRandomElement(data.countries);
-  let description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}`;
+  let description = `${condiment} ${verb} like ${indefiniteArticle} ${cat} in a ${room} based out of ${country}. `;
 
   console.log(description);
   $('body').append(description)
