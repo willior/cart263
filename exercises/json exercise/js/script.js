@@ -10,6 +10,8 @@ $(document).ready(function () {
   $.getJSON('data/data.JSON',dataLoaded);
 });
 
+let vowels = 'aeiou';
+
 function dataLoaded(data) {
 
   let condiment = getRandomElement(data.condiments);

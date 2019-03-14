@@ -10,48 +10,36 @@ let textLog = " ";
 let textLog1 = " \n ";
 let textLog2 = " \n ";
 let textLog3 = " \n ";
-let procPower;
-let procPowerString;
+let procPower, procPowerString;
 let memory;
-let cash;
-let cashString;
-let cashEarned;
-let cashEarnedString;
-let traceLevel;
-let traceLevelString;
-let traceFactor;
-let traceFactorString;
-let time;
-
-let procPrice;
-let procPriceString;
-let memoryPrice;
-let memoryPriceString;
+let cash, cashString;
+let cashEarned, cashEarnedString;
+let traceLevel, traceLevelString;
+let traceFactor, traceFactorString;
+// let time;
+let procPrice, procPriceString;
+let memoryPrice, memoryPriceString;
 let bouncePrice;
 let proxyPrice;
-
 let bounceCount;
 let proxyCount;
-
-let hacking;
-let hackingString;
+let hacking, hackingString;
 let hackingProgress;
-
+// visuals
 let canvas;
-
 let traceColorG;
 let traceColorB;
-
+// audio
 let amp;
 let BGMplay;
-// variables to draw progress bars
+// variables used to draw progress bars
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
 let updateInt, userInputInt, procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
 
 window.addEventListener('load', setup);
 function setup() {
-
+  $spans = $('span');
   // loads the canvas on which the progress bars are placed
   canvas = createCanvas(800,150);
   canvas.parent("progressBars");
@@ -75,7 +63,6 @@ function setup() {
   traceUpgrading = false;
   proxyUpgrading = false;
   memoryUpgrading = false;
-  $spans = $('span');
   // initial values
   procPower = 100;
   memory = 0;
@@ -110,6 +97,7 @@ function setup() {
   // annyang stuff
   if (annyang) {
     var commands = {
+      // runs main screen on "I'm in"
       "I'm in": function() {
         console.log("I'm in.");
         main();
@@ -125,7 +113,7 @@ function setup() {
     userInput();
   });
 }
-// stops listening for username, hides screen 1, shows screen 2
+// stops listening for username, hides start screen1, shows start screen2
 function userInput() {
   annyang.removeCallback('result');
   document.getElementById("start1").style.display = "none";
@@ -133,8 +121,10 @@ function userInput() {
 }
 // loads main screen
 function main() {
+  // creates text log
   textLog = "Welcome back, " + user;
   textLogger();
+  // displays main screen, hides start screen2, plays background SFX
   document.getElementById("everything").style.display = "block";
   document.getElementById("start2").style.display = "none";
   playSFX();
@@ -152,11 +142,17 @@ function playBGM() {
   BGM.play();
   BGM.loop = true;
 }
+
+// the next few functions have to do with the buttons and much of the code is redundant so i won't comment on everything
+
 // function for the 'hack banking establishments' button
 function cashClick() {
+  // cashEarned is based off of procPower (processing power)
   cashEarned = procPower/10;
   cash += cashEarned;
+  // traceFactor increased on each hack
   traceFactor += 0.1;
+  // generates string to display the amount of cash earned and updates text/log
   cashEarnedString = cashEarned.toFixed(2);
   $("#cashEarned").text(cashEarnedString);
   textLog = "$" + cashEarnedString + " earned from hacking."
@@ -168,12 +164,11 @@ function hackClick() {
   hack.play();
   hacking = procPower/1200;
   hackingProgress += hacking;
-  console.log(hackingProgress+ "% hacked");
   traceFactor += 0.5;
   hackBarX += hacking*8;
   hackingString = hacking.toFixed(2);
   $("#hack").text(hackingString);
-  textLog = "Central mainframe hacked by " + hackingString + "%."
+  textLog = "Central mainframe hacked by " + hackingString + "% to " + hackingProgress;
   textLogger();
   textUpdate();
   // starts BGM at 50% of central mainframe hack
@@ -388,33 +383,41 @@ function textLogger()
 }
 // function primarily for updating the trace factor and trace progress
 function update() {
+  // the traceLevel is increased by the amount in TraceFactor
   traceLevel = (traceLevel + traceFactor);
+  // if traceLevel hits 100, the game is lost
   if (traceLevel > 100) {
     traceLevel = 100;
     traced();
   }
+  // gradually reduces the traceLevel over time
   traceLevel -= 0.1;
+  // keeps the traceLevel a positive value
   if (traceLevel < 0) {
     traceLevel = 0;
   }
-
+  // gradually reduces the traceFactor over time if positive
   if (traceFactor >= 0.1){
     traceFactor -= 0.1;
   }
+  // lowers the amount traceFactor is reduced if between 0 and 0.1
   else if ((traceFactor < 0.1)&&(traceFactor > 0)){
     traceFactor -= 0.01;
   }
-
+  // gradually increases the traceFactor over time if less than 0.1
   if (traceFactor <= -0.1){
     traceFactor += 0.1;
   }
+  // lowers the amount traceFactor is increased if between -0.1 and 0
   else if ((traceFactor > -0.1)&&(traceFactor <= 0)){
     traceFactor += 0.01;
   }
-
+  // draws the trace bar
   tracedBarX = traceLevel*8;
+  // gradually turns the trace bar red over 50%
   traceColorB = 500 - (traceLevel*5);
   traceColorG = 500 - (traceLevel*5);
+  // updates text
   textUpdate();
 }
 // function for drawing the progress bars
@@ -462,6 +465,7 @@ function hacked() {
   textLogger();
   textLog = "Downloading files...";
   textLogger();
+  // begins the download
   downloadingInt = setInterval(download,64);
 }
 // function that determines the download progress after central mainframe hack; also increases trace factor every tick
