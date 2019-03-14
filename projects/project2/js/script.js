@@ -442,6 +442,11 @@ function update() {
   if (traceLevel > 100) {
     traceLevel = 100;
     traced();
+    return;
+  }
+  // plays a warning sound effect when the player is close to losing
+  if (traceLevel > 80) {
+    warning.play();
   }
   // gradually reduces the traceLevel over time
   traceLevel -= 0.1;
