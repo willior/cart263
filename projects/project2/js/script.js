@@ -24,7 +24,7 @@ let proxyPrice;
 let bounceCount;
 let proxyCount;
 let hacking, hackingString;
-let hackingProgress;
+let hackingProgress, hackingProgressString;
 // visuals
 let canvas;
 let traceColorG;
@@ -32,6 +32,8 @@ let traceColorB;
 // audio
 let amp;
 let BGMplay;
+let hackCount;
+let cashCount;
 // variables used to draw progress bars
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
@@ -79,6 +81,8 @@ function setup() {
   bouncePrice = 1;
   proxyPrice = 1;
   cashEarned = procPower/10;
+  cashCount = 0;
+  hackCount = 0;
   // update/display text
   cashEarnedString = cashEarned.toFixed(2);
   $("#cashEarned").text(cashEarnedString);
@@ -147,6 +151,15 @@ function playBGM() {
 
 // function for the 'hack banking establishments' button
 function cashClick() {
+  // alternates between 2 sound holders so sounds aren't lost on rapid presses
+  if (cashCount = 0){
+    hackCash1.play();
+    cashCount = 1;
+  }
+  else if (cashCount = 1){
+    hackCash2.play();
+    cashCount = 0;
+  }
   // cashEarned is based off of procPower (processing power)
   cashEarned = procPower/10;
   cash += cashEarned;
@@ -161,14 +174,22 @@ function cashClick() {
 }
 // function for the 'HACK CENTRAL MAINFRAME' button
 function hackClick() {
-  hack.play();
+  if (hackCount = 0){
+    hack1.play();
+    hackCount = 1;
+  }
+  else if (hackCount = 1){
+    hack2.play();
+    hackCount = 0;
+  }
   hacking = procPower/1200;
   hackingProgress += hacking;
   traceFactor += 0.5;
   hackBarX += hacking*8;
   hackingString = hacking.toFixed(2);
+  hackingProgressString = hackingProgress.toFixed(2);
   $("#hack").text(hackingString);
-  textLog = "Central mainframe hacked by " + hackingString + "% to " + hackingProgress;
+  textLog = "Central mainframe hacked by " + hackingString + "% to " + hackingProgressString;
   textLogger();
   textUpdate();
   // starts BGM at 50% of central mainframe hack
@@ -192,12 +213,14 @@ function hackClick() {
 // function for 'upgrade processing power' button
 function procPowerUpgrade() {
   if (procUpgrading === true) {
+    error1.play();
     textLog = "Unable to comply. Processor upgrade in progress.";
     textLogger();
     textUpdate();
     return;
   }
   else if (cash < procPrice) {
+    error1.play();
     textLog = "Not enough cash to upgrade processor.";
     textLogger();
     textUpdate();
@@ -205,6 +228,7 @@ function procPowerUpgrade() {
   }
   else {
     textLog = "Uprading processing power.";
+    upgrade1.play();
     cash -= procPrice;
     textLogger();
     textUpdate();
@@ -216,6 +240,7 @@ function procPowerUpgrade() {
 function procPowerUpgradeProgress() {
   if (procBarX < 798) {procBarX+=10;} // fills bar
   else if ((procBarX >= 798)&&(procUpgrading = true)) {
+    complete1.play();
     clearInterval(procUpgradingInt);
     procBarX = 1;
     procUpgrading = false;
@@ -233,16 +258,19 @@ function procPowerUpgradeProgress() {
 // function for 'bounce signal' button
 function bounceClick() {
   if (traceUpgrading === true ){
+    error2.play();
     textLog = "Unable to comply. Signal bouncing in progress.";
     textLogger();
     return;
   }
   else if (memory <= 0) {
+    error2.play();
     textLog = "Not enough memory to bounce signal.";
     textLogger();
     return;
   }
   else {
+    upgrade2.play();
     textLog = "Bouncing signal.";
     memory -= bouncePrice;
     textLogger();
@@ -257,6 +285,7 @@ function bounceProgress() {
     bounceBarX+=30;
   }
   else if (bounceBarX >= 798) {
+    complete2.play();
     bounceCount++;
     clearInterval(traceUpgradingInt);
     bounceBarX = 1;
@@ -276,16 +305,19 @@ function bounceProgress() {
 // function for 'install proxy' button
 function proxyClick() {
   if (proxyUpgrading === true){
+    error3.play();
     textLog = "Unable to comply. Proxy installation in progress.";
     textLogger();
     return;
   }
   if (memory <= 0) {
+    error3.play();
     textLog = "Not enough memory to install proxy.";
     textLogger();
     return;
   }
   else {
+    upgrade3.play();
     memory -= proxyPrice;
     textLog = "Installing proxy.";
     textLogger();
@@ -300,6 +332,7 @@ function proxyProgress() {
     proxyBarX += 30;
   }
   else if(proxyBarX >= 798) {
+    complete3.play();
     clearInterval(proxyUpgradingInt);
     proxyUpgrading = false;
     proxyBarX = 1;
@@ -310,17 +343,20 @@ function proxyProgress() {
 // function for 'expand memory' button
 function memoryUpgrade() {
   if (memoryUpgrading === true) {
+    error4.play();
     textLog = "Unable to comply. Memory expansion in progress.";
     textLogger();
     return;
   }
   if (cash < memoryPrice) {
+    error4.play();
     textLog = "Not enough cash to expand memory.";
     textLogger();
     textUpdate();
     return;
   }
   else {
+    upgrade4.play();
     memoryUpgrading = true;
     cash -= memoryPrice;
     textLog = "Expanding memory.";
@@ -335,6 +371,7 @@ function memoryProgress() {
     memoryBarX += 30;
   }
   else if(memoryBarX >= 798) {
+    complete4.play();
     clearInterval(memoryUpgradingInt);
     memoryUpgrading = false;
     memoryPrice = memoryPrice * 1.2;
@@ -481,7 +518,10 @@ function download() {
 }
 // function for the win state; disables button and clears function intervals
 function win() {
+  SFX.pause();
+  BGM.pause();
   console.log("you're winner!");
+  clearInterval(updateInt);
   clearInterval(downloadingInt);
   clearInterval(procUpgradingInt);
   clearInterval(traceUpgradingInt);
@@ -497,7 +537,11 @@ function win() {
 }
 // function for the lose state
 function traced() {
+  SFX.pause();
+  BGM.pause();
+  lose.play();
   console.log("traced!");
+  clearInterval(updateInt);
   clearInterval(procUpgradingInt);
   clearInterval(traceUpgradingInt);
   clearInterval(proxyUpgradingInt);
