@@ -32,6 +32,7 @@ let traceColorB;
 // audio
 let amp;
 let BGMplay;
+let boolSFXplay;
 let hackCount;
 let cashCount;
 // variables used to draw progress bars
@@ -126,12 +127,10 @@ function userInput() {
 }
 // loads main screen
 function main() {
-  if (boolSFXplay === false) {
-    $(document).click(function () {
-    playSFX();
-    console.log("playing SFX");
-  });
-  }
+
+  // extremely messy way to get background SFX to play on clicking the page, sorry
+  $(document).click(function () { if (boolSFXplay === false) { playSFX();
+  boolSFXplay = true; } });
   // creates text log
   textLog = "Welcome back, " + user;
   textLogger();
@@ -605,7 +604,7 @@ function traced() {
   // setTimeout(function() {end.play();},7000);
   setTimeout(function(){
     responsiveVoice.speak("and we know more than you.", "UK English Male", voice);
-  }, 22000);
+  }, 24000);
 
 }
 
