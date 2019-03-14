@@ -67,9 +67,9 @@ function setup() {
 
   $spans = $('span');
 
-  procPower = 10000;
+  procPower = 100;
   memory = 0;
-  cash = 10000;
+  cash = 1000;
   cashEarned = 0;
   traceLevel = 0;
   traceFactor = 0;
@@ -406,12 +406,13 @@ function hacked() {
   textLogger();
   textLog = "Downloading files...";
   textLogger();
-  downloadingInt = setInterval(download,32);
+  downloadingInt = setInterval(download,64);
 }
 
 function download() {
   downloadBarX++;
   console.log(downloadBarX);
+  traceFactor += 0.03;
   if (downloadBarX >= 796) {
     win();
     return;
