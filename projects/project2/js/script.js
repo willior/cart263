@@ -121,12 +121,11 @@ function setup() {
   }
   annyang.addCallback('result', function(phrases) {
     user = phrases[0];
-    console.log(user);
+    console.log("username: " + user);
     userInput();
   });
 }
 function userInput() {
-  console.log("user input!");
   annyang.removeCallback('result');
   document.getElementById("start1").style.display = "none";
   document.getElementById("start2").style.display = "block";
@@ -168,10 +167,9 @@ function hackClick() {
   hack.play();
   hacking = procPower/1200;
   hackingProgress += hacking;
-  console.log("progress " + hackingProgress);
+  console.log(hackingProgress+ "% hacked");
   traceFactor += 0.5;
   hackBarX += hacking*8;
-  console.log("hackbarx " + hackBarX);
   hackingString = hacking.toFixed(2);
   $("#hack").text(hackingString);
   textLog = "Central mainframe hacked by " + hackingString + "%."
