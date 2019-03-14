@@ -2,6 +2,8 @@
 project2
 Will Graham-Simpkins
 ******************/
+
+// The Variables
 let $spans;
 let user;
 let textLog = " ";
@@ -42,24 +44,26 @@ let traceColorB;
 
 let amp;
 let BGMplay;
-
+// variables to draw progress bars
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
 let updateInt, userInputInt, procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
 
 window.addEventListener('load', setup);
-
 function setup() {
 
+  // loads the canvas on which the progress bars are placed
   canvas = createCanvas(800,150);
   canvas.parent("progressBars");
   background(16);
+  // colour values to fade the trace progress bar to red
   traceColorG = 255;
   traceColorB = 255;
+  // volume for BGM/SFX
   amp = 0;
   BGMplay = false;
   SFX.muted = true;
-
+  // setting variable defaults
   procBarX = 1;
   bounceBarX = 1;
   proxyBarX = 1;
@@ -71,44 +75,39 @@ function setup() {
   traceUpgrading = false;
   proxyUpgrading = false;
   memoryUpgrading = false;
-
   $spans = $('span');
-
+  // initial values
   procPower = 100;
   memory = 0;
   cash = 1000;
-
   traceLevel = 0;
   traceFactor = 0;
   bounceCount = 0;
   proxyCount = 0;
   hacking = 0;
   hackingProgress = 0;
-
   time = 0;
-
   procPrice = 100;
   memoryPrice = 100;
   bouncePrice = 1;
   proxyPrice = 1;
-
   cashEarned = procPower/10;
+  // update/display text
   cashEarnedString = cashEarned.toFixed(2);
   $("#cashEarned").text(cashEarnedString);
-
   textLogger();
   textUpdate();
-
+  // setting up buttons
   $('span.action').on('click',cashClick);
   $('span.hack').on('click',hackClick);
   $('span.bounce').on('click',bounceClick);
   $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
-
+  // hides splash screen 2 and main screen
   document.getElementById("start2").style.display = "none";
   document.getElementById("everything").style.display = "none";
-
+  // annyang stuff
   if (annyang) {
     var commands = {
       "I'm in": function() {
@@ -119,18 +118,20 @@ function setup() {
     annyang.addCommands(commands);
     annyang.start();
   }
+  // setting username
   annyang.addCallback('result', function(phrases) {
     user = phrases[0];
     console.log("username: " + user);
     userInput();
   });
 }
+// stops listening for username, hides screen 1, shows screen 2
 function userInput() {
   annyang.removeCallback('result');
   document.getElementById("start1").style.display = "none";
   document.getElementById("start2").style.display = "block";
 }
-
+// loads main screen
 function main() {
   textLog = "Welcome back, " + user;
   textLogger();
@@ -140,18 +141,18 @@ function main() {
   // setInterval(timer,1000);
   updateInt = setInterval(update,1000);
 }
-
+// function to start SFX; sometimes does not work on page load, may have to revert to using a click to start SFX
 function playSFX() {
   SFX.play();
   SFX.loop = true;
   SFX.muted = false;
 }
-
+// function to start BGM
 function playBGM() {
   BGM.play();
   BGM.loop = true;
 }
-
+// function for the 'hack banking establishments' button
 function cashClick() {
   cashEarned = procPower/10;
   cash += cashEarned;
@@ -162,7 +163,7 @@ function cashClick() {
   textUpdate();
   textLogger();
 }
-
+// function for the 'HACK CENTRAL MAINFRAME' button
 function hackClick() {
   hack.play();
   hacking = procPower/1200;
@@ -175,22 +176,25 @@ function hackClick() {
   textLog = "Central mainframe hacked by " + hackingString + "%."
   textLogger();
   textUpdate();
+  // starts BGM at 50% of central mainframe hack
   document.getElementById("BGM").volume = amp;
   if ((hackingProgress >= 50)&&(!BGMplay)) {
     BGMplay = true;
     playBGM();
   }
+  // disables hack central mainframe button when complete
   if (hackingProgress >= 100) {
     $('span.hack').off('click',hackClick);
     hacked();
   }
+  // volume control for BGM
   else if (BGMplay){
     amp = ((hackingProgress*2)-100);
     amp = amp/100;
     console.log("amp " + amp);
   }
 }
-
+// function for 'upgrade processing power' button
 function procPowerUpgrade() {
   if (procUpgrading === true) {
     textLog = "Unable to comply. Processor upgrade in progress.";
@@ -213,9 +217,9 @@ function procPowerUpgrade() {
     procUpgradingInt = setInterval(procPowerUpgradeProgress,50);
   }
 }
-
+// function for processor upgrade process
 function procPowerUpgradeProgress() {
-  if (procBarX < 798) {procBarX+=10;}
+  if (procBarX < 798) {procBarX+=10;} // fills bar
   else if ((procBarX >= 798)&&(procUpgrading = true)) {
     clearInterval(procUpgradingInt);
     procBarX = 1;
@@ -231,7 +235,7 @@ function procPowerUpgradeProgress() {
     return;
   }
 }
-
+// function for 'bounce signal' button
 function bounceClick() {
   if (traceUpgrading === true ){
     textLog = "Unable to comply. Signal bouncing in progress.";
@@ -252,7 +256,7 @@ function bounceClick() {
     traceUpgradingInt = setInterval(bounceProgress,50);
   }
 }
-
+// function for bounce signal progress
 function bounceProgress() {
   if (bounceBarX < 798) {
     bounceBarX+=30;
@@ -274,7 +278,7 @@ function bounceProgress() {
     return;
   }
 }
-
+// function for 'install proxy' button
 function proxyClick() {
   if (proxyUpgrading === true){
     textLog = "Unable to comply. Proxy installation in progress.";
@@ -295,7 +299,7 @@ function proxyClick() {
     proxyUpgradingInt = setInterval(proxyProgress,50);
   }
 }
-
+// function for proxy install process
 function proxyProgress() {
   if (proxyBarX < 798) {
     proxyBarX += 30;
@@ -308,7 +312,7 @@ function proxyProgress() {
     traceFactor--;
   }
 }
-
+// function for 'expand memory' button
 function memoryUpgrade() {
   if (memoryUpgrading === true) {
     textLog = "Unable to comply. Memory expansion in progress.";
@@ -330,7 +334,7 @@ function memoryUpgrade() {
     memoryUpgradingInt = setInterval(memoryProgress,50);
   }
 }
-
+// function for memory expansion process
 function memoryProgress() {
   if (memoryBarX < 798) {
     memoryBarX += 30;
@@ -346,7 +350,8 @@ function memoryProgress() {
     textUpdate();
   }
 }
-
+// function for updating main screen text: information and button text
+// decimal values are truncated to 2 digits and converted into strings
 function textUpdate() {
   cashString = cash.toFixed(2);
   $("#cash").text(cashString);
@@ -371,7 +376,7 @@ function textUpdate() {
   $("#bounceCount").text(bounceCount);
   $("#proxyCount").text(proxyCount);
 }
-
+// function for updating the text log
 function textLogger()
 {
   textLog3 = textLog2;
@@ -380,13 +385,9 @@ function textLogger()
   $("#textLog2").text(textLog2);
   textLog1 = textLog;
   $("#textLog1").text(textLog1);
-  var changeText = function(words) {
-    text.innerHTML = words.replace("USERNAME", user);
-  };
 }
-
+// function primarily for updating the trace factor and trace progress
 function update() {
-  // console.log("updating...");
   traceLevel = (traceLevel + traceFactor);
   if (traceLevel > 100) {
     traceLevel = 100;
@@ -416,59 +417,45 @@ function update() {
   traceColorG = 500 - (traceLevel*5);
   textUpdate();
 }
-
+// function for drawing the progress bars
 function draw() {
   clear();
   strokeWeight(0);
   // procBar
   fill(255);
   rect(0,0,800,10);
-
   fill(0);
   rect(procBarX,1,(798-procBarX),8);
-
   // bounceBar
   fill(255);
   rect(0,20,800,10);
-
   fill(0);
   rect(bounceBarX,21,(798-bounceBarX),8);
-
   // proxyBar
   fill(255);
   rect(0,40,800,10);
-
   fill(0);
   rect(proxyBarX,41,(798-proxyBarX),8);
-
-
   // memoryBar
   fill(255);
   rect(0,60,800,10);
-
   fill(0);
   rect(memoryBarX,61,(798-memoryBarX),8);
-
   //tracedBar
   fill(255,traceColorG,traceColorB);
   rect(0,80,800,20);
-
   fill(0);
   rect(tracedBarX+1,81,(797-tracedBarX),18);
-
   //hackBar
   fill(255);
   rect(0,110,800,30);
-
   fill(0);
   rect(hackBarX,111,(798-hackBarX),28);
-
   //downloadBar
   fill(2,13,123);
   rect(1,111,downloadBarX,28);
-
 }
-
+// function that runs when the central mainframe hack is at 100%
 function hacked() {
   console.log("central mainframe hacked!");
   textLog = "Central mainframe hacked.";
@@ -477,17 +464,18 @@ function hacked() {
   textLogger();
   downloadingInt = setInterval(download,64);
 }
-
+// function that determines the download progress after central mainframe hack; also increases trace factor every tick
 function download() {
   downloadBarX++;
   console.log(downloadBarX);
   traceFactor += 0.03;
+  // win state detector
   if (downloadBarX >= 796) {
     win();
     return;
   }
 }
-
+// function for the win state; disables button and clears function intervals
 function win() {
   console.log("you're winner!");
   clearInterval(downloadingInt);
@@ -503,7 +491,7 @@ function win() {
   textLog = "You have successfully downloaded the files.";
   textLogger();
 }
-
+// function for the lose state
 function traced() {
   console.log("traced!");
   clearInterval(procUpgradingInt);
