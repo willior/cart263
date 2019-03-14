@@ -3,6 +3,7 @@ project2
 Will Graham-Simpkins
 ******************/
 let $spans;
+let user;
 let textLog = "Welcome back, USERNAME";
 let textLog1 = " \n ";
 let textLog2 = " \n ";
@@ -44,7 +45,7 @@ let BGMplay;
 
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
-let procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
+let userInputInt, procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
 
 window.addEventListener('load', setup);
 
@@ -99,27 +100,48 @@ function setup() {
   $('span.proxy').on('click',proxyClick);
   $('span.upProcPower').on('click',procPowerUpgrade);
   $('span.upMemory').on('click',memoryUpgrade);
-  let s = document.getElementById("start");
-
+  let s1 = document.getElementById("start1");
+  let s2 = document.getElementById("start2");
   let e = document.getElementById("everything");
+  s2.style.display = "none";
   e.style.display = "none";
-
-  setInterval(timer,1000);
-  setInterval(update,1000);
 
   if (annyang) {
     var commands = {
       "I'm in": function() {
         console.log("I'm in.");
-        e.style.display = "block";
-        s.style.display = "none";
-        SFX.play();
-        SFX.loop = true;
-      }
+        main();
+      },
     };
     annyang.addCommands(commands);
     annyang.start();
   }
+  annyang.addCallback('result', function(phrases) {
+    console.log("I think the user said: ", phrases[0]);
+    user = phrases[0];
+    console.log(user);
+    userInput();
+  });
+}
+function userInput() {
+  console.log("user input!");
+  annyang.removeCallback('result');
+  s1.style.display = "none";
+  s2.style.display = "block";
+}
+
+function main() {
+  e.style.display = "block";
+  s2.style.display = "none";
+  playSFX();
+  clearInterval(userInputInt)
+  setInterval(timer,1000);
+  setInterval(update,1000);
+}
+
+function playSFX() {
+  SFX.play();
+  SFX.loop = true;
 }
 
 function playBGM() {
@@ -351,6 +373,9 @@ function textLogger()
   $("#textLog2").text(textLog2);
   textLog1 = textLog;
   $("#textLog1").text(textLog1);
+  var changeText = function(words) {
+    text.innerHTML = words.replace("USERNAME", user);
+  };
 }
 
 function update() {
