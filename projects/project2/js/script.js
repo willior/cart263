@@ -77,7 +77,7 @@ function setup() {
   procPower = 100;
   memory = 0;
   cash = 1000;
-  cashEarned = 0;
+
   traceLevel = 0;
   traceFactor = 0;
   bounceCount = 0;
@@ -91,6 +91,10 @@ function setup() {
   memoryPrice = 100;
   bouncePrice = 1;
   proxyPrice = 1;
+
+  cashEarned = procPower/10;
+  cashEarnedString = cashEarned.toFixed(2);
+  $("#cashEarned").text(cashEarnedString);
 
   textLogger();
   textUpdate();
@@ -219,8 +223,10 @@ function procPowerUpgradeProgress() {
     procPower *= 1.4;
     procPrice = procPrice * 1.5;
     textLog = "Processing power upgraded.";
-    textLogger();
     cashEarned = procPower/10;
+    cashEarnedString = cashEarned.toFixed(2);
+    $("#cashEarned").text(cashEarnedString);
+    textLogger();
     textUpdate();
     return;
   }
@@ -318,7 +324,6 @@ function memoryUpgrade() {
   else {
     memoryUpgrading = true;
     cash -= memoryPrice;
-    memoryPrice = memoryPrice * 1.2;
     textLog = "Expanding memory.";
     textLogger();
     textUpdate();
@@ -333,6 +338,7 @@ function memoryProgress() {
   else if(memoryBarX >= 798) {
     clearInterval(memoryUpgradingInt);
     memoryUpgrading = false;
+    memoryPrice = memoryPrice * 1.2;
     memoryBarX = 1;
     memory += 4;
     textLog = "Memory expanded."
