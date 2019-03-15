@@ -17,7 +17,14 @@ body {
 
 #loseScreen {
   padding: 2em;
-  font-size: 4em;
+  font-size: 5em;
+  text-align: center;
+}
+
+#winScreen {
+  padding: 2em;
+  padding-top:4em;
+  font-size:2em;
   text-align: center;
 }
 

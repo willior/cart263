@@ -39,6 +39,8 @@ let cashCount;
 let procBarX, bounceBarX, proxyBarX, memoryBarX, tracedBarX, hackBarX, downloadBarX;
 let procUpgrading, traceUpgrading, proxyUpgrading, memoryUpgrading, downloading;
 let updateInt, userInputInt, procUpgradingInt, traceUpgradingInt, proxyUpgradingInt, memoryUpgradingInt, downloadingInt;
+// variable to store responsiveVoice info
+let voice;
 
 window.addEventListener('load', setup);
 function setup() {
@@ -68,7 +70,7 @@ function setup() {
   proxyUpgrading = false;
   memoryUpgrading = false;
   // initial values
-  procPower = 100;
+  procPower = 100000;
   memory = 0;
   cash = 1000;
   traceLevel = 0;
@@ -538,6 +540,14 @@ function hacked() {
 // function that determines the download progress after central mainframe hack; also increases trace factor every tick
 function download() {
   downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
+  downloadBarX++;
   console.log(downloadBarX);
   traceFactor += 0.03;
   // win state detector
@@ -548,6 +558,11 @@ function download() {
 }
 // function for the win state; disables button and clears function intervals
 function win() {
+  voice = {
+    volume: 0.7,
+    pitch: 0.5,
+    rate: 0.6
+  };
   document.getElementById("everything").style.display = "none";
   document.getElementById("winScreen").style.display = "block";
   SFX.pause();
@@ -559,17 +574,40 @@ function win() {
   clearInterval(traceUpgradingInt);
   clearInterval(proxyUpgradingInt);
   clearInterval(memoryUpgradingInt);
-  $('span.action').off('click',cashClick);
-  $('span.bounce').off('click',bounceClick);
-  $('span.proxy').off('click',proxyClick);
-  $('span.upProcPower').off('click',procPowerUpgrade);
-  $('span.upMemory').off('click',memoryUpgrade);
-  textLog = "You have successfully downloaded the files.";
-  textLogger();
+  ding.play();
+  phoneDial.play();
+  setTimeout(function(){
+    responsiveVoice.speak("this is " + user + ". i am currently unavailable. please leave a message.", "Australian Male", voice);
+  }, 19000);
+  setTimeout(function(){
+    phoneCall.play();
+  }, 26500);
+  setTimeout(function(){
+    $("#winScreen").text("I'm in");
+  }, 36000);
+  setTimeout(function(){
+    $("#winScreen").text('"a game" by Will Graham-Simpkins');
+  }, 45000);
+  setTimeout(function(){
+    $("#winScreen").text('for Pippin Barr');
+  }, 54000);
+  setTimeout(function(){
+    $("#winScreen").text('CART 263');
+  }, 63000);
+  setTimeout(function(){
+    $("#winScreen").text('Thanks for playing');
+  }, 72000);
+  setTimeout(function(){
+    $("#winScreen").text('The End ');
+    refract.play();
+  }, 83500);
+  setTimeout(function(){
+    $("#winScreen").text('The End?');
+  }, 133000);
 }
 // function for the lose state
 function traced() {
-  let voice = {
+  voice = {
     volume: 0.7,
     pitch: 0.1,
     rate: 0.3
