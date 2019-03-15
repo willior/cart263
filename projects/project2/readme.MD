@@ -1,0 +1,19 @@
+Will Graham-Simpkins
+CART 263-B
+Project 2
+
+“I’m in”
+
+When I read Bridle’s paper the first time, I didn’t know what to make of it. When I read it a second time, my feelings didn’t change. What he pointed out was creepy, but it felt a bit preachy. Yes, the internet is a weird place. It’s very weird. A lot of weird things happen on the internet. That’s always been true, and that always will be true. I thought, as a self-proclaimed internet expert, why exactly did he seem so surprised?
+
+Personally, what I find most creepy - in general - is nearly too-complex-for-humans-to-understand algorithms (of which Bridle seemed to remind me), and so I originally wanted to make something that explored the generation of a story through a generative process. However, it was something I simply could not get off the ground, for a multitude of reasons. Since I am more interested in game design than anything, I wanted to continue to explore the creation of “game feel” through simple clicking on things and watching numbers change. I needed a strong foundation from which to build my idea.
+
+Originally, my concept for the game was this: you pick a job, and then you are presented with a clicker game with relevant elements to that job. Throughout the game, there would be small hints that you could pick up on, that insinuated that the “game” you were playing was not actually an emulation of real life, but a literal computer simulation, where your role would be to feed processing power (?) to some unknown-but-probably-AI force. The first job I picked was “hacker”, and, of course, the elements of the game (processing power, proxies, memory) are as unrealistic as could possibly be. But I kept working on it, and I somehow became attached to the “hacker” role, so I ditched the multiple job idea and decided to focus on that alone.
+
+Now I’m going to talk about game feel for a moment. I had surprised myself with my Sisyphus clicker game because there was a moment where you had to stop and think, even though it was only 2 buttons, and even though all you do is click on them (of course, audio and visuals contribute to game feel as well). I thought if I could generate a feel out of something like that, I could continue to work on that foundation - the clicker game - to further explore feel. What if instead of 2 buttons, you had 5? What if there were threats? What if time was an consideration?
+
+The haphazard design process is mostly there in the commits, but the thing that really brought this project home for me ended up being the audiovisual aspect. Seeing the progress of your actions, hearing the effects of your actions, seeing the bars fill up… there was a sense of satisfaction to it all.
+
+I chose not to label any of the bars. Apart from it “looking cool”, it forces the player to pay attention to their actions. I also chose it not to be very difficult - that is, until you decide to hack the central mainframe, in which the trace factor is increased exponentially. The fade in of the music contributed to this build up, and the timed sequence of having to wait for the download while fighting off the trace with bouncing and proxies (???) is always exciting. And, obviously, I had a lot of fun with the end screens, both winning and losing.
+
+At some point, I decided it would be better to remove the shackles that bound me to Bridle’s article. I was thinking too much about it, and nothing I could come up with (in the programming context) would be able to echo my thoughts on that subject in any satisfying way. There are very small hints in both end sequences that point towards some terrible conflict, which I’ll just say is possibly some kind of tyrannical artificial intelligence borne from making creepy children’s YouTube videos. I say possibly because I myself have not decided what the background context to the game is. It exists as is, and it is up to you to form your own interpretation.
