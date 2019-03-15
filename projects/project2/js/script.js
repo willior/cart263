@@ -100,6 +100,8 @@ function setup() {
   // hides splash screen 2 and main screen
   document.getElementById("start2").style.display = "none";
   document.getElementById("everything").style.display = "none";
+  document.getElementById("loseScreen").style.display = "none";
+  document.getElementById("winScreen").style.display = "none";
   // annyang stuff
   if (annyang) {
     var commands = {
@@ -568,11 +570,11 @@ function win() {
 // function for the lose state
 function traced() {
   let voice = {
+    volume: 0.7,
     pitch: 0.1,
     rate: 0.3
   };
   document.getElementById("everything").style.display = "none";
-  document.getElementById("loseScreen").style.display = "block";
   SFX.pause();
   BGM.pause();
   lose.play();
@@ -583,28 +585,25 @@ function traced() {
   clearInterval(proxyUpgradingInt);
   clearInterval(memoryUpgradingInt);
   clearInterval(downloadingInt);
-  $('span.action').off('click',cashClick);
-  $('span.hack').off('click',hackClick);
-  $('span.bounce').off('click',bounceClick);
-  $('span.proxy').off('click',proxyClick);
-  $('span.upProcPower').off('click',procPowerUpgrade);
-  $('span.upMemory').off('click',memoryUpgrade);
-  textLog = "You have been traced.";
-  textLogger();
   setTimeout(function(){
     spotlight.play();
     document.body.style.backgroundColor = "white";
-    }, 4000);
+  }, 3500);
   setTimeout(function(){
     end.play();
-  }, 6500);
+  }, 5000);
   setTimeout(function(){
     responsiveVoice.speak("we know where you are. and we know who you are. and we know what you think you fear most.", "UK English Male", voice);
   }, 9000);
   // setTimeout(function() {end.play();},7000);
   setTimeout(function(){
     responsiveVoice.speak("and we know more than you.", "UK English Male", voice);
-  }, 24000);
+  }, 26000);
+  setTimeout(function(){
+    document.getElementById("loseScreen").style.display = "block";
+    document.body.style.backgroundColor = "red";
+    gameOver.play();
+  }, 30700)
 
 }
 

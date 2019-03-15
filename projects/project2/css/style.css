@@ -15,6 +15,12 @@ body {
   text-align: center;
 }
 
+#loseScreen {
+  padding: 2em;
+  font-size: 4em;
+  text-align: center;
+}
+
 #log2 {
   color: silver;
 }
@@ -29,7 +35,7 @@ button {
   width:100%;
   margin-left: 0px;
   margin-top: 0px;
-  height: 2.4em;
+  height: 2.5em;
 }
 
 #hackButton {
