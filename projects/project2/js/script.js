@@ -70,7 +70,7 @@ function setup() {
   proxyUpgrading = false;
   memoryUpgrading = false;
   // initial values
-  procPower = 100000;
+  procPower = 100;
   memory = 0;
   cash = 1000;
   traceLevel = 0;
@@ -317,7 +317,7 @@ function bounceProgress() {
     clearInterval(traceUpgradingInt);
     bounceBarX = 1;
     traceUpgrading = false;
-    traceLevel -= 10;
+    traceLevel -= 15;
     if (traceLevel < 0){
       traceLevel = 0;
       traceLevelString = traceLevel.toFixed(2);
@@ -456,7 +456,7 @@ function update() {
     return;
   }
   // plays a warning sound effect when the player is close to losing
-  if (traceLevel > 80) {
+  if (traceLevel > 75) {
     warning.play();
   }
   // gradually reduces the traceLevel over time
@@ -536,17 +536,10 @@ function hacked() {
   textLogger();
   // begins the download
   downloadingInt = setInterval(download,64);
+  $("#hack").text("CENTRAL MAINFRAME HACKED! FIGHT BACK THE TRACE!");
 }
 // function that determines the download progress after central mainframe hack; also increases trace factor every tick
 function download() {
-  downloadBarX++;
-  downloadBarX++;
-  downloadBarX++;
-  downloadBarX++;
-  downloadBarX++;
-  downloadBarX++;
-  downloadBarX++;
-  downloadBarX++;
   downloadBarX++;
   console.log(downloadBarX);
   traceFactor += 0.03;
@@ -581,7 +574,7 @@ function win() {
   }, 19000);
   setTimeout(function(){
     phoneCall.play();
-  }, 26500);
+  }, 27000);
   setTimeout(function(){
     $("#winScreen").text("I'm in");
   }, 36000);
@@ -600,7 +593,7 @@ function win() {
   setTimeout(function(){
     $("#winScreen").text('The End ');
     refract.play();
-  }, 83500);
+  }, 84000);
   setTimeout(function(){
     $("#winScreen").text('The End?');
   }, 133000);
