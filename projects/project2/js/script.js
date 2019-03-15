@@ -536,7 +536,8 @@ function hacked() {
   textLogger();
   // begins the download
   downloadingInt = setInterval(download,64);
-  $("#hack").text("CENTRAL MAINFRAME HACKED! FIGHT BACK THE TRACE!");
+  $("#hackButton").text("CENTRAL MAINFRAME HACKED! FIGHT BACK THE TRACE!");
+  textUpdate();
 }
 // function that determines the download progress after central mainframe hack; also increases trace factor every tick
 function download() {
