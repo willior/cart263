@@ -27,6 +27,7 @@ let pattern = [
 let patternIndex = 0;
 let bass, synth, kick, snare, hat;
 let playing = false;
+let noteRNG;
 
 function preload() {
 
@@ -43,7 +44,6 @@ function setup() {
   kick = new Pizzicato.Sound('/assets/sounds/kick.wav');
   snare = new Pizzicato.Sound('/assets/sounds/snare.wav');
   hat = new Pizzicato.Sound('/assets/sounds/hihat.wav');
-
 }
 
 function draw() {
@@ -53,7 +53,7 @@ function draw() {
 function mousePressed() {
   if (!playing){
     setInterval(playBass,200);
-    setInterval(playNote,200);
+    setTimeout(playNote,200);
     setInterval(playDrum,200);
     playing = true;
   }
@@ -66,9 +66,27 @@ function playBass() {
 }
 
 function playNote() {
+
+  noteRNG = Math.random();
+
   let synthFreq = synthFreqs[floor(random() * synthFreqs.length)];
   synth.frequency = synthFreq;
-  synth.play();
+
+  if (noteRNG <= 0.7) {
+    synth.play();
+  }
+  else {
+    synth.stop();
+    setTimeout(playNote,200);
+    return;
+  }
+
+  if (noteRNG > 0.7) {
+    setTimeout(playNote,400);
+  }
+  else {
+    setTimeout(playNote,200);
+  }
 }
 
 function playDrum() {
