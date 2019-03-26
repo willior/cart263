@@ -26,7 +26,14 @@ let pattern = [
 
 let patternIndex = 0;
 let bass, synth, kick, snare, hat;
+
+let dubDelay;
+let reverb;
+let reverbMod = 0.5;
+let reverbModUp = false;
+
 let playing = false;
+
 let noteRNG;
 
 function preload() {
@@ -44,6 +51,14 @@ function setup() {
   kick = new Pizzicato.Sound('/assets/sounds/kick.wav');
   snare = new Pizzicato.Sound('/assets/sounds/snare.wav');
   hat = new Pizzicato.Sound('/assets/sounds/hihat.wav');
+
+  reverb = new Pizzicato.Effects.Reverb({
+    time: 0.5,
+    decay: 0.5,
+    reverse: false,
+    mix: reverbMod
+  });
+  synth.addEffect(reverb);
 }
 
 function draw() {
@@ -56,6 +71,22 @@ function mousePressed() {
     setTimeout(playNote,200);
     setInterval(playDrum,200);
     playing = true;
+    setInterval(reverbMix,400);
+  }
+}
+
+function reverbMix() {
+
+  if (reverbModUp === true) {
+    reverbMod = reverbMod + 0.1;
+  }
+  if (reverbModUp === false) {
+    reverbMod = reverbMod - 0.1;
+  }
+
+
+  if (reverbMod >= 1) {
+    reverbModUp = false;
   }
 }
 
@@ -73,6 +104,7 @@ function playNote() {
   synth.frequency = synthFreq;
 
   if (noteRNG <= 0.7) {
+
     synth.play();
   }
   else {
