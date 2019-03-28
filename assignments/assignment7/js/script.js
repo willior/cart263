@@ -1,16 +1,15 @@
 "use strict";
 // A minor: A B C D E F G A
+// bass synth plays two A notes one octave apart
 let bassFreqs = [55, 110];
+// lead synth plays a note randomly from the A minor scale
 let synthFreqs = [440.00, 493.88, 523.25, 587.33, 659.25, 698.46, 783.99, 880.00];
+// background synth plays a note randomly from the A minor pentatonic scale, one octave higher than the lead synth
 let synthFreqsB = [880.00, 1046.50, 1318.5, 1567.98];
-
-// F minor: F G Ab Bb C Dd Eb
+// F notes for bass key change
 let bassFreqs2 = [43.65, 87.3];
-let synthFreqs2 = [349.23, 392.00, 415.30, 466.16, 523.25, 554.37, 622.25];
-let synthFreqsB2 = [];
-
+// drum pattern: i used x as an empty space
 let pattern = [
-
 'kh',
 'x',
 'sh',
@@ -30,9 +29,8 @@ let pattern = [
 'x',
 'sh',
 'k',
-
 ];
-
+// variables
 let patternIndex = 0;
 let bass, synth, synthB, kick, snare, hat;
 
@@ -57,15 +55,30 @@ let keyChange = false;
 let playing = false;
 
 function setup() {
-  // percussion
-  kick = new Pizzicato.Sound('/assets/sounds/kick.wav');
-  snare = new Pizzicato.Sound('/assets/sounds/snare.wav');
-  hat = new Pizzicato.Sound('/assets/sounds/hihat.wav');
+  // percussion sounds
+  kick = new Pizzicato.Sound({
+    source: 'file',
+    options: {
+      path: 'assets/sounds/kick.wav'
+    }
+  });
+  snare = new Pizzicato.Sound({
+    source: 'file',
+    options: {
+      path: 'assets/sounds/snare.wav'
+    }
+  });
+  hat = new Pizzicato.Sound({
+    source: 'file',
+    options: {
+      path: 'assets/sounds/hihat.wav'
+    }
+  });
   kick.release = 0;
   snare.release = 0;
   hat.release = 0;
 
-  // percussion effects
+  // percussion effects (distortion, low pass filter, reverb)
   drumDist = new Pizzicato.Effects.Distortion({
     gain: 1
   });
@@ -87,7 +100,7 @@ function setup() {
       volume: 0.8
     }
   })
-  // bass synth effects
+  // bass synth effects (distortion)
   bassDist = new Pizzicato.Effects.Distortion({
     gain: 0.4
   });
@@ -101,12 +114,11 @@ function setup() {
     }
   })
 
-  // lead synth effects
+  // lead synth effects (lowpass, flanger, reverb)
   synthLPF = new Pizzicato.Effects.LowPassFilter({
     frequency: lowpassLFO,
     peak: 16
   })
-
   synthFlanger = new Pizzicato.Effects.Flanger({
     time: 0.8,
     depth: 0.2,
@@ -114,7 +126,6 @@ function setup() {
     feedback: 0.5,
     mix: 1
   })
-
   synthReverb = new Pizzicato.Effects.Reverb({
     time: 1.6,
     decay: 1.6,
@@ -130,14 +141,14 @@ function setup() {
     }
   });
 
-  // background synth effects
+  // background synth effects (ping pong delay)
   synthBdelay = new Pizzicato.Effects.PingPongDelay({
     feedback: 0.5,
     time: 0.2,
     mix: 0.5
   });
 
-  // global synth Effects
+  // global synth Effects (compressor)
   allSynthComp = new Pizzicato.Effects.Compressor({
     threshold: -12,
     knee: 12,
@@ -170,6 +181,7 @@ function setup() {
   synths.addEffect(allSynthComp);
 }
 
+// runs functions on mousePressed; doesn't run twice
 function mousePressed() {
   if (!playing){
     setInterval(playBass,200);
@@ -181,14 +193,18 @@ function mousePressed() {
   }
 }
 
+// LFO for the slow filter sweeping on lead synth
 function lowPassMod() {
   synthLPF.frequency = lowpassLFO;
+  // begins sweeping down once frequency reaches 8kHz
   if (lowpassLFO >= 8000) {
     lowpassLFOup = false;
   }
+  // sweeps up once frequency reached 800Hz
   else if (lowpassLFO <= 800) {
     lowpassLFOup = true;
   }
+  // filter sweep amount per tick
   if (lowpassLFOup){
     lowpassLFO = lowpassLFO + 4;
   }
@@ -199,11 +215,12 @@ function lowPassMod() {
 
 // randomly plays a bass note and its upper octave neighbour
 function playBass() {
-
+  // plays A notes for 2 bars
   if (keyChange === false) {
     let bassFreq = bassFreqs[floor(random() * bassFreqs.length)];
     bass.frequency = bassFreq;
   }
+  // plays F notes for 2 bars, every other 2 bars
   else if(keyChange === true) {
     let bassFreq = bassFreqs2[floor(random() * bassFreqs2.length)];
     bass.frequency = bassFreq;
@@ -211,45 +228,49 @@ function playBass() {
   bass.play();
 }
 
+// lead synth function
 function playNote() {
-
+  // random values to determine a rest or longer note
   restRNG = Math.random();
   lengthRNG = Math.random();
-
+  // picks a frequency from the scale
   let synthFreq = synthFreqs[floor(random() * synthFreqs.length)];
   synth.frequency = synthFreq;
-
+  // plays a note 70% of the time
   if (restRNG <= 0.7) {
     synth.play();
+    // if playing, plays a longer note 30% of the time
+    if (lengthRNG > 0.7) {
+      setTimeout(playNote,400);
+    }
+    // otherwise plays a shorter note
+    else {
+      setTimeout(playNote,200);
+    }
   }
+  // if a note isn't played, stops and plays again after 400ms
   else {
     synth.stop();
     setTimeout(playNote,400);
     return;
   }
-
-  if (lengthRNG > 0.7) {
-    setTimeout(playNote,400);
-  }
-  else {
-    setTimeout(playNote,200);
-  }
 }
 
+// background synth function
 function playNoteB() {
-  synthB.volume = 0.2;
   let synthFreqB = synthFreqsB[floor(random() * synthFreqsB.length)];
   synthB.frequency = synthFreqB;
   synthB.play();
 }
 
 function playDrum() {
+  // only stops sample playback if started
   if (playing) {
     kick.stop();
     snare.stop();
     hat.stop();
   }
-
+  // plays proper drum samples if pattern index matches the character in the array
   let symbols = pattern[patternIndex];
   if (symbols.indexOf('k') !== -1) {
     kick.play();
@@ -262,14 +283,17 @@ function playDrum() {
   }
   patternIndex = (patternIndex + 1) % pattern.length;
   console.log("pattern index: ",patternIndex);
+  // counts the number of bars (used for key change)
   if (patternIndex === 15) {
     barCount++;
   }
   console.log("bar count: ",barCount);
+  // changes the bass note from A to F every two bars
   if ((patternIndex === 0) && (barCount === 2) && (keyChange === false)) {
     keyChange = true;
     barCount = 0;
   }
+  // then changes back to A
   else if ((patternIndex === 0) && (barCount === 2) && (keyChange === true)) {
     keyChange = false;
     barCount = 0;
