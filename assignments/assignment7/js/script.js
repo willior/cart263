@@ -44,6 +44,7 @@ let synthLPF;
 let synthFlanger;
 let synthReverb;
 let synthBdelay;
+let allSynthComp;
 
 let lowpassLFO = 800;
 let lowpassLFOup = true;
@@ -68,11 +69,6 @@ function setup() {
   snare.release = 0;
   hat.release = 0;
 
-  // creating a group for the percussion
-  var drums = new Pizzicato.Group();
-  drums.addSound(kick)
-  drums.addSound(snare)
-  drums.addSound(hat)
   // percussion effects
   drumDist = new Pizzicato.Effects.Distortion({
     gain: 1
@@ -137,12 +133,35 @@ function setup() {
       volume: 0.2
     }
   });
+
   // background synth effects
   synthBdelay = new Pizzicato.Effects.PingPongDelay({
     feedback: 0.5,
     time: 0.2,
     mix: 0.5
   });
+
+  // global synth Effects
+  allSynthComp = new Pizzicato.Effects.Compressor({
+    threshold: -12,
+    knee: 12,
+    attack: 0.05,
+    release: 0.05,
+    ratio: 16,
+    mix: 1
+  })
+
+  // creating a group for the percussion
+  var drums = new Pizzicato.Group();
+  drums.addSound(kick)
+  drums.addSound(snare)
+  drums.addSound(hat)
+
+  // creating a group for the synths
+  var synths = new Pizzicato.Group();
+  synths.addSound(bass)
+  synths.addSound(synth)
+  synths.addSound(synthB)
 
   // applying effects
   drums.addEffect(drumDist);
@@ -152,6 +171,7 @@ function setup() {
   synth.addEffect(synthLPF);
   synth.addEffect(synthFlanger);  synth.addEffect(synthReverb);
   synthB.addEffect(synthBdelay);
+  synths.addEffect(allSynthComp);
 }
 
 function draw() {
