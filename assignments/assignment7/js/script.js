@@ -56,10 +56,6 @@ let barCount = 0;
 let keyChange = false;
 let playing = false;
 
-function preload() {
-
-}
-
 function setup() {
   // percussion
   kick = new Pizzicato.Sound('/assets/sounds/kick.wav');
@@ -174,10 +170,6 @@ function setup() {
   synths.addEffect(allSynthComp);
 }
 
-function draw() {
-
-}
-
 function mousePressed() {
   if (!playing){
     setInterval(playBass,200);
@@ -252,9 +244,11 @@ function playNoteB() {
 }
 
 function playDrum() {
-  kick.stop();
-  snare.stop();
-  hat.stop();
+  if (playing) {
+    kick.stop();
+    snare.stop();
+    hat.stop();
+  }
 
   let symbols = pattern[patternIndex];
   if (symbols.indexOf('k') !== -1) {
