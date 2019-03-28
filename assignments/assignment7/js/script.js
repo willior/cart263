@@ -1,8 +1,14 @@
 "use strict";
-
+// A minor: A B C D E F G A
 let bassFreqs = [55, 110];
 let synthFreqs = [440.00, 493.88, 523.25, 587.33, 659.25, 698.46, 783.99, 880.00];
 let synthFreqsB = [880.00, 1046.50, 1318.5, 1567.98];
+
+// F minor: F G Ab Bb C Dd Eb
+let bassFreqs2 = [43.65, 87.3];
+let synthFreqs2 = [349.23, 392.00, 415.30, 466.16, 523.25, 554.37, 622.25];
+let synthFreqsB2 = [];
+
 let pattern = [
 
 'kh',
@@ -39,13 +45,15 @@ let synthFlanger;
 let synthReverb;
 let synthBdelay;
 
-let lowpassLFO = 400;
+let lowpassLFO = 800;
 let lowpassLFOup = true;
-
-let playing = false;
 
 let lengthRNG;
 let restRNG;
+
+let barCount = 0;
+let keyChange = false;
+let playing = false;
 
 function preload() {
 
@@ -83,16 +91,20 @@ function setup() {
   // bass synth
   bass = new Pizzicato.Sound({
     source: 'wave',
+    options: {
+      volume: 0.8
+    }
   })
   // bass synth effects
   bassDist = new Pizzicato.Effects.Distortion({
-    gain: 0.5
+    gain: 0.4
   });
 
   // lead synth
   synth = new Pizzicato.Sound({
     source: 'wave',
     options: {
+      volume: 0.2,
       type: 'triangle'
     }
   })
@@ -121,6 +133,9 @@ function setup() {
   // background synth
   synthB = new Pizzicato.Sound({
     source: 'wave',
+    options: {
+      volume: 0.2
+    }
   });
   // background synth effects
   synthBdelay = new Pizzicato.Effects.PingPongDelay({
@@ -156,11 +171,10 @@ function mousePressed() {
 
 function lowPassMod() {
   synthLPF.frequency = lowpassLFO;
-  console.log(lowpassLFO);
-  if (lowpassLFO >= 4000) {
+  if (lowpassLFO >= 8000) {
     lowpassLFOup = false;
   }
-  else if (lowpassLFO <= 400) {
+  else if (lowpassLFO <= 800) {
     lowpassLFOup = true;
   }
   if (lowpassLFOup){
@@ -173,8 +187,15 @@ function lowPassMod() {
 
 // randomly plays a bass note and its upper octave neighbour
 function playBass() {
-  let bassFreq = bassFreqs[floor(random() * bassFreqs.length)];
-  bass.frequency = bassFreq;
+
+  if (keyChange === false) {
+    let bassFreq = bassFreqs[floor(random() * bassFreqs.length)];
+    bass.frequency = bassFreq;
+  }
+  else if(keyChange === true) {
+    let bassFreq = bassFreqs2[floor(random() * bassFreqs2.length)];
+    bass.frequency = bassFreq;
+  }
   bass.play();
 }
 
@@ -185,14 +206,13 @@ function playNote() {
 
   let synthFreq = synthFreqs[floor(random() * synthFreqs.length)];
   synth.frequency = synthFreq;
-  synth.volume = 0.2;
 
   if (restRNG <= 0.7) {
     synth.play();
   }
   else {
     synth.stop();
-    setTimeout(playNote,200);
+    setTimeout(playNote,400);
     return;
   }
 
@@ -227,4 +247,17 @@ function playDrum() {
     hat.play();
   }
   patternIndex = (patternIndex + 1) % pattern.length;
+  console.log("pattern index: ",patternIndex);
+  if (patternIndex === 15) {
+    barCount++;
+  }
+  console.log("bar count: ",barCount);
+  if ((patternIndex === 0) && (barCount === 2) && (keyChange === false)) {
+    keyChange = true;
+    barCount = 0;
+  }
+  else if ((patternIndex === 0) && (barCount === 2) && (keyChange === true)) {
+    keyChange = false;
+    barCount = 0;
+  }
 }
