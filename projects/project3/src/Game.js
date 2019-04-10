@@ -15,8 +15,21 @@ export default class GameScene extends Phaser.Scene {
     this.scale.on('resize', this.resize, this);
     // run tilemap creation
     this.createMap1();
+    // run player creation
+    this.createPlayer();
+  }
+
+  createPlayer() {
     // creating Player
-    this.player = new Player(this, 30, 30);
+    // since i am using babel to compile, => is ES6 shorthand for an anonymous function and binding this to it. normally it would be something like:
+    // function (obj) {}.bind(this);
+    // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
+    this.map.findObject('player', (obj) => {
+      console.log(obj);
+      this.player = new Player(this, obj.x, obj.y);
+    });
+
+
   }
 
   resize (gameSize, baseSize, displaySize, resolution) {
