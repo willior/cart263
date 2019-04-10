@@ -27,7 +27,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update() {
-    this.player.update();
+    this.player.update(this.cursors);
   }
 
   createPlayer() {
