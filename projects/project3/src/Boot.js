@@ -12,6 +12,8 @@ export default class BootScene extends Phaser.Scene {
     this.load.spritesheet('masterTileset', 'assets/images/masterTileset.png', { frameWidth: 16, frameHeight: 16});
     // load player avatar
     this.load.spritesheet('player', 'assets/images/player.png', { frameWidth: 16, frameHeight: 16});
+    // load exit marker
+    this.load.spritesheet('exit', 'assets/images/exit.png', { frameWidth: 16, frameHeight: 16});
   }
 
   create () {

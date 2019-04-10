@@ -20,6 +20,10 @@ export default class GameScene extends Phaser.Scene {
     this.createMap1();
     // run player creation
     this.createPlayer();
+    // instantiating the ability to leave your house
+    this.createExit();
+
+
     // add collisions
     this.addCollisions();
 
@@ -44,8 +48,13 @@ export default class GameScene extends Phaser.Scene {
     // function (obj) {}.bind(this);
     // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
     this.map.findObject('player', (obj) => {
-      console.log(obj);
       this.player = new Player(this, obj.x, obj.y);
+    });
+  }
+
+  createExit() {
+    this.map.findObject('exit', (obj) => {
+      this.exit = new Exit(this, obj.x, obj.y);
     });
   }
 
