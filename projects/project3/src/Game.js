@@ -77,7 +77,7 @@ export default class GameScene extends Phaser.Scene {
 
   createMap1 () {
     // creating tilemap
-    this.map = this.make.tilemap({ key: 'map1'});
+    this.map = this.make.tilemap({ key: this._MAPS[this._MAP] });
     // add tileset images
     this.tiles = this.map.addTilesetImage('masterTileset');
     // creating layers ()

@@ -6,8 +6,16 @@ export default class BootScene extends Phaser.Scene {
   }
 
   preload () {
+    this.maps = {
+      1: 'map1',
+      2: 'map2'
+    };
+
     // loading tilemap
     this.load.tilemapTiledJSON('map1', 'assets/maps/map1.json');
+    this.load.tilemapTiledJSON('map2', 'assets/maps/map2.json');
+
+
     // loading spritesheet
     this.load.spritesheet('masterTileset', 'assets/images/masterTileset.png', { frameWidth: 16, frameHeight: 16});
     // load player avatar
@@ -17,7 +25,7 @@ export default class BootScene extends Phaser.Scene {
   }
 
   create () {
-    this.scene.start('Game');
-    // this.scene.start('Game' { map: 1, newGame: true, maps: [] });
+
+    this.scene.start('Game', { map: 1, newGame: true, maps: this.maps });
   }
 };
