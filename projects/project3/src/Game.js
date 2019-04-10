@@ -6,11 +6,11 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload () {
-    console.log('game scene preload');
+
   }
 
   create () {
-    console.log('creating the map');
+
     this.createMap1();
   }
 
@@ -22,6 +22,6 @@ export default class GameScene extends Phaser.Scene {
     // creating layers ()
     this.backgroundLayer = this.map.createStaticLayer('background1', this.tiles, 0, 0);
     this.blockedLayer = this.map.createStaticLayer('blocked1', this.tiles, 0, 0);
-    console.log('map created');
+
   }
 };
