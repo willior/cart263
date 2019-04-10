@@ -13,6 +13,9 @@ export default class GameScene extends Phaser.Scene {
   create () {
     // listen for resize
     this.scale.on('resize', this.resize, this);
+    // listen for player input
+    this.cursors = this.input.keyboard.createCursorKeys();
+
     // run tilemap creation
     this.createMap1();
     // run player creation
@@ -21,6 +24,12 @@ export default class GameScene extends Phaser.Scene {
     // i might not use this at all as i intend on making each map in 16x16 blocks, classic zelda dungeon style.
     // however, i may change that if i can have it contribute to the mood of the game i am trying to achieve.
     this.cameras.main.startFollow(this.player);
+  }
+
+  update() {
+    if (this.cursors.up.isDown) {
+      console.log('input check');
+    }
   }
 
   createPlayer() {
