@@ -39,12 +39,24 @@
                  "type":"StartPos",
                  "visible":true,
                  "width":0,
-                 "x":120.245719513789,
-                 "y":104.561495229382
+                 "x":120.246,
+                 "y":104.561
+                }, 
+                {
+                 "height":0,
+                 "id":5,
+                 "name":"playerReturn",
+                 "point":true,
+                 "rotation":0,
+                 "type":"playerReturn",
+                 "visible":true,
+                 "width":0,
+                 "x":23.5263364266109,
+                 "y":133.969415762645
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -62,8 +74,8 @@
                  "type":"stuff",
                  "visible":true,
                  "width":0,
-                 "x":88.2237615997909,
-                 "y":166.644883021827
+                 "x":88.2238,
+                 "y":166.645
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -85,8 +97,8 @@
                  "type":"cat",
                  "visible":true,
                  "width":0,
-                 "x":150.96065873742,
-                 "y":166.644883021827
+                 "x":150.961,
+                 "y":166.645
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -108,8 +120,8 @@
                  "type":"exit",
                  "visible":true,
                  "width":0,
-                 "x":8.49562148738727,
-                 "y":135.929943798196
+                 "x":0.653507857796367,
+                 "y":136.583509345184
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -118,7 +130,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":5,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.3",
@@ -127,7 +139,7 @@
         {
          "columns":11,
          "firstgid":1,
-         "image":"..\/..\/..\/..\/..\/..\/..\/gameDev\/masterTileset.png",
+         "image":"..\/..\/..\/..\/..\/..\/gameDev\/masterTileset.png",
          "imageheight":176,
          "imagewidth":176,
          "margin":0,
@@ -140,7 +152,7 @@
         {
          "columns":1,
          "firstgid":122,
-         "image":"..\/..\/..\/..\/..\/..\/..\/gameDev\/player.png",
+         "image":"..\/..\/..\/..\/..\/..\/gameDev\/player.png",
          "imageheight":32,
          "imagewidth":16,
          "margin":0,
