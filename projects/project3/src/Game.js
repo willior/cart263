@@ -17,6 +17,10 @@ export default class GameScene extends Phaser.Scene {
     this.createMap1();
     // run player creation
     this.createPlayer();
+    // camera update:
+    // i might not use this at all as i intend on making each map in 16x16 blocks, classic zelda dungeon style.
+    // however, i may change that if i can have it contribute to the mood of the game i am trying to achieve.
+    this.cameras.main.startFollow(this.player);
   }
 
   createPlayer() {
