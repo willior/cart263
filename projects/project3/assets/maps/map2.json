@@ -33,10 +33,10 @@
                 {
                  "height":0,
                  "id":5,
-                 "name":"player",
+                 "name":"startPos",
                  "point":true,
                  "rotation":0,
-                 "type":"player",
+                 "type":"startPos",
                  "visible":true,
                  "width":0,
                  "x":78.4211214220363,

@@ -54,10 +54,10 @@ export default class GameScene extends Phaser.Scene {
     // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
     this.map.findObject('player', (obj) => {
       if (this._NEWGAME && this._LEVEL === 1) {
-        if (obj.type === 'player') {
+        if (obj.type === 'startPos') {
           this.player = new Player(this, obj.x, obj.y);
         }
-      } else {
+      } else if (obj.type === 'playerReturn') {
           this.player = new Player(this, obj.x, obj.y);
       }
     });
@@ -65,7 +65,12 @@ export default class GameScene extends Phaser.Scene {
 
   createExit() {
     this.map.findObject('exit', (obj) => {
-      this.exit = new Exit(this, obj.x, obj.y);
+      if (obj.type === 'return'){
+        this.exit = new Exit(this, obj.x, obj.y);
+      }
+      else if (obj.type === 'exit'){
+        this.exit = new Exit(this, obj.x, obj.y);
+      }
     });
   }
 
@@ -95,7 +100,7 @@ export default class GameScene extends Phaser.Scene {
   nextMap() {
     if (this._MAP === 1) {
       this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
-    } else {
+    } else if (this.LEVEL === 2) {
       this.scene.restart({ map: 1, newGame: false, maps: this._MAPS });
     }
 
