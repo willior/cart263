@@ -7,8 +7,8 @@ export default class GameScene extends Phaser.Scene {
     super(key);
   }
 
-  preload () {
-
+  init (data) {
+    console.log(data);
   }
 
   create () {
@@ -41,6 +41,7 @@ export default class GameScene extends Phaser.Scene {
 
   addCollisions() {
     this.physics.add.collider(this.player, this.blockedLayer);
+    this.physics.add.overlap(this.player, this.exit, this.nextMap.bind(this));
   }
 
   createPlayer() {
@@ -80,5 +81,9 @@ export default class GameScene extends Phaser.Scene {
     this.backgroundLayer = this.map.createStaticLayer('background1', this.tiles, 0, 0);
     this.blockedLayer = this.map.createStaticLayer('blocked1', this.tiles, 0, 0);
     this.blockedLayer.setCollisionByExclusion([-1]);
+  }
+
+  nextMap() {
+    this.scene.start('Game', { map: 1, newGame: true, maps: [] });
   }
 };

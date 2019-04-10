@@ -18,5 +18,6 @@ export default class BootScene extends Phaser.Scene {
 
   create () {
     this.scene.start('Game');
+    // this.scene.start('Game' { map: 1, newGame: true, maps: [] });
   }
 };
