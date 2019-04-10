@@ -33,14 +33,14 @@
                 {
                  "height":0,
                  "id":5,
-                 "name":"startPos",
+                 "name":"playerStart",
                  "point":true,
                  "rotation":0,
-                 "type":"startPos",
+                 "type":"playerStart",
                  "visible":true,
                  "width":0,
-                 "x":78.4211,
-                 "y":55.5483
+                 "x":62.7368757155927,
+                 "y":56.8553186903673
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -78,10 +78,10 @@
                 {
                  "height":0,
                  "id":6,
-                 "name":"return",
+                 "name":"exitBack",
                  "point":true,
                  "rotation":0,
-                 "type":"return",
+                 "type":"exitBack",
                  "visible":true,
                  "width":0,
                  "x":110.443,
