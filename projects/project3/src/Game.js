@@ -102,7 +102,7 @@ export default class GameScene extends Phaser.Scene {
   nextMap() {
     if (this._MAP === 1) {
       this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
-    } else if (this.LEVEL === 2) {
+    } else if (this._MAP === 2) {
       this.scene.restart({ map: 1, newGame: false, maps: this._MAPS });
     }
 
