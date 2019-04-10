@@ -12,4 +12,20 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.scene.add.existing(this);
   }
 
+  update() {
+    // player inputs for movement
+    if (this.cursors.up.isDown) {
+      console.log('up');
+    }
+    if (this.cursors.down.isDown){
+      console.log('down');
+    }
+    if (this.cursors.left.isDown){
+      console.log('left');
+    }
+    if (this.cursors.right.isDown){
+      console.log('right');
+    }
+  }
+
 }

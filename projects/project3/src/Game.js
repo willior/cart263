@@ -27,20 +27,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update() {
-    // player inputs for movement
-    if (this.cursors.up.isDown) {
-      console.log('up');
-    }
-    if (this.cursors.down.isDown){
-      console.log('down');
-    }
-    if (this.cursors.left.isDown){
-      console.log('left');
-    }
-    if (this.cursors.right.isDown){
-      console.log('right');
-    }
-
+    this.player.update();
   }
 
   createPlayer() {
