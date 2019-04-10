@@ -53,7 +53,11 @@ export default class GameScene extends Phaser.Scene {
     // function (obj) {}.bind(this);
     // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
     this.map.findObject('player', (obj) => {
-      this.player = new Player(this, obj.x, obj.y);
+      if (this._NEWGAME && this._LEVEL === 1) {
+        this.player = new Player(this, obj.x, obj.y);
+      } else {
+        this.player = new Player(this, obj.x, obj.y);
+      }
     });
   }
 
