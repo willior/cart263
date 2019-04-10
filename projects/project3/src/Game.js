@@ -1,5 +1,6 @@
 import 'phaser';
 import Player from './Player';
+import Exit from './Exit';
 
 export default class GameScene extends Phaser.Scene {
   constructor (key) {
