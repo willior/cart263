@@ -20,7 +20,11 @@ export default class GameScene extends Phaser.Scene {
     this.createMap1();
     // run player creation
     this.createPlayer();
+    // add collisions
+    this.addCollisions();
+
     // camera update:
+    //
     // i might not use this at all as i intend on making each map in 16x16 blocks, classic zelda dungeon style.
     // however, i may change that if i can have it contribute to the mood of the game i am trying to achieve.
     this.cameras.main.startFollow(this.player);
@@ -28,6 +32,10 @@ export default class GameScene extends Phaser.Scene {
 
   update() {
     this.player.update(this.cursors);
+  }
+
+  addCollisions() {
+    this.physics.add.collider(this.player, this.blockedLayer);
   }
 
   createPlayer() {
@@ -39,8 +47,6 @@ export default class GameScene extends Phaser.Scene {
       console.log(obj);
       this.player = new Player(this, obj.x, obj.y);
     });
-
-
   }
 
   resize (gameSize, baseSize, displaySize, resolution) {
@@ -63,6 +69,6 @@ export default class GameScene extends Phaser.Scene {
     // creating layers ()
     this.backgroundLayer = this.map.createStaticLayer('background1', this.tiles, 0, 0);
     this.blockedLayer = this.map.createStaticLayer('blocked1', this.tiles, 0, 0);
-
+    this.blockedLayer.setCollisionByExclusion([-1]);
   }
 };
