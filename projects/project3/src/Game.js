@@ -57,18 +57,22 @@ export default class GameScene extends Phaser.Scene {
         if (obj.type === 'startPos') {
           this.player = new Player(this, obj.x, obj.y);
         }
-      } else if (obj.type === 'playerReturn') {
-          this.player = new Player(this, obj.x, obj.y);
+      } else if (obj.type === 'startPos') {
+        this.player = new Player(this, obj.x, obj.y);
+      } else {
+        this.player = new Player(this, obj.x, obj.y);
       }
     });
   }
 
   createExit() {
     this.map.findObject('exit', (obj) => {
-      if (obj.type === 'return'){
+
+      if (obj.type === 'exit'){
         this.exit = new Exit(this, obj.x, obj.y);
       }
-      else if (obj.type === 'exit'){
+
+      if (obj.type === 'return'){
         this.exit = new Exit(this, obj.x, obj.y);
       }
     });
