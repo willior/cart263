@@ -1,4 +1,5 @@
 import 'phaser';
+import Player from './Player';
 
 export default class GameScene extends Phaser.Scene {
   constructor (key) {
@@ -10,8 +11,24 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
-
+    // listen for resize
+    this.scale.on('resize', this.resize, this);
+    // run tilemap creation
     this.createMap1();
+    // creating Player
+    this.player = new Player(this, 30, 30);
+  }
+
+  resize (gameSize, baseSize, displaySize, resolution) {
+    let width = gameSize.width;
+    let height = gameSize.height;
+    if (width === undefined) {
+      width = this.sys.game.config.width;
+    }
+    if (height === undefined) {
+      height = this.sys.game.config.height;
+    }
+    this.cameras.resize(width, height);
   }
 
   createMap1 () {
