@@ -9,6 +9,9 @@ export default class GameScene extends Phaser.Scene {
 
   init (data) {
     console.log(data);
+    this._MAP = data.map;
+    this._MAPS = data.maps;
+    this._NEWGAME = data.newGame;
   }
 
   create () {
@@ -84,6 +87,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   nextMap() {
-    this.scene.start('Game', { map: 1, newGame: true, maps: [] });
+    this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
   }
 };
