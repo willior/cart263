@@ -39,20 +39,8 @@
                  "type":"startPos",
                  "visible":true,
                  "width":0,
-                 "x":78.4211214220363,
-                 "y":55.5482943406091
-                }, 
-                {
-                 "height":0,
-                 "id":7,
-                 "name":"playerReturn",
-                 "point":true,
-                 "rotation":0,
-                 "type":"playerReturn",
-                 "visible":true,
-                 "width":0,
-                 "x":120.245719513789,
-                 "y":220.232649326885
+                 "x":78.4211,
+                 "y":55.5483
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -89,18 +77,6 @@
          "objects":[
                 {
                  "height":0,
-                 "id":2,
-                 "name":"exit",
-                 "point":true,
-                 "rotation":0,
-                 "type":"exit",
-                 "visible":true,
-                 "width":0,
-                 "x":118.938699336035,
-                 "y":256.175719513789
-                }, 
-                {
-                 "height":0,
                  "id":6,
                  "name":"return",
                  "point":true,
@@ -108,8 +84,8 @@
                  "type":"return",
                  "visible":true,
                  "width":0,
-                 "x":110.443079336035,
-                 "y":57.50882237616
+                 "x":110.443,
+                 "y":57.5088
                 }],
          "opacity":1,
          "type":"objectgroup",

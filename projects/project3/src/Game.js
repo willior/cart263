@@ -57,8 +57,6 @@ export default class GameScene extends Phaser.Scene {
         if (obj.type === 'startPos') {
           this.player = new Player(this, obj.x, obj.y);
         }
-      } else if (obj.type === 'startPos') {
-        this.player = new Player(this, obj.x, obj.y);
       } else {
         this.player = new Player(this, obj.x, obj.y);
       }
