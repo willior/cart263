@@ -1,6 +1,7 @@
 import 'phaser';
 import Player from './Player';
-import Exit from './Exit';
+import ExitNext from './ExitNext';
+import ExitBack from './ExitBack';
 
 export default class GameScene extends Phaser.Scene {
   constructor (key) {
@@ -24,8 +25,9 @@ export default class GameScene extends Phaser.Scene {
     this.createMap1();
     // run player creation
     this.createPlayer();
-    // instantiating the ability to leave your house
-    this.createExit();
+    // instantiating exits
+    this.createExitNext();
+    this.createExitBack();
 
 
     // add collisions
@@ -44,7 +46,8 @@ export default class GameScene extends Phaser.Scene {
 
   addCollisions() {
     this.physics.add.collider(this.player, this.blockedLayer);
-    this.physics.add.overlap(this.player, this.exit, this.nextMap.bind(this));
+    this.physics.add.overlap(this.player, this.exitNext, this.nextMap.bind(this));
+    this.physics.add.overlap(this.player, this.exitBack, this.previousMap.bind(this));
   }
 
   createPlayer() {
@@ -52,7 +55,7 @@ export default class GameScene extends Phaser.Scene {
     // since i am using babel to compile, => is ES6 shorthand for an anonymous function and binding this to it. normally it would be something like:
     // function (obj) {}.bind(this);
     // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
-    this.map.findObject('player', (obj) => {
+    this.map.findObject('playerStart', (obj) => {
       if (this._NEWGAME && this._LEVEL === 1) {
         if (obj.type === 'playerStart') {
           this.player = new Player(this, obj.x, obj.y);
@@ -63,17 +66,20 @@ export default class GameScene extends Phaser.Scene {
     });
   }
 
-  createExit() {
-    this.map.findObject('exit', (obj) => {
-
+  createExitNext() {
+    this.map.findObject('exitNext', (obj) => {
       if (obj.type === 'exitNext'){
-        this.exit = new Exit(this, obj.x, obj.y);
-      }
-
-      if (obj.type === 'exitBack'){
-        this.exit = new Exit(this, obj.x, obj.y);
+        this.exitNext = new ExitNext(this, obj.x, obj.y);
       }
     });
+  }
+
+  createExitBack() {
+    this.map.findObject('exitBack', (obj) => {
+      if (obj.type === 'exitBack'){
+        this.exitBack = new ExitBack(this, obj.x, obj.y);
+      }
+    })
   }
 
   resize (gameSize, baseSize, displaySize, resolution) {
@@ -100,11 +106,35 @@ export default class GameScene extends Phaser.Scene {
   }
 
   nextMap() {
-    if (this._MAP === 1) {
-      this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
-    } else if (this._MAP === 2) {
-      this.scene.restart({ map: 1, newGame: false, maps: this._MAPS });
-    }
 
+    this.map.findObject('exitNext', (obj) => {
+
+      if (this._MAP === 1) {
+        if (obj.type === 'exitNext'){
+          this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
+        }
+      }
+      else if (this._MAP === 2) {
+        if (obj.type === 'exitNext'){
+          this.scene.restart({ map: 3, newGame: false, maps: this._MAPS });
+        }
+      }
+    });
   }
-};
+
+  previousMap() {
+    this.map.findObject('exitBack', (obj) => {
+      if (this._MAP === 2) {
+        if (obj.type === 'exitNext'){
+          this.scene.restart({ map: 1, newGame: false, maps: this._MAPS });
+        }
+      }
+      else if (this._MAP === 3) {
+        if (obj.type === 'exitNext'){
+          this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
+        }
+      }
+
+    });
+  }
+}

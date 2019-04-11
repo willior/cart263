@@ -14,7 +14,7 @@
          "y":0
         }, 
         {
-         "data":[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 112, 112, 112, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 110, 111, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 108, 109, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+         "data":[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 112, 112, 112, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 110, 111, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 108, 109, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 118, 0, 0, 0, 117, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
          "height":16,
          "id":2,
          "name":"blocked1",
@@ -28,7 +28,7 @@
         {
          "draworder":"topdown",
          "id":3,
-         "name":"player",
+         "name":"playerStart",
          "objects":[
                 {
                  "height":0,
@@ -51,19 +51,65 @@
         {
          "draworder":"topdown",
          "id":7,
-         "name":"playerReturn",
+         "name":"playerBack",
          "objects":[
                 {
                  "height":0,
                  "id":6,
-                 "name":"playerReturn",
+                 "name":"playerBack",
                  "point":true,
                  "rotation":0,
-                 "type":"playerReturn",
+                 "type":"playerBack",
                  "visible":true,
                  "width":0,
-                 "x":30.7149392236309,
-                 "y":136.58345314338
+                 "x":30.7149,
+                 "y":136.583
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"exitNext",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"exitNext",
+                 "point":true,
+                 "rotation":0,
+                 "type":"exitNext",
+                 "visible":true,
+                 "width":0,
+                 "x":0.653508,
+                 "y":136.584
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":9,
+         "name":"exitBack",
+         "objects":[
+                {
+                 "height":0,
+                 "id":8,
+                 "name":"exitBack",
+                 "point":true,
+                 "rotation":0,
+                 "type":"exitBack",
+                 "visible":true,
+                 "width":0,
+                 "x":248.987060514965,
+                 "y":135.276434453013
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -108,31 +154,8 @@
                  "type":"cat",
                  "visible":true,
                  "width":0,
-                 "x":150.961,
-                 "y":166.645
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":6,
-         "name":"exit",
-         "objects":[
-                {
-                 "height":0,
-                 "id":2,
-                 "name":"exitNext",
-                 "point":true,
-                 "rotation":0,
-                 "type":"exitNext",
-                 "visible":true,
-                 "width":0,
-                 "x":0.653508,
-                 "y":136.584
+                 "x":152,
+                 "y":168
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -140,8 +163,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":7,
+ "nextlayerid":10,
+ "nextobjectid":9,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.3",
@@ -158,6 +181,19 @@
          "spacing":0,
          "tilecount":121,
          "tileheight":16,
+         "tiles":[
+                {
+                 "animation":[
+                        {
+                         "duration":400,
+                         "tileid":115
+                        }, 
+                        {
+                         "duration":400,
+                         "tileid":116
+                        }],
+                 "id":116
+                }],
          "tilewidth":16
         }, 
         {
