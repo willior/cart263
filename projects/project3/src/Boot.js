@@ -17,9 +17,9 @@ export default class BootScene extends Phaser.Scene {
     this.load.tilemapTiledJSON('map2', 'assets/maps/map2.json');
     this.load.tilemapTiledJSON('map3', 'assets/maps/map3.json');
 
-
     // loading spritesheet
     this.load.spritesheet('masterTileset', 'assets/images/masterTileset.png', { frameWidth: 16, frameHeight: 16});
+    this.load.spritesheet('grass', 'assets/images/grass.png', { frameWidth: 16, frameHeight: 16});
     // load player avatar
     this.load.spritesheet('player', 'assets/images/player.png', { frameWidth: 16, frameHeight: 16});
     // load exit marker
@@ -28,7 +28,6 @@ export default class BootScene extends Phaser.Scene {
   }
 
   create () {
-
     this.scene.start('Game', { map: 1, newGame: true, maps: this.maps });
   }
 };

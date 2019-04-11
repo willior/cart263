@@ -13,6 +13,7 @@ export default class GameScene extends Phaser.Scene {
     this._MAP = data.map;
     this._MAPS = data.maps;
     this._NEWGAME = data.newGame;
+    this._PLAYERRETURN = data.playerReturn;
   }
 
   create () {
@@ -28,7 +29,6 @@ export default class GameScene extends Phaser.Scene {
     // instantiating exits
     this.createExitNext();
     this.createExitBack();
-
 
     // add collisions
     this.addCollisions();
@@ -55,15 +55,23 @@ export default class GameScene extends Phaser.Scene {
     // since i am using babel to compile, => is ES6 shorthand for an anonymous function and binding this to it. normally it would be something like:
     // function (obj) {}.bind(this);
     // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
-    this.map.findObject('playerStart', (obj) => {
-      if (this._NEWGAME && this._LEVEL === 1) {
-        if (obj.type === 'playerStart') {
-          this.player = new Player(this, obj.x, obj.y);
-        }
-      } else {
+    if (this._NEWGAME) {
+      this.map.findObject('playerStart', (obj) => {
         this.player = new Player(this, obj.x, obj.y);
-      }
-    });
+        this.newGame = false;
+      });
+    }
+    else if (this._PLAYERRETURN) {
+      this.map.findObject('playerBack', (obj) => {
+        this.player = new Player(this, obj.x, obj.y);
+      });
+    }
+
+    else if (!this._PLAYERRETURN) {
+      this.map.findObject('playerStart', (obj) => {
+        this.player = new Player(this, obj.x, obj.y);
+      });
+    }
   }
 
   createExitNext() {
@@ -111,12 +119,12 @@ export default class GameScene extends Phaser.Scene {
 
       if (this._MAP === 1) {
         if (obj.type === 'exitNext'){
-          this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
+          this.scene.restart({ map: 2, playerReturn: false, maps: this._MAPS, });
         }
       }
       else if (this._MAP === 2) {
         if (obj.type === 'exitNext'){
-          this.scene.restart({ map: 3, newGame: false, maps: this._MAPS });
+          this.scene.restart({ map: 3, playerReturn: false, maps: this._MAPS });
         }
       }
     });
@@ -125,16 +133,15 @@ export default class GameScene extends Phaser.Scene {
   previousMap() {
     this.map.findObject('exitBack', (obj) => {
       if (this._MAP === 2) {
-        if (obj.type === 'exitNext'){
-          this.scene.restart({ map: 1, newGame: false, maps: this._MAPS });
+        if (obj.type === 'exitBack'){
+          this.scene.restart({ map: 1, playerReturn: true, maps: this._MAPS });
         }
       }
       else if (this._MAP === 3) {
-        if (obj.type === 'exitNext'){
-          this.scene.restart({ map: 2, newGame: false, maps: this._MAPS });
+        if (obj.type === 'exitBack'){
+          this.scene.restart({ map: 2, playerReturn: true, maps: this._MAPS });
         }
       }
-
     });
   }
 }
