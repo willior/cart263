@@ -107,8 +107,10 @@ export default class GameScene extends Phaser.Scene {
     this.map = this.make.tilemap({ key: this._MAPS[this._MAP] });
     // add tileset images
     this.tiles = this.map.addTilesetImage('masterTileset');
-    // creating layers ()
+    // creating layers
+
     this.backgroundLayer = this.map.createStaticLayer('background1', this.tiles, 0, 0);
+    this.backgroundLayer = this.map.createStaticLayer('grass', this.tiles, 0, 0);
     this.blockedLayer = this.map.createStaticLayer('blocked1', this.tiles, 0, 0);
     this.blockedLayer.setCollisionByExclusion([-1]);
   }
