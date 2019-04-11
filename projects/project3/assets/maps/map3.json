@@ -39,8 +39,8 @@
                  "type":"playerStart",
                  "visible":true,
                  "width":0,
-                 "x":119.592210168605,
-                 "y":47.7061821984054
+                 "x":120,
+                 "y":24
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -96,8 +96,8 @@
                  "type":"exitBack",
                  "visible":true,
                  "width":0,
-                 "x":120.245719513789,
-                 "y":6.53509345183636
+                 "x":120,
+                 "y":0
                 }],
          "opacity":1,
          "type":"objectgroup",

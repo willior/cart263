@@ -39,8 +39,8 @@
                  "type":"playerStart",
                  "visible":true,
                  "width":0,
-                 "x":120.246,
-                 "y":104.561
+                 "x":120,
+                 "y":104
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -62,8 +62,8 @@
                  "type":"playerBack",
                  "visible":true,
                  "width":0,
-                 "x":30.7149,
-                 "y":136.583
+                 "x":24,
+                 "y":136
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -85,8 +85,8 @@
                  "type":"exitNext",
                  "visible":true,
                  "width":0,
-                 "x":0.653508,
-                 "y":136.584
+                 "x":0,
+                 "y":136
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -124,15 +124,14 @@
          "objects":[
                 {
                  "height":0,
-                 "id":3,
+                 "id":10,
                  "name":"stuff",
-                 "point":true,
                  "rotation":0,
                  "type":"stuff",
                  "visible":true,
                  "width":0,
-                 "x":88.2238,
-                 "y":166.645
+                 "x":88,
+                 "y":168
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -147,9 +146,8 @@
          "objects":[
                 {
                  "height":0,
-                 "id":4,
+                 "id":11,
                  "name":"cat",
-                 "point":true,
                  "rotation":0,
                  "type":"cat",
                  "visible":true,
@@ -164,7 +162,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":9,
+ "nextobjectid":13,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.3",

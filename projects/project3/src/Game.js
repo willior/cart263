@@ -2,6 +2,7 @@ import 'phaser';
 import Player from './Player';
 import ExitNext from './ExitNext';
 import ExitBack from './ExitBack';
+import Stuff from './Stuff';
 
 export default class GameScene extends Phaser.Scene {
   constructor (key) {
@@ -24,6 +25,8 @@ export default class GameScene extends Phaser.Scene {
 
     // run tilemap creation
     this.createMap1();
+    // run object creation
+    this.createStuff();
     // run player creation
     this.createPlayer();
     // instantiating exits
@@ -46,8 +49,19 @@ export default class GameScene extends Phaser.Scene {
 
   addCollisions() {
     this.physics.add.collider(this.player, this.blockedLayer);
+    this.physics.add.overlap(this.player, this.stuff, this.getStuff.bind(this));
     this.physics.add.overlap(this.player, this.exitNext, this.nextMap.bind(this));
     this.physics.add.overlap(this.player, this.exitBack, this.previousMap.bind(this));
+  }
+
+  createStuff() {
+    this.map.findObject('stuff', (obj) => {
+      this.stuff = new Stuff(this, obj.x, obj.y);
+    });
+  }
+
+  getStuff() {
+    console.log("got stuff!");
   }
 
   createPlayer() {
@@ -110,7 +124,6 @@ export default class GameScene extends Phaser.Scene {
     // creating layers
 
     this.backgroundLayer = this.map.createStaticLayer('background1', this.tiles, 0, 0);
-    this.backgroundLayer = this.map.createStaticLayer('grass', this.tiles, 0, 0);
     this.blockedLayer = this.map.createStaticLayer('blocked1', this.tiles, 0, 0);
     this.blockedLayer.setCollisionByExclusion([-1]);
   }
