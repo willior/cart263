@@ -9,6 +9,8 @@ class Text extends Phaser.Scene {
 
   create() {
 
-    
+
   }
 }
+
+export default Text;
