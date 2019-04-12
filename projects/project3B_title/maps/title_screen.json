@@ -14,7 +14,7 @@
       "style": {"font": "65px Arial", "fill":
        "#000000"}
     },
-    "start_message" {
+    "start_message": {
       "type": "text",
       "position": {"x": 150, "y": 2},
       "style": {"font": "20px Arial", "fill": "#000000"}

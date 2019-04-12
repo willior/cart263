@@ -11643,7 +11643,7 @@ var TitleScene = function (_Phaser$Scene) {
     _createClass(TitleScene, [{
         key: "preload",
         value: function preload() {
-            this.load.image("background_image", "assets/images/battle/background.png");
+            this.load.image("background_image", "assets/images/background.png");
         }
     }, {
         key: "create",

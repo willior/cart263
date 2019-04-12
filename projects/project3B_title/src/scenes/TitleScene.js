@@ -6,7 +6,7 @@ class TitleScene extends Phaser.Scene {
     }
 
     preload () {
-        this.load.image("background_image", "assets/images/battle/background.png");
+        this.load.image("background_image", "assets/images/background.png");
     }
 
     create () {

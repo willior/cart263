@@ -12,5 +12,5 @@ let config = {
 
 let game = new Phaser.Game(config);
 
-// game.scene.add('TitleScene', titleScene);
-// game.scene.start("TitleScene");
+game.scene.add('TitleScene', titleScene);
+game.scene.start("TitleScene");
