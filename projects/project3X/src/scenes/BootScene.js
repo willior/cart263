@@ -7,7 +7,7 @@ class BootScene extends Phaser.Scene {
   }
   preload() {
     for (let map_name in this.maps) {
-      let map = this.map[map_name];
+      let map = this.maps[map_name];
       this.load.json(map_name, map.path);
     }
   }
