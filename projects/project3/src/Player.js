@@ -28,5 +28,8 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       this.setVelocityX(100);
     }
   }
+  // stop() {
+  //
+  // }
 
 }

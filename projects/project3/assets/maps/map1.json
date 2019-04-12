@@ -108,8 +108,8 @@
                  "type":"exitBack",
                  "visible":true,
                  "width":0,
-                 "x":248.987060514965,
-                 "y":135.276434453013
+                 "x":248.987,
+                 "y":135.276
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -126,7 +126,13 @@
                  "height":0,
                  "id":10,
                  "name":"stuff",
-                 "rotation":0,
+                 "properties":[
+                        {
+                         "name":"group",
+                         "type":"string",
+                         "value":"stuff"
+                        }],
+                 "rotation":180,
                  "type":"stuff",
                  "visible":true,
                  "width":0,
@@ -134,6 +140,17 @@
                  "y":168
                 }],
          "opacity":1,
+         "properties":[
+                {
+                 "name":"group",
+                 "type":"string",
+                 "value":"stuff"
+                }, 
+                {
+                 "name":"message",
+                 "type":"string",
+                 "value":"stuffText1"
+                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,
@@ -156,6 +173,17 @@
                  "y":168
                 }],
          "opacity":1,
+         "properties":[
+                {
+                 "name":"group",
+                 "type":"string",
+                 "value":"cats"
+                }, 
+                {
+                 "name":"message",
+                 "type":"string",
+                 "value":"catText1"
+                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,
@@ -172,12 +200,12 @@
          "columns":11,
          "firstgid":1,
          "image":"..\/..\/..\/..\/..\/..\/gameDev\/masterTileset.png",
-         "imageheight":176,
+         "imageheight":192,
          "imagewidth":176,
          "margin":0,
          "name":"masterTileset",
          "spacing":0,
-         "tilecount":121,
+         "tilecount":132,
          "tileheight":16,
          "tiles":[
                 {
@@ -196,7 +224,7 @@
         }, 
         {
          "columns":1,
-         "firstgid":122,
+         "firstgid":133,
          "image":"..\/..\/..\/..\/..\/..\/gameDev\/player.png",
          "imageheight":32,
          "imagewidth":16,

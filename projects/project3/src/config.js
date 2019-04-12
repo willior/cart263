@@ -16,11 +16,11 @@ export default {
   },
   plugins: {
     scene: [
-      {
-        key: 'rexUI',
-        plugin: UIPlugin,
-        mapping: 'rexUI'
-      }
+      // {
+      //   key: 'rexUI',
+      //   plugin: UIPlugin,
+      //   mapping: 'rexUI'
+      // }
     ]
   }
 };

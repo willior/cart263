@@ -2,7 +2,7 @@ import Phaser from "phaser";
 import config from './config';
 import GameScene from './Game';
 import BootScene from './Boot';
-import UIPlugin from './ui/ui-plugin.js'
+// import UIPlugin from './ui/ui-plugin.js'
 
 class Game extends Phaser.Game {
   constructor () {

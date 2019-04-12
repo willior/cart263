@@ -3,6 +3,7 @@ import Player from './Player';
 import ExitNext from './ExitNext';
 import ExitBack from './ExitBack';
 import Stuff from './Stuff';
+import TextScene from './TextBox';
 // import UIPlugin from './ui/ui-plugin.js'
 
 export default class GameScene extends Phaser.Scene {
@@ -19,7 +20,12 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
+
     console.log(game.plugins.scenePlugins);
+
+    // for (let SpriteMessageName in this.level.data.SpriteMessages) {
+    //   this.load.text(SpriteMessageName, this.level_data.SpriteMessage[SpriteMessageName]);
+    // }
 
   }
 
@@ -48,6 +54,7 @@ export default class GameScene extends Phaser.Scene {
 
   update() {
     this.player.update(this.cursors);
+
   }
 
   addCollisions() {
