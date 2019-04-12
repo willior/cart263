@@ -100,17 +100,55 @@ return /******/ (function(modules) { // webpackBootstrap
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var gameScene = new Phaser.Scene('Title');
-var config = {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scenes/TitleScene */ "./src/scenes/TitleScene.js");
+
+let titleScene = new _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__["default"]();
+let config = {
   type: Phaser.AUTO,
   width: 640,
-  height: 360,
-  scene: gameScene
+  height: 360
 };
-var game = new Phaser.Game(config);
+let game = new Phaser.Game(config);
+game.scene.add('TitleScene', titleScene);
+game.scene.start('TitleScene');
+
+/***/ }),
+
+/***/ "./src/scenes/TitleScene.js":
+/*!**********************************!*\
+  !*** ./src/scenes/TitleScene.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class TitleScene extends Phaser.Scene {
+  constructor() {
+    super({
+      key: 'TitleScene'
+    });
+  }
+
+  preload() {
+    // asset key, asset path
+    this.load.image('background_image', 'assets/images/background.png');
+  }
+
+  create() {
+    // x, y, asset key
+    let background = this.add.sprite(0, 0, 'background_image');
+    background.setOrigin(0, 0);
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TitleScene);
 
 /***/ }),
 
@@ -121,7 +159,7 @@ var game = new Phaser.Game(config);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/haroldsimpkins/.Trash/project3C/src/main.js */"./src/main.js");
+module.exports = __webpack_require__(/*! /Users/haroldsimpkins/Desktop/school 2019/cart263/projects/project3X/src/main.js */"./src/main.js");
 
 
 /***/ })

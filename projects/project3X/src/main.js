@@ -1,12 +1,16 @@
+import TitleScene from './scenes/TitleScene';
 
 
-let gameScene = new Phaser.Scene('Title');
+
+let titleScene = new TitleScene;
 
 let config = {
   type: Phaser.AUTO,
   width: 640,
   height: 360,
-  scene: gameScene
 };
 
 let game = new Phaser.Game(config);
+
+game.scene.add('TitleScene', titleScene);
+game.scene.start('TitleScene');
