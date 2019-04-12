@@ -192,8 +192,9 @@ class LoadingScene extends Phaser.Scene {
     this.map_data = data.map_data;
     let loading_message = this.add.text(320, 240, "LOADING", {
       font: "48px Courier",
-      fill: "#ffffff"
+      fill: "#FF0000"
     });
+    console.log(loading_message);
   }
 
   preload() {
@@ -215,7 +216,6 @@ class LoadingScene extends Phaser.Scene {
             margin: asset.margin,
             spacing: asset.spacing
           });
-          break;
       }
     }
   }
@@ -246,16 +246,12 @@ class TitleScene extends Phaser.Scene {
     });
   }
 
-  preload() {
-    // asset key, asset path
-    this.load.image('background_image', 'assets/images/background.png');
+  init(data) {
+    this.map_data = data.map_data;
   }
 
   create() {
-    // x, y, asset key
-    let background = this.add.sprite(0, 0, 'background_image');
-    background.setOrigin(0, 0);
-    let title_text = this.add.text(100, 300, "ancient artifacts");
+    this.sprites = {};
   }
 
 }

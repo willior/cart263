@@ -1,13 +1,14 @@
 class LoadingScene extends Phaser.Scene {
   constructor() {
     super({key: 'LoadingScene'});
-
   }
 
-init (data) {
-  this.map_data = data.map_data;
-  let loading_message = this.add.text(320,240, "LOADING", {font: "48px Courier", fill: "#ffffff"});
-}
+  init (data) {
+    this.map_data = data.map_data;
+
+    let loading_message = this.add.text(320, 240,  "LOADING", {font: "48px Courier", fill: "#FF0000"});
+    console.log(loading_message);
+  }
 
   preload() {
     let assets = this.map_data.assets;
@@ -25,7 +26,6 @@ init (data) {
             margin: asset.margin,
             spacing: asset.spacing
           });
-          break;
       }
     }
   }

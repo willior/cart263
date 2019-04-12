@@ -1,7 +1,8 @@
 {
   "assets": {
     "background_image": {
-      "type": "image", "source": "assets/images/background.png"
+      "type": "image",
+      "source": "assets/images/background.png"
     }
   },
 
