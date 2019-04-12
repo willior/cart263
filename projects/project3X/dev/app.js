@@ -129,6 +129,74 @@ game.scene.start('BootScene', {
 
 /***/ }),
 
+/***/ "./src/prefabs/Prefab.js":
+/*!*******************************!*\
+  !*** ./src/prefabs/Prefab.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class Prefab extends Phaser.GameObjects.Sprite {
+  constructor(scene, name, position, properties) {
+    super(scene, position.x, position.y, properties.texture, properties.frame);
+    this.scene = scene;
+    this.name = name;
+    this.scene.add.existing(this);
+    this.scene.groups[properties.group].add(this);
+
+    if (properties.scale) {
+      this.setScale(properties.scale.x, properties.scale.y);
+    }
+
+    if (properties.anchor) {
+      this.setOrigin(properties.anchor.x, properties.anchor.y);
+    }
+
+    this.scene.sprites[name] = this;
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Prefab);
+
+/***/ }),
+
+/***/ "./src/prefabs/TextPrefab.js":
+/*!***********************************!*\
+  !*** ./src/prefabs/TextPrefab.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class TextPrefab extends Phaser.GameObjects.Text {
+  constructor(scene, name, position, properties) {
+    super(scene, position.x, position.y, properties.text, properties.style);
+    this.scene = scene;
+    this.name = name;
+    this.scene.add.existing(this);
+    this.scene.groups[properties.group].add(this);
+
+    if (properties.scale) {
+      this.setScale(properties.scale.x, properties.scale.y);
+    }
+
+    if (properties.anchor) {
+      this.setOrigin(properties.anchor.x, properties.anchor.y);
+    }
+
+    this.scene.sprites[name] = this;
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TextPrefab);
+
+/***/ }),
+
 /***/ "./src/scenes/BootScene.js":
 /*!*********************************!*\
   !*** ./src/scenes/BootScene.js ***!
@@ -181,6 +249,11 @@ class BootScene extends Phaser.Scene {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _prefabs_Prefab__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../prefabs/Prefab */ "./src/prefabs/Prefab.js");
+/* harmony import */ var _prefabs_TextPrefab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../prefabs/TextPrefab */ "./src/prefabs/TextPrefab.js");
+
+
+
 class JSONLevelScene extends Phaser.Scene {
   constructor(key) {
     super({
@@ -201,21 +274,8 @@ class JSONLevelScene extends Phaser.Scene {
 
     for (let sprite_name in this.map_data.sprites) {
       let sprite_data = this.map_data.sprites[sprite_name];
+      let sprite = new this.prefab_classes[sprite_data.type](this, sprite_name, sprite_data.position, sprite_data.properties);
       console.log(sprite_data);
-      let sprite = undefined;
-
-      switch (sprite_data.type) {
-        case 'sprite':
-          sprite = this.add.sprite(sprite_data.position.x, sprite_data.position.y, sprite_data.texture);
-          break;
-
-        case 'text':
-          sprite = this.add.text(sprite_data.position.x, sprite_data.position.y, sprite_data.text, sprite_data.style);
-          break;
-      }
-
-      this.sprites[sprite_name] = sprite;
-      this.groups[sprite_data.group].add(sprite);
     }
   }
 
@@ -295,11 +355,19 @@ class LoadingScene extends Phaser.Scene {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./JSONLevelScene */ "./src/scenes/JSONLevelScene.js");
+/* harmony import */ var _prefabs_Prefab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../prefabs/Prefab */ "./src/prefabs/Prefab.js");
+/* harmony import */ var _prefabs_TextPrefab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../prefabs/TextPrefab */ "./src/prefabs/TextPrefab.js");
+
+
 
 
 class TitleScene extends _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__["default"] {
   constructor() {
     super('TitleScene');
+    this.prefab_classes = {
+      background: _prefabs_Prefab__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.constructor,
+      text: _prefabs_TextPrefab__WEBPACK_IMPORTED_MODULE_2__["default"].prototype.constructor
+    };
   }
 
 }
