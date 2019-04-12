@@ -3,6 +3,7 @@ import Player from './Player';
 import ExitNext from './ExitNext';
 import ExitBack from './ExitBack';
 import Stuff from './Stuff';
+import Item from './Item';
 // import TextScene from './TextBox';
 // import UIPlugin from './ui/ui-plugin.js'
 
@@ -37,9 +38,13 @@ export default class GameScene extends Phaser.Scene {
     // run tilemap creation
     this.createMap1();
     // run object creation
-    this.createStuff();
+    // this.createStuff();
 
-
+    if (this._MAP === 1) {
+      this.item = this.map.createFromObjects('items', 'hourglass', {key: 'hourglass'});
+      this.stuff = this.map.createFromObjects('stuff', 'books', {key: 'books'});
+      this.cat = this.map.createFromObjects('cat', 'cat1', {key: 'cat'});
+    }
     // run player creation
     this.createPlayer();
     // instantiating exits
@@ -60,8 +65,16 @@ export default class GameScene extends Phaser.Scene {
   }
 
   addCollisions() {
+    // walls
     this.physics.add.collider(this.player, this.blockedLayer);
+    // stuff
     this.physics.add.overlap(this.player, this.stuff, this.getStuff.bind(this));
+    // items
+    this.physics.add.overlap(this.player, this.item, this.getItem.bind(this));
+
+    // cat
+
+    // exits
     this.physics.add.overlap(this.player, this.exitNext, this.nextMap.bind(this));
     this.physics.add.overlap(this.player, this.exitBack, this.previousMap.bind(this));
   }
@@ -73,13 +86,24 @@ export default class GameScene extends Phaser.Scene {
   }
 
   getStuff() {
-    console.log("got stuff!");
     if (this._MAP === 1) {
+      console.log("a pile of books, including...");
       // this.scene.rexUI.add.textBox({
       //   orientation: 0,
       //   text: "hi"
       // });
       // console.log(this.text);
+    }
+  }
+  createItem() {
+    this.map.findObject('items', (obj) => {
+      this.item = new Item(this, obj.x, obj.y);
+    });
+  }
+
+  getItem() {
+    if (this._MAP === 1) {
+      console.log("acquired ancient hourglass");
     }
   }
 

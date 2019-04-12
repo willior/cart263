@@ -22,9 +22,12 @@ export default class BootScene extends Phaser.Scene {
     this.load.spritesheet('masterTileset', 'assets/images/masterTileset.png', { frameWidth: 16, frameHeight: 16});
     // load player avatar
     this.load.spritesheet('player', 'assets/images/player.png', { frameWidth: 16, frameHeight: 16});
-    // load exit marker
+    // loading object sprites
     this.load.spritesheet('exitBack', 'assets/images/exit.png', { frameWidth: 16, frameHeight: 16});
     this.load.spritesheet('exitNext', 'assets/images/exit.png', { frameWidth: 16, frameHeight: 16});
+    this.load.spritesheet('hourglass', 'assets/images/hourglass.png', {frameWidth:16, frameHeight: 16});
+    this.load.spritesheet('cat', 'assets/images/cat.png', {frameWidth:16, frameHeight: 16});
+    this.load.image('books', 'assets/images/books.png', {frameWidth: 16, frameHeight: 16});
   }
 
   create (data) {
