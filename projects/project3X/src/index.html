@@ -22,9 +22,21 @@
           -ms-interpolation-mode: nearest-neighbor;    /* IE (non standard naming) */
           image-rendering: pixelated;                  /* Chrome 41 */
         }
+
+        @font-face {
+          font-family: 'Courier';
+        }
+
+        .fontPreload {
+          font-family: 'Courier';
+          position: absolute;
+          left:-100px;
+        }
+
     </style>
 </head>
 
 <body style="background-color: black;">
+  <div class="fontPreload">.</div>
 
 </body>

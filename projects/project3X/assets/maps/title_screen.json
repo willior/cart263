@@ -1,0 +1,28 @@
+{
+  "assets": {
+    "background_image": {
+      "type": "image", "source": "assets/images/background.png"}
+    }
+  },
+
+  "sprites": {
+    "background": {
+      "type": "sprite",
+      "position": {"x": 0, "y": 0},
+      "texture": "background_image"
+    },
+    "title_message": {
+      "type": "text",
+      "position": {"x": 320, "y": 200},
+      "style": {"font": "65px", "fill": "#ffffff"},
+      "text": "ANCIENT ARTIFACTS"
+    },
+    "start_message": {
+      "type": "text",
+      "position": {"x": 320, "y": 400},
+      "style": {"font": "20px", "fill": "#ffffff"},
+      "text": "a game by will graham-simpkins"
+    }
+
+  }
+}
