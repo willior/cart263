@@ -11,10 +11,10 @@ let bootScene = new BootScene();
 class Game extends Phaser.Game {
   constructor () {
     super(config);
-    this.scene.add('TitleScene', titleScene);
-    this.scene.add('Boot', BootScene);
+    this.scene.add('TitleScene', TitleScene);
+    this.scene.add('BootScene', BootScene);
     this.scene.add('Game', GameScene);
-    this.scene.start('Boot');
+    this.scene.start('BootScene', {scene:'title'});
   }
 }
 

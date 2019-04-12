@@ -12,29 +12,12 @@
       "type": "text",
       "position": {"x": 20, "y": 100},
       "style": {"font": "65px", "fill":
-       "#000000"}
+       "#ffffff"}
     },
-    "start_message" {
+    "start_message": {
       "type": "text",
       "position": {"x": 150, "y": 2},
-      "style": {"font": "20px", "fill": "#000000"}
+      "style": {"font": "20px", "fill": "#ffffff"}
     }
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
