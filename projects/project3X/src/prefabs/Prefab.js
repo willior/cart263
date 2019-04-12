@@ -14,6 +14,7 @@ class Prefab extends Phaser.GameObjects.Sprite {
     if(properties.anchor) {
       this.setOrigin(properties.anchor.x, properties.anchor.y);
     }
+    this.scene.prefabs[name] = this;
   }
 }
 
