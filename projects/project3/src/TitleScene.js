@@ -11,6 +11,7 @@ class TitleScene extends Phaser.Scene {
       this._MAPS = data.maps;
       this._NEWGAME = data.newGame;
       this._PLAYERRETURN = data.playerReturn;
+      this._ARTIFACTS = data.artifacts;
     }
 
     preload () {
@@ -19,6 +20,10 @@ class TitleScene extends Phaser.Scene {
           1: 'map1',
           2: 'map2',
           3: 'map3'
+        };
+        this.artifacts = {
+          1: 'hourglass',
+          2: 'spectacles'
         };
     }
 
@@ -29,7 +34,7 @@ class TitleScene extends Phaser.Scene {
         let title_text = this.add.text(100, 100, "today seems like a good day to go out and find some ancient artifacts i guess");
 
         console.log('title screen; starting game');
-            this.scene.start('Game', { map: 1, newGame: true, maps: this.maps });
+            this.scene.start('Game', { map: 1, newGame: true, maps: this.maps, artifacts: this.artifacts });
     }
 }
 

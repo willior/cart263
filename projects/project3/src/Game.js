@@ -4,6 +4,7 @@ import ExitNext from './ExitNext';
 import ExitBack from './ExitBack';
 import Stuff from './Stuff';
 import Item from './Item';
+import Text from './Text';
 // import TextScene from './TextBox';
 // import UIPlugin from './ui/ui-plugin.js'
 
@@ -18,7 +19,7 @@ export default class GameScene extends Phaser.Scene {
     this._MAPS = data.maps;
     this._NEWGAME = data.newGame;
     this._PLAYERRETURN = data.playerReturn;
-    this._ACQUIREDITEM1 = data.acquiredItem1;
+    this._ARTIFACTS = data.artifacts;
   }
 
   preload() {
@@ -71,7 +72,7 @@ export default class GameScene extends Phaser.Scene {
     // walls
     this.physics.add.collider(this.player, this.blockedLayer);
     // stuff
-    this.physics.add.overlap(this.player, this.stuff, this.getStuff.bind(this));
+    this.physics.add.collider(this.player, this.stuff, this.getStuff.bind(this));
     // items
     this.physics.add.overlap(this.player, this.item, this.getItem.bind(this));
 
@@ -99,13 +100,10 @@ export default class GameScene extends Phaser.Scene {
     }
   }
   createItem() {
-    if (this._MAP === 1) {
-      console.log(this._ACQUIREDITEM1);
-      if (!this._ACQUIREDITEM1) {
-        this.map.findObject('items', (obj) => {
-          this.item = new Item(this, obj.x, obj.y);
-        });
-      }
+    if ((this._MAP === 1) && (!this._ACQUIREDITEM1)) {
+      this.map.findObject('items', (obj) => {
+        this.item = new Item(this, obj.x, obj.y);
+      });
     }
   }
 
@@ -118,22 +116,20 @@ export default class GameScene extends Phaser.Scene {
   }
 
   createPlayer() {
-    // creating Player
-    // since i am using babel to compile, => is ES6 shorthand for an anonymous function and binding this to it. normally it would be something like:
-    // function (obj) {}.bind(this);
-    // this allows me to target the x & y values of the object in particular that i had set when i made my tilemap in Tiled.
+    // if it is a new game, start the player next to the bed
     if (this._NEWGAME) {
       this.map.findObject('playerStart', (obj) => {
         this.player = new Player(this, obj.x, obj.y);
         this.newGame = false;
       });
     }
+    // if the player is returning from a previous area, spwawn the player where they came form
     else if (this._PLAYERRETURN) {
       this.map.findObject('playerBack', (obj) => {
         this.player = new Player(this, obj.x, obj.y);
       });
     }
-
+    // if the player is not returning, spawn the player where they are going
     else if (!this._PLAYERRETURN) {
       this.map.findObject('playerStart', (obj) => {
         this.player = new Player(this, obj.x, obj.y);
@@ -184,12 +180,12 @@ export default class GameScene extends Phaser.Scene {
     this.map.findObject('exitNext', (obj) => {
       if (this._MAP === 1) {
         if (obj.type === 'exitNext'){
-          this.scene.restart({ map: 2, playerReturn: false, maps: this._MAPS, });
+          this.scene.restart({ map: 2, playerReturn: false, maps: this._MAPS, artifacts: this._ARTIFACTS });
         }
       }
       else if (this._MAP === 2) {
         if (obj.type === 'exitNext'){
-          this.scene.restart({ map: 3, playerReturn: false, maps: this._MAPS });
+          this.scene.restart({ map: 3, playerReturn: false, maps: this._MAPS, artifacts: this._ARTIFACTS });
         }
       }
     });
@@ -199,12 +195,12 @@ export default class GameScene extends Phaser.Scene {
     this.map.findObject('exitBack', (obj) => {
       if (this._MAP === 2) {
         if (obj.type === 'exitBack'){
-          this.scene.restart({ map: 1, playerReturn: true, maps: this._MAPS });
+          this.scene.restart({ map: 1, playerReturn: true, maps: this._MAPS, artifacts: this._ARTIFACTS });
         }
       }
       else if (this._MAP === 3) {
         if (obj.type === 'exitBack'){
-          this.scene.restart({ map: 2, playerReturn: true, maps: this._MAPS });
+          this.scene.restart({ map: 2, playerReturn: true, maps: this._MAPS, artifacts: this._ARTIFACTS });
         }
       }
     });

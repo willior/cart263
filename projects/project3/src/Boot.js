@@ -7,12 +7,6 @@ export default class BootScene extends Phaser.Scene {
 
   preload () {
     console.log("preloading");
-    this.maps = {
-      1: 'map1',
-      2: 'map2',
-      3: 'map3'
-    };
-
     // loading tilemap
     this.load.tilemapTiledJSON('map1', 'assets/maps/map1.json');
     this.load.tilemapTiledJSON('map2', 'assets/maps/map2.json');
@@ -32,6 +26,11 @@ export default class BootScene extends Phaser.Scene {
 
   create (data) {
     console.log("creating title screen");
-    this.scene.start('TitleScene', { map: 1, newGame: true, maps: this.maps, acquiredItem1: false });
+    this.scene.start('TitleScene', {
+      map: 1,
+      newGame: true,
+      maps: this.maps,
+      artifacts: this.artifacts
+    });
   }
 };
