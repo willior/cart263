@@ -3,6 +3,7 @@ import Player from './Player';
 import ExitNext from './ExitNext';
 import ExitBack from './ExitBack';
 import Stuff from './Stuff';
+// import UIPlugin from './ui/ui-plugin.js'
 
 export default class GameScene extends Phaser.Scene {
   constructor (key) {
@@ -17,12 +18,15 @@ export default class GameScene extends Phaser.Scene {
     this._PLAYERRETURN = data.playerReturn;
   }
 
+  preload() {
+
+  }
+
   create () {
     // listen for resize
     this.scale.on('resize', this.resize, this);
     // listen for player input
     this.cursors = this.input.keyboard.createCursorKeys();
-
     // run tilemap creation
     this.createMap1();
     // run object creation
@@ -32,10 +36,8 @@ export default class GameScene extends Phaser.Scene {
     // instantiating exits
     this.createExitNext();
     this.createExitBack();
-
     // add collisions
     this.addCollisions();
-
     // camera update:
     //
     // i might not use this at all as i intend on making each map in 16x16 blocks, classic zelda dungeon style.
@@ -62,6 +64,12 @@ export default class GameScene extends Phaser.Scene {
 
   getStuff() {
     console.log("got stuff!");
+    if (this._MAP === 1) {
+      // var textBox = scene.rexUI.add.textBox({
+      //   orientation: 0,
+      //   text: textHolder,
+      // });
+    }
   }
 
   createPlayer() {
@@ -129,9 +137,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   nextMap() {
-
     this.map.findObject('exitNext', (obj) => {
-
       if (this._MAP === 1) {
         if (obj.type === 'exitNext'){
           this.scene.restart({ map: 2, playerReturn: false, maps: this._MAPS, });
