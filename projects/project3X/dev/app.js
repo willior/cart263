@@ -107,6 +107,8 @@ return /******/ (function(modules) { // webpackBootstrap
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scenes/TitleScene */ "./src/scenes/TitleScene.js");
 /* harmony import */ var _scenes_BootScene__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scenes/BootScene */ "./src/scenes/BootScene.js");
+/* harmony import */ var _scenes_LoadingScene__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scenes/LoadingScene */ "./src/scenes/LoadingScene.js");
+
 
 
 let titleScene = new _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__["default"]();
@@ -160,6 +162,49 @@ class BootScene extends Phaser.Scene {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BootScene);
+
+/***/ }),
+
+/***/ "./src/scenes/LoadingScene.js":
+/*!************************************!*\
+  !*** ./src/scenes/LoadingScene.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class LoadingScene extends Phaser.Scene {
+  constructor() {
+    super({
+      key: 'LoadingScene'
+    });
+  }
+
+  init(data) {
+    this.map_data = data.map_data;
+    let loading_message = this.add.text(320, 240, "LOADING", {
+      font: "48px Courier",
+      fill: "#ffffff"
+    });
+  }
+
+  preload() {
+    let assets = this.map_data.assets;
+
+    for (let asset_key in assets) {
+      let asset = assets[asset_key];
+      this.load.image(asset_key, asset.source);
+    }
+  }
+
+  create() {
+    console.log("starting title scene");
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (LoadingScene);
 
 /***/ }),
 

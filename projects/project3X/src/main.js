@@ -1,5 +1,6 @@
 import TitleScene from './scenes/TitleScene';
 import BootScene from './scenes/BootScene';
+import LoadingScene from './scenes/LoadingScene';
 
 let titleScene = new TitleScene();
 let bootScene = new BootScene();
