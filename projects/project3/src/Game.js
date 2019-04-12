@@ -3,7 +3,7 @@ import Player from './Player';
 import ExitNext from './ExitNext';
 import ExitBack from './ExitBack';
 import Stuff from './Stuff';
-import TextScene from './TextBox';
+// import TextScene from './TextBox';
 // import UIPlugin from './ui/ui-plugin.js'
 
 export default class GameScene extends Phaser.Scene {
@@ -38,6 +38,8 @@ export default class GameScene extends Phaser.Scene {
     this.createMap1();
     // run object creation
     this.createStuff();
+
+
     // run player creation
     this.createPlayer();
     // instantiating exits
@@ -73,10 +75,11 @@ export default class GameScene extends Phaser.Scene {
   getStuff() {
     console.log("got stuff!");
     if (this._MAP === 1) {
-      // var textBox = scene.rexUI.add.textBox({
+      // this.scene.rexUI.add.textBox({
       //   orientation: 0,
-      //   text: textHolder,
+      //   text: "hi"
       // });
+      // console.log(this.text);
     }
   }
 
@@ -138,7 +141,6 @@ export default class GameScene extends Phaser.Scene {
     // add tileset images
     this.tiles = this.map.addTilesetImage('masterTileset');
     // creating layers
-
     this.backgroundLayer = this.map.createStaticLayer('background1', this.tiles, 0, 0);
     this.blockedLayer = this.map.createStaticLayer('blocked1', this.tiles, 0, 0);
     this.blockedLayer.setCollisionByExclusion([-1]);
