@@ -32,6 +32,6 @@ export default class BootScene extends Phaser.Scene {
 
   create (data) {
     console.log("creating title screen");
-    this.scene.start('TitleScene', { map: 1, newGame: true, maps: this.maps });
+    this.scene.start('TitleScene', { map: 1, newGame: true, maps: this.maps, acquiredItem1: false });
   }
 };

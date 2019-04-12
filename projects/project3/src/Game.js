@@ -18,6 +18,7 @@ export default class GameScene extends Phaser.Scene {
     this._MAPS = data.maps;
     this._NEWGAME = data.newGame;
     this._PLAYERRETURN = data.playerReturn;
+    this._ACQUIREDITEM1 = data.acquiredItem1;
   }
 
   preload() {
@@ -38,13 +39,15 @@ export default class GameScene extends Phaser.Scene {
     // run tilemap creation
     this.createMap1();
     // run object creation
-    // this.createStuff();
+    this.createStuff();
+    this.createItem();
 
-    if (this._MAP === 1) {
-      this.item = this.map.createFromObjects('items', 'hourglass', {key: 'hourglass'});
-      this.stuff = this.map.createFromObjects('stuff', 'books', {key: 'books'});
-      this.cat = this.map.createFromObjects('cat', 'cat1', {key: 'cat'});
-    }
+    // if (this._MAP === 1) {
+    //   this.item = this.map.createFromObjects('items', 'hourglass', {key: 'hourglass'});
+    //   this.stuff = this.map.createFromObjects('stuff', 'books', {key: 'books'});
+    //   this.cat = this.map.createFromObjects('cat', 'cat1', {key: 'cat'});
+    // }
+
     // run player creation
     this.createPlayer();
     // instantiating exits
@@ -96,13 +99,20 @@ export default class GameScene extends Phaser.Scene {
     }
   }
   createItem() {
-    this.map.findObject('items', (obj) => {
-      this.item = new Item(this, obj.x, obj.y);
-    });
+    if (this._MAP === 1) {
+      console.log(this._ACQUIREDITEM1);
+      if (!this._ACQUIREDITEM1) {
+        this.map.findObject('items', (obj) => {
+          this.item = new Item(this, obj.x, obj.y);
+        });
+      }
+    }
   }
 
-  getItem() {
+  getItem(player, item) {
     if (this._MAP === 1) {
+      this._ACQUIREDITEM1 = true;
+      item.disableBody(true,true);
       console.log("acquired ancient hourglass");
     }
   }
