@@ -2,28 +2,34 @@
   "assets": {
     "background_image": {
       "type": "image",
-      "source": "assets/images/background.png"
-    }
+      "source": "assets/images/background.png"}
   },
+  "groups": [
+    "background",
+    "texts"
+  ],
 
 
   "sprites": {
     "background": {
       "type": "sprite",
-      "position": {"x": 0, "y": 0},
-      "texture": "background_image"
+      "position": {"x": 320, "y": 240},
+      "texture": "background_image",
+      "group": "background"
     },
     "title_message": {
       "type": "text",
-      "position": {"x": 320, "y": 200},
-      "style": {"font": "65px", "fill": "#ffffff"},
-      "text": "ANCIENT ARTIFACTS"
+      "position": {"x": 20, "y": 100},
+      "text": "ANCIENT ARTIFACTS",
+      "style": {"font": "60px Courier", "fill": "#ffffff"},
+      "group": "texts"
     },
     "start_message": {
       "type": "text",
-      "position": {"x": 320, "y": 400},
-      "style": {"font": "20px", "fill": "#ffffff"},
-      "text": "a game by will graham-simpkins"
+      "position": {"x": 150, "y": 200},
+      "text": "a game by will graham-simpkins",
+      "style": {"font": "20px Courier", "fill": "#ffffff"},
+      "group": "texts"
     }
   }
 }

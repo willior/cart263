@@ -31,7 +31,7 @@ class LoadingScene extends Phaser.Scene {
   }
 
   create() {
-    console.log("starting title scene");
+    this.scene.start('TitleScene', {map_data: this.map_data});
   }
 }
 
