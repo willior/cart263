@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import config from './config';
 import GameScene from './Game';
 import BootScene from './Boot';
+import UIPlugin from './ui/ui-plugin.js'
 
 class Game extends Phaser.Game {
   constructor () {
@@ -13,6 +14,7 @@ class Game extends Phaser.Game {
 }
 
 window.game = new Game();
+
 window.addEventListener('resize', (event) => {
   game.scale.resize(window.innerWidth, window.innerHeight);
 });

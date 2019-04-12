@@ -1,5 +1,4 @@
 import 'phaser';
-// import UIPlugin from './ui/ui-plugin.js'
 
 export default {
   type: Phaser.AUTO,
@@ -15,11 +14,13 @@ export default {
       debug: true
     }
   },
-  // plugins: {
-  //   scene: [{
-  //     key: 'rexUI',
-  //     plugin: UIPlugin,
-  //     mapping: 'rexUI'
-  //   }]
-  // }
+  plugins: {
+    scene: [
+      {
+        key: 'rexUI',
+        plugin: UIPlugin,
+        mapping: 'rexUI'
+      }
+    ]
+  }
 };

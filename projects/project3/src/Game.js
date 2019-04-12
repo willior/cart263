@@ -19,6 +19,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
+    console.log(game.plugins.scenePlugins);
 
   }
 
