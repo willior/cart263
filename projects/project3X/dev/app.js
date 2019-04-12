@@ -106,8 +106,11 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scenes/TitleScene */ "./src/scenes/TitleScene.js");
+/* harmony import */ var _scenes_BootScene__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scenes/BootScene */ "./src/scenes/BootScene.js");
+
 
 let titleScene = new _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__["default"]();
+let bootScene = new _scenes_BootScene__WEBPACK_IMPORTED_MODULE_1__["default"]();
 let config = {
   type: Phaser.AUTO,
   width: 640,
@@ -115,7 +118,48 @@ let config = {
 };
 let game = new Phaser.Game(config);
 game.scene.add('TitleScene', titleScene);
-game.scene.start('TitleScene');
+game.scene.add('BootScene', bootScene);
+game.scene.start('BootScene');
+
+/***/ }),
+
+/***/ "./src/scenes/BootScene.js":
+/*!*********************************!*\
+  !*** ./src/scenes/BootScene.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class BootScene extends Phaser.Scene {
+  constructor() {
+    super({
+      key: 'BootScene'
+    });
+    this.maps = {
+      title: {
+        key: 'TitleScene',
+        path: 'assets/maps/title_screen.json'
+      }
+    };
+  }
+
+  preload() {
+    for (let map_name in this.maps) {
+      let map = this.map[map_name];
+      this.load.json(map_name, map.path);
+    }
+  }
+
+  create() {
+    let map_data = this.cache.json.get('title');
+    console.log(map_data);
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (BootScene);
 
 /***/ }),
 
