@@ -113,6 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let titleScene = new _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__["default"]();
 let bootScene = new _scenes_BootScene__WEBPACK_IMPORTED_MODULE_1__["default"]();
+let loadingScene = new _scenes_LoadingScene__WEBPACK_IMPORTED_MODULE_2__["default"]();
 let config = {
   type: Phaser.AUTO,
   width: 640,
@@ -121,7 +122,10 @@ let config = {
 let game = new Phaser.Game(config);
 game.scene.add('TitleScene', titleScene);
 game.scene.add('BootScene', bootScene);
-game.scene.start('BootScene');
+game.scene.add('LoadingScene', loadingScene);
+game.scene.start('BootScene', {
+  scene: 'title'
+});
 
 /***/ }),
 
@@ -156,7 +160,9 @@ class BootScene extends Phaser.Scene {
 
   create() {
     let map_data = this.cache.json.get('title');
-    console.log(map_data);
+    this.scene.start('LoadingScene', {
+      map_data: map_data
+    });
   }
 
 }
@@ -194,7 +200,22 @@ class LoadingScene extends Phaser.Scene {
 
     for (let asset_key in assets) {
       let asset = assets[asset_key];
-      this.load.image(asset_key, asset.source);
+
+      switch (asset.type) {
+        case 'image':
+          this.load.image(asset_key, asset.source);
+          break;
+
+        case 'spritesheet':
+          this.load.spritesheet(asset_key, asset.source, {
+            frameWidth: asset.frame_width,
+            frameHeight: asset.frame_height,
+            frames: asset.frames,
+            margin: asset.margin,
+            spacing: asset.spacing
+          });
+          break;
+      }
     }
   }
 

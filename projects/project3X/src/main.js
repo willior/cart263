@@ -4,6 +4,7 @@ import LoadingScene from './scenes/LoadingScene';
 
 let titleScene = new TitleScene();
 let bootScene = new BootScene();
+let loadingScene = new LoadingScene();
 
 let config = {
   type: Phaser.AUTO,
@@ -15,4 +16,5 @@ let game = new Phaser.Game(config);
 
 game.scene.add('TitleScene', titleScene);
 game.scene.add('BootScene', bootScene);
-game.scene.start('BootScene');
+game.scene.add('LoadingScene', loadingScene);
+game.scene.start('BootScene', {scene: 'title'});

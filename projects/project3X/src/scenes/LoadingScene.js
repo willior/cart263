@@ -13,7 +13,20 @@ init (data) {
     let assets = this.map_data.assets;
     for (let asset_key in assets) {
       let asset = assets[asset_key];
-      this.load.image(asset_key, asset.source);
+      switch (asset.type) {
+        case 'image':
+          this.load.image(asset_key, asset.source);
+          break;
+        case 'spritesheet':
+          this.load.spritesheet(asset_key, asset.source, {
+            frameWidth: asset.frame_width,
+            frameHeight: asset.frame_height,
+            frames: asset.frames,
+            margin: asset.margin,
+            spacing: asset.spacing
+          });
+          break;
+      }
     }
   }
 
