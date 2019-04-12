@@ -18,4 +18,4 @@ class TextPrefab extends Phaser.GameObjects.Text {
     this.scene.prefabs[name] = this;
   }
 }
-export default Prefab;
+export default TextPrefab;

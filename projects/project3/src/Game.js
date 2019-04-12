@@ -5,7 +5,8 @@ import ExitBack from './ExitBack';
 import Stuff from './Stuff';
 import Item from './Item';
 import Text from './Text';
-// import TextScene from './TextBox';
+import Prefab from './prefabs/Prefab';
+import TextPrefab from './prefabs/TextPrefab';
 // import UIPlugin from './ui/ui-plugin.js'
 
 export default class GameScene extends Phaser.Scene {
