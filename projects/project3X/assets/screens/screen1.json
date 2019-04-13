@@ -1,0 +1,12 @@
+{
+  "assets": {
+    "background_image": {
+      "type": "image",
+      "source": "assets/images/background.png"}
+  },
+  "groups": [
+    "background",
+    "texts"
+  ],
+
+}

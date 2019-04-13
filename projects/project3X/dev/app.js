@@ -214,7 +214,7 @@ class BootScene extends Phaser.Scene {
     this.maps = {
       title: {
         key: 'TitleScene',
-        path: 'assets/maps/title_screen.json'
+        path: 'assets/screens/title_screen.json'
       }
     };
   }
