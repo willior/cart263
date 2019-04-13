@@ -33,8 +33,8 @@ class LoadingScene extends Phaser.Scene {
     }
   }
 
-  create() {
-    this.scene.start('TitleScene', {map_data: this.map_data});
+  create(data) {
+    this.scene.start(data.scene, {map_data: this.map_data});
   }
 }
 

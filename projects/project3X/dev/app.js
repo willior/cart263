@@ -230,7 +230,8 @@ class BootScene extends Phaser.Scene {
     let map_data = this.cache.json.get(data.scene); // loading scene expects map data, which comes from the .json file
 
     this.scene.start('LoadingScene', {
-      map_data: map_data
+      map_data: map_data,
+      scene: this.maps[data.scene].key
     });
   }
 
@@ -338,8 +339,8 @@ class LoadingScene extends Phaser.Scene {
     }
   }
 
-  create() {
-    this.scene.start('TitleScene', {
+  create(data) {
+    this.scene.start(data.scene, {
       map_data: this.map_data
     });
   }
