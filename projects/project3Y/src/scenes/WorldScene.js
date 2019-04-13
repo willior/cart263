@@ -26,6 +26,7 @@ class WorldScene extends JSONLevelScene {
     this.map.layers.forEach(function (layer) {
       console.log("adding layers");
       this.layers[layer.name] = this.map.createStaticLayer(layer.name, this.tilesets[layer.properties.tileset]);
+      console.log("creating layers");
       if (layer.properties.collision) {
         console.log("adding collision");
         this.map.setCollisionByExclusion([-1], true, layer.name);

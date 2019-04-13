@@ -2,7 +2,7 @@
   "assets": {
     "map_tileset": {
       "type": "image",
-      "source": "assets/images/masterTileset.png"
+      "source": "assets/images/tileset.png"
     },
     "player_spritesheet": {
       "type": "spritesheet",
@@ -13,7 +13,7 @@
     "level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map1.json"
-      
+
     }
   },
   "groups": [
