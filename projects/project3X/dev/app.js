@@ -376,6 +376,16 @@ class TitleScene extends _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
   }
 
+  update() {
+    if (this.input.activePointer.isDown) {
+      this.start_game();
+    }
+  }
+
+  start_game() {
+    console.log("starting game");
+  }
+
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TitleScene);

@@ -11,6 +11,17 @@ class TitleScene extends JSONLevelScene {
       text: TextPrefab.prototype.constructor
     }
   }
+
+  update() {
+    if (this.input.activePointer.isDown) {
+      this.start_game();
+    }
+  }
+
+  start_game() {
+    console.log("starting game");
+  }
+
 }
 
 export default TitleScene;
