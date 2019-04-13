@@ -330,6 +330,10 @@ class LoadingScene extends Phaser.Scene {
             margin: asset.margin,
             spacing: asset.spacing
           });
+
+        case 'tilemap':
+          this.load.tilemapTiledJSON(asset_key, asset.source);
+          break;
       }
     }
   }
