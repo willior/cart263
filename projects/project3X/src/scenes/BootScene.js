@@ -2,7 +2,8 @@ class BootScene extends Phaser.Scene {
   constructor() {
     super({key: 'BootScene'});
     this.maps = {
-      title: {key: 'TitleScene', path: 'assets/screens/title_screen.json'}
+      title: {key: 'TitleScene', path: 'assets/screens/title_screen.json'},
+      screenOne: {key: 'FieldScene', path: 'assets/screens/screen1.json'}
     };
   }
   preload() {

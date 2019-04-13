@@ -106,14 +106,17 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scenes/TitleScene */ "./src/scenes/TitleScene.js");
-/* harmony import */ var _scenes_BootScene__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scenes/BootScene */ "./src/scenes/BootScene.js");
-/* harmony import */ var _scenes_LoadingScene__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scenes/LoadingScene */ "./src/scenes/LoadingScene.js");
+/* harmony import */ var _scenes_FieldScene__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scenes/FieldScene */ "./src/scenes/FieldScene.js");
+/* harmony import */ var _scenes_BootScene__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scenes/BootScene */ "./src/scenes/BootScene.js");
+/* harmony import */ var _scenes_LoadingScene__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scenes/LoadingScene */ "./src/scenes/LoadingScene.js");
+
 
 
 
 let titleScene = new _scenes_TitleScene__WEBPACK_IMPORTED_MODULE_0__["default"]();
-let bootScene = new _scenes_BootScene__WEBPACK_IMPORTED_MODULE_1__["default"]();
-let loadingScene = new _scenes_LoadingScene__WEBPACK_IMPORTED_MODULE_2__["default"]();
+let fieldScene = new _scenes_FieldScene__WEBPACK_IMPORTED_MODULE_1__["default"]();
+let bootScene = new _scenes_BootScene__WEBPACK_IMPORTED_MODULE_2__["default"]();
+let loadingScene = new _scenes_LoadingScene__WEBPACK_IMPORTED_MODULE_3__["default"]();
 let config = {
   type: Phaser.AUTO,
   width: 640,
@@ -121,6 +124,7 @@ let config = {
 };
 let game = new Phaser.Game(config);
 game.scene.add('TitleScene', titleScene);
+game.scene.add('FieldScene', fieldScene);
 game.scene.add('BootScene', bootScene);
 game.scene.add('LoadingScene', loadingScene);
 game.scene.start('BootScene', {
@@ -215,6 +219,10 @@ class BootScene extends Phaser.Scene {
       title: {
         key: 'TitleScene',
         path: 'assets/screens/title_screen.json'
+      },
+      screenOne: {
+        key: 'FieldScene',
+        path: 'assets/screens/screen1.json'
       }
     };
   }
@@ -238,6 +246,75 @@ class BootScene extends Phaser.Scene {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BootScene);
+
+/***/ }),
+
+/***/ "./src/scenes/FieldScene.js":
+/*!**********************************!*\
+  !*** ./src/scenes/FieldScene.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./JSONLevelScene */ "./src/scenes/JSONLevelScene.js");
+/* harmony import */ var _prefabs_Prefab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../prefabs/Prefab */ "./src/prefabs/Prefab.js");
+/* harmony import */ var _prefabs_TextPrefab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../prefabs/TextPrefab */ "./src/prefabs/TextPrefab.js");
+
+
+
+
+class FieldScene extends _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__["default"] {
+  constructor() {
+    super('FieldScene'); // prefab classes
+
+    this.prefab_classes = {
+      player: _prefabs_Prefab__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.constructor
+    };
+  }
+
+  create() {
+    // iterates through tilemaps
+    this.screen = this.add.tilemap(this.map_data.screen.key);
+    let tileset_index = 0;
+    this.tilesets = {};
+    this.screen.tilesets.forEach(function (tileset) {
+      let screen_tileset = this.screen.addTilesetImage(tileset.name, this.map_data.screen.tilesets[tileset_index]);
+      this.tilesets[this.map_data.screen.tilesets[tileset_index]] = screen_tileset;
+      tileset_index += 1;
+    }, this); // iterates through layers and adds collision
+
+    this.layers = {};
+    this.screen.layers.forEach(function (layer) {
+      this.layers[layer.name] = this.screen.createStaticLayer(layer.name, this.tilesets[layer.properties.tileset]);
+
+      if (layer.properties.collision) {
+        this.screen.setCollisionByExclusion([-1], true, layer.name);
+      }
+    }, this); // creates prefabs using the JSONLevelScene
+
+    super.create();
+    this.screen.objects.forEach(function (object_layer) {
+      object_layer.objects.forEach(this.create_object, this);
+    }, this);
+  } // object creation
+
+
+  create_object(object) {
+    let position = {
+      x: object.x + object.width / 2,
+      y: object.y + object.height / 2
+    };
+
+    if (this.prefab_classes.hasOwnProperty(object.type)) {
+      let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (FieldScene);
 
 /***/ }),
 
@@ -385,6 +462,9 @@ class TitleScene extends _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__["default"]
 
   start_game() {
     console.log("starting game");
+    this.scene.start('BootScene', {
+      scene: 'screenOne'
+    });
   }
 
 }

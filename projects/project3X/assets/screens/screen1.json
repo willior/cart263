@@ -14,7 +14,6 @@
       "type": "tilemap",
       "source": "assets/maps/map1.json"
     }
-
   },
   "groups": [
     "players"
@@ -23,5 +22,4 @@
     "key": "level_tilemap",
     "tilesets": ["map_tileset"]
   }
-
 }

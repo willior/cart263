@@ -20,6 +20,7 @@ class TitleScene extends JSONLevelScene {
 
   start_game() {
     console.log("starting game");
+    this.scene.start('BootScene', {scene: 'screenOne'});
   }
 
 }
