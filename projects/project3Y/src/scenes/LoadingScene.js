@@ -13,6 +13,7 @@ class LoadingScene extends Phaser.Scene {
     let assets = this.level_data.assets;
     for (let asset_key in assets) {
       let asset = assets[asset_key];
+      console.log(assets);
       switch (asset.type) {
         case 'image':
           this.load.image(asset_key, asset.source);
@@ -27,7 +28,9 @@ class LoadingScene extends Phaser.Scene {
           });
           break;
         case 'tilemap':
+        console.log("loading tilemap");
           this.load.tilemapTiledJSON(asset_key, asset.source);
+          console.log("tilemap loaded");
           break;
       }
     }

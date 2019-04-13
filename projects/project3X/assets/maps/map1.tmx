@@ -9,12 +9,6 @@
    </animation>
   </tile>
  </tileset>
- <tileset firstgid="133" name="player" tilewidth="16" tileheight="16" tilecount="2" columns="1">
-  <image source="../../../../../../gameDev/player.png" width="16" height="32"/>
- </tileset>
- <tileset firstgid="135" name="hourglass" tilewidth="16" tileheight="16" tilecount="4" columns="2">
-  <image source="../../../project3/assets/images/hourglass.png" width="32" height="32"/>
- </tileset>
  <layer id="1" name="background" width="16" height="16">
   <properties>
    <property name="tileset" value="map_tileset"/>

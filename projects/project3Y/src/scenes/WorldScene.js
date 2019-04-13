@@ -5,7 +5,6 @@ import TextPrefab from '../prefabs/TextPrefab';
 class WorldScene extends JSONLevelScene {
   constructor() {
     super('WorldScene');
-    console.log("world scene super");
 
     this.prefab_classes = {
       player: Prefab.prototype.constructor
@@ -42,14 +41,14 @@ class WorldScene extends JSONLevelScene {
     }, this);
   }
 
-  // create_object (object) {
-  //   let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
-  //   if (this.prefab_classes.hasOwnProperty(object.type)) {
-  //     console.log("creating object");
-  //     let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
-  //     console.log(object);
-  //   }
-  // }
+  create_object (object) {
+    let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
+    if (this.prefab_classes.hasOwnProperty(object.type)) {
+      console.log("creating object");
+      let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
+      console.log(object);
+    }
+  }
 
 }
 

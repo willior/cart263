@@ -13,6 +13,7 @@
     "level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map1.json"
+      
     }
   },
   "groups": [
