@@ -2,8 +2,8 @@ class BootScene extends Phaser.Scene {
   constructor() {
     super({key: 'BootScene'});
     this.maps = {
-      title: {key: 'TitleScene', path: 'assets/screens/title_screen.json'},
-      screenOne: {key: 'FieldScene', path: 'assets/screens/screen1.json'}
+      title: {key: 'TitleScene', path: 'assets/levels/title_screen.json'},
+      screenOne: {key: 'FieldScene', path: 'assets/levels/screen1.json'}
     };
   }
   preload() {
@@ -15,7 +15,7 @@ class BootScene extends Phaser.Scene {
 
   create(data) {
     let map_data = this.cache.json.get(data.scene);
-    // loading scene expects map data, which comes from the .json file
+
     this.scene.start('LoadingScene', {map_data: map_data, scene: this.maps[data.scene].key});
   }
 }

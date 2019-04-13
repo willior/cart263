@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="15">
+ <tileset firstgid="1" name="masterTileset" tilewidth="16" tileheight="16" tilecount="132" columns="11">
+  <image source="../../../../../../gameDev/masterTileset.png" width="176" height="192"/>
+ </tileset>
+ <tileset firstgid="133" name="player" tilewidth="16" tileheight="16" tilecount="2" columns="1">
+  <image source="../../../../../../gameDev/player.png" width="16" height="32"/>
+ </tileset>
+ <tileset firstgid="135" name="grass" tilewidth="16" tileheight="16" tilecount="9" columns="3">
+  <image source="../../../project3/assets/images/grass.png" width="48" height="48"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="400"/>
+    <frame tileid="1" duration="400"/>
+   </animation>
+  </tile>
+  <tile id="2">
+   <animation>
+    <frame tileid="2" duration="500"/>
+    <frame tileid="3" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="4">
+   <animation>
+    <frame tileid="4" duration="400"/>
+    <frame tileid="5" duration="400"/>
+   </animation>
+  </tile>
+  <tile id="7">
+   <animation>
+    <frame tileid="2" duration="500"/>
+    <frame tileid="3" duration="500"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer id="1" name="background" width="16" height="16">
+  <properties>
+   <property name="tileset" value="map_tileset"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="2" name="blocked" width="16" height="16">
+  <properties>
+   <property name="collision" type="bool" value="true"/>
+   <property name="tileset" value="map_tileset"/>
+  </properties>
+  <data encoding="csv">
+2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="playerStart">
+  <object id="13" name="playerStart" type="playerStart" x="120" y="24">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="7" name="playerBack"/>
+ <objectgroup id="6" name="exitNext">
+  <object id="8" gid="115" x="195.895" y="391.61" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup id="8" name="exitBack">
+  <object id="14" name="exitBack" type="exitBack" x="120" y="0">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="stuff"/>
+ <objectgroup id="5" name="cat"/>
+</map>

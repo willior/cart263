@@ -10,7 +10,6 @@ class JSONLevelScene extends Phaser.Scene {
     this.map_data = data.map_data;
   }
 
-  // creating prefabs
   create() {
     this.groups = {};
     this.map_data.groups.forEach(function (group_name) {
