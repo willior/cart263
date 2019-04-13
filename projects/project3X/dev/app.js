@@ -263,7 +263,8 @@ class JSONLevelScene extends Phaser.Scene {
 
   init(data) {
     this.map_data = data.map_data;
-  }
+  } // creating prefabs
+
 
   create() {
     this.groups = {};
@@ -363,7 +364,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class TitleScene extends _JSONLevelScene__WEBPACK_IMPORTED_MODULE_0__["default"] {
   constructor() {
-    super('TitleScene');
+    super('TitleScene'); // prefab classes
+
     this.prefab_classes = {
       background: _prefabs_Prefab__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.constructor,
       text: _prefabs_TextPrefab__WEBPACK_IMPORTED_MODULE_2__["default"].prototype.constructor
