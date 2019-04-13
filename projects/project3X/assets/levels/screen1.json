@@ -18,8 +18,8 @@
   "groups": [
     "players"
   ],
-  "map": {
-    "key": "level_tilemap",
-    "tilesets": ["map_tileset"]
+  "screen": {
+    "key": "map_tilemap",
+    "tilesets": ["screen_tileset"]
   }
 }

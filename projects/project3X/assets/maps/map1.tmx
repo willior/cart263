@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="18">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="19">
  <tileset firstgid="1" name="masterTileset" tilewidth="16" tileheight="16" tilecount="132" columns="11">
   <image source="../../../../../../gameDev/masterTileset.png" width="176" height="192"/>
   <tile id="116">
@@ -62,51 +62,15 @@
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
 </data>
  </layer>
- <objectgroup id="3" name="playerStart">
+ <objectgroup id="3" name="objects">
   <properties>
-   <property name="group" value="players"/>
-   <property name="texture" value="player_spritesheet"/>
+   <property name="tileset" value="map_tileset"/>
   </properties>
-  <object id="1" name="playerStart" type="playerStart" x="120" y="104">
-   <point/>
-  </object>
- </objectgroup>
- <objectgroup id="7" name="playerBack">
-  <object id="6" name="playerBack" type="playerBack" x="24" y="136">
-   <point/>
-  </object>
- </objectgroup>
- <objectgroup id="6" name="exitNext">
-  <object id="2" name="exitNext" type="exitNext" x="0" y="136">
-   <point/>
-  </object>
- </objectgroup>
- <objectgroup id="9" name="exitBack">
-  <object id="8" name="exitBack" type="exitBack" x="248.987" y="135.276">
-   <point/>
-  </object>
- </objectgroup>
- <objectgroup id="4" name="stuff">
-  <properties>
-   <property name="group" value="stuff"/>
-   <property name="message" value="stuffText1"/>
-  </properties>
-  <object id="13" name="books" type="books" x="80" y="176">
-   <point/>
-  </object>
- </objectgroup>
- <objectgroup id="5" name="cat">
-  <properties>
-   <property name="group" value="cats"/>
-   <property name="message" value="catText1"/>
-  </properties>
-  <object id="14" name="cat1" type="cat1" x="144" y="176">
-   <point/>
-  </object>
- </objectgroup>
- <objectgroup id="10" name="items">
-  <object id="16" name="hourglass" type="hourglass" x="16" y="176">
-   <point/>
+  <object id="18" name="player" type="player" x="112" y="96" width="16" height="16">
+   <properties>
+    <property name="group" value="players"/>
+    <property name="texture" value="player_spritesheet"/>
+   </properties>
   </object>
  </objectgroup>
 </map>
