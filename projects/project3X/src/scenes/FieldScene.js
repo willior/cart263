@@ -12,8 +12,8 @@ class FieldScene extends JSONLevelScene {
   }
 
   create() {
+    // iterates through tilemaps
     this.screen = this.add.tilemap(this.map_data.screen.key);
-
     let tileset_index = 0;
     this.tilesets = {};
     this.screen.tilesets.forEach(function (tileset) {
@@ -21,7 +21,7 @@ class FieldScene extends JSONLevelScene {
       this.tilesets[this.map_data.screen.tilesets[tileset_index]] = screen_tileset;
       tileset_index += 1;
     }, this);
-
+    // iterates through layers and adds collision
     this.layers = {};
     this.screen.layers.forEach(function (layer) {
       this.layers[layer.name] = this.screen.createStaticLayer(layer.name, this.tilesets[layer.properties.tileset]);
@@ -29,14 +29,18 @@ class FieldScene extends JSONLevelScene {
         this.screen.setCollisionByExclusion([-1], true, layer.name);
       }
     }, this);
+    // creates prefabs using the JSONLevelScene
     super.create();
     this.screen.objects.forEach(function (object_layer) {
       object_layer.objects.forEach(this.create_object, this);
     }, this);
   }
-
+  // object creation
   create_object (object) {
-    
+    let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
+    if (this.prefab_classes.hasOwnProperty(object.type)) {
+      let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
+    }
   }
 
 }
