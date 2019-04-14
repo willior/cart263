@@ -2,17 +2,17 @@
   "assets": {
     "map_tileset": {
       "type": "image",
-      "source": "assets/images/tileset.png"
+      "source": "assets/images/tileset2.png"
     },
     "player_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/player.png",
-      "frame_width": 16,
-      "frame_height": 16
+      "frame_width": 32,
+      "frame_height": 32
     },
     "level_tilemap": {
       "type": "tilemap",
-      "source": "assets/maps/town.json"
+      "source": "assets/maps/map1.json"
 
     }
   },
