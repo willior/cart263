@@ -5,7 +5,7 @@ class BootScene extends Phaser.Scene {
     });
     this.levels = {
       title: {key: 'TitleScene', path: 'assets/levels/title_screen.json'},
-      screenOne: {key: 'WorldScene', path: 'assets/levels/map1.json'}
+      screenOne: {key: 'WorldScene', path: 'assets/levels/town.json'}
     };
   }
   preload() {
