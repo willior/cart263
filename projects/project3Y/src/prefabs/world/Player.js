@@ -54,7 +54,7 @@ class Player extends Prefab {
   }
 
   update() {
-
+    console.log('player update');
 
     if (this.move_left.isDown && this.body.velocity.x <= 0) {
       console.log("moving left");
@@ -74,11 +74,6 @@ class Player extends Prefab {
       this.body.velocity.x = 0
     }
     if (this.move_up.isDown && this.body.velocity.y <= 0) {
-      if (cursors.up.isDown) {
-        console.log("up");
-      }
-
-
       console.log("moving up");
       this.body.velocity.y = -this.walking_speed;
       if (this.body.velocity.x === 0) {
@@ -95,10 +90,10 @@ class Player extends Prefab {
     else {
       this.body.velocity.y = 0
     }
-    if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
-      this.anims.stop();
-      this.setFrame(this.stopped_frames[this.body.facing]);
-    }
+    // if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
+    //   this.anims.stop();
+    //   this.setFrame(this.stopped_frames[this.body.facing]);
+    // }
   }
 }
 

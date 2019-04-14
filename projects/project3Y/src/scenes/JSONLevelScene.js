@@ -25,7 +25,10 @@ class JSONLevelScene extends Phaser.Scene {
     }
   }
   update() {
+
     for (let prefab_name in this.prefabs) {
+      console.log('updating');
+      console.log(prefab_name);
       this.prefabs[prefab_name].update();
     }
   }
