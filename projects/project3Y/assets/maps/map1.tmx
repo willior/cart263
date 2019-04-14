@@ -47,7 +47,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="buildings" width="20" height="15">
+ <layer name="blocked" width="20" height="15">
   <properties>
    <property name="collision" type="bool" value="true"/>
    <property name="tileset" value="map_tileset"/>

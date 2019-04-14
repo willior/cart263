@@ -14,7 +14,12 @@ let config = {
   type: Phaser.AUTO,
   width: 640,
   height: 480,
-  // scaleMode: Phaser.ScalesModes.DEFAULT
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: {y: 0}
+    }
+  }
 };
 
 let game = new Phaser.Game(config);
