@@ -21,7 +21,6 @@ class TitleScene extends JSONLevelScene {
   start_game() {
     this.scene.start('BootScene', {scene: 'screenOne'});
   }
-
 }
 
 export default TitleScene;

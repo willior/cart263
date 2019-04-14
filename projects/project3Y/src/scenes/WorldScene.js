@@ -35,17 +35,14 @@ class WorldScene extends JSONLevelScene {
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
     }, this);
-    }
+  }
 
   create_object (object) {
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
-      console.log("creating object");
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
-      console.log(object);
     }
   }
-
 }
 
 export default WorldScene;
