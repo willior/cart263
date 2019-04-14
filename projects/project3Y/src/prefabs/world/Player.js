@@ -5,8 +5,7 @@ class Player extends Prefab {
     super(scene, name, position, properties);
 
     this.walking_speed = +properties.walking_speed;
-
-    this.scene.physics.add.existing(this);
+    
     this.body.collideWorldBounds = true;
 
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
