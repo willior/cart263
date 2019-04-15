@@ -15,7 +15,7 @@
     "ArrowRight": {
       "callback": "player.change_movement",
       "args": ["right", true]
-    },
+    }
   },
 
   "keyup": {

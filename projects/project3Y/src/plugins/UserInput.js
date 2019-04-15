@@ -26,7 +26,7 @@ class UserInput {
         if (callback_data[0] === 'scene') {
           context = this.scene;
         } else {
-          context = this.scene.prefabs[callback_data[0]];
+          context = this.scene.sprites[callback_data[0]];
         }
         let method = context[callback_data[1]];
         method.apply(context, user_input.args);
