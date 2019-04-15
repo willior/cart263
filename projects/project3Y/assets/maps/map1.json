@@ -88,6 +88,29 @@
                  "width":32,
                  "x":288,
                  "y":224
+                }, 
+                {
+                 "height":32,
+                 "id":5,
+                 "name":"cat1",
+                 "properties":
+                    {
+                     "group":"cats",
+                     "message":"cat1_message",
+                     "texture":"cat_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"cat",
+                 "visible":true,
+                 "width":32,
+                 "x":576,
+                 "y":288
                 }],
          "opacity":1,
          "properties":
@@ -103,7 +126,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":5,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
