@@ -59,13 +59,13 @@ class WorldScene extends JSONLevelScene {
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
     }
   }
-end_talk() {
-  console.log('destorying message box');
-  this.current_message_box.destroy();
-  console.log('resetting input');
-  this.user_input.set_input(this.user_inputs.world_user_input);
-  console.log('input reset');
-}
+  end_talk() {
+    console.log('destorying message box');
+    this.current_message_box.destroy();
+    console.log('resetting input');
+    this.user_input.set_input(this.user_inputs.world_user_input);
+    console.log('input reset');
+  }
 
 }
 
