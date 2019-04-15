@@ -18,7 +18,8 @@ class WorldScene extends JSONLevelScene {
       cat: Cat.prototype.constructor,
       npc: NPC.prototype.constructor
     }
-    this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
+    // creating object const to hold message box text style
+    // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
   }
 
   preload() {
@@ -58,6 +59,14 @@ class WorldScene extends JSONLevelScene {
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
     }
   }
+end_talk() {
+  console.log('destorying message box');
+  this.current_message_box.destroy();
+  console.log('resetting input');
+  this.user_input.set_input(this.user_inputs.world_user_input);
+  console.log('input reset');
+}
+
 }
 
 export default WorldScene;
