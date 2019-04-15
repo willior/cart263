@@ -86,6 +86,38 @@
                  "width":32,
                  "x":512,
                  "y":160
+                }, 
+                {
+                 "height":32,
+                 "id":2,
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"map2"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":32,
+                 "x":288,
+                 "y":224
+                }, 
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":512,
+                 "y":192
                 }],
          "opacity":1,
          "properties":
@@ -101,7 +133,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":2,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

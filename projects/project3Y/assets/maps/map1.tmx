@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="5">
  <tileset firstgid="1" name="map_tileset" tilewidth="32" tileheight="32" tilecount="140" columns="20">
   <image source="../images/tileset2.png" width="640" height="224"/>
  </tileset>
@@ -81,5 +81,12 @@
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
+  <object id="2" name="door" type="door" x="288" y="224" width="32" height="32">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="map2"/>
+   </properties>
+  </object>
+  <object id="3" x="512" y="192"/>
  </objectgroup>
 </map>

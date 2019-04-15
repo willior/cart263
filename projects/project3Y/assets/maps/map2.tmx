@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="5">
+ <tileset firstgid="1" name="map_tileset" tilewidth="32" tileheight="32" tilecount="140" columns="20">
+  <image source="../images/tileset2.png" width="640" height="224"/>
+ </tileset>
+ <layer name="background" width="20" height="15">
+  <properties>
+   <property name="tileset" value="map_tileset"/>
+  </properties>
+  <data encoding="csv">
+121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,
+121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,
+121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,7,3,3,3,3,101,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,3,4,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,3,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,3,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,3,1,1,1,121,121,121,121,121,121,121,121,121,121,121,121,
+121,121,1,1,3,1,1,1,121,121,121,121,121,121,121,121,121,121,121,121,
+121,121,1,1,3,1,1,1,121,121,121,121,121,121,121,121,121,121,121,121,
+121,121,1,1,3,1,1,1,121,121,121,121,121,121,121,121,121,121,121,121
+</data>
+ </layer>
+ <layer name="blocked" width="20" height="15">
+  <properties>
+   <property name="collision" type="bool" value="true"/>
+   <property name="tileset" value="map_tileset"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,15,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="objects">
+  <properties>
+   <property name="tileset" value="map_tileset"/>
+  </properties>
+  <object id="1" name="player" type="player" x="256" y="224" width="32" height="32">
+   <properties>
+    <property name="group" value="players"/>
+    <property name="texture" value="player_spritesheet"/>
+    <property name="walking_speed" value="200"/>
+   </properties>
+  </object>
+  <object id="3" x="288" y="224" width="32" height="32"/>
+  <object id="4" name="door" type="door" x="496" y="-112">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="map1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

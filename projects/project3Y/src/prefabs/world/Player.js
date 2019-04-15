@@ -28,7 +28,7 @@ class Player extends Prefab {
       this.scene.anims.create({
         key: 'walking_down',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [13, 14, 15, 16, 17, 18]}),
-        frameRate: 8,
+        frameRate: 16,
         repeat: -1
       });
     }
@@ -37,7 +37,7 @@ class Player extends Prefab {
       this.scene.anims.create({
         key: 'walking_up',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [18, 17, 16, 15, 14, 13]}),
-        frameRate: 8,
+        frameRate: 16,
         repeat: -1
       });
     }
@@ -46,7 +46,7 @@ class Player extends Prefab {
       this.scene.anims.create({
         key: 'walking_right',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [7, 8, 9, 10, 11, 12]}),
-        frameRate: 8,
+        frameRate: 16,
         repeat: -1
       });
     }
@@ -55,7 +55,7 @@ class Player extends Prefab {
       this.scene.anims.create({
         key: 'walking_left',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [1, 2, 3, 4, 5, 6]}),
-        frameRate: 8,
+        frameRate: 16,
         repeat: -1
       });
     }
