@@ -10,7 +10,7 @@ class UserInput {
     this.scene.input.keyboard.removeAllListeners('keyup');
 
     this.scene.input.keyboard.on('keydown', this.process_input, this);
-    this.scene.input.keyboard.on('keyup'), this.process_input, this);
+    this.scene.input.keyboard.on('keyup', this.process_input, this);
 
     this.user_inputs = user_input_data;
 
