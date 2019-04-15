@@ -18,21 +18,23 @@
     },
     "books_image": {
       "type": "image",
-      "source": "assets/images/books.png",
-      "frame_width": 32,
-      "frame_height": 32
+      "source": "assets/images/books.png"
+    },
+    "message_box_image": {
+      "type": "image",
+      "source": "assets/images/message_box.png"
     },
     "1B_level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map1B.json"
-
     }
   },
   "groups": [
     "players",
     "doors",
     "returns",
-    "npcs"
+    "npcs",
+    "hud"
   ],
   "map": {
     "key": "1B_level_tilemap",

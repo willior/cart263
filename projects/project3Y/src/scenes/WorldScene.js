@@ -18,7 +18,7 @@ class WorldScene extends JSONLevelScene {
       cat: Cat.prototype.constructor,
       npc: NPC.prototype.constructor
     }
-    this.TEXT_STYLE = {font: "14px LCD", fill: "#FFFFFF"};
+    this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
   }
 
   preload() {

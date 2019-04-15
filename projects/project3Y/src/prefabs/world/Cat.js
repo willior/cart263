@@ -1,4 +1,5 @@
 import Prefab from '../Prefab';
+import MessageBox from '../HUD/MessageBox';
 
 class Cat extends Prefab {
   constructor(scene, name, position, properties) {
@@ -7,6 +8,8 @@ class Cat extends Prefab {
     this.message = this.scene.cache.text.get(properties.message);
 
     this.body.immovable = true;
+
+    this.MESSAGE_BOX_POSITION = {x: 0, y: 360};
 
     this.scene.physics.add.collider(this, this.scene.groups.players, this.talk, null, this);
 
@@ -22,7 +25,7 @@ class Cat extends Prefab {
 
   talk(cat, player) {
     player.stop();
-    console.log(this.message);
+    this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
   }
 
   update() {
