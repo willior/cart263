@@ -2,18 +2,19 @@ import JSONLevelScene from './JSONLevelScene';
 import Prefab from '../prefabs/Prefab';
 import TextPrefab from '../prefabs/TextPrefab';
 import Player from '../prefabs/world/Player';
+import Door from '../prefabs/world/Door';
 
 class WorldScene extends JSONLevelScene {
   constructor() {
     super('WorldScene');
 
     this.prefab_classes = {
-      player: Player.prototype.constructor
+      player: Player.prototype.constructor,
+      door: Door.prototype.constructor
     }
   }
 
   create() {
-    console.log('world class creation');
     this.map = this.add.tilemap(this.level_data.map.key);
     let tileset_index = 0;
     this.tilesets = {};

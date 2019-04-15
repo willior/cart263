@@ -3,19 +3,9 @@ import Prefab from '../Prefab';
 class Player extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
-
     this.walking_speed = +properties.walking_speed;
-
     this.body.collideWorldBounds = true;
-
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
-
-    // this.body.velocity.x = -this.walking_speed;
-
-    // this.move_left = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-    // this.move_right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-    // this.move_up = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
-    // this.move_down = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
     this.moving = {
       left: false,
@@ -23,7 +13,6 @@ class Player extends Prefab {
       up: false,
       down: false
     };
-
     if (!this.scene.anims.anims.has('walking_down')) {
       this.scene.anims.create({
         key: 'walking_down',
@@ -32,7 +21,6 @@ class Player extends Prefab {
         repeat: -1
       });
     }
-
     if (!this.scene.anims.anims.has('walking_up')) {
       this.scene.anims.create({
         key: 'walking_up',
@@ -41,7 +29,6 @@ class Player extends Prefab {
         repeat: -1
       });
     }
-
     if (!this.scene.anims.anims.has('walking_right')) {
       this.scene.anims.create({
         key: 'walking_right',
@@ -50,7 +37,6 @@ class Player extends Prefab {
         repeat: -1
       });
     }
-
     if (!this.scene.anims.anims.has('walking_left')) {
       this.scene.anims.create({
         key: 'walking_left',
@@ -104,10 +90,8 @@ class Player extends Prefab {
       this.setFrame(this.stopped_frames[this.body.facing - 10]);
     }
   }
-
   change_movement(direction, move) {
     this.moving[direction] = move;
-
   }
 }
 

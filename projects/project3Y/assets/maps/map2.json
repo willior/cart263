@@ -71,9 +71,19 @@
                 {
                  "height":32,
                  "id":3,
-                 "name":"",
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"map2"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
                  "rotation":0,
-                 "type":"",
+                 "type":"door",
                  "visible":true,
                  "width":32,
                  "x":288,

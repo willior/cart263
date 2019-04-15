@@ -87,6 +87,5 @@
     <property name="next_level" value="map2"/>
    </properties>
   </object>
-  <object id="3" x="512" y="192"/>
  </objectgroup>
 </map>

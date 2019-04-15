@@ -59,7 +59,12 @@
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
-  <object id="3" x="288" y="224" width="32" height="32"/>
+  <object id="3" name="door" type="door" x="288" y="224" width="32" height="32">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="map2"/>
+   </properties>
+  </object>
   <object id="4" name="door" type="door" x="496" y="-112">
    <properties>
     <property name="group" value="doors"/>
