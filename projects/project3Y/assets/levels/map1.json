@@ -10,7 +10,7 @@
       "frame_width": 32,
       "frame_height": 32
     },
-    "level_tilemap": {
+    "1_level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map1.json"
 
@@ -21,7 +21,7 @@
     "doors"
   ],
   "map": {
-    "key": "level_tilemap",
+    "key": "1_level_tilemap",
     "tilesets": ["map_tileset"]
   },
   "user_input": {
