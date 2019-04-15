@@ -14,12 +14,12 @@ class WorldScene extends JSONLevelScene {
       player: Player.prototype.constructor,
       door: Door.prototype.constructor,
       return: Return.prototype.constructor,
-      
+      npc: NPC.prototype.constructor
     }
   }
 
   preload() {
-    for (let npc_message_name in this.level_data.npce_messages) {
+    for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
     }
   }

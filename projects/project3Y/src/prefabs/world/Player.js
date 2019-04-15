@@ -89,6 +89,15 @@ class Player extends Prefab {
   change_movement(direction, move) {
     this.moving[direction] = move;
   }
+
+  stop () {
+    this.moving = {
+      left: false,
+      right: false,
+      up: false,
+      down: false
+    };
+  }
 }
 
 export default Player;

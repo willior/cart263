@@ -12,10 +12,10 @@ class NPC extends Prefab {
        this.talk, null, this);
   }
 
-  talk() {
-    
+  talk(npc, player) {
+    player.stop();
+    console.log(this.message);
   }
-
 }
 
 export default NPC;

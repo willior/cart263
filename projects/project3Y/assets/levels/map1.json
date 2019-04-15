@@ -10,16 +10,28 @@
       "frame_width": 32,
       "frame_height": 32
     },
+    "cat_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/cat.png",
+      "frame_width": 32,
+      "frame_height": 32
+    },
+    "books_image": {
+      "type": "image",
+      "source": "assets/images/books.png",
+      "frame_width": 32,
+      "frame_height": 32
+    },
     "1_level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map1.json"
-
     }
   },
   "groups": [
     "players",
     "doors",
-    "returns"
+    "returns",
+    "npcs"
   ],
   "map": {
     "key": "1_level_tilemap",
