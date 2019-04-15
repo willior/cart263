@@ -12,6 +12,10 @@ class BootScene extends Phaser.Scene {
         key: 'WorldScene',
         path: 'assets/levels/map1.json'
       },
+      screenOneB: {
+        key: 'WorldScene',
+        path: 'assets/levels/map1B.json'
+      },
       screenTwo: {
         key: 'WorldScene',
         path: 'assets/levels/map2.json'
