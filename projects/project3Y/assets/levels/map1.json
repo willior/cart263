@@ -28,5 +28,9 @@
   "user_input": {
     "key": "1_map_user_input",
     "path": "assets/user_inputs/world_map_user_input.json"
+  },
+  "npc_messages": {
+    "cat1_message": "assets/npc_messages/cat1_message.txt",
+    "books_message": "assets/npc_messages/books_message.txt"
   }
 }

@@ -95,7 +95,7 @@
                  "name":"cat1",
                  "properties":
                     {
-                     "group":"cats",
+                     "group":"npcs",
                      "message":"cat1_message",
                      "texture":"cat_spritesheet"
                     },
@@ -106,10 +106,33 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"cat",
+                 "type":"npc",
                  "visible":true,
                  "width":32,
                  "x":576,
+                 "y":288
+                }, 
+                {
+                 "height":32,
+                 "id":8,
+                 "name":"books",
+                 "properties":
+                    {
+                     "group":"npcs",
+                     "message":"books_message",
+                     "texture":"books_image"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":32,
+                 "x":446,
                  "y":288
                 }],
          "opacity":1,
@@ -126,7 +149,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":6,
+ "nextobjectid":9,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
