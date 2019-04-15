@@ -47,7 +47,7 @@
          "objects":[
                 {
                  "height":32,
-                 "id":1,
+                 "id":5,
                  "name":"player",
                  "properties":
                     {
@@ -70,7 +70,7 @@
                 }, 
                 {
                  "height":32,
-                 "id":2,
+                 "id":6,
                  "name":"door",
                  "properties":
                     {
@@ -88,6 +88,52 @@
                  "width":32,
                  "x":288,
                  "y":224
+                }, 
+                {
+                 "height":32,
+                 "id":7,
+                 "name":"note",
+                 "properties":
+                    {
+                     "group":"npcs",
+                     "message":"note_message",
+                     "texture":"note_image"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":32,
+                 "x":576,
+                 "y":288
+                }, 
+                {
+                 "height":32,
+                 "id":8,
+                 "name":"books",
+                 "properties":
+                    {
+                     "group":"npcs",
+                     "message":"books_message",
+                     "texture":"books_image"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":32,
+                 "x":446,
+                 "y":288
                 }],
          "opacity":1,
          "properties":
@@ -103,7 +149,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":5,
+ "nextobjectid":9,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

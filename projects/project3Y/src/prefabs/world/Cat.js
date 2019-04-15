@@ -13,7 +13,7 @@ class Cat extends Prefab {
     if (!this.scene.anims.anims.has('cat_tail')) {
       this.scene.anims.create({
         key: 'cat_tail',
-        frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 6]}),
+        frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
         frameRate: 8,
         repeat: -1
       });

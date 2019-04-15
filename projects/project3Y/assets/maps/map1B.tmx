@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="5">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="9">
  <tileset firstgid="1" name="map_tileset" tilewidth="32" tileheight="32" tilecount="140" columns="20">
   <image source="../images/tileset2.png" width="640" height="224"/>
  </tileset>
@@ -52,17 +52,31 @@
   <properties>
    <property name="tileset" value="map_tileset"/>
   </properties>
-  <object id="1" name="player" type="player" x="320" y="224" width="32" height="32">
+  <object id="5" name="player" type="player" x="320" y="224" width="32" height="32">
    <properties>
     <property name="group" value="players"/>
     <property name="texture" value="player_spritesheet"/>
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
-  <object id="2" name="door" type="door" x="288" y="224" width="32" height="32">
+  <object id="6" name="door" type="door" x="288" y="224" width="32" height="32">
    <properties>
     <property name="group" value="doors"/>
     <property name="next_level" value="screenTwo"/>
+   </properties>
+  </object>
+  <object id="7" name="note" type="npc" x="576" y="288" width="32" height="32">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message" value="note_message"/>
+    <property name="texture" value="note_image"/>
+   </properties>
+  </object>
+  <object id="8" name="books" type="npc" x="446" y="288" width="32" height="32">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message" value="books_message"/>
+    <property name="texture" value="books_image"/>
    </properties>
   </object>
  </objectgroup>
