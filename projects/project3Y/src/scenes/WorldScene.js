@@ -13,6 +13,7 @@ class WorldScene extends JSONLevelScene {
   }
 
   create() {
+    console.log('world class creation');
     this.map = this.add.tilemap(this.level_data.map.key);
     let tileset_index = 0;
     this.tilesets = {};

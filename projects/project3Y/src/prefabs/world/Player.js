@@ -10,6 +10,8 @@ class Player extends Prefab {
 
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
 
+    // this.body.velocity.x = -this.walking_speed;
+
     this.move_left = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
     this.move_right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
     this.move_up = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
@@ -45,7 +47,7 @@ class Player extends Prefab {
     if (!this.scene.anims.anims.has('walking_left')) {
       this.scene.anims.create({
         key: 'walking_left',
-        frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [13, 14, 15, 16, 17, 18]}),
+        frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [1, 2, 3, 4, 5, 6]}),
         frameRate: 8,
         repeat: -1
       });
@@ -90,10 +92,10 @@ class Player extends Prefab {
     else {
       this.body.velocity.y = 0
     }
-    // if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
-    //   this.anims.stop();
-    //   this.setFrame(this.stopped_frames[this.body.facing]);
-    // }
+    if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
+      this.anims.stop();
+      this.setFrame(this.stopped_frames[this.body.facing - 10]);
+    }
   }
 }
 
