@@ -4,6 +4,7 @@ import TextPrefab from '../prefabs/TextPrefab';
 import Player from '../prefabs/world/Player';
 import Door from '../prefabs/world/Door';
 import Return from '../prefabs/world/Return';
+import Cat from '../prefabs/world/Cat';
 import NPC from '../prefabs/world/NPC';
 
 class WorldScene extends JSONLevelScene {
@@ -14,6 +15,7 @@ class WorldScene extends JSONLevelScene {
       player: Player.prototype.constructor,
       door: Door.prototype.constructor,
       return: Return.prototype.constructor,
+      cat: Cat.prototype.constructor,
       npc: NPC.prototype.constructor
     }
   }

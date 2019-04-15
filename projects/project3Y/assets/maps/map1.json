@@ -95,7 +95,7 @@
                  "name":"cat1",
                  "properties":
                     {
-                     "group":"npcs",
+                     "group":"cats",
                      "message":"cat1_message",
                      "texture":"cat_spritesheet"
                     },
@@ -106,7 +106,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"npc",
+                 "type":"cat",
                  "visible":true,
                  "width":32,
                  "x":576,

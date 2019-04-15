@@ -65,9 +65,9 @@
     <property name="next_level" value="screenTwo"/>
    </properties>
   </object>
-  <object id="5" name="cat1" type="npc" x="576" y="288" width="32" height="32">
+  <object id="5" name="cat1" type="cat" x="576" y="288" width="32" height="32">
    <properties>
-    <property name="group" value="npcs"/>
+    <property name="group" value="cats"/>
     <property name="message" value="cat1_message"/>
     <property name="texture" value="cat_spritesheet"/>
    </properties>
