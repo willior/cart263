@@ -4,9 +4,18 @@ class BootScene extends Phaser.Scene {
       key: 'BootScene'
     });
     this.levels = {
-      title: {key: 'TitleScene', path: 'assets/levels/title_screen.json'},
-      screenOne: {key: 'WorldScene', path: 'assets/levels/map1.json'},
-      screenTwo: {key: 'WorldScene', path: 'assets/levels/map2.json'}
+      title: {
+        key: 'TitleScene',
+        path: 'assets/levels/title_screen.json'
+      },
+      screenOne: {
+        key: 'WorldScene',
+        path: 'assets/levels/map1.json'
+      },
+      screenTwo: {
+        key: 'WorldScene',
+        path: 'assets/levels/map2.json'
+      }
     };
   }
   preload() {
@@ -18,8 +27,11 @@ class BootScene extends Phaser.Scene {
 
   create(data) {
     let level_data = this.cache.json.get(data.scene);
-    console.log(data);
-    this.scene.start('LoadingScene', {level_data: level_data, scene: this.levels[data.scene].key});
+    console.log(level_data);
+    this.scene.start('LoadingScene', {
+      level_data: level_data,
+      scene: this.levels[data.scene].key
+    });
   }
 }
 

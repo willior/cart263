@@ -8,7 +8,9 @@ class Door extends Prefab {
     this.scene.physics.add.collider(this, this.scene.groups.players, this.enter, null, this);
   }
   enter() {
-    this.scene.scene.start('BootScene', {scene: this.next_level});
+    this.scene.scene.start('BootScene', {
+      scene: this.next_level
+    });
   }
 }
 
