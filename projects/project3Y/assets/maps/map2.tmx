@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="5">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="8">
  <tileset firstgid="1" name="map_tileset" tilewidth="32" tileheight="32" tilecount="140" columns="20">
   <image source="../images/tileset2.png" width="640" height="224"/>
  </tileset>
@@ -16,7 +16,7 @@
 121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
 121,121,1,1,1,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
 121,121,1,1,7,3,3,3,3,101,0,0,0,0,0,0,0,0,0,0,
-121,121,1,1,3,4,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
+121,121,1,1,3,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
 121,121,1,1,3,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
 121,121,1,1,3,1,1,1,125,0,0,0,0,0,0,0,0,0,0,0,
 121,121,1,1,3,1,1,1,121,121,121,121,121,121,121,121,121,121,121,121,
@@ -59,16 +59,16 @@
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
-  <object id="3" name="door" type="door" x="288" y="224" width="32" height="32">
+  <object id="3" name="door" type="door" x="128" y="448" width="32" height="32">
    <properties>
     <property name="group" value="doors"/>
-    <property name="next_level" value="screenOne"/>
+    <property name="next_level" value="screenThree"/>
    </properties>
   </object>
-  <object id="4" name="door" type="door" x="496" y="-112">
+  <object id="5" name="return" type="return" x="288" y="224" width="32" height="32">
    <properties>
-    <property name="group" value="doors"/>
-    <property name="next_level" value="map1"/>
+    <property name="group" value="returns"/>
+    <property name="previous_level" value="screenOne"/>
    </properties>
   </object>
  </objectgroup>

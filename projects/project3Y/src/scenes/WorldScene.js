@@ -3,6 +3,7 @@ import Prefab from '../prefabs/Prefab';
 import TextPrefab from '../prefabs/TextPrefab';
 import Player from '../prefabs/world/Player';
 import Door from '../prefabs/world/Door';
+import Return from '../prefabs/world/Return';
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -10,7 +11,8 @@ class WorldScene extends JSONLevelScene {
 
     this.prefab_classes = {
       player: Player.prototype.constructor,
-      door: Door.prototype.constructor
+      door: Door.prototype.constructor,
+      return: Return.prototype.constructor
     }
   }
 

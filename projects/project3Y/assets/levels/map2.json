@@ -18,7 +18,8 @@
   },
   "groups": [
     "players",
-    "doors"
+    "doors",
+    "returns"
   ],
   "map": {
     "key": "2_level_tilemap",
