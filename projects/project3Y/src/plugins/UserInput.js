@@ -23,7 +23,7 @@ class UserInput {
       if (user_input) {
         let context = undefined;
         let callback_data = user_input.callback.split('.');
-        if (callback_data[0]) === 'scene') {
+        if (callback_data[0] === 'scene') {
           context = this.scene;
         } else {
           context = this.scene.prefabs[callback_data[0]];
