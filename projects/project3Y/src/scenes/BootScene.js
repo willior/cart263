@@ -32,54 +32,58 @@ class BootScene extends Phaser.Scene {
         key: 'WorldScene',
         path: 'assets/levels/map2B.json'
       },
-      screen3: {
+      act1: {
         key: 'WorldScene',
-        path: 'assets/levels/map3.json'
-      },
-      screen3B: {
-        key: 'WorldScene',
-        path: 'assets/levels/map3B.json'
-      },
-      screen4: {
-        key: 'WorldScene',
-        path: 'assets/levels/map4.json'
-      },
-      screen4b: {
-        key: 'WorldScene',
-        path: 'assets/levels/map4b.json'
-      },
-      screen5: {
-        key: 'WorldScene',
-        path: 'assets/levels/map5.json'
-      },
-      screen5b: {
-        key: 'WorldScene',
-        path: 'assets/levels/map5b.json'
-      },
-      screen6: {
-        key: 'WorldScene',
-        path: 'assets/levels/map6.json'
-      },
-      screen6b: {
-        key: 'WorldScene',
-        path: 'assets/levels/map6b.json'
-      },
-      screen7: {
-        key: 'WorldScene',
-        path: 'assets/levels/map7.json'
-      },
-      screen7b: {
-        key: 'WorldScene',
-        path: 'assets/levels/map7b.json'
-      },
-      screen8: {
-        key: 'WorldScene',
-        path: 'assets/levels/map8.json'
-      },
-      screen8b: {
-        key: 'WorldScene',
-        path: 'assets/levels/map8b.json'
-      },
+        path: 'assets/levels/mapMaster1.json'
+      }
+      // screen3: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map3.json'
+      // },
+      // screen3B: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map3B.json'
+      // },
+      // screen4: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map4.json'
+      // },
+      // screen4b: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map4b.json'
+      // },
+      // screen5: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map5.json'
+      // },
+      // screen5b: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map5b.json'
+      // },
+      // screen6: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map6.json'
+      // },
+      // screen6b: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map6b.json'
+      // },
+      // screen7: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map7.json'
+      // },
+      // screen7b: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map7b.json'
+      // },
+      // screen8: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map8.json'
+      // },
+      // screen8b: {
+      //   key: 'WorldScene',
+      //   path: 'assets/levels/map8b.json'
+      // },
     }
   }
   preload() {

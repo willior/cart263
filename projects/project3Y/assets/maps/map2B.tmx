@@ -62,7 +62,7 @@
   <object id="3" name="door" type="door" x="16" y="240" width="112" height="8">
    <properties>
     <property name="group" value="doors"/>
-    <property name="next_level" value="screen3"/>
+    <property name="next_level" value="act1"/>
    </properties>
   </object>
   <object id="5" name="return" type="return" x="160" y="112" width="8" height="16">
