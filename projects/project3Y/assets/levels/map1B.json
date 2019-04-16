@@ -16,13 +16,13 @@
       "frame_width": 16,
       "frame_height": 16
     },
-    "books_image": {
-      "type": "image",
-      "source": "assets/images/books.png"
-    },
     "message_box_image": {
       "type": "image",
       "source": "assets/images/message_box.png"
+    },
+    "books_image": {
+      "type": "image",
+      "source": "assets/images/books.png"
     },
     "1B_level_tilemap": {
       "type": "tilemap",
