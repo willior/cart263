@@ -46,6 +46,7 @@ class Player extends Prefab {
       });
     }
     this.stopped_frames = [0, 0, 0, 1, 7]
+
   }
 
   update() {

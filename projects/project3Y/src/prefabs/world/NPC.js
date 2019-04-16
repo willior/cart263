@@ -25,7 +25,6 @@ class NPC extends Prefab {
   onEvent() {
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
   }
-
 }
 
 export default NPC;

@@ -29,6 +29,7 @@ class WorldScene extends JSONLevelScene {
   }
 
   create() {
+
     this.map = this.add.tilemap(this.level_data.map.key);
     let tileset_index = 0;
     this.tilesets = {};
@@ -60,11 +61,8 @@ class WorldScene extends JSONLevelScene {
     }
   }
   end_talk() {
-    console.log('destorying message box');
     this.current_message_box.destroy();
-    console.log('resetting input');
     this.user_input.set_input(this.user_inputs.world_user_input);
-    console.log('input reset');
   }
 
 }

@@ -21,6 +21,7 @@ class JSONLevelScene extends Phaser.Scene {
     for (let sprite_name in this.level_data.sprites) {
       let sprite_data = this.level_data.sprites[sprite_name];
       let sprite = new this.prefab_classes[sprite_data.type](this, sprite_data.name, sprite_data.position, sprite_data.properties);
+      console.log(sprite);
     }
 
     this.user_inputs = {};
