@@ -14,6 +14,9 @@ let config = {
   type: Phaser.AUTO,
   width: 640,
   height: 640,
+  // scale: {
+  //   mode: Phaser.Scale.FIT
+  // },
   pixelArt: true,
   roundPixels: true,
   physics: {
