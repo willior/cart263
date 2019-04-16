@@ -29,6 +29,12 @@
     "1_level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map1.json"
+    },
+    "hourglass_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/hourglass.png",
+      "frame_width": 16,
+      "frame_height": 16
     }
   },
   "groups": [

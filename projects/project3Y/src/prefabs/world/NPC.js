@@ -14,15 +14,33 @@ class NPC extends Prefab {
     this.scene.physics.add.collider(this, this.scene.groups.players,
     this.talk, null, this);
 
-    // if (!this.scene.anims.anims.has('animation')) {
+    if (!this.scene.anims.anims.has('animationBooks')) {
       console.log(this.name);
       this.scene.anims.create({
-        key: 'animation',
+        key: 'animationBooks',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
         frameRate: 8,
         repeat: -1
       });
-    // }
+    }
+    if (!this.scene.anims.anims.has('animationNote') && this.name === 'note1') {
+      console.log(this.name);
+      this.scene.anims.create({
+        key: 'animationNote',
+        frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
+        frameRate: 8,
+        repeat: -1
+      });
+    }
+    if (!this.scene.anims.anims.has('animationSign') && this.name === 'sign1') {
+      console.log(this.name);
+      this.scene.anims.create({
+        key: 'animationSign',
+        frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
+        frameRate: 8,
+        repeat: -1
+      });
+    }
   }
 
   talk(npc, player) {
@@ -33,7 +51,13 @@ class NPC extends Prefab {
   }
   update() {
     if (this.body) {
-      this.anims.play('animation', true);
+      this.anims.play('animationBooks', true);
+    }
+    if (this.body) {
+      this.anims.play('animationNote', true);
+    }
+    if (this.body) {
+      this.anims.play('animationSign', true);
     }
   }
 }
