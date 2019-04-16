@@ -47,8 +47,8 @@ class Player extends Prefab {
     }
     this.stopped_frames = [0, 0, 0, 1, 7]
 
-    var camera1 = this.scene.cameras.main.setZoom(2.0);
-    camera1.startFollow(this);
+    // var camera1 = this.scene.cameras.main.setZoom(1.5);
+    // camera1.startFollow(this);
 
   }
 

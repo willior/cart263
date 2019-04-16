@@ -43,6 +43,6 @@
   },
   "initial_user_input": "world_user_input",
   "npc_messages": {
-    "cat1_message": "assets/npc_messages/cat2.txt"
+    "cat2_message": "assets/npc_messages/cat2.txt"
   }
 }

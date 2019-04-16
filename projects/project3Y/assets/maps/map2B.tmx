@@ -31,17 +31,17 @@
    <property name="tileset" value="map_tileset"/>
   </properties>
   <data encoding="csv">
-2,2,16,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
-2,16,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
-16,8,116,116,116,116,116,116,2,2,2,2,2,2,2,2,2,2,2,2,
-8,116,116,116,116,116,116,116,2,2,2,2,2,2,2,2,2,2,2,2,
+126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+3,4,116,116,116,116,116,116,2,2,2,2,2,2,2,2,2,2,2,2,
+4,116,116,116,116,116,116,116,2,2,2,2,2,2,2,2,2,2,2,2,
 116,116,81,86,86,86,86,86,2,2,2,2,2,2,2,2,2,2,2,2,
 116,81,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
 84,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
-84,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,
+84,0,0,0,7,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,
+84,0,0,0,0,4,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
 84,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
-84,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
-84,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+84,0,0,0,0,0,0,0,13,2,2,2,2,2,2,2,2,2,2,2,
 84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 84,0,0,0,0,0,0,0,81,86,86,86,86,86,86,86,86,86,86,86,
@@ -52,20 +52,20 @@
   <properties>
    <property name="tileset" value="map_tileset"/>
   </properties>
-  <object id="1" name="player" type="player" x="112" y="112" width="16" height="16">
+  <object id="1" name="player" type="player" x="64" y="208" width="16" height="16">
    <properties>
     <property name="group" value="players"/>
     <property name="texture" value="player_spritesheet"/>
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
-  <object id="3" name="door" type="door" x="64" y="232" width="16" height="8">
+  <object id="3" name="door" type="door" x="16" y="240" width="112" height="8">
    <properties>
     <property name="group" value="doors"/>
     <property name="next_level" value="screen3"/>
    </properties>
   </object>
-  <object id="5" name="return" type="return" x="152" y="112" width="8" height="16">
+  <object id="5" name="return" type="return" x="160" y="112" width="8" height="16">
    <properties>
     <property name="group" value="returns"/>
     <property name="previous_level" value="screen1B"/>

@@ -65,7 +65,7 @@
                  "type":"player",
                  "visible":true,
                  "width":16,
-                 "x":168,
+                 "x":160,
                  "y":112
                 }, 
                 {
@@ -86,7 +86,7 @@
                  "type":"door",
                  "visible":true,
                  "width":8,
-                 "x":144,
+                 "x":136,
                  "y":112
                 }, 
                 {
