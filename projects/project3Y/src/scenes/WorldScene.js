@@ -5,9 +5,11 @@ import Player from '../prefabs/world/Player';
 import Door from '../prefabs/world/Door';
 import Return from '../prefabs/world/Return';
 import Cat from '../prefabs/world/Cat';
-import Books from '../prefabs/world/Books';
-import Note from '../prefabs/world/Note';
 import Item from '../prefabs/world/Item';
+import NPC from '../prefabs/world/NPC';
+import Books from '../prefabs/world/NPCs/Books';
+import Note from '../prefabs/world/NPCs/Note';
+
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -19,9 +21,12 @@ class WorldScene extends JSONLevelScene {
       door: Door.prototype.constructor,
       return: Return.prototype.constructor,
       cat: Cat.prototype.constructor,
+      item: Item.prototype.constructor,
+
+      npc: NPC.prototype.constructor,
       books: Books.prototype.constructor,
-      note: Note.prototype.constructor,
-      item: Item.prototype.constructor
+      note: Note.prototype.constructor
+
     }
     // creating object const to hold message box text style
     // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
