@@ -35,6 +35,12 @@
       "source": "assets/images/hourglass.png",
       "frame_width": 16,
       "frame_height": 16
+    },
+    "specs_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/specs.png",
+      "frame_width": 16,
+      "frame_height": 16
     }
   },
   "groups": [

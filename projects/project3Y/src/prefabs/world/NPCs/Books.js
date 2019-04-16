@@ -12,7 +12,6 @@ class Books extends NPC {
       });
     }
   }
-
   update() {
     if (this.body) {
       this.anims.play('animationBooks', true);

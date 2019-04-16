@@ -43,24 +43,6 @@
         }, 
         {
          "draworder":"topdown",
-         "name":"items",
-         "objects":[],
-         "opacity":1,
-         "properties":
-            {
-             "tileset":"map_tileset"
-            },
-         "propertytypes":
-            {
-             "tileset":"string"
-            },
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
          "name":"objects",
          "objects":[
                 {
@@ -71,7 +53,7 @@
                     {
                      "group":"players",
                      "texture":"player_spritesheet",
-                     "walking_speed":"200"
+                     "walking_speed":"800"
                     },
                  "propertytypes":
                     {
@@ -214,7 +196,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"npc",
+                 "type":"sign",
                  "visible":true,
                  "width":16,
                  "x":624,
@@ -239,11 +221,36 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"item",
+                 "type":"hourglass",
                  "visible":true,
                  "width":0,
                  "x":792,
                  "y":1704
+                }, 
+                {
+                 "height":16,
+                 "id":24,
+                 "name":"specs",
+                 "properties":
+                    {
+                     "collected":false,
+                     "group":"items",
+                     "message":"specs_message",
+                     "texture":"specs_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "collected":"bool",
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"specs",
+                 "visible":true,
+                 "width":16,
+                 "x":368,
+                 "y":2224
                 }],
          "opacity":1,
          "properties":
@@ -259,7 +266,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":21,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
