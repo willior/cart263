@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" infinite="0" nextobjectid="10">
- <tileset firstgid="1" name="map_tileset" tilewidth="32" tileheight="32" tilecount="180" columns="20">
-  <image source="../images/tileset3.png" width="640" height="288"/>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextobjectid="10">
+ <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
+  <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
  <layer name="background" width="32" height="32">
   <properties>
@@ -86,27 +86,27 @@
   <properties>
    <property name="tileset" value="map_tileset"/>
   </properties>
-  <object id="1" name="player" type="player" x="512" y="32" width="32" height="32">
+  <object id="1" name="player" type="player" x="256" y="24" width="16" height="16">
    <properties>
     <property name="group" value="players"/>
     <property name="texture" value="player_spritesheet"/>
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
-  <object id="2" name="door" type="door" x="128" y="992" width="32" height="32">
+  <object id="2" name="door" type="door" x="64" y="504" width="16" height="8">
    <properties>
     <property name="group" value="doors"/>
     <property name="next_level" value="screen4"/>
    </properties>
   </object>
-  <object id="5" name="cat2" type="cat" x="928" y="864" width="32" height="32">
+  <object id="5" name="cat2" type="cat" x="464" y="432" width="16" height="16">
    <properties>
     <property name="group" value="cats"/>
     <property name="message" value="cat2_message"/>
     <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>
-  <object id="9" name="return" type="return" x="512" y="0" width="32" height="32">
+  <object id="9" name="return" type="return" x="256" y="0" width="16" height="8">
    <properties>
     <property name="group" value="returns"/>
     <property name="previous_level" value="screen2B"/>

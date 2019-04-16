@@ -46,7 +46,7 @@
          "name":"objects",
          "objects":[
                 {
-                 "height":32,
+                 "height":16,
                  "id":1,
                  "name":"player",
                  "properties":
@@ -64,12 +64,12 @@
                  "rotation":0,
                  "type":"player",
                  "visible":true,
-                 "width":32,
-                 "x":512,
-                 "y":160
+                 "width":16,
+                 "x":256,
+                 "y":80
                 }, 
                 {
-                 "height":32,
+                 "height":16,
                  "id":2,
                  "name":"door",
                  "properties":
@@ -85,12 +85,12 @@
                  "rotation":0,
                  "type":"door",
                  "visible":true,
-                 "width":32,
-                 "x":288,
-                 "y":224
+                 "width":8,
+                 "x":144,
+                 "y":112
                 }, 
                 {
-                 "height":32,
+                 "height":16,
                  "id":5,
                  "name":"cat1",
                  "properties":
@@ -108,12 +108,12 @@
                  "rotation":0,
                  "type":"cat",
                  "visible":true,
-                 "width":32,
-                 "x":576,
-                 "y":288
+                 "width":16,
+                 "x":288,
+                 "y":144
                 }, 
                 {
-                 "height":32,
+                 "height":16,
                  "id":8,
                  "name":"books",
                  "properties":
@@ -131,9 +131,9 @@
                  "rotation":0,
                  "type":"npc",
                  "visible":true,
-                 "width":32,
-                 "x":446,
-                 "y":288
+                 "width":16,
+                 "x":224,
+                 "y":144
                 }],
          "opacity":1,
          "properties":
@@ -153,22 +153,22 @@
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
- "tileheight":32,
+ "tileheight":16,
  "tilesets":[
         {
          "columns":20,
          "firstgid":1,
-         "image":"..\/images\/tileset3.png",
-         "imageheight":288,
-         "imagewidth":640,
+         "image":"..\/images\/tileset3s.png",
+         "imageheight":144,
+         "imagewidth":320,
          "margin":0,
          "name":"map_tileset",
          "spacing":0,
          "tilecount":180,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":16,
+         "tilewidth":16
         }],
- "tilewidth":32,
+ "tilewidth":16,
  "type":"map",
  "version":1,
  "width":20

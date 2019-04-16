@@ -7,8 +7,8 @@
     "player_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/player.png",
-      "frame_width": 32,
-      "frame_height": 32
+      "frame_width": 16,
+      "frame_height": 16
     },
     "2_level_tilemap": {
       "type": "tilemap",

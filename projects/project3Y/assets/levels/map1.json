@@ -2,19 +2,19 @@
   "assets": {
     "map_tileset": {
       "type": "image",
-      "source": "assets/images/tileset3.png"
+      "source": "assets/images/tileset3s.png"
     },
     "player_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/player.png",
-      "frame_width": 32,
-      "frame_height": 32
+      "frame_width": 16,
+      "frame_height": 16
     },
     "cat_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/cat.png",
-      "frame_width": 32,
-      "frame_height": 32
+      "frame_width": 16,
+      "frame_height": 16
     },
     "books_image": {
       "type": "image",

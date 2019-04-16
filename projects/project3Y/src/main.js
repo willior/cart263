@@ -12,14 +12,8 @@ let worldScene = new WorldScene();
 
 let config = {
   type: Phaser.AUTO,
-  // width: window.innerWidth,
-  // height: window.innerHeight,
-
-  scale: {
-    parent: 'phaser-example',
-    width: 1060,
-    height: 1060,
-  },
+  width: 640,
+  height: 640,
   pixelArt: true,
   roundPixels: true,
   physics: {
