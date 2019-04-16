@@ -54,6 +54,10 @@ class WorldScene extends JSONLevelScene {
         object_layer.objects.forEach(this.create_object, this);
     }, this);
 
+    this.map.items.forEach(function (object_layer) {
+        item_layer.objects.forEach(this.create_object, this);
+    }, this);
+
   }
 
   // resize (gameSize, baseSize, displaySize, resolution) {

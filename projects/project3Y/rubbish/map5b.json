@@ -1,0 +1,32 @@
+{
+  "assets": {
+    "map_tileset": {
+      "type": "image",
+      "source": "assets/images/tileset3s.png"
+    },
+    "player_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/player.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "5b_level_tilemap": {
+      "type": "tilemap",
+      "source": "assets/maps/map5b.json"
+    }
+  },
+  "groups": [
+    "players",
+    "doors",
+    "returns"
+  ],
+  "map": {
+    "key": "5b_level_tilemap",
+    "tilesets": ["map_tileset"]
+  },
+  "user_input": {
+    "world_user_input": "assets/user_inputs/world_map_user_input.json",
+    "talking_user_input": "assets/user_inputs/talking_user_input.json"
+  },
+  "initial_user_input": "world_user_input"
+}
