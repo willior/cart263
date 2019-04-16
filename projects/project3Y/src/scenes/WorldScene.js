@@ -6,6 +6,7 @@ import Door from '../prefabs/world/Door';
 import Return from '../prefabs/world/Return';
 import Cat from '../prefabs/world/Cat';
 import NPC from '../prefabs/world/NPC';
+import Item from '../prefabs/world/Item';
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -17,7 +18,8 @@ class WorldScene extends JSONLevelScene {
       door: Door.prototype.constructor,
       return: Return.prototype.constructor,
       cat: Cat.prototype.constructor,
-      npc: NPC.prototype.constructor
+      npc: NPC.prototype.constructor,
+      item: Item.prototype.constructor
     }
     // creating object const to hold message box text style
     // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
@@ -52,10 +54,6 @@ class WorldScene extends JSONLevelScene {
 
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
-    }, this);
-
-    this.map.items.forEach(function (object_layer) {
-        item_layer.objects.forEach(this.create_object, this);
     }, this);
 
   }

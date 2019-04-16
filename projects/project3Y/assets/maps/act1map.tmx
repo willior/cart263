@@ -422,13 +422,6 @@
   <properties>
    <property name="tileset" value="map_tileset"/>
   </properties>
-  <object id="12" name="hourglass" type="hourglass" x="792" y="1704">
-   <properties>
-    <property name="group" value="items"/>
-    <property name="message" value="hourglass_message"/>
-    <property name="texture" value="hourglass_spritesheet"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="objects">
   <properties>
@@ -479,6 +472,14 @@
     <property name="group" value="npcs"/>
     <property name="message" value="sign1_message"/>
     <property name="texture" value="sign1_spritesheet"/>
+   </properties>
+  </object>
+  <object id="12" name="hourglass" type="item" x="792" y="1704">
+   <properties>
+    <property name="collected" type="bool" value="false"/>
+    <property name="group" value="items"/>
+    <property name="message" value="hourglass_message"/>
+    <property name="texture" value="hourglass_spritesheet"/>
    </properties>
   </object>
  </objectgroup>
