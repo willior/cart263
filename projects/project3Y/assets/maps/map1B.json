@@ -75,7 +75,7 @@
                  "properties":
                     {
                      "group":"doors",
-                     "next_level":"screenTwo"
+                     "next_level":"screen2"
                     },
                  "propertytypes":
                     {

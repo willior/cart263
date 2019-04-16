@@ -19,7 +19,7 @@ class TitleScene extends JSONLevelScene {
   }
 
   start_game() {
-    this.scene.start('BootScene', {scene: 'screenOne'});
+    this.scene.start('BootScene', {scene: 'screen1'});
   }
 }
 
