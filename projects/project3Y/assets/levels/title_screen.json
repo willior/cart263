@@ -21,7 +21,7 @@
       "type": "text",
       "position": {"x": 20, "y": 100},
       "properties": {
-        "text": "ANCIENT ARTIFACTS",
+        "text": " ",
         "style": {"font": "58px LCD", "fill": "#000000"},
         "group": "texts"
       }
@@ -30,7 +30,7 @@
       "type": "text",
       "position": {"x": 150, "y": 200},
       "properties": {
-        "text": "a game by will graham-simpkins",
+        "text": "will graham-simpkins presents",
         "style": {"font": "18px LCD", "fill": "#ffffff"},
         "group": "texts"
       }

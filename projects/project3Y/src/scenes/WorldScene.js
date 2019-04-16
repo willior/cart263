@@ -12,6 +12,7 @@ class WorldScene extends JSONLevelScene {
     super('WorldScene');
 
     this.prefab_classes = {
+      text: TextPrefab.prototype.constructor,
       player: Player.prototype.constructor,
       door: Door.prototype.constructor,
       return: Return.prototype.constructor,
