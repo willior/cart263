@@ -12,8 +12,10 @@ let worldScene = new WorldScene();
 
 let config = {
   type: Phaser.AUTO,
-  width: 640,
-  height: 480,
+  width: window.innerWidth,
+  height: window.innerHeight,
+  pixelArt: true,
+  roundPixels: true,
   physics: {
     default: 'arcade',
     arcade: {

@@ -21,7 +21,6 @@ class JSONLevelScene extends Phaser.Scene {
     for (let sprite_name in this.level_data.sprites) {
       let sprite_data = this.level_data.sprites[sprite_name];
       let sprite = new this.prefab_classes[sprite_data.type](this, sprite_data.name, sprite_data.position, sprite_data.properties);
-      console.log(sprite);
     }
 
     this.user_inputs = {};
@@ -32,6 +31,7 @@ class JSONLevelScene extends Phaser.Scene {
     this.user_input = new UserInput(this);
     this.user_input_data = this.cache.json.get(this.level_data.initial_user_input);
     this.user_input.set_input(this.user_input_data);
+
   }
 
   update() {

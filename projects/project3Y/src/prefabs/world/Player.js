@@ -6,6 +6,8 @@ class Player extends Prefab {
     this.walking_speed = +properties.walking_speed;
     this.body.collideWorldBounds = true;
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
+    var camera = this.scene.cameras.main;
+    camera.startFollow(this);
 
     this.moving = {
       left: false,
