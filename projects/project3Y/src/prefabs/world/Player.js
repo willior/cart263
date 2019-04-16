@@ -7,7 +7,6 @@ class Player extends Prefab {
     this.body.collideWorldBounds = true;
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
     var camera = this.scene.cameras.main;
-    camera.startFollow(this);
 
     this.moving = {
       left: false,
@@ -48,6 +47,8 @@ class Player extends Prefab {
       });
     }
     this.stopped_frames = [0, 0, 0, 1, 7]
+
+        camera.startFollow(this);
 
   }
 
