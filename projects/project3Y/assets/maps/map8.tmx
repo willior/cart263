@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="32" tilewidth="16" tileheight="16" infinite="0" nextobjectid="12">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="32" tilewidth="16" tileheight="16" infinite="0" nextobjectid="13">
  <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
   <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
- <layer name="background" width="40" height="32" visible="0">
+ <layer name="background" width="40" height="32">
   <properties>
    <property name="tileset" value="map_tileset"/>
   </properties>
@@ -21,12 +21,12 @@
 1,1,1,1,136,1,1,1,137,1,1,1,1,1,138,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,136,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,139,1,1,140,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,17,1,139,1,1,1,1,1,1,1,1,1,1,136,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,1,1,1,1,9,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,1,1,1,1,1,1,1,140,1,1,1,1,1,1,1,1,1,140,1,
+1,1,1,1,1,9,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,8,1,140,1,1,1,1,1,1,1,1,1,140,1,
 1,1,1,1,1,1,1,1,1,136,1,1,1,1,1,1,1,1,139,1,1,1,1,1,1,1,136,137,1,1,1,1,1,1,1,1,141,1,136,1,
-1,1,1,1,1,1,1,137,1,1,1,1,1,1,1,1,1,1,1,1,15,1,1,1,1,1,1,1,140,1,138,1,1,139,1,1,1,1,137,1,
+1,1,1,1,1,1,1,137,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,140,1,138,1,1,139,1,1,1,1,137,1,
 1,1,1,16,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,139,141,138,1,
 22,22,22,8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,139,1,1,139,1,1,1,136,1,1,1,1,141,1,137,1,139,1,137,1,
-1,1,1,1,1,15,1,1,1,1,139,1,1,1,1,1,138,1,1,1,1,1,1,1,1,1,1,137,1,1,1,1,1,1,1,1,138,1,136,1,
+1,1,1,1,1,1,1,1,1,1,139,1,1,1,1,1,138,1,1,1,1,1,1,1,1,1,1,137,1,1,1,1,1,1,1,1,138,1,136,1,
 1,1,1,1,1,1,137,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,140,1,1,1,1,1,1,1,1,1,1,136,137,1,140,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,136,1,1,1,1,1,1,1,140,1,137,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,140,1,1,1,1,1,1,1,1,1,137,1,1,1,1,1,1,1,1,1,1,1,
@@ -102,7 +102,7 @@
   <object id="9" name="return" type="return" x="64" y="-8" width="16" height="8">
    <properties>
     <property name="group" value="returns"/>
-    <property name="previous_level" value="screen6B"/>
+    <property name="previous_level" value="screen7B"/>
    </properties>
   </object>
   <object id="10" name="cat4" type="cat" x="160" y="304" width="16" height="16">
@@ -117,6 +117,12 @@
     <property name="group" value="npcs"/>
     <property name="message" value="sign1_message"/>
     <property name="texture" value="sign1_image"/>
+   </properties>
+  </object>
+  <object id="12" name="return" type="return" x="464" y="-8" width="16" height="8">
+   <properties>
+    <property name="group" value="returns"/>
+    <property name="previous_level" value="screen7C"/>
    </properties>
   </object>
  </objectgroup>

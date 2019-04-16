@@ -25,7 +25,7 @@
       "frame_height": 16
     },
     "sign_image": {
-      "type": "image",
+      "type": "spritesheet",
       "source": "assets/images/sign.png",
       "frame_width": 16,
       "frame_height": 16

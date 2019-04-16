@@ -11,7 +11,7 @@
       "frame_height": 16
     },
     "note_image": {
-      "type": "image",
+      "type": "spritesheet",
       "source": "assets/images/note.png",
       "frame_width": 16,
       "frame_height": 16
@@ -21,7 +21,7 @@
       "source": "assets/images/message_box.png"
     },
     "books_image": {
-      "type": "image",
+      "type": "spritesheet",
       "source": "assets/images/books.png"
     },
     "1B_level_tilemap": {
