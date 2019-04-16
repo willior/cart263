@@ -14,14 +14,15 @@ class NPC extends Prefab {
     this.scene.physics.add.collider(this, this.scene.groups.players,
     this.talk, null, this);
 
-    if (!this.scene.anims.anims.has('animation')) {
+    // if (!this.scene.anims.anims.has('animation')) {
+      console.log(this.name);
       this.scene.anims.create({
         key: 'animation',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
         frameRate: 8,
         repeat: -1
       });
-    }
+    // }
   }
 
   talk(npc, player) {
