@@ -5,7 +5,6 @@ class LoadingScene extends Phaser.Scene {
 
   init (data) {
     this.level_data = data.level_data;
-
     let loading_message = this.add.text(520, 400,  "LOADING...", {font: "20px LCD", fill: "#ffffff"});
   }
 
