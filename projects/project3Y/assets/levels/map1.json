@@ -17,8 +17,10 @@
       "frame_height": 16
     },
     "books_image": {
-      "type": "image",
-      "source": "assets/images/books.png"
+      "type": "spritesheet",
+      "source": "assets/images/books.png",
+      "frame_width": 16,
+      "frame_height": 16
     },
     "message_box_image": {
       "type": "image",
