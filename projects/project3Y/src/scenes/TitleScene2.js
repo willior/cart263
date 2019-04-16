@@ -12,12 +12,6 @@ class TitleScene2 extends JSONLevelScene {
     }
   }
 
-  // update() {
-  //   if (this.input.activePointer.isDown) {
-  //     this.start_game();
-  //   }
-  // }
-
   start_game() {
     this.scene.start('BootScene', {scene: 'screen2'});
   }

@@ -9,7 +9,7 @@ class Cat extends Prefab {
 
     this.body.immovable = true;
 
-    this.MESSAGE_BOX_POSITION = {x: 0, y: 360};
+    this.MESSAGE_BOX_POSITION = {x: 80, y: 360};
 
     this.scene.physics.add.collider(this, this.scene.groups.players, this.talk, null, this);
 

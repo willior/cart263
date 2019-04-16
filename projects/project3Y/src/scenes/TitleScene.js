@@ -11,13 +11,7 @@ class TitleScene extends JSONLevelScene {
       text: TextPrefab.prototype.constructor
     }
   }
-
-  // update() {
-  //   if (this.input.activePointer.isDown) {
-  //     this.start_game();
-  //   }
-  // }
-
+  
   start_game() {
     this.scene.start('BootScene', {scene: 'screen1'});
   }

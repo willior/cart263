@@ -19,7 +19,7 @@
     },
     "title_message": {
       "type": "text",
-      "position": {"x": 70, "y": 100},
+      "position": {"x": 100, "y": 100},
       "properties": {
         "text": "a game by",
         "style": {"font": "18px LCD", "fill": "#ffffff"},
