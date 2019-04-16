@@ -20,7 +20,7 @@
       "type": "image",
       "source": "assets/images/message_box.png"
     },
-    "3B_level_tilemap": {
+    "3b_level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/map3b.json"
     }

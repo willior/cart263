@@ -4,7 +4,7 @@ class Player extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
     this.walking_speed = +properties.walking_speed;
-    this.body.collideWorldBounds = true;
+    this.body.collideWorldBounds = false;
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
 
     this.moving = {
@@ -47,8 +47,8 @@ class Player extends Prefab {
     }
     this.stopped_frames = [0, 0, 0, 1, 7]
 
-    // var camera1 = this.scene.cameras.main.setZoom(1.5);
-    // camera1.startFollow(this);
+    var camera1 = this.scene.cameras.main.setZoom(1.5);
+    camera1.startFollow(this);
 
   }
 

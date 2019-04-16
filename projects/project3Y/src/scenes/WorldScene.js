@@ -72,17 +72,12 @@ class WorldScene extends JSONLevelScene {
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
-      console.log(object);
-      // camera.startFollow(gameObject);
-        // this.cameras.main.startFollow(this.object);
-
     }
   }
   end_talk() {
     this.current_message_box.destroy();
     this.user_input.set_input(this.user_inputs.world_user_input);
   }
-
 }
 
 export default WorldScene;

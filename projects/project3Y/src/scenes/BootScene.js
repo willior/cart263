@@ -72,6 +72,14 @@ class BootScene extends Phaser.Scene {
         key: 'WorldScene',
         path: 'assets/levels/map7b.json'
       },
+      screen8: {
+        key: 'WorldScene',
+        path: 'assets/levels/map8.json'
+      },
+      screen8b: {
+        key: 'WorldScene',
+        path: 'assets/levels/map8b.json'
+      },
     }
   }
   preload() {
