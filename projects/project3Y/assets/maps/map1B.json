@@ -106,7 +106,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"npc",
+                 "type":"note",
                  "visible":true,
                  "width":16,
                  "x":288,
@@ -129,7 +129,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"npc",
+                 "type":"books",
                  "visible":true,
                  "width":16,
                  "x":224,

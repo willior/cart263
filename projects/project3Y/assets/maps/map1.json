@@ -129,7 +129,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"npc",
+                 "type":"books",
                  "visible":true,
                  "width":16,
                  "x":224,

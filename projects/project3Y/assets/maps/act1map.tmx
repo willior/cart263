@@ -418,11 +418,6 @@
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
 </data>
  </layer>
- <objectgroup name="items">
-  <properties>
-   <property name="tileset" value="map_tileset"/>
-  </properties>
- </objectgroup>
  <objectgroup name="objects">
   <properties>
    <property name="tileset" value="map_tileset"/>
@@ -467,14 +462,14 @@
     <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>
-  <object id="20" name="sign1" type="npc" x="624" y="2336" width="16" height="16">
+  <object id="20" name="sign1" type="sign" x="624" y="2336" width="16" height="16">
    <properties>
     <property name="group" value="npcs"/>
     <property name="message" value="sign1_message"/>
     <property name="texture" value="sign1_spritesheet"/>
    </properties>
   </object>
-  <object id="12" name="hourglass" type="item" x="792" y="1704">
+  <object id="12" name="hourglass" type="hourglass" x="792" y="1704">
    <properties>
     <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>
