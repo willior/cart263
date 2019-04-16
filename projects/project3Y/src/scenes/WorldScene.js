@@ -51,22 +51,21 @@ class WorldScene extends JSONLevelScene {
 
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
-
-
     }, this);
 
   }
-  resize (gameSize, baseSize, displaySize, resolution) {
-    let width = gameSize.width;
-    let height = gameSize.height;
-    if (width === undefined) {
-      width = this.sys.game.config.width;
-    }
-    if (height === undefined) {
-      height = this.sys.game.config.height;
-    }
-    this.cameras.resize(width, height);
-  }
+
+  // resize (gameSize, baseSize, displaySize, resolution) {
+  //   let width = gameSize.width;
+  //   let height = gameSize.height;
+  //   if (width === undefined) {
+  //     width = this.sys.game.config.width;
+  //   }
+  //   if (height === undefined) {
+  //     height = this.sys.game.config.height;
+  //   }
+  //   this.cameras.resize(width, height);
+  // }
 
   create_object (object) {
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};

@@ -12,8 +12,14 @@ let worldScene = new WorldScene();
 
 let config = {
   type: Phaser.AUTO,
-  width: window.innerWidth,
-  height: window.innerHeight,
+  // width: window.innerWidth,
+  // height: window.innerHeight,
+
+  scale: {
+    parent: 'phaser-example',
+    width: 1060,
+    height: 1060,
+  },
   pixelArt: true,
   roundPixels: true,
   physics: {
@@ -25,9 +31,9 @@ let config = {
 };
 
 let game = new Phaser.Game(config);
-window.addEventListener('resize', (event) => {
-  window.game.resize(window.innerWidth, window.innerHeight);
-});
+// window.addEventListener('resize', (event) => {
+//   window.game.resize(window.innerWidth, window.innerHeight);
+// });
 
 game.scene.add('BootScene', bootScene);
 game.scene.add('LoadingScene', loadingScene);
