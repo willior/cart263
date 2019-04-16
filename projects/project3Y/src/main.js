@@ -25,6 +25,10 @@ let config = {
 };
 
 let game = new Phaser.Game(config);
+window.addEventListener('resize', (event) => {
+  window.game.resize(window.innerWidth, window.innerHeight);
+});
+
 game.scene.add('BootScene', bootScene);
 game.scene.add('LoadingScene', loadingScene);
 game.scene.add('TitleScene', titleScene);
