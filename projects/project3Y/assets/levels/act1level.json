@@ -59,7 +59,7 @@
       "source": "assets/images/sleep.png",
       "frame_width": 16,
       "frame_height": 16
-    },
+    }
 
   },
   "groups": [
@@ -85,8 +85,15 @@
     "cat2_message": "assets/npc_messages/cat2.txt",
     "cat3_message": "assets/npc_messages/cat3.txt",
     "cat4_message": "assets/npc_messages/cat4.txt",
+    "cat5_message": "assets/npc_messages/cat5.txt",
+    "cat6_message": "assets/npc_messages/cat6.txt",
+
     "sign1_message": "assets/npc_messages/sign1.txt",
+    "sleep_message": "assets/npc_messages/sleep.txt",
+
     "hourglass_message": "assets/npc_messages/hourglass.txt",
+    "specs_message": "assets/npc_messages/specs.txt",
+    "pipe_message": "assets/npc_messages/pipe.txt",
     "tome_message": "assets/npc_messages/tome.txt"
   }
 }

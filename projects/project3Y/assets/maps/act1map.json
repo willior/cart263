@@ -65,8 +65,8 @@
                  "type":"player",
                  "visible":true,
                  "width":16,
-                 "x":256,
-                 "y":24
+                 "x":496,
+                 "y":2304
                 }, 
                 {
                  "height":8,
@@ -299,6 +299,77 @@
                  "width":16,
                  "x":64,
                  "y":2368
+                }, 
+                {
+                 "height":16,
+                 "id":27,
+                 "name":"pipe",
+                 "properties":
+                    {
+                     "collected":false,
+                     "group":"items",
+                     "message":"pipe_message",
+                     "texture":"pipe_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "collected":"bool",
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"pipe",
+                 "visible":true,
+                 "width":16,
+                 "x":864,
+                 "y":2544
+                }, 
+                {
+                 "height":16,
+                 "id":28,
+                 "name":"cat6",
+                 "properties":
+                    {
+                     "group":"cats",
+                     "message":"cat6_message",
+                     "texture":"cat_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"cat",
+                 "visible":true,
+                 "width":16,
+                 "x":1152,
+                 "y":2080
+                }, 
+                {
+                 "height":16,
+                 "id":29,
+                 "name":"sleep",
+                 "properties":
+                    {
+                     "group":"npcs",
+                     "message":"sleep_message",
+                     "texture":"sleep_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"sleep",
+                 "visible":true,
+                 "width":16,
+                 "x":1152,
+                 "y":2736
                 }],
          "opacity":1,
          "properties":
@@ -314,7 +385,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":27,
+ "nextobjectid":30,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

@@ -13,6 +13,7 @@ import Cat from '../prefabs/world/Cat';
 import NPC from '../prefabs/world/NPC';
 import Books from '../prefabs/world/NPCs/Books';
 import Note from '../prefabs/world/NPCs/Note';
+import Sleep from '../prefabs/world/NPCs/Sleep';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
