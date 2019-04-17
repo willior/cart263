@@ -18,20 +18,19 @@ class Item extends Prefab {
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     player.stop();
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
-    this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
-    this.destroy();
+
+    console.log(item);
+
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');
     // for one second
     var closeTime = this.scene.time.delayedCall(1000, this.closable, [], this);
-    console.log('talking to NPC; cannot close textbox for 1 second');
   }
-
   closable(){
-    console.log('can close box');
     // after 1 second, reapplies inputs so the text box can be closed
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
+    this.destroy();
   }
 }
 

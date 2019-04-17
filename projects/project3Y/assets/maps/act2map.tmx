@@ -243,7 +243,7 @@
     <property name="texture" value="sign1_spritesheet"/>
    </properties>
   </object>
-  <object id="12" name="flute" type="flute" x="368" y="720" width="16" height="16">
+  <object id="12" name="flute" type="flute" x="240" y="296" width="16" height="16">
    <properties>
     <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>

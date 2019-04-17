@@ -28,9 +28,7 @@ class NPC extends Prefab {
     var closeTime = this.scene.time.delayedCall(1000, this.closable, [], this);
     console.log('talking to NPC; cannot close textbox for 1 second');
   }
-
   closable(){
-    console.log('can close box');
     // after 1 second, reapplies inputs so the text box can be closed
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
   }
