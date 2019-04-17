@@ -32,6 +32,8 @@ let config = {
 };
 
 let game = new Phaser.Game(config);
+
+
 // window.addEventListener('resize', (event) => {
 //   window.game.resize(window.innerWidth, window.innerHeight);
 // });

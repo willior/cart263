@@ -63,11 +63,17 @@ class WorldScene extends JSONLevelScene {
     for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
     }
+    this.load.scenePlugin({
+        key: 'AnimatedTiles',
+        url: 'node_modules/phaser-animated-tiles/dist/AnimatedTiles.js',
+        sceneKey: 'tileAnimate'
+    });
   }
 
   create() {
 
     this.map = this.add.tilemap(this.level_data.map.key);
+    console.log(this.map);
     let tileset_index = 0;
     this.tilesets = {};
     this.map.tilesets.forEach(function (tileset) {
@@ -89,6 +95,10 @@ class WorldScene extends JSONLevelScene {
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
     }, this);
+    console.log(this.level_data.map);
+    // this.sys.animatedTiles.init(this.level_data.map.key);
+
+
 
   }
 
@@ -111,6 +121,10 @@ class WorldScene extends JSONLevelScene {
     }
   }
   end_talk() {
+    var timedEvent = this.time.addEvent({ delay: 2000, callback: close_text, callbackScope: this });
+  }
+
+  close_text() {
     this.current_message_box.destroy();
     this.user_input.set_input(this.user_inputs.world_user_input);
   }
