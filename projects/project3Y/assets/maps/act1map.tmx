@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="100" height="200" tilewidth="16" tileheight="16" infinite="0" nextobjectid="25">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="100" height="200" tilewidth="16" tileheight="16" infinite="0" nextobjectid="27">
  <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
   <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
@@ -483,6 +483,21 @@
     <property name="group" value="items"/>
     <property name="message" value="specs_message"/>
     <property name="texture" value="specs_spritesheet"/>
+   </properties>
+  </object>
+  <object id="25" name="tome" type="tome" x="1152" y="2544" width="16" height="16">
+   <properties>
+    <property name="collected" type="bool" value="false"/>
+    <property name="group" value="items"/>
+    <property name="message" value="tome_message"/>
+    <property name="texture" value="tome_spritesheet"/>
+   </properties>
+  </object>
+  <object id="26" name="cat5" type="cat" x="64" y="2368" width="16" height="16">
+   <properties>
+    <property name="group" value="cats"/>
+    <property name="message" value="cat5_message"/>
+    <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>
  </objectgroup>

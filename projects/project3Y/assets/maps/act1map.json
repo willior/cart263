@@ -251,6 +251,54 @@
                  "width":16,
                  "x":368,
                  "y":2224
+                }, 
+                {
+                 "height":16,
+                 "id":25,
+                 "name":"tome",
+                 "properties":
+                    {
+                     "collected":false,
+                     "group":"items",
+                     "message":"tome_message",
+                     "texture":"tome_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "collected":"bool",
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"tome",
+                 "visible":true,
+                 "width":16,
+                 "x":1152,
+                 "y":2544
+                }, 
+                {
+                 "height":16,
+                 "id":26,
+                 "name":"cat5",
+                 "properties":
+                    {
+                     "group":"cats",
+                     "message":"cat5_message",
+                     "texture":"cat_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"cat",
+                 "visible":true,
+                 "width":16,
+                 "x":64,
+                 "y":2368
                 }],
          "opacity":1,
          "properties":
@@ -266,7 +314,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":25,
+ "nextobjectid":27,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

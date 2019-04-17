@@ -41,6 +41,12 @@
       "source": "assets/images/specs.png",
       "frame_width": 16,
       "frame_height": 16
+    },
+    "tome_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/tome.png",
+      "frame_width": 16,
+      "frame_height": 16
     }
   },
   "groups": [
@@ -67,6 +73,7 @@
     "cat3_message": "assets/npc_messages/cat3.txt",
     "cat4_message": "assets/npc_messages/cat4.txt",
     "sign1_message": "assets/npc_messages/sign1.txt",
-    "hourglass_message": "assets/npc_messages/hourglass.txt"
+    "hourglass_message": "assets/npc_messages/hourglass.txt",
+    "tome_message": "assets/npc_messages/tome.txt"
   }
 }
