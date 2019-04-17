@@ -91,6 +91,13 @@ class WorldScene extends JSONLevelScene {
 
     super.create();
 
+    this.events.on('collectFlute', () => {
+      this.gotFlute = true;
+      console.log(this.gotFlute);
+      console.log("got flute!!");
+
+    });
+
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
     }, this);

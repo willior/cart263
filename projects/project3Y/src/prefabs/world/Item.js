@@ -13,17 +13,14 @@ class Item extends Prefab {
     this.collect, null, this);
   }
 
-
-
   collect(item, player) {
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     player.stop();
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
-    console.log(this.name);
+
     if (this.name === 'flute') {
-      console.log('got flute');
-      var gotFlute = true;
-      console.log(gotFlute);
+      console.log('flute collected');
+      this.scene.events.emit('collectFlute');
     }
 
     // stops listening for key presses
