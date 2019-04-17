@@ -12,7 +12,7 @@ class MessageBox extends Prefab {
     {
       group: 'hud',
       text: properties.message,
-      style: {font: "10px LCD", fill: "#ffffff"}
+      style: {font: "11px LCD", fill: "#ffffff"}
       // creating the object holding message box text style
       // style: Object.create(this.scene.TEXT_STYLE)
     });

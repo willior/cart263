@@ -84,7 +84,7 @@
     "cat7_message": "assets/npc_messages/cat7.txt",
 
     "sign2_message": "assets/npc_messages/sign2.txt",
-    "sleep_message": "assets/npc_messages/sleep.txt",
+    "water_message": "assets/npc_messages/water.txt",
     "house1_message": "assets/npc_messages/house1.txt",
     "house2_message": "assets/npc_messages/house2.txt",
     "house3_message": "assets/npc_messages/house3.txt",

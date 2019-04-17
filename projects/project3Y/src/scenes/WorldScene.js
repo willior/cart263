@@ -14,12 +14,18 @@ import NPC from '../prefabs/world/NPC';
 import Books from '../prefabs/world/NPCs/Books';
 import Note from '../prefabs/world/NPCs/Note';
 import Sleep from '../prefabs/world/NPCs/Sleep';
+import House1 from '../prefabs/world/NPCs/House1';
+import House4 from '../prefabs/world/NPCs/House4';
+import Sign from '../prefabs/world/NPCs/Sign';
+import Water from '../prefabs/world/NPCs/Water';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
 import Specs from '../prefabs/world/Items/Specs';
 import Tome from '../prefabs/world/Items/Tome';
 import Pipe from '../prefabs/world/Items/Pipe';
+import Flute from '../prefabs/world/Items/Flute';
+import Cap from '../prefabs/world/Items/Cap';
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -36,12 +42,17 @@ class WorldScene extends JSONLevelScene {
       books: Books.prototype.constructor,
       note: Note.prototype.constructor,
       sleep: Sleep.prototype.constructor,
+      house1: House1.prototype.constructor,
+      house4: House4.prototype.constructor,
+      water: Water.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
       specs: Specs.prototype.constructor,
       tome: Tome.prototype.constructor,
-      pipe: Pipe.prototype.constructor
+      pipe: Pipe.prototype.constructor,
+      flute: Flute.prototype.constructor,
+      cap: Cap.prototype.constructor,
 
     }
     // creating object const to hold message box text style
