@@ -31,6 +31,13 @@ let config = {
   }
 };
 
+// var gotCap = false;
+// var gotFlute = false;
+// var gotHourglass = false;
+// var gotPipe = false;
+// var gotSpecs = false;
+// var gotTome = false;
+
 let game = new Phaser.Game(config);
 
 // window.addEventListener('resize', (event) => {
