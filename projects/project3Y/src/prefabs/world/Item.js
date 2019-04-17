@@ -12,14 +12,6 @@ class Item extends Prefab {
     this.scene.physics.add.collider(this, this.scene.groups.players,
     this.talk, null, this);
 
-    // if (!this.scene.anims.anims.has('animation')) {
-    //   this.scene.anims.create({
-    //     key: 'animation',
-    //     frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
-    //     frameRate: 8,
-    //     repeat: -1
-    //   });
-    // }
   }
 
   talk(item, player) {
@@ -28,12 +20,19 @@ class Item extends Prefab {
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
     this.destroy();
+    // stops listening for key presses
+    this.scene.input.keyboard.removeAllListeners('keydown');
+    this.scene.input.keyboard.removeAllListeners('keyup');
+    // for one second
+    var closeTime = this.scene.time.delayedCall(1000, this.closable, [], this);
+    console.log('talking to NPC; cannot close textbox for 1 second');
   }
-  // update() {
-  //   if (this.body) {
-  //     this.anims.play('animation', true);
-  //   }
-  // }
+
+  closable(){
+    console.log('can close box');
+    // after 1 second, reapplies inputs so the text box can be closed
+    this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
+  }
 }
 
 export default Item;

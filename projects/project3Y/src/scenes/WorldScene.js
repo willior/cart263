@@ -73,7 +73,6 @@ class WorldScene extends JSONLevelScene {
   create() {
 
     this.map = this.add.tilemap(this.level_data.map.key);
-    console.log(this.map);
     let tileset_index = 0;
     this.tilesets = {};
     this.map.tilesets.forEach(function (tileset) {
@@ -95,11 +94,10 @@ class WorldScene extends JSONLevelScene {
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
     }, this);
+
+
     console.log(this.level_data.map);
     // this.sys.animatedTiles.init(this.level_data.map.key);
-
-
-
   }
 
   // resize (gameSize, baseSize, displaySize, resolution) {
@@ -118,13 +116,10 @@ class WorldScene extends JSONLevelScene {
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
+      console.log(object);
     }
   }
   end_talk() {
-    var timedEvent = this.time.addEvent({ delay: 2000, callback: close_text, callbackScope: this });
-  }
-
-  close_text() {
     this.current_message_box.destroy();
     this.user_input.set_input(this.user_inputs.world_user_input);
   }
