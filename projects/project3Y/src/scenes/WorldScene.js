@@ -18,6 +18,7 @@ import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
 import Specs from '../prefabs/world/Items/Specs';
 import Tome from '../prefabs/world/Items/Tome';
+import Pipe from '../prefabs/world/Items/Pipe';
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -33,11 +34,13 @@ class WorldScene extends JSONLevelScene {
       npc: NPC.prototype.constructor,
       books: Books.prototype.constructor,
       note: Note.prototype.constructor,
+      sleep: Sleep.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
       specs: Specs.prototype.constructor,
       tome: Tome.prototype.constructor,
+      pipe: Pipe.prototype.constructor
 
     }
     // creating object const to hold message box text style

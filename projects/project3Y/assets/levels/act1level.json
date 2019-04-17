@@ -47,7 +47,20 @@
       "source": "assets/images/tome.png",
       "frame_width": 16,
       "frame_height": 16
-    }
+    },
+    "pipe_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/pipe.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "sleep_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/sleep.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+
   },
   "groups": [
     "players",
