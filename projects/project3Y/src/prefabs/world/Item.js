@@ -18,10 +18,13 @@ class Item extends Prefab {
     player.stop();
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
 
-    if (this.name === 'flute') {
-      console.log('flute collected');
-      this.scene.events.emit('collectFlute');
-    }
+    // emits an for item collection if the name matches
+    if (this.name === 'cap') {this.scene.events.emit('collectCap');}
+    if (this.name === 'flute') {this.scene.events.emit('collectFlute');}
+    if (this.name === 'hourglass') {this.scene.events.emit('collectHourglass');}
+    if (this.name === 'pipe') {this.scene.events.emit('collectPipe');}
+    if (this.name === 'specs') {this.scene.events.emit('collectSpecs');}
+    if (this.name === 'tome') {this.scene.events.emit('collectTome');}
 
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');

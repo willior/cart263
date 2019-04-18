@@ -103,23 +103,27 @@ class WorldScene extends JSONLevelScene {
         object_layer.objects.forEach(this.create_object, this);
     }, this);
 
-    this.events.on('collectFlute', () => {
-      this.fluteGot = true;
-    });
+    // event listeners for item collection
+    this.events.on('collectCap', () => {this.capGot = true;});
+    this.events.on('collectFlute', () => {this.fluteGot = true;});
+    this.events.on('collectHourglass', () => {this.hourglassGot = true;});
+    this.events.on('collectPipe', () => {this.pipeGot = true;});
+    this.events.on('collectSpecs', () => {this.specsGot = true;});
+    this.events.on('collectTome', () => {this.tomeGot = true;});
   }
 
   create_object (object) {
-    if (object.name === 'flute') {
-      if (this.fluteGot) {
-        return;
-      }
-      else if (!this.fluteGot) {
-      }
-    }
+    // skips object creation if collected
+    if ((object.name === 'cap')&&(this.capGot)) {return;}
+    if ((object.name === 'flute')&&(this.fluteGot)) {return;}
+    if ((object.name === 'hourglass')&&(this.hourglassGot)) {return;}
+    if ((object.name === 'pipe')&&(this.pipeGot)) {return;}
+    if ((object.name === 'specs')&&(this.specsGot)) {return;}
+    if ((object.name === 'tome') && (this.tomeGot)) {return;}
+
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
-      // console.log(object.name);
     }
   }
   end_talk() {
