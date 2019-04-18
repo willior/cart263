@@ -464,7 +464,6 @@
   </object>
   <object id="12" name="hourglass" type="hourglass" x="792" y="1704">
    <properties>
-    <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>
     <property name="message" value="hourglass_message"/>
     <property name="texture" value="hourglass_spritesheet"/>
@@ -472,7 +471,6 @@
   </object>
   <object id="24" name="specs" type="specs" x="368" y="2224" width="16" height="16">
    <properties>
-    <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>
     <property name="message" value="specs_message"/>
     <property name="texture" value="specs_spritesheet"/>
@@ -480,7 +478,6 @@
   </object>
   <object id="25" name="tome" type="tome" x="1152" y="2544" width="16" height="16">
    <properties>
-    <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>
     <property name="message" value="tome_message"/>
     <property name="texture" value="tome_spritesheet"/>
@@ -495,7 +492,6 @@
   </object>
   <object id="27" name="pipe" type="pipe" x="864" y="2544" width="16" height="16">
    <properties>
-    <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>
     <property name="message" value="pipe_message"/>
     <property name="texture" value="pipe_spritesheet"/>

@@ -185,14 +185,12 @@
                  "name":"hourglass",
                  "properties":
                     {
-                     "collected":false,
                      "group":"items",
                      "message":"hourglass_message",
                      "texture":"hourglass_spritesheet"
                     },
                  "propertytypes":
                     {
-                     "collected":"bool",
                      "group":"string",
                      "message":"string",
                      "texture":"string"
@@ -210,14 +208,12 @@
                  "name":"specs",
                  "properties":
                     {
-                     "collected":false,
                      "group":"items",
                      "message":"specs_message",
                      "texture":"specs_spritesheet"
                     },
                  "propertytypes":
                     {
-                     "collected":"bool",
                      "group":"string",
                      "message":"string",
                      "texture":"string"
@@ -235,14 +231,12 @@
                  "name":"tome",
                  "properties":
                     {
-                     "collected":false,
                      "group":"items",
                      "message":"tome_message",
                      "texture":"tome_spritesheet"
                     },
                  "propertytypes":
                     {
-                     "collected":"bool",
                      "group":"string",
                      "message":"string",
                      "texture":"string"
@@ -283,14 +277,12 @@
                  "name":"pipe",
                  "properties":
                     {
-                     "collected":false,
                      "group":"items",
                      "message":"pipe_message",
                      "texture":"pipe_spritesheet"
                     },
                  "propertytypes":
                     {
-                     "collected":"bool",
                      "group":"string",
                      "message":"string",
                      "texture":"string"
