@@ -35,7 +35,7 @@
 0,1,137,1,141,1,1,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,1,140,1,141,1,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,137,136,140,137,136,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,1,136,1,139,1,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,140,136,1,1,1,140,140,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,1,1,1,139,1,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,136,1,1,1,1,1,136,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,1,1,1,139,1,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,136,1,1,120,1,1,136,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,1,1,1,138,1,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,137,140,1,1,1,136,137,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,1,1,1,138,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,136,140,139,137,140,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,1,1,1,137,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -441,32 +441,11 @@
     <property name="next_level" value="act2"/>
    </properties>
   </object>
-  <object id="19" name="cat4" type="cat" x="560" y="2368" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat4_message"/>
-    <property name="texture" value="cat_spritesheet"/>
-   </properties>
-  </object>
-  <object id="11" name="cat3" type="cat" x="1008" y="1504" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat3_message"/>
-    <property name="texture" value="cat_spritesheet"/>
-   </properties>
-  </object>
-  <object id="5" name="cat2" type="cat" x="480" y="432" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat2_message"/>
-    <property name="texture" value="cat_spritesheet"/>
-   </properties>
-  </object>
-  <object id="20" name="sign" type="sign1" x="624" y="2336" width="16" height="16">
+  <object id="20" name="sign" type="sign" x="624" y="2336" width="16" height="16">
    <properties>
     <property name="group" value="npcs"/>
     <property name="message" value="sign1_message"/>
-    <property name="texture" value="sign1_spritesheet"/>
+    <property name="texture" value="sign_spritesheet"/>
    </properties>
   </object>
   <object id="12" name="hourglass" type="hourglass" x="792" y="1704">
@@ -493,26 +472,12 @@
     <property name="texture" value="tome_spritesheet"/>
    </properties>
   </object>
-  <object id="26" name="cat5" type="cat" x="64" y="2368" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat5_message"/>
-    <property name="texture" value="cat_spritesheet"/>
-   </properties>
-  </object>
   <object id="27" name="pipe" type="pipe" x="864" y="2544" width="16" height="16">
    <properties>
     <property name="collected" type="bool" value="false"/>
     <property name="group" value="items"/>
     <property name="message" value="pipe_message"/>
     <property name="texture" value="pipe_spritesheet"/>
-   </properties>
-  </object>
-  <object id="28" name="cat6" type="cat" x="1152" y="2080" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat6_message"/>
-    <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>
  </objectgroup>

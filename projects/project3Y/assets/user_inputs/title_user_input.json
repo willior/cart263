@@ -3,7 +3,6 @@
     "Enter": {
       "callback": "scene.start_game"
     },
-
     "ArrowUp": {
       "callback": "scene.start_game"
     },
