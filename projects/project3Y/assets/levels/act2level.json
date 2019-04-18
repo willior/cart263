@@ -20,9 +20,9 @@
       "type": "image",
       "source": "assets/images/message_box.png"
     },
-    "act2_level_tilemap": {
+    "act2b_level_tilemap": {
       "type": "tilemap",
-      "source": "assets/maps/act2map.json"
+      "source": "assets/maps/act2bmap.json"
     },
     "sign1_spritesheet": {
       "type": "spritesheet",
@@ -72,7 +72,7 @@
     "hud"
   ],
   "map": {
-    "key": "act2_level_tilemap",
+    "key": "act2b_level_tilemap",
     "tilesets": ["map_tileset"]
   },
   "user_input": {
