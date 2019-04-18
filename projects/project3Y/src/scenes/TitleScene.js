@@ -1,6 +1,6 @@
 import JSONLevelScene from './JSONLevelScene';
-import Prefab from '../prefabs/Prefab';
-import TextPrefab from '../prefabs/TextPrefab';
+import Prefab from '../prefabs/Prefab.js';
+import TextPrefab from '../prefabs/TextPrefab.js';
 
 class TitleScene extends JSONLevelScene {
   constructor() {
@@ -12,9 +12,17 @@ class TitleScene extends JSONLevelScene {
     }
   }
 
-  start_game() {
-    this.scene.start('BootScene', {scene: 'screen1'});
+  update() {
+    if (this.input.activePointer.isDown) {
+      this.start_game();
+    }
   }
+
+  start_game() {
+    console.log("starting game");
+    this.scene.start('BootScene', {scene: 'screenOne'});
+  }
+
 }
 
 export default TitleScene;

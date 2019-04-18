@@ -8,6 +8,8 @@
     "background",
     "texts"
   ],
+
+
   "sprites": {
     "background": {
       "type": "background",
@@ -16,28 +18,26 @@
         "texture": "background_image",
         "group": "background"
       }
+
     },
     "title_message": {
       "type": "text",
       "position": {"x": 20, "y": 100},
       "properties": {
-        "text": " ",
-        "style": {"font": "58px LCD", "fill": "#000000"},
+        "text": "ANCIENT ARTIFACTS",
+        "style": {"font": "60px Courier", "fill": "#ffffff"},
         "group": "texts"
       }
+
     },
     "start_message": {
       "type": "text",
       "position": {"x": 150, "y": 200},
       "properties": {
-        "text": "will graham-simpkins presents",
-        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "text": "a game by will graham-simpkins",
+        "style": {"font": "20px Courier", "fill": "#ffffff"},
         "group": "texts"
       }
     }
-  },
-  "user_input": {
-    "title_user_input": "assets/user_inputs/title_user_input.json"
-  },
-  "initial_user_input": "title_user_input"
+  }
 }

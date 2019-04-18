@@ -1,175 +1,302 @@
-{ "height":15,
+{ "height":16,
  "infinite":false,
  "layers":[
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1, 1, 1, 1, 1, 114, 113, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "height":15,
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1, 1, 1, 1, 1, 114, 113, 0, 0, 0, 0, 0, 0, 1, 115, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":16,
+         "id":1,
          "name":"background",
          "opacity":1,
-         "properties":
-            {
-             "tileset":"map_tileset"
-            },
-         "propertytypes":
-            {
-             "tileset":"string"
-            },
+         "properties":[
+                {
+                 "name":"tileset",
+                 "type":"string",
+                 "value":"map_tileset"
+                }],
          "type":"tilelayer",
          "visible":true,
-         "width":20,
+         "width":16,
          "x":0,
          "y":0
         }, 
         {
-         "data":[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 112, 112, 112, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 110, 111, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 108, 109, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-         "height":15,
+         "data":[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 112, 112, 112, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 110, 111, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 108, 109, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+         "height":16,
+         "id":2,
          "name":"blocked",
          "opacity":1,
-         "properties":
-            {
-             "collision":true,
-             "tileset":"map_tileset"
-            },
-         "propertytypes":
-            {
-             "collision":"bool",
-             "tileset":"string"
-            },
+         "properties":[
+                {
+                 "name":"collision",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"tileset",
+                 "type":"string",
+                 "value":"map_tileset"
+                }],
          "type":"tilelayer",
          "visible":true,
-         "width":20,
+         "width":16,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "name":"objects",
+         "id":3,
+         "name":"playerStart",
          "objects":[
                 {
-                 "height":16,
+                 "height":0,
                  "id":1,
-                 "name":"player",
-                 "properties":
-                    {
-                     "group":"players",
-                     "texture":"player_spritesheet",
-                     "walking_speed":"200"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "texture":"string",
-                     "walking_speed":"string"
-                    },
+                 "name":"playerStart",
+                 "point":true,
                  "rotation":0,
-                 "type":"player",
+                 "type":"playerStart",
                  "visible":true,
-                 "width":16,
-                 "x":256,
-                 "y":80
+                 "width":0,
+                 "x":120,
+                 "y":104
+                }],
+         "opacity":1,
+         "properties":[
+                {
+                 "name":"group",
+                 "type":"string",
+                 "value":"players"
                 }, 
                 {
-                 "height":16,
+                 "name":"texture",
+                 "type":"string",
+                 "value":"player_spritesheet"
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":7,
+         "name":"playerBack",
+         "objects":[
+                {
+                 "height":0,
+                 "id":6,
+                 "name":"playerBack",
+                 "point":true,
+                 "rotation":0,
+                 "type":"playerBack",
+                 "visible":true,
+                 "width":0,
+                 "x":24,
+                 "y":136
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"exitNext",
+         "objects":[
+                {
+                 "height":0,
                  "id":2,
-                 "name":"door",
-                 "properties":
-                    {
-                     "group":"doors",
-                     "next_level":"title2"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "next_level":"string"
-                    },
+                 "name":"exitNext",
+                 "point":true,
                  "rotation":0,
-                 "type":"door",
+                 "type":"exitNext",
                  "visible":true,
-                 "width":8,
-                 "x":136,
-                 "y":112
-                }, 
+                 "width":0,
+                 "x":0,
+                 "y":136
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":9,
+         "name":"exitBack",
+         "objects":[
                 {
-                 "height":16,
-                 "id":5,
-                 "name":"cat1",
-                 "properties":
-                    {
-                     "group":"cats",
-                     "message":"cat1_message",
-                     "texture":"cat_spritesheet"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "message":"string",
-                     "texture":"string"
-                    },
-                 "rotation":0,
-                 "type":"cat",
-                 "visible":true,
-                 "width":16,
-                 "x":288,
-                 "y":144
-                }, 
-                {
-                 "height":16,
+                 "height":0,
                  "id":8,
+                 "name":"exitBack",
+                 "point":true,
+                 "rotation":0,
+                 "type":"exitBack",
+                 "visible":true,
+                 "width":0,
+                 "x":248.987,
+                 "y":135.276
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"stuff",
+         "objects":[
+                {
+                 "height":0,
+                 "id":13,
                  "name":"books",
-                 "properties":
-                    {
-                     "group":"npcs",
-                     "message":"books_message",
-                     "texture":"books_image"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "message":"string",
-                     "texture":"string"
-                    },
+                 "point":true,
                  "rotation":0,
                  "type":"books",
                  "visible":true,
-                 "width":16,
-                 "x":224,
-                 "y":144
+                 "width":0,
+                 "x":80,
+                 "y":176
                 }],
          "opacity":1,
-         "properties":
-            {
-             "tileset":"map_tileset"
-            },
-         "propertytypes":
-            {
-             "tileset":"string"
-            },
+         "properties":[
+                {
+                 "name":"group",
+                 "type":"string",
+                 "value":"stuff"
+                }, 
+                {
+                 "name":"message",
+                 "type":"string",
+                 "value":"stuffText1"
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"cat",
+         "objects":[
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"cat1",
+                 "point":true,
+                 "rotation":0,
+                 "type":"cat1",
+                 "visible":true,
+                 "width":0,
+                 "x":144,
+                 "y":176
+                }],
+         "opacity":1,
+         "properties":[
+                {
+                 "name":"group",
+                 "type":"string",
+                 "value":"cats"
+                }, 
+                {
+                 "name":"message",
+                 "type":"string",
+                 "value":"catText1"
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":10,
+         "name":"items",
+         "objects":[
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"hourglass",
+                 "point":true,
+                 "rotation":0,
+                 "type":"hourglass",
+                 "visible":true,
+                 "width":0,
+                 "x":16,
+                 "y":176
+                }],
+         "opacity":1,
          "type":"objectgroup",
          "visible":true,
          "x":0,
          "y":0
         }],
- "nextobjectid":10,
+ "nextlayerid":11,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.1.5",
+ "tiledversion":"1.2.3",
  "tileheight":16,
  "tilesets":[
         {
-         "columns":20,
+         "columns":11,
          "firstgid":1,
-         "image":"..\/images\/tileset3s.png",
-         "imageheight":144,
-         "imagewidth":320,
+         "image":"..\/..\/..\/..\/..\/..\/gameDev\/masterTileset.png",
+         "imageheight":192,
+         "imagewidth":176,
          "margin":0,
-         "name":"map_tileset",
+         "name":"masterTileset",
          "spacing":0,
-         "tilecount":180,
+         "tilecount":132,
+         "tileheight":16,
+         "tiles":[
+                {
+                 "animation":[
+                        {
+                         "duration":400,
+                         "tileid":115
+                        }, 
+                        {
+                         "duration":400,
+                         "tileid":116
+                        }],
+                 "id":116
+                }],
+         "tilewidth":16
+        }, 
+        {
+         "columns":1,
+         "firstgid":133,
+         "image":"..\/..\/..\/..\/..\/..\/gameDev\/player.png",
+         "imageheight":32,
+         "imagewidth":16,
+         "margin":0,
+         "name":"player",
+         "spacing":0,
+         "tilecount":2,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":2,
+         "firstgid":135,
+         "image":"..\/..\/..\/project3\/assets\/images\/hourglass.png",
+         "imageheight":32,
+         "imagewidth":32,
+         "margin":0,
+         "name":"hourglass",
+         "spacing":0,
+         "tilecount":4,
          "tileheight":16,
          "tilewidth":16
         }],
  "tilewidth":16,
  "type":"map",
- "version":1,
- "width":20
+ "version":1.2,
+ "width":16
 }

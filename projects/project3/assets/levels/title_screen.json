@@ -1,0 +1,43 @@
+{
+  "assets": {
+    "background_image": {
+      "type": "image",
+      "source": "assets/images/background.png"}
+  },
+  "groups": [
+    "background",
+    "texts"
+  ],
+  "sprites": {
+    "background": {
+      "type": "background",
+      "position": {"x": 320, "y": 240},
+      "properties": {
+        "texture": "background_image",
+        "group": "background"
+      }
+    },
+    "title_message": {
+      "type": "text",
+      "position": {"x": 20, "y": 100},
+      "properties": {
+        "text": " ",
+        "style": {"font": "58px LCD", "fill": "#000000"},
+        "group": "texts"
+      }
+    },
+    "start_message": {
+      "type": "text",
+      "position": {"x": 150, "y": 200},
+      "properties": {
+        "text": "will graham-simpkins presents",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    }
+  },
+  "user_input": {
+    "title_user_input": "assets/user_inputs/title_user_input.json"
+  },
+  "initial_user_input": "title_user_input"
+}

@@ -5,7 +5,9 @@ class LoadingScene extends Phaser.Scene {
 
   init (data) {
     this.level_data = data.level_data;
-    let loading_message = this.add.text(460, 400,  "LOADING...", {font: "20px LCD", fill: "#ffffff"});
+
+    let loading_message = this.add.text(320, 240,  "LOADING", {font: "48px Courier", fill: "#FF0000"});
+    console.log(loading_message);
   }
 
   preload() {
@@ -22,19 +24,12 @@ class LoadingScene extends Phaser.Scene {
             frameHeight: asset.frame_height,
             frames: asset.frames,
             margin: asset.margin,
-            spacing: asset.spacing,
+            spacing: asset.spacing
           });
-          break;
         case 'tilemap':
           this.load.tilemapTiledJSON(asset_key, asset.source);
           break;
       }
-    }
-    // this.load.json(this.level_data.user_input.key, this.level_data.user_input.path);
-
-    for (let user_input_key in this.level_data.user_input) {
-      let user_input_path = this.level_data.user_input[user_input_key];
-      this.load.json(user_input_key, user_input_path);
     }
   }
 
