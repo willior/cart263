@@ -30,6 +30,12 @@
       "frame_width": 16,
       "frame_height": 16
     },
+    "stare_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/stare.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
     "hourglass_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/hourglass.png",
@@ -88,6 +94,7 @@
     "cat5_message": "assets/npc_messages/cat5.txt",
     "cat6_message": "assets/npc_messages/cat6.txt",
 
+    "stare_message": "assets/npc_messages/stare.txt",
     "sign1_message": "assets/npc_messages/sign1.txt",
     "sleep_message": "assets/npc_messages/sleep.txt",
 
