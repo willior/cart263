@@ -92,8 +92,8 @@ class WorldScene extends JSONLevelScene {
     super.create();
 
     this.events.on('collectFlute', () => {
-      this.gotFlute = true;
-      console.log(this.gotFlute);
+      this.fluteGot = true;
+
       console.log("got flute!!");
 
     });
@@ -116,9 +116,16 @@ class WorldScene extends JSONLevelScene {
   // }
 
   create_object (object) {
+    console.log(this.fluteGot);
+    if (object.name + "Got" === true) {
+      console.log(object.name + " already got");
+      return;
+
+    }
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
+      // console.log(object.name);
     }
   }
   end_talk() {

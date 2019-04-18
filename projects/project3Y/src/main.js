@@ -31,12 +31,12 @@ let config = {
   }
 };
 
-var gotCap = false;
-var gotFlute = false;
-var gotHourglass = false;
-var gotPipe = false;
-var gotSpecs = false;
-var gotTome = false;
+var capGot = false;
+var fluteGot = false;
+var houseglassGot = false;
+var pipeGot = false;
+var specsGot = false;
+var tomeGot = false;
 
 let game = new Phaser.Game(config);
 
