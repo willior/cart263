@@ -57,6 +57,14 @@ class WorldScene extends JSONLevelScene {
     }
     // creating object const to hold message box text style
     // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
+
+    this.capGot = false;
+    this.fluteGot = false;
+    this.houseglassGot = false;
+    this.pipeGot = false;
+    this.specsGot = false;
+    this.tomeGot = false;
+
   }
 
   preload() {
@@ -91,36 +99,22 @@ class WorldScene extends JSONLevelScene {
 
     super.create();
 
-    this.events.on('collectFlute', () => {
-      this.fluteGot = true;
-
-      console.log("got flute!!");
-
-    });
-
     this.map.objects.forEach(function (object_layer) {
         object_layer.objects.forEach(this.create_object, this);
     }, this);
+
+    this.events.on('collectFlute', () => {
+      this.fluteGot = true;
+    });
   }
 
-  // resize (gameSize, baseSize, displaySize, resolution) {
-  //   let width = gameSize.width;
-  //   let height = gameSize.height;
-  //   if (width === undefined) {
-  //     width = this.sys.game.config.width;
-  //   }
-  //   if (height === undefined) {
-  //     height = this.sys.game.config.height;
-  //   }
-  //   this.cameras.resize(width, height);
-  // }
-
   create_object (object) {
-    console.log(this.fluteGot);
-    if (object.name + "Got" === true) {
-      console.log(object.name + " already got");
-      return;
-
+    if (object.name === 'flute') {
+      if (this.fluteGot) {
+        return;
+      }
+      else if (!this.fluteGot) {
+      }
     }
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
@@ -132,6 +126,17 @@ class WorldScene extends JSONLevelScene {
     this.current_message_box.destroy();
     this.user_input.set_input(this.user_inputs.world_user_input);
   }
+  // resize (gameSize, baseSize, displaySize, resolution) {
+  //   let width = gameSize.width;
+  //   let height = gameSize.height;
+  //   if (width === undefined) {
+  //     width = this.sys.game.config.width;
+  //   }
+  //   if (height === undefined) {
+  //     height = this.sys.game.config.height;
+  //   }
+  //   this.cameras.resize(width, height);
+  // }
 }
 
 export default WorldScene;
