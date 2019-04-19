@@ -91,29 +91,6 @@
                 }, 
                 {
                  "height":16,
-                 "id":28,
-                 "name":"cat8",
-                 "properties":
-                    {
-                     "group":"cats",
-                     "message":"cat8_message",
-                     "texture":"cat_spritesheet"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "message":"string",
-                     "texture":"string"
-                    },
-                 "rotation":0,
-                 "type":"cat",
-                 "visible":true,
-                 "width":16,
-                 "x":624,
-                 "y":800
-                }, 
-                {
-                 "height":16,
                  "id":32,
                  "name":"return",
                  "properties":
@@ -233,7 +210,7 @@
                     {
                      "group":"items",
                      "message":"astrolabe_message",
-                     "texture":"astrolabe_spritesheet"
+                     "texture":"sign_spritesheet"
                     },
                  "propertytypes":
                     {
@@ -270,29 +247,6 @@
                  "width":0,
                  "x":1712,
                  "y":1840
-                }, 
-                {
-                 "height":16,
-                 "id":44,
-                 "name":"cat10",
-                 "properties":
-                    {
-                     "group":"cats",
-                     "message":"cat10_message",
-                     "texture":"cat_spritesheet"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "message":"string",
-                     "texture":"string"
-                    },
-                 "rotation":0,
-                 "type":"cat",
-                 "visible":true,
-                 "width":16,
-                 "x":1696,
-                 "y":528
                 }, 
                 {
                  "height":0,

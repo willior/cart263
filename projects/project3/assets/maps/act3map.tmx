@@ -299,13 +299,6 @@
     <property name="texture" value="sign_spritesheet"/>
    </properties>
   </object>
-  <object id="28" name="cat8" type="cat" x="624" y="800" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat8_message"/>
-    <property name="texture" value="cat_spritesheet"/>
-   </properties>
-  </object>
   <object id="32" name="return" type="return" x="0" y="1424" width="16" height="16">
    <properties>
     <property name="group" value="returns"/>
@@ -344,7 +337,7 @@
    <properties>
     <property name="group" value="items"/>
     <property name="message" value="astrolabe_message"/>
-    <property name="texture" value="astrolabe_spritesheet"/>
+    <property name="texture" value="sign_spritesheet"/>
    </properties>
   </object>
   <object id="43" name="scope" type="scope" x="1712" y="1840">
@@ -352,13 +345,6 @@
     <property name="group" value="items"/>
     <property name="message" value="scope_message"/>
     <property name="texture" value="scope_spritesheet"/>
-   </properties>
-  </object>
-  <object id="44" name="cat10" type="cat" x="1696" y="528" width="16" height="16">
-   <properties>
-    <property name="group" value="cats"/>
-    <property name="message" value="cat10_message"/>
-    <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>
   <object id="45" name="synth" type="synth" x="824" y="536">

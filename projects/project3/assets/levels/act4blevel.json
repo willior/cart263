@@ -60,7 +60,7 @@
       "frame_width": 16,
       "frame_height": 16
     },
-    "talk_spritesheet": {
+    "tree_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/talk.png",
       "frame_width": 16,
@@ -86,6 +86,9 @@
   },
   "initial_user_input": "world_user_input",
   "npc_messages": {
+    "ankh_message": "assets/npc_messages/void.txt",
+    "wheel_message": "assets/npc_messages/wheel.txt",
+    "scope_message": "assets/npc_messages/scope.txt",
     "cat8_message": "assets/npc_messages/cat8.txt",
     "cat9_message": "assets/npc_messages/cat9.txt",
     "cat10_message": "assets/npc_messages/cat10.txt",

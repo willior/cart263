@@ -84,6 +84,9 @@
     "cat9_message": "assets/npc_messages/cat9.txt",
     "cat10_message": "assets/npc_messages/cat10.txt",
     "void_message": "assets/npc_messages/void.txt",
+    "ankh_message": "assets/npc_messages/ankh.txt",
+    "wheel_message": "assets/npc_messages/wheel.txt",
+    "scope_message": "assets/npc_messages/scope.txt",
     "sign3_message": "assets/npc_messages/sign3.txt"
   }
 }

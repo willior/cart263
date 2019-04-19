@@ -1,11 +1,11 @@
 import Item from '../Item';
 
-class Void extends Item {
+class Synth extends Item {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
     if (!this.scene.anims.anims.has('animationSynth')) {
       this.scene.anims.create({
-        key: 'animationVoid',
+        key: 'animationSynth',
         frames: this.scene.anims.generateFrameNumbers(this.texture.key, {frames: [0, 1, 2, 3, 4, 5, 6, 7]}),
         frameRate: 8,
         repeat: -1
@@ -14,9 +14,9 @@ class Void extends Item {
   }
   update() {
     if (this.body) {
-      this.anims.play('animationVoid', true);
+      this.anims.play('animationSynth', true);
     }
   }
 }
 
-export default Void;
+export default Synth;

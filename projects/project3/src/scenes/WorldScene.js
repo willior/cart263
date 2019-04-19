@@ -19,6 +19,8 @@ import House1 from '../prefabs/world/NPCs/House1';
 import House4 from '../prefabs/world/NPCs/House4';
 import Sign from '../prefabs/world/NPCs/Sign';
 import Water from '../prefabs/world/NPCs/Water';
+import Void from '../prefabs/world/NPCs/Void';
+import Tree from '../prefabs/world/NPCs/Tree';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
@@ -27,6 +29,11 @@ import Tome from '../prefabs/world/Items/Tome';
 import Pipe from '../prefabs/world/Items/Pipe';
 import Flute from '../prefabs/world/Items/Flute';
 import Cap from '../prefabs/world/Items/Cap';
+import Ankh from '../prefabs/world/Items/Ankh';
+import Wheel from '../prefabs/world/Items/Wheel';
+import Synth from '../prefabs/world/Items/Synth';
+import Scope from '../prefabs/world/Items/Scope';
+import Astrolabe from '../prefabs/world/Items/Astrolabe';
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -48,6 +55,8 @@ class WorldScene extends JSONLevelScene {
       house1: House1.prototype.constructor,
       house4: House4.prototype.constructor,
       water: Water.prototype.constructor,
+      tree: Tree.prototype.constructor,
+      void: Void.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
@@ -56,7 +65,11 @@ class WorldScene extends JSONLevelScene {
       pipe: Pipe.prototype.constructor,
       flute: Flute.prototype.constructor,
       cap: Cap.prototype.constructor,
-
+      ankh: Ankh.prototype.constructor,
+      wheel: Wheel.prototype.constructor,
+      synth: Synth.prototype.constructor,
+      scope: Scope.prototype.constructor,
+      astrolabe: Astrolabe.prototype.constructor
     }
     // creating object const to hold message box text style
     // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
