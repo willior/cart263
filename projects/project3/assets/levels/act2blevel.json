@@ -1,0 +1,96 @@
+{
+  "assets": {
+    "map_tileset": {
+      "type": "image",
+      "source": "assets/images/tileset3s.png"
+    },
+    "player_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/player.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "cat_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/cat.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "message_box_image": {
+      "type": "image",
+      "source": "assets/images/message_box.png"
+    },
+    "act2b_level_tilemap": {
+      "type": "tilemap",
+      "source": "assets/maps/act2bmap.json"
+    },
+    "sign1_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/sign.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "flute_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/flute.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "cap_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/cap.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "house1_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/house1.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "house4_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/house4.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "water_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/water.png",
+      "frame_width": 16,
+      "frame_height": 16
+    }
+
+  },
+  "groups": [
+    "players",
+    "doors",
+    "returns",
+    "npcs",
+    "cats",
+    "items",
+    "hud"
+  ],
+  "map": {
+    "key": "act2b_level_tilemap",
+    "tilesets": ["map_tileset"]
+  },
+  "user_input": {
+    "world_user_input": "assets/user_inputs/world_map_user_input.json",
+    "talking_user_input": "assets/user_inputs/talking_user_input.json"
+  },
+  "initial_user_input": "world_user_input",
+  "npc_messages": {
+    "cat7_message": "assets/npc_messages/cat7.txt",
+
+    "sign2_message": "assets/npc_messages/sign2.txt",
+    "water_message": "assets/npc_messages/water.txt",
+    "house1_message": "assets/npc_messages/house1.txt",
+    "house2_message": "assets/npc_messages/house2.txt",
+    "house3_message": "assets/npc_messages/house3.txt",
+    "house4_message": "assets/npc_messages/house4.txt",
+
+    "flute_message": "assets/npc_messages/flute.txt",
+    "cap_message": "assets/npc_messages/cap.txt"
+  }
+}

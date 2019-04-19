@@ -13,14 +13,14 @@ class NPC extends Prefab {
     this.scene.physics.add.collider(this, this.scene.groups.players,
     this.talk, null, this);
 
-    this.scene.physics.add.collider(this, this.scene.groups.players,
-    this.timedEvent, null, this);
   }
 
   talk(npc, player) {
-    this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     player.stop();
+
+    this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
+
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');

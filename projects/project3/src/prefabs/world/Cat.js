@@ -9,8 +9,6 @@ class Cat extends Prefab {
 
     this.body.immovable = true;
 
-    // this.MESSAGE_BOX_POSITION = {x: 40, y: 320};
-
     this.scene.physics.add.collider(this, this.scene.groups.players, this.talk, null, this);
 
     if (!this.scene.anims.anims.has('cat_tail')) {
@@ -24,9 +22,16 @@ class Cat extends Prefab {
   }
 
   talk(cat, player) {
-    this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
+
     player.stop();
+
+    this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
+
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
+
+
+
+
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');

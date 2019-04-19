@@ -54,6 +54,7 @@
     "talking_user_input": "assets/user_inputs/talking_user_input.json"
   },
   "initial_user_input": "world_user_input",
+  
   "npc_messages": {
     "cat1_message": "assets/npc_messages/cat1.txt",
     "books_message": "assets/npc_messages/books.txt"

@@ -74,10 +74,16 @@ class WorldScene extends JSONLevelScene {
     for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
     }
+    // plugins
     this.load.scenePlugin({
         key: 'AnimatedTiles',
         url: 'node_modules/phaser-animated-tiles/dist/AnimatedTiles.js',
         sceneKey: 'tileAnimate'
+    });
+    this.load.scenePlugin({
+        key: 'rexuiplugin',
+        url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/plugins/dist/rexuiplugin.min.js',
+        sceneKey: 'rexUI'
     });
   }
 

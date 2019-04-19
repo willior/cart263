@@ -1,6 +1,7 @@
 import Prefab from '../prefabs/Prefab';
 import TextPrefab from '../prefabs/TextPrefab';
 import UserInput from '../plugins/UserInput';
+// import UIPlugin from '../plugins/ui/ui-plugin.js';
 
 class JSONLevelScene extends Phaser.Scene {
   constructor(key){

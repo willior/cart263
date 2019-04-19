@@ -6,6 +6,7 @@ import WorldScene from './scenes/WorldScene';
 import BootScene from './scenes/BootScene';
 import LoadingScene from './scenes/LoadingScene';
 import JSONLevelScene from './scenes/JSONLevelScene';
+// import UIPlugin from './plugins/ui/ui-plugin.js';
 
 let bootScene = new BootScene();
 let loadingScene = new LoadingScene();
@@ -23,12 +24,22 @@ let config = {
   // },
   pixelArt: true,
   roundPixels: true,
+
+  // plugins: {
+  //   scene: [{
+  //     key: 'rexUI',
+  //     plugin: UIPlugin,
+  //     mapping: 'rexUI'
+  //   }]
+  // },
+
   physics: {
     default: 'arcade',
     arcade: {
       gravity: {y: 0}
     }
   }
+
 };
 
 let game = new Phaser.Game(config);

@@ -35,8 +35,31 @@
       "source": "assets/images/stare.png",
       "frame_width": 16,
       "frame_height": 16
+    },
+    "synth_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/synth.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "scope_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/scope.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "ankh_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/ankh.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "wheel_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/wheel.png",
+      "frame_width": 16,
+      "frame_height": 16
     }
-
   },
   "groups": [
     "players",
@@ -57,7 +80,10 @@
   },
   "initial_user_input": "world_user_input",
   "npc_messages": {
-    "cat1_message": "assets/npc_messages/cat1.txt",
+    "cat8_message": "assets/npc_messages/cat8.txt",
+    "cat9_message": "assets/npc_messages/cat9.txt",
+    "cat10_message": "assets/npc_messages/cat10.txt",
+    "void_message": "assets/npc_messages/void.txt",
     "sign3_message": "assets/npc_messages/sign3.txt"
   }
 }
