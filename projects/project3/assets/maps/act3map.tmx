@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="150" height="132" tilewidth="16" tileheight="16" infinite="0" nextobjectid="48">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="150" height="132" tilewidth="16" tileheight="16" infinite="0" nextobjectid="49">
  <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
   <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
@@ -368,17 +368,17 @@
     <property name="texture" value="synth_spritesheet"/>
    </properties>
   </object>
-  <object id="46" name="portal" type="portal" x="1392" y="1728" width="16" height="16">
-   <properties>
-    <property name="group" value="portals"/>
-    <property name="next_level" value="act3b"/>
-   </properties>
-  </object>
   <object id="47" name="player" type="player" x="32" y="1392" width="16" height="16">
    <properties>
     <property name="group" value="players"/>
     <property name="texture" value="player_spritesheet"/>
     <property name="walking_speed" value="200"/>
+   </properties>
+  </object>
+  <object id="48" name="door" type="door" x="1392" y="1728" width="16" height="16">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="act3b"/>
    </properties>
   </object>
  </objectgroup>

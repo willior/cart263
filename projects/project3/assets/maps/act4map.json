@@ -73,7 +73,7 @@
                  "properties":
                     {
                      "group":"doors",
-                     "next_level":"act2"
+                     "next_level":"act4b"
                     },
                  "propertytypes":
                     {
@@ -84,17 +84,17 @@
                  "type":"door",
                  "visible":true,
                  "width":16,
-                 "x":416,
-                 "y":1296
+                 "x":224,
+                 "y":112
                 }, 
                 {
                  "height":16,
                  "id":11,
-                 "name":"cat3",
+                 "name":"cat11",
                  "properties":
                     {
                      "group":"cats",
-                     "message":"cat3_message",
+                     "message":"cat11_message",
                      "texture":"cat_spritesheet"
                     },
                  "propertytypes":
@@ -107,8 +107,8 @@
                  "type":"cat",
                  "visible":true,
                  "width":16,
-                 "x":-448,
-                 "y":1872
+                 "x":312,
+                 "y":304
                 }, 
                 {
                  "height":16,
@@ -130,8 +130,8 @@
                  "type":"talk",
                  "visible":true,
                  "width":16,
-                 "x":-112,
-                 "y":1488
+                 "x":704,
+                 "y":304
                 }, 
                 {
                  "height":16,
@@ -170,7 +170,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":32,
+ "nextobjectid":33,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

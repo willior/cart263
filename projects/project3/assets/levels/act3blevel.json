@@ -1,0 +1,89 @@
+{
+  "assets": {
+    "map_tileset": {
+      "type": "image",
+      "source": "assets/images/tileset3s.png"
+    },
+    "player_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/player.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "cat_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/cat.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "message_box_image": {
+      "type": "image",
+      "source": "assets/images/message_box.png"
+    },
+    "act3b_level_tilemap": {
+      "type": "tilemap",
+      "source": "assets/maps/act3bmap.json"
+    },
+    "sign_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/sign.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "stare_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/stare.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "synth_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/synth.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "scope_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/scope.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "ankh_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/ankh.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "wheel_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/wheel.png",
+      "frame_width": 16,
+      "frame_height": 16
+    }
+  },
+  "groups": [
+    "players",
+    "doors",
+    "returns",
+    "npcs",
+    "cats",
+    "items",
+    "hud"
+  ],
+  "map": {
+    "key": "act3b_level_tilemap",
+    "tilesets": ["map_tileset"]
+  },
+  "user_input": {
+    "world_user_input": "assets/user_inputs/world_map_user_input.json",
+    "talking_user_input": "assets/user_inputs/talking_user_input.json"
+  },
+  "initial_user_input": "world_user_input",
+  "npc_messages": {
+    "cat8_message": "assets/npc_messages/cat8.txt",
+    "cat9_message": "assets/npc_messages/cat9.txt",
+    "cat10_message": "assets/npc_messages/cat10.txt",
+    "void_message": "assets/npc_messages/void.txt",
+    "sign3_message": "assets/npc_messages/sign3.txt"
+  }
+}
