@@ -8,7 +8,7 @@
          "opacity":1,
          "properties":
             {
-             "tileset":"map_tileset"
+             "tileset":"ancientTree"
             },
          "propertytypes":
             {
@@ -28,7 +28,7 @@
          "properties":
             {
              "collision":true,
-             "tileset":"map_tileset"
+             "tileset":"ancientTree"
             },
          "propertytypes":
             {
@@ -230,7 +230,7 @@
          "opacity":1,
          "properties":
             {
-             "tileset":"map_tileset"
+             "tileset":"ancientTree"
             },
          "propertytypes":
             {

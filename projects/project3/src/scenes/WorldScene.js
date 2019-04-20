@@ -93,11 +93,11 @@ class WorldScene extends JSONLevelScene {
         url: 'node_modules/phaser-animated-tiles/dist/AnimatedTiles.js',
         sceneKey: 'tileAnimate'
     });
-    this.load.scenePlugin({
-        key: 'rexuiplugin',
-        url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/plugins/dist/rexuiplugin.min.js',
-        sceneKey: 'rexUI'
-    });
+    // this.load.scenePlugin({
+    //     key: 'rexuiplugin',
+    //     url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/plugins/dist/rexuiplugin.min.js',
+    //     sceneKey: 'rexUI'
+    // });
   }
 
   create() {

@@ -1,6 +1,6 @@
 {
   "assets": {
-    "map_tileset": {
+    "ancientTree": {
       "type": "image",
       "source": "assets/images/tree.png"
     },
