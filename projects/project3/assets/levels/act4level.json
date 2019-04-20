@@ -92,9 +92,8 @@
   },
   "initial_user_input": "world_user_input",
   "npc_messages": {
-    "cat8_message": "assets/npc_messages/cat8.txt",
-    "cat9_message": "assets/npc_messages/cat9.txt",
-    "cat10_message": "assets/npc_messages/cat10.txt",
+    "cat11_message": "assets/npc_messages/cat11.txt",
+    "tree1_message": "assets/npc_messages/tree/tree1.txt",
     "void_message": "assets/npc_messages/void.txt",
     "sign3_message": "assets/npc_messages/sign3.txt",
     "clementine_message": "assets/npc_messages/clementine.txt",

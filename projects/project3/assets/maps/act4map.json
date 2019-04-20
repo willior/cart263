@@ -96,7 +96,7 @@
                  "properties":
                     {
                      "group":"npcs",
-                     "message":"tree_message",
+                     "message":"tree1_message",
                      "texture":"tree_spritesheet"
                     },
                  "propertytypes":
@@ -241,7 +241,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":38,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
