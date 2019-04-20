@@ -80,6 +80,7 @@ class WorldScene extends JSONLevelScene {
     this.pipeGot = false;
     this.specsGot = false;
     this.tomeGot = false;
+    this.treeIndex = 0;
 
   }
 
