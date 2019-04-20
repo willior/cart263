@@ -21,11 +21,14 @@ class NPC extends Prefab {
     if (npc.name = 'tree') {
 
 
-      // let titleStyle = { fontFamily: 'Commodore', fontSize: '38px', fill: '#aadddd', wordWrap: true, align: 'left' };
+      let treeStyle = { fontFamily: 'Commodore', fontSize: '38px', fill: '#aadddd', wordWrap: true, align: 'left' };
 
       // let textStart = this.add.text(this.game.canvas.width/2,100,'');
 
-      var textStart = this.add.text(100,100,'hi');
+      var textStart = new Text(this,player.x,player.y+20,'hi', treeStyle);
+      console.log(textStart);
+
+      // this.add.text(this,100,100,'hi');
 
       // this.textHolder = "I know what you're thinking.";
       //
