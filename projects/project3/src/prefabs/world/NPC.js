@@ -23,6 +23,7 @@ class NPC extends Prefab {
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     if (npc.name === 'tree') {
       console.log('talking to tree');
+      // i'm sorry
       if (this.scene.treeIndex == 0) {
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message1});
         this.scene.treeIndex++;
@@ -33,6 +34,90 @@ class NPC extends Prefab {
         this.scene.treeIndex++;
       } else if (this.scene.treeIndex == 2) {
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message3});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 3) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message4});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 4) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 5) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message6});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 6) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message7});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 7) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message8});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 8) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message9});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 9) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message10});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 10) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message11});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 11) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message12});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 12) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message13});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 13) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message14});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 14) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message15});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 15) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message16});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 16) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message17});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 17) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message18});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 18) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message19});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 19) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message20});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 20) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message21});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 21) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message22});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 22) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message23});
+        this.scene.treeIndex++;
+      }
+      else if (this.scene.treeIndex == 23) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message24});
         this.scene.treeIndex++;
       }
 
