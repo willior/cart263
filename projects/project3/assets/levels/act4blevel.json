@@ -95,6 +95,8 @@
     "ankh_message": "assets/npc_messages/void.txt",
     "wheel_message": "assets/npc_messages/wheel.txt",
     "scope_message": "assets/npc_messages/scope.txt",
+    "synth_message": "assets/npc_messages/synth.txt",
+    "astrolabe_message": "assets/npc_messages/astrolabe.txt",
     "sign3_message": "assets/npc_messages/sign3.txt",
 
       "final_message": "assets/npc_messages/final1.txt",
