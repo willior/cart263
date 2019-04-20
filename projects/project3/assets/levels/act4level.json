@@ -95,6 +95,7 @@
     "cat11_message": "assets/npc_messages/cat11.txt",
     "tree1_message": "assets/npc_messages/tree/tree1.txt",
     "tree2_message": "assets/npc_messages/tree/tree2.txt",
+    "tree3_message": "assets/npc_messages/tree/tree3.txt",
     "void_message": "assets/npc_messages/void.txt",
     "sign3_message": "assets/npc_messages/sign3.txt",
     "clementine_message": "assets/npc_messages/clementine.txt",

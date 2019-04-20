@@ -24,7 +24,7 @@
       "type": "tilemap",
       "source": "assets/maps/act2map.json"
     },
-    "sign1_spritesheet": {
+    "sign_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/sign.png",
       "frame_width": 16,

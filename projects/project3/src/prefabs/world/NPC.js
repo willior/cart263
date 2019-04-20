@@ -5,9 +5,10 @@ import MessageBox from '../HUD/MessageBox';
 class NPC extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
-
+    this.message = this.scene.cache.text.get(properties.message);
     this.message1 = this.scene.cache.text.get(properties.message1);
     this.message2 = this.scene.cache.text.get(properties.message2);
+    this.message3 = this.scene.cache.text.get(properties.message3);
 
     this.body.immovable = true;
 
@@ -20,16 +21,16 @@ class NPC extends Prefab {
     player.stop();
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     if (npc.name = 'tree') {
-      console.log(this.scene.treeIndex);
       if (this.scene.treeIndex == 0) {
-        console.log('talking to tree');
-        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message1});
         this.scene.treeIndex++;
         console.log(this.message);
         console.log(this.message2);
       } else if (this.scene.treeIndex == 1) {
-        console.log('talking to tree 2');
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message2});
+        this.scene.treeIndex++;
+      } else if (this.scene.treeIndex == 2) {
+        this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message3});
         this.scene.treeIndex++;
       }
 
