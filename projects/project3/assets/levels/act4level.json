@@ -2,7 +2,7 @@
   "assets": {
     "map_tileset": {
       "type": "image",
-      "source": "assets/images/tileset3s.png"
+      "source": "assets/images/tree.png"
     },
     "player_spritesheet": {
       "type": "spritesheet",
@@ -60,6 +60,12 @@
       "frame_width": 16,
       "frame_height": 16
     },
+    "astrolabe_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/astrolabe.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
     "tree_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/talk.png",
@@ -91,7 +97,7 @@
     "cat10_message": "assets/npc_messages/cat10.txt",
     "void_message": "assets/npc_messages/void.txt",
     "sign3_message": "assets/npc_messages/sign3.txt",
-    "clementine_message": "assets/npc_messages/sign3.txt",
+    "clementine_message": "assets/npc_messages/clementine.txt",
     "percy_message": "assets/npc_messages/percy.txt",
     "gribs_message": "assets/npc_messages/gribs.txt",
     "jack_message": "assets/npc_messages/sign3.txt"
