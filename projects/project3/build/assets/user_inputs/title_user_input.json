@@ -1,0 +1,23 @@
+{
+  "keydown": {
+    "Enter": {
+      "callback": "scene.start_game"
+    },
+    "ArrowUp": {
+      "callback": "scene.start_game"
+    },
+    "ArrowDown": {
+      "callback": "scene.start_game"
+    },
+    "ArrowLeft": {
+      "callback": "scene.start_game"
+    },
+    "ArrowRight": {
+    "callback": "scene.start_game"
+    }
+
+  },
+  "keyup": {
+
+  }
+}

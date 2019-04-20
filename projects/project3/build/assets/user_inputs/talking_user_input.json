@@ -1,0 +1,20 @@
+{
+  "keydown": {
+    "ArrowUp": {
+      "callback": "scene.end_talk"
+    },
+    "ArrowDown": {
+      "callback": "scene.end_talk"
+    },
+    "ArrowLeft": {
+      "callback": "scene.end_talk"
+    },
+    "ArrowRight": {
+    "callback": "scene.end_talk"
+    }
+
+  },
+  "keyup": {
+
+  }
+}
