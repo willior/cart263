@@ -210,7 +210,7 @@
                     {
                      "group":"items",
                      "message":"astrolabe_message",
-                     "texture":"sign_spritesheet"
+                     "texture":"astrolabe_spritesheet"
                     },
                  "propertytypes":
                     {

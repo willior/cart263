@@ -54,6 +54,12 @@
       "frame_width": 16,
       "frame_height": 16
     },
+    "astrolabe_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/astrolabe.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
     "wheel_spritesheet": {
       "type": "spritesheet",
       "source": "assets/images/wheel.png",

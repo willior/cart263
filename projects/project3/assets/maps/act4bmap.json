@@ -255,11 +255,13 @@
                  "properties":
                     {
                      "group":"npcs",
+                     "message":"final_message1",
                      "texture":"cat_spritesheet"
                     },
                  "propertytypes":
                     {
                      "group":"string",
+                     "message":"string",
                      "texture":"string"
                     },
                  "rotation":0,

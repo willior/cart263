@@ -159,7 +159,7 @@
                  "type":"clementine",
                  "visible":true,
                  "width":16,
-                 "x":1024,
+                 "x":816,
                  "y":256
                 }, 
                 {
@@ -182,7 +182,7 @@
                  "type":"percy",
                  "visible":true,
                  "width":16,
-                 "x":1280,
+                 "x":1264,
                  "y":336
                 }, 
                 {
@@ -228,8 +228,8 @@
                  "type":"gribs",
                  "visible":true,
                  "width":16,
-                 "x":1024,
-                 "y":384
+                 "x":976,
+                 "y":400
                 }],
          "opacity":1,
          "properties":

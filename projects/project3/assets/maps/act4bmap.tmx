@@ -649,6 +649,7 @@
   <object id="51" name="finalCat" type="finalCat" x="32" y="176" width="16" height="16">
    <properties>
     <property name="group" value="npcs"/>
+    <property name="message" value="final_message1"/>
     <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>

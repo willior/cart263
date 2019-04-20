@@ -21,6 +21,10 @@ import Sign from '../prefabs/world/NPCs/Sign';
 import Water from '../prefabs/world/NPCs/Water';
 import Void from '../prefabs/world/NPCs/Void';
 import Tree from '../prefabs/world/NPCs/Tree';
+import Clementine from '../prefabs/world/NPCs/Clementine';
+import Percy from '../prefabs/world/NPCs/Percy';
+import Gribs from '../prefabs/world/NPCs/Gribs';
+import Jack from '../prefabs/world/NPCs/Jack';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
@@ -57,6 +61,10 @@ class WorldScene extends JSONLevelScene {
       water: Water.prototype.constructor,
       tree: Tree.prototype.constructor,
       void: Void.prototype.constructor,
+      clementine: Clementine.prototype.constructor,
+      percy: Percy.prototype.constructor,
+      gribs: Gribs.prototype.constructor,
+      jack: Jack.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
