@@ -19,8 +19,10 @@ class NPC extends Prefab {
 
   talk(npc, player) {
     player.stop();
+    console.log('talking to NPC');
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
-    if (npc.name = 'tree') {
+    if (npc.name === 'tree') {
+      console.log('talking to tree');
       if (this.scene.treeIndex == 0) {
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message1});
         this.scene.treeIndex++;
@@ -56,6 +58,7 @@ class NPC extends Prefab {
 
     }
     else {
+      console.log('talking to something else');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
     }
     // stops listening for key presses
@@ -63,7 +66,6 @@ class NPC extends Prefab {
     this.scene.input.keyboard.removeAllListeners('keyup');
     // for one second
     var closeTime = this.scene.time.delayedCall(1000, this.closable, [], this);
-    console.log('talking to NPC; cannot close textbox for 1 second');
   }
   closable(){
     // after 1 second, reapplies inputs so the text box can be closed

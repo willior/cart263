@@ -337,7 +337,7 @@
    <properties>
     <property name="group" value="items"/>
     <property name="message" value="astrolabe_message"/>
-    <property name="texture" value="sign_spritesheet"/>
+    <property name="texture" value="astrolabe_spritesheet"/>
    </properties>
   </object>
   <object id="43" name="scope" type="scope" x="1712" y="1840">
