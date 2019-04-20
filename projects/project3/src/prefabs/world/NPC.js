@@ -23,19 +23,20 @@ class NPC extends Prefab {
 
       // let titleStyle = { fontFamily: 'Commodore', fontSize: '38px', fill: '#aadddd', wordWrap: true, align: 'left' };
 
+      // let textStart = this.add.text(this.game.canvas.width/2,100,'');
 
-      this.add.text(100,100,'hi');
+      var textStart = this.add.text(100,100,'hi');
 
-      this.textHolder = "I know what you're thinking.";
-
-      let index = 0;
-      let interval = setInterval(() => {
-        textStart.textHolder += textHolder.charAt(index);
-        index++;
-        if (index === textHolder.length) {
-          clearInterval(interval);
-        }
-      },50);
+      // this.textHolder = "I know what you're thinking.";
+      //
+      // let index = 0;
+      // let interval = setInterval(() => {
+      //   textStart.textHolder += textHolder.charAt(index);
+      //   index++;
+      //   if (index === textHolder.length) {
+      //     clearInterval(interval);
+      //   }
+      // },50);
 
 
     }
