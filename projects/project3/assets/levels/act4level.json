@@ -84,7 +84,7 @@
   ],
   "map": {
     "key": "act4_level_tilemap",
-    "tilesets": ["map_tileset"]
+    "tilesets": ["ancientTree"]
   },
   "user_input": {
     "world_user_input": "assets/user_inputs/world_map_user_input.json",
