@@ -91,6 +91,11 @@ class WorldScene extends JSONLevelScene {
     this.pipeGot = false;
     this.specsGot = false;
     this.tomeGot = false;
+    this.ankhGot = false;
+    this.wheelGot = false;
+    this.scopeGot = false;
+    this.synthGot = false;
+    this.astrolabeGot = false;
   }
 
   preload() {
@@ -133,43 +138,36 @@ class WorldScene extends JSONLevelScene {
       bgm.play();
     }
     else if  (this.level_data.map.key === '2B_level_tilemap') {
-      bgm.stop();
       console.log('playing musicHome');
       var bgm = this.sound.add('musicHome');
       bgm.play();
     }
     else if (this.level_data.map.key === 'act1_level_tilemap') {
-      this.bgm.destroy();
       console.log('playing music1');
       var bgm = this.sound.add('music1');
       bgm.play();
     }
     else if (this.level_data.map.key === 'act1b_level_tilemap') {
-      bgm.stop();
       console.log('playing music1B');
       var bgm = this.sound.add('music1B');
       bgm.play();
     }
     else if ((this.level_data.map.key === 'act2_level_tilemap')||(this.level_data.map.key === 'act2b_level_tilemap')) {
-      bgm.stop();
       console.log('playing music2');
       var bgm = this.sound.add('music2');
       bgm.play();
     }
     else if (this.level_data.map.key === 'act3_level_tilemap') {
-      bgm.stop();
       console.log('playing music3');
       var bgm = this.sound.add('music3');
       bgm.play();
     }
     else if (this.level_data.map.key === 'act4_level_tilemap') {
-      bgm.stop();
       console.log('playing music4');
       var bgm = this.sound.add('music4');
       bgm.play();
     }
     else if (this.level_data.map.key === 'act4b_level_tilemap') {
-      bgm.stop();
       console.log('playing music5');
       var bgm = this.sound.add('music5');
       bgm.play();

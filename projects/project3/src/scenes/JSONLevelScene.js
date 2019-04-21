@@ -13,7 +13,7 @@ class JSONLevelScene extends Phaser.Scene {
   }
 
   create() {
-    
+
     this.groups = {};
     this.level_data.groups.forEach(function (group_name) {
       this.groups[group_name] = this.physics.add.group();
