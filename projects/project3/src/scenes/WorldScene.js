@@ -99,23 +99,23 @@ class WorldScene extends JSONLevelScene {
   }
 
   preload() {
-    if (this.level_data.map.key === '1_level_tilemap') {
-      this.load.audio('musicHome','assets/audio/holophone_days.mp3');
-    }
-    if (this.level_data.map.key === 'act1_level_tilemap') {
-      this.load.audio('music1','assets/audio/single.mp3');
-    }
-    this.load.audio('music1B','assets/audio/alonetime.mp3');
-
-    this.load.audio('music2','assets/audio/garden.mp3');
-
-    this.load.audio('music3','assets/audio/oncoming.mp3');
-
-    this.load.audio('music4','assets/audio/victim_of_the_summer_sun.mp3');
-
-    this.load.audio('music5','assets/audio/completely_dead_inside.mp3');
-
-    this.load.audio('music6','assets/audio/pollution.mp3');
+    // if (this.level_data.map.key === '1_level_tilemap') {
+    //   this.load.audio('musicHome','assets/audio/holophone_days.mp3');
+    // }
+    // if (this.level_data.map.key === 'act1_level_tilemap') {
+    //   this.load.audio('music1','assets/audio/single.mp3');
+    // }
+    // this.load.audio('music1B','assets/audio/alonetime.mp3');
+    //
+    // this.load.audio('music2','assets/audio/garden.mp3');
+    //
+    // this.load.audio('music3','assets/audio/oncoming.mp3');
+    //
+    // this.load.audio('music4','assets/audio/victim_of_the_summer_sun.mp3');
+    //
+    // this.load.audio('music5','assets/audio/completely_dead_inside.mp3');
+    //
+    // this.load.audio('music6','assets/audio/pollution.mp3');
 
     this.treeIndex = 0;
     for (let npc_message_name in this.level_data.npc_messages) {
@@ -132,46 +132,47 @@ class WorldScene extends JSONLevelScene {
   create(){
     console.log(this.level_data.map.key);
 
-    if (this.level_data.map.key === '1_level_tilemap') {
-      console.log('playing musicHome');
-      var bgm = this.sound.add('musicHome');
-      bgm.play();
-    }
-    else if  (this.level_data.map.key === '2B_level_tilemap') {
-      console.log('playing musicHome');
-      var bgm = this.sound.add('musicHome');
-      bgm.play();
-    }
-    else if (this.level_data.map.key === 'act1_level_tilemap') {
-      console.log('playing music1');
-      var bgm = this.sound.add('music1');
-      bgm.play();
-    }
-    else if (this.level_data.map.key === 'act1b_level_tilemap') {
-      console.log('playing music1B');
-      var bgm = this.sound.add('music1B');
-      bgm.play();
-    }
-    else if ((this.level_data.map.key === 'act2_level_tilemap')||(this.level_data.map.key === 'act2b_level_tilemap')) {
-      console.log('playing music2');
-      var bgm = this.sound.add('music2');
-      bgm.play();
-    }
-    else if (this.level_data.map.key === 'act3_level_tilemap') {
-      console.log('playing music3');
-      var bgm = this.sound.add('music3');
-      bgm.play();
-    }
-    else if (this.level_data.map.key === 'act4_level_tilemap') {
-      console.log('playing music4');
-      var bgm = this.sound.add('music4');
-      bgm.play();
-    }
-    else if (this.level_data.map.key === 'act4b_level_tilemap') {
-      console.log('playing music5');
-      var bgm = this.sound.add('music5');
-      bgm.play();
-    }
+    // if (this.level_data.map.key === '1_level_tilemap') {
+    //   console.log('playing musicHome');
+    //   var bgm = this.sound.add('musicHome');
+    //   bgm.play();
+    // }
+    // else if  (this.level_data.map.key === '2B_level_tilemap') {
+    //   console.log('playing musicHome');
+    //   var bgm = this.sound.add('musicHome');
+    //   bgm.play();
+    // }
+    // else if (this.level_data.map.key === 'act1_level_tilemap') {
+    //   console.log('playing music1');
+    //   var bgm = this.sound.add('music1');
+    //   bgm.play();
+    // }
+    // else if (this.level_data.map.key === 'act1b_level_tilemap') {
+    //   console.log('playing music1B');
+    //   var bgm = this.sound.add('music1B');
+    //   bgm.play();
+    // }
+    // else if ((this.level_data.map.key === 'act2_level_tilemap')||(this.level_data.map.key === 'act2b_level_tilemap')) {
+    //   console.log('playing music2');
+    //   var bgm = this.sound.add('music2');
+    //   bgm.play();
+    // }
+    // else if (this.level_data.map.key === 'act3_level_tilemap') {
+    //   console.log('playing music3');
+    //   var bgm = this.sound.add('music3');
+    //   bgm.play();
+    // }
+    // else if (this.level_data.map.key === 'act4_level_tilemap') {
+    //   console.log('playing music4');
+    //   var bgm = this.sound.add('music4');
+    //   bgm.play();
+    // }
+    // else if (this.level_data.map.key === 'act4b_level_tilemap') {
+    //   console.log('playing music5');
+    //   var bgm = this.sound.add('music5');
+    //   bgm.play();
+    // }
+    
     // var rect;
     // var graphics;
     this.map = this.add.tilemap(this.level_data.map.key);
