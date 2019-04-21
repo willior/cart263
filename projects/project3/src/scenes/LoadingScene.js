@@ -9,6 +9,7 @@ class LoadingScene extends Phaser.Scene {
   }
 
   preload() {
+
     let assets = this.level_data.assets;
     for (let asset_key in assets) {
       let asset = assets[asset_key];

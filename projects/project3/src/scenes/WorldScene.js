@@ -94,6 +94,13 @@ class WorldScene extends JSONLevelScene {
   }
 
   preload() {
+
+    this.load.audio('act1audio','assets/audio/single.mp3');
+    this.load.audio('act2audio','assets/audio/garden.mp3');
+    this.load.audio('act3audio','assets/audio/oncoming.mp3');
+    this.load.audio('act4audio','assets/audio/victim_of_the_summer_sun.mp3');
+    this.load.audio('act5audio','assets/audio/completely_dead_inside.mp3');
+
     this.treeIndex = 0;
     for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
@@ -104,14 +111,17 @@ class WorldScene extends JSONLevelScene {
         url: 'node_modules/phaser-animated-tiles/dist/AnimatedTiles.js',
         sceneKey: 'tileAnimate'
     });
-    // this.load.scenePlugin({
-    //     key: 'rexuiplugin',
-    //     url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/plugins/dist/rexuiplugin.min.js',
-    //     sceneKey: 'rexUI'
-    // });
   }
 
-  create() {
+  create(){
+    let bgm;
+    console.log(this.level_data.map.key)
+    if (this.level_data.map.key === 'act1_level_tilemap') {
+      console.log('playing music');
+      this.sound.play('act1audio');
+      // let bgm = this.sound.add('act1audio');
+      // bgm.sound.play();
+    }
     // var rect;
     // var graphics;
     this.map = this.add.tilemap(this.level_data.map.key);
