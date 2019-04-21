@@ -235,6 +235,8 @@
                      "message1F":"final1_message",
                      "message2F":"final2_message",
                      "message3F":"final3_message",
+                     "message4F":"final4_message",
+                     "messageNO":"finalNO_message",
                      "texture":"cat_spritesheet"
                     },
                  "propertytypes":
@@ -243,6 +245,8 @@
                      "message1F":"string",
                      "message2F":"string",
                      "message3F":"string",
+                     "message4F":"string",
+                     "messageNO":"string",
                      "texture":"string"
                     },
                  "rotation":0,

@@ -426,6 +426,8 @@
     <property name="message1F" value="final1_message"/>
     <property name="message2F" value="final2_message"/>
     <property name="message3F" value="final3_message"/>
+    <property name="message4F" value="final4_message"/>
+    <property name="messageNO" value="finalNO_message"/>
     <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>

@@ -127,6 +127,12 @@
 
       "final1_message": "assets/npc_messages/final/final1.txt",
       "final2_message": "assets/npc_messages/final/final2.txt",
-      "final3_message": "assets/npc_messages/final/final3.txt"
+      "final3_message": "assets/npc_messages/final/final3.txt",
+      "final4_message": "assets/npc_messages/final/final4.txt",
+      "final4Y_message": "assets/npc_messages/final/final4Y.txt",
+
+
+      
+      "finalNO_message": "assets/npc_messages/final/finalNO.txt"
   }
 }

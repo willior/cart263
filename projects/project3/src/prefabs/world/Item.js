@@ -26,7 +26,12 @@ class Item extends Prefab {
     if (this.name === 'pipe') {this.scene.events.emit('collectPipe');}
     if (this.name === 'specs') {this.scene.events.emit('collectSpecs');}
     if (this.name === 'tome') {this.scene.events.emit('collectTome');}
-
+    if (this.name === 'ankh') {this.scene.events.emit('collectAnkh');}
+    if (this.name === 'wheel') {this.scene.events.emit('collectWheel');}
+    if (this.name === 'scope') {this.scene.events.emit('collectScope');}
+    if (this.name === 'synth') {this.scene.events.emit('collectSynth');}
+    if (this.name === 'astrolabe') {this.scene.events.emit('collectAstrolabe');}
+    
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');
