@@ -72,7 +72,7 @@
     "doors",
     "returns",
     "npcs",
-    "cats",
+    "finals",
     "items",
     "hud"
   ],
@@ -125,6 +125,8 @@
       "treeB30_message": "assets/npc_messages/tree/treeB30.txt",
       "treeB31_message": "assets/npc_messages/tree/treeB31.txt",
 
-            "final_message": "assets/npc_messages/final1.txt"
+      "final1_message": "assets/npc_messages/final/final1.txt",
+      "final2_message": "assets/npc_messages/final/final2.txt",
+      "final3_message": "assets/npc_messages/final/final3.txt"
   }
 }

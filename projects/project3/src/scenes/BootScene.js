@@ -78,8 +78,6 @@ class BootScene extends Phaser.Scene {
     this.scene.start('LoadingScene', {
       level_data: level_data,
       scene: this.levels[data.scene].key
-
-
     });
   }
 }

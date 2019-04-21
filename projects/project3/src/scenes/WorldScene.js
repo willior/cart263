@@ -26,6 +26,7 @@ import Gribs from '../prefabs/world/NPCs/Gribs';
 import Jack from '../prefabs/world/NPCs/Jack';
 import Tree from '../prefabs/world/NPCs/Tree';
 import TreeB from '../prefabs/world/NPCs/TreeB';
+import Final from '../prefabs/world/Final';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
@@ -68,6 +69,7 @@ class WorldScene extends JSONLevelScene {
       jack: Jack.prototype.constructor,
       tree: Tree.prototype.constructor,
       treeB: TreeB.prototype.constructor,
+      final: Final.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
@@ -118,6 +120,7 @@ class WorldScene extends JSONLevelScene {
     // this.load.audio('music6','assets/audio/pollution.mp3');
 
     this.treeIndex = 0;
+    this.finalIndex = 0;
     for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
     }
@@ -172,7 +175,7 @@ class WorldScene extends JSONLevelScene {
     //   var bgm = this.sound.add('music5');
     //   bgm.play();
     // }
-    
+
     // var rect;
     // var graphics;
     this.map = this.add.tilemap(this.level_data.map.key);
