@@ -129,10 +129,14 @@
       "final2_message": "assets/npc_messages/final/final2.txt",
       "final3_message": "assets/npc_messages/final/final3.txt",
       "final4_message": "assets/npc_messages/final/final4.txt",
-      "final4Y_message": "assets/npc_messages/final/final4Y.txt",
+      "final5_message": "assets/npc_messages/final/final5.txt",
+      "final6_message": "assets/npc_messages/final/final6.txt",
+      "final7_message": "assets/npc_messages/final/final7.txt",
+      "final8_message": "assets/npc_messages/final/final8.txt",
+      "final9_message": "assets/npc_messages/final/final9.txt",
 
 
-      
+
       "finalNO_message": "assets/npc_messages/final/finalNO.txt"
   }
 }

@@ -11,9 +11,12 @@ class Final extends Prefab {
     this.message3F = this.scene.cache.text.get(properties.message3F);
 
     this.message4F = this.scene.cache.text.get(properties.message4F);
-    this.message4Y = this.scene.cache.text.get(properties.message4Y);
 
     this.message5F = this.scene.cache.text.get(properties.message5F);
+    this.message6F = this.scene.cache.text.get(properties.message6F);
+    this.message7F = this.scene.cache.text.get(properties.message7F);
+    this.message8F = this.scene.cache.text.get(properties.message8F);
+    this.message9F = this.scene.cache.text.get(properties.message9F);
 
     this.body.immovable = true;
 
@@ -59,6 +62,37 @@ class Final extends Prefab {
       console.log('no hourglass, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
     }
+    else if (this.scene.finalIndex == 5) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
+      this.scene.finalIndex++;
+    }
+    else if (this.scene.finalIndex == 5) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
+      this.scene.finalIndex++;
+    }
+    else if (this.scene.finalIndex == 6) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message6F});
+      this.scene.finalIndex++;
+    }
+    else if ((this.scene.hourglassGot)&&(this.scene.finalIndex == 7)) {
+      console.log('got spectacles, OK');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message7F});
+      this.scene.finalIndex++;
+    }
+    else if ((!this.scene.specsGot)) {
+      console.log('no specs, returning');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+    }
+    else if (this.scene.finalIndex == 8) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message8F});
+      this.scene.finalIndex++;
+    }
+    else if ((this.scene.tomeglassGot)&&(this.scene.finalIndex == 9)) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message9F});
+      this.scene.finalIndex++;
+    }
+
+
 
     // if (this.scene.finalIndex == 5) {
     //   this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
