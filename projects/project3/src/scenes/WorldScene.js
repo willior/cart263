@@ -140,8 +140,6 @@ class WorldScene extends JSONLevelScene {
   }
 
   create(){
-    console.log(this.level_data.map.key);
-
     if (this.level_data.map.key === '1_level_tilemap') {
       var music = this.sound.add('musicHome');
       this.music = music;
@@ -176,7 +174,6 @@ class WorldScene extends JSONLevelScene {
       music.play({loop: true});
     }
     else if (this.level_data.map.key === 'act4_level_tilemap') {
-      this.animatedTiles.init(act4_level_tilemap);
       console.log('playing music4');
       var music = this.sound.add('music4');
       this.music = music;
@@ -192,6 +189,7 @@ class WorldScene extends JSONLevelScene {
 
     // var rect;
     // var graphics;
+    let mapAnim = this.make.tilemap({key: this.level_data.map.key});
     this.map = this.add.tilemap(this.level_data.map.key);
     let tileset_index = 0;
     this.tilesets = {};
@@ -203,13 +201,15 @@ class WorldScene extends JSONLevelScene {
 
     this.layers = {};
     this.map.layers.forEach(function (layer) {
-        this.layers[layer.name] = this.map.createStaticLayer(layer.name, this.tilesets[layer.properties.tileset]);
+        this.layers[layer.name] = this.map.createDynamicLayer(layer.name, this.tilesets[layer.properties.tileset]);
         if (layer.properties.collision) { // collision layer
             this.map.setCollisionByExclusion([-1], true, layer.name);
         }
     }, this);
 
-    console.log(this.map);
+    console.log(mapAnim);
+
+    // this.animatedTiles.init(mapAnim);
 
     super.create();
 
