@@ -75,7 +75,7 @@
                  "properties":
                     {
                      "group":"doors",
-                     "next_level":"title3"
+                     "next_level":"act1"
                     },
                  "propertytypes":
                     {
@@ -107,7 +107,28 @@
                  "type":"return",
                  "visible":true,
                  "width":8,
-                 "x":352,
+                 "x":392,
+                 "y":192
+                }, 
+                {
+                 "height":16,
+                 "id":9,
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"screen1B"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":16,
+                 "x":344,
                  "y":208
                 }],
          "opacity":1,
@@ -124,7 +145,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":8,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

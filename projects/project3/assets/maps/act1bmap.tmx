@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="100" height="200" tilewidth="16" tileheight="16" infinite="0" nextobjectid="34">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="100" height="200" tilewidth="16" tileheight="16" infinite="0" nextobjectid="35">
  <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
   <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
@@ -422,12 +422,6 @@
   <properties>
    <property name="tileset" value="map_tileset"/>
   </properties>
-  <object id="9" name="return" type="return" x="688" y="136" width="112" height="8">
-   <properties>
-    <property name="group" value="returns"/>
-    <property name="previous_level" value="screen2B"/>
-   </properties>
-  </object>
   <object id="10" name="door" type="door" x="1152" y="2144" width="16" height="16">
    <properties>
     <property name="group" value="doors"/>
@@ -481,6 +475,12 @@
     <property name="group" value="players"/>
     <property name="texture" value="player_spritesheet"/>
     <property name="walking_speed" value="200"/>
+   </properties>
+  </object>
+  <object id="34" name="door" type="door" x="736" y="136" width="16" height="16">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="screen2B"/>
    </properties>
   </object>
  </objectgroup>

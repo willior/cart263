@@ -46,27 +46,6 @@
          "name":"objects",
          "objects":[
                 {
-                 "height":8,
-                 "id":9,
-                 "name":"return",
-                 "properties":
-                    {
-                     "group":"returns",
-                     "previous_level":"screen2B"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "previous_level":"string"
-                    },
-                 "rotation":0,
-                 "type":"return",
-                 "visible":true,
-                 "width":112,
-                 "x":688,
-                 "y":136
-                }, 
-                {
                  "height":16,
                  "id":10,
                  "name":"door",
@@ -247,6 +226,27 @@
                  "width":16,
                  "x":1152,
                  "y":2736
+                }, 
+                {
+                 "height":16,
+                 "id":34,
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"screen2B"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":16,
+                 "x":736,
+                 "y":136
                 }],
          "opacity":1,
          "properties":
@@ -262,7 +262,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":34,
+ "nextobjectid":35,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

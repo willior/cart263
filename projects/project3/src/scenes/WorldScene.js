@@ -113,7 +113,7 @@ class WorldScene extends JSONLevelScene {
         sceneKey: 'tileAnimate'
     });
 
-    if (this.level_data.map.key === '1_level_tilemap') {
+    if ((this.level_data.map.key === '1_level_tilemap')||(this.level_data.map.key === '2B_level_tilemap')) {
       this.load.audio('musicHome','assets/audio/holophone_days.mp3');
     }
     else if (this.level_data.map.key === 'act1_level_tilemap') {
@@ -150,40 +150,43 @@ class WorldScene extends JSONLevelScene {
     else if (this.level_data.map.key === 'act1_level_tilemap') {
       var music = this.sound.add('music1');
       this.music = music;
-      music.play();
+      music.play({loop: true});
     }
     else if  (this.level_data.map.key === '2B_level_tilemap') {
       var music = this.sound.add('musicHome');
       this.music = music;
-      music.play();
+      music.play({loop: true});
     }
     else if (this.level_data.map.key === 'act1b_level_tilemap') {
       console.log('playing music1B');
       var music = this.sound.add('music1B');
       this.music = music;
-      music.play();
+      music.play({loop: true});
     }
     else if ((this.level_data.map.key === 'act2_level_tilemap')||(this.level_data.map.key === 'act2b_level_tilemap')) {
       console.log('playing music2');
       var music = this.sound.add('music2');
       this.music = music;
-      music.play();
+      music.play({loop: true});
     }
-    // else if (this.level_data.map.key === 'act3_level_tilemap') {
-    //   console.log('playing music3');
-    //   var music = this.sound.add('music3');
-    //   music.play();
-    // }
-    // else if (this.level_data.map.key === 'act4_level_tilemap') {
-    //   console.log('playing music4');
-    //   var music = this.sound.add('music4');
-    //   music.play();
-    // }
-    // else if (this.level_data.map.key === 'act4b_level_tilemap') {
-    //   console.log('playing music5');
-    //   var music = this.sound.add('music5');
-    //   music.play();
-    // }
+    else if (this.level_data.map.key === 'act3_level_tilemap') {
+      console.log('playing music3');
+      var music = this.sound.add('music3');
+      this.music = music;
+      music.play({loop: true});
+    }
+    else if (this.level_data.map.key === 'act4_level_tilemap') {
+      console.log('playing music4');
+      var music = this.sound.add('music4');
+      this.music = music;
+      music.play({loop: true});
+    }
+    else if (this.level_data.map.key === 'act4b_level_tilemap') {
+      console.log('playing music5');
+      var music = this.sound.add('music5');
+      this.music = music;
+      music.play({loop: true});
+    }
 
     // var rect;
     // var graphics;
