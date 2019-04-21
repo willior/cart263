@@ -119,7 +119,7 @@
                  "properties":
                     {
                      "group":"returns",
-                     "previous_level":"act2b"
+                     "previous_level":"act3b"
                     },
                  "propertytypes":
                     {
@@ -130,8 +130,8 @@
                  "type":"return",
                  "visible":true,
                  "width":16,
-                 "x":0,
-                 "y":1424
+                 "x":1392,
+                 "y":1728
                 }, 
                 {
                  "height":16,
@@ -324,7 +324,7 @@
                  "properties":
                     {
                      "group":"doors",
-                     "next_level":"act3b"
+                     "next_level":"act2b"
                     },
                  "propertytypes":
                     {
@@ -335,8 +335,8 @@
                  "type":"door",
                  "visible":true,
                  "width":16,
-                 "x":1392,
-                 "y":1728
+                 "x":0,
+                 "y":1424
                 }, 
                 {
                  "height":16,

@@ -306,10 +306,10 @@
     <property name="texture" value="cat_spritesheet"/>
    </properties>
   </object>
-  <object id="32" name="return" type="return" x="0" y="1424" width="16" height="16">
+  <object id="32" name="return" type="return" x="1392" y="1728" width="16" height="16">
    <properties>
     <property name="group" value="returns"/>
-    <property name="previous_level" value="act2b"/>
+    <property name="previous_level" value="act3b"/>
    </properties>
   </object>
   <object id="34" name="void" type="void" x="904" y="1840" width="16" height="16">
@@ -368,10 +368,10 @@
     <property name="texture" value="synth_spritesheet"/>
    </properties>
   </object>
-  <object id="48" name="door" type="door" x="1392" y="1728" width="16" height="16">
+  <object id="48" name="door" type="door" x="0" y="1424" width="16" height="16">
    <properties>
     <property name="group" value="doors"/>
-    <property name="next_level" value="act3b"/>
+    <property name="next_level" value="act2b"/>
    </properties>
   </object>
   <object id="49" name="player" type="player" x="896" y="496" width="16" height="16">

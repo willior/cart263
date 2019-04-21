@@ -128,7 +128,7 @@
   <object id="3" name="door" type="door" x="256" y="328" width="16" height="8">
    <properties>
     <property name="group" value="doors"/>
-    <property name="next_level" value="title3"/>
+    <property name="next_level" value="act1"/>
    </properties>
   </object>
   <object id="5" name="return" type="return" x="352" y="208" width="8" height="16">

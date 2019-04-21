@@ -39,7 +39,6 @@ let config = {
       gravity: {y: 0}
     }
   }
-
 };
 
 let game = new Phaser.Game(config);
