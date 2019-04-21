@@ -70,27 +70,6 @@
                 }, 
                 {
                  "height":16,
-                 "id":9,
-                 "name":"return",
-                 "properties":
-                    {
-                     "group":"returns",
-                     "previous_level":"act1b"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "previous_level":"string"
-                    },
-                 "rotation":0,
-                 "type":"return",
-                 "visible":true,
-                 "width":16,
-                 "x":240,
-                 "y":800
-                }, 
-                {
-                 "height":16,
                  "id":10,
                  "name":"door",
                  "properties":
@@ -320,6 +299,27 @@
                  "width":16,
                  "x":528,
                  "y":304
+                }, 
+                {
+                 "height":16,
+                 "id":38,
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"act1b"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":16,
+                 "x":240,
+                 "y":800
                 }],
          "opacity":1,
          "properties":
@@ -335,7 +335,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":37,
+ "nextobjectid":39,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

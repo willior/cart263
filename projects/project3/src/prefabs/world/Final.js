@@ -93,12 +93,6 @@ class Final extends Prefab {
     }
 
 
-
-    // if (this.scene.finalIndex == 5) {
-    //   this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
-    //   this.scene.finalIndex++;
-    //   }
-
     // this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
