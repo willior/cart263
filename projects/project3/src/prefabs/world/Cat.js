@@ -22,16 +22,10 @@ class Cat extends Prefab {
   }
 
   talk(cat, player) {
-
+    console.log("talking to Max; stops player, creates message box, removes input listeners for 1s");
     player.stop();
-
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
-
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
-
-
-
-
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');
@@ -40,6 +34,7 @@ class Cat extends Prefab {
   }
   closable(){
     // after 1 second, reapplies inputs so the text box can be closed
+    console.log("talking input applied - can now close message box");
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
   }
   update() {

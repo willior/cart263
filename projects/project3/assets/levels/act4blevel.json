@@ -65,12 +65,6 @@
       "source": "assets/images/astrolabe.png",
       "frame_width": 16,
       "frame_height": 16
-    },
-    "tree_spritesheet": {
-      "type": "spritesheet",
-      "source": "assets/images/talk.png",
-      "frame_width": 16,
-      "frame_height": 16
     }
   },
   "groups": [
@@ -99,11 +93,38 @@
     "astrolabe_message": "assets/npc_messages/astrolabe.txt",
     "sign3_message": "assets/npc_messages/sign3.txt",
 
-      "final_message": "assets/npc_messages/final1.txt",
+      "treeB1_message": "assets/npc_messages/tree/treeB1.txt",
+      "treeB2_message": "assets/npc_messages/tree/treeB2.txt",
+      "treeB3_message": "assets/npc_messages/tree/treeB3.txt",
+      "treeB4_message": "assets/npc_messages/tree/treeB4.txt",
+      "treeB5_message": "assets/npc_messages/tree/treeB5.txt",
+      "treeB6_message": "assets/npc_messages/tree/treeB6.txt",
+      "treeB7_message": "assets/npc_messages/tree/treeB7.txt",
+      "treeB8_message": "assets/npc_messages/tree/treeB8.txt",
+      "treeB9_message": "assets/npc_messages/tree/treeB9.txt",
+      "treeB10_message": "assets/npc_messages/tree/treeB10.txt",
+      "treeB11_message": "assets/npc_messages/tree/treeB11.txt",
+      "treeB12_message": "assets/npc_messages/tree/treeB12.txt",
+      "treeB13_message": "assets/npc_messages/tree/treeB13.txt",
+      "treeB14_message": "assets/npc_messages/tree/treeB14.txt",
+      "treeB15_message": "assets/npc_messages/tree/treeB15.txt",
+      "treeB16_message": "assets/npc_messages/tree/treeB16.txt",
+      "treeB17_message": "assets/npc_messages/tree/treeB17.txt",
+      "treeB18_message": "assets/npc_messages/tree/treeB18.txt",
+      "treeB19_message": "assets/npc_messages/tree/treeB19.txt",
+      "treeB20_message": "assets/npc_messages/tree/treeB20.txt",
+      "treeB21_message": "assets/npc_messages/tree/treeB21.txt",
+      "treeB22_message": "assets/npc_messages/tree/treeB22.txt",
+      "treeB23_message": "assets/npc_messages/tree/treeB23.txt",
+      "treeB24_message": "assets/npc_messages/tree/treeB24.txt",
+      "treeB25_message": "assets/npc_messages/tree/treeB25.txt",
+      "treeB26_message": "assets/npc_messages/tree/treeB26.txt",
+      "treeB27_message": "assets/npc_messages/tree/treeB27.txt",
+      "treeB28_message": "assets/npc_messages/tree/treeB28.txt",
+      "treeB29_message": "assets/npc_messages/tree/treeB29.txt",
+      "treeB30_message": "assets/npc_messages/tree/treeB30.txt",
+      "treeB31_message": "assets/npc_messages/tree/treeB31.txt",
 
-    "clementine_message": "assets/npc_messages/sign3.txt",
-    "percy_message": "assets/npc_messages/percy.txt",
-    "gribs_message": "assets/npc_messages/gribs.txt",
-    "jack_message": "assets/npc_messages/sign3.txt"
+            "final_message": "assets/npc_messages/final1.txt"
   }
 }

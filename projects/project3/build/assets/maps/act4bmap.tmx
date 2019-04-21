@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="150" height="172" tilewidth="16" tileheight="16" infinite="0" nextobjectid="54">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="150" height="172" tilewidth="16" tileheight="16" infinite="0" nextobjectid="89">
  <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
   <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
@@ -500,9 +500,9 @@
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,12,1,1,1,13,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,29,160,30,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,12,1,1,1,13,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,29,160,30,1,13,1,1,12,70,1,1,1,71,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,12,70,1,1,1,71,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,12,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,29,160,30,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -680,11 +680,11 @@
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,71,72,72,70,0,0,71,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,2,2,2,70,0,0,0,71,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,70,0,0,0,71,0,0,0,0,0,71,72,72,70,0,0,71,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,73,73,73,2,0,0,0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,70,0,0,0,71,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,72,72,72,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,2,
@@ -865,7 +865,7 @@
     <property name="walking_speed" value="200"/>
    </properties>
   </object>
-  <object id="51" name="finalCat" type="finalCat" x="32" y="176" width="16" height="16">
+  <object id="51" name="final" type="finalCat" x="32" y="176" width="16" height="16">
    <properties>
     <property name="group" value="npcs"/>
     <property name="message" value="final1_message"/>
@@ -882,6 +882,198 @@
    <properties>
     <property name="group" value="doors"/>
     <property name="next_level" value="act2"/>
+   </properties>
+  </object>
+  <object id="54" name="treeB" type="treeB" x="1704" y="1192" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message1B" value="treeB1_message"/>
+   </properties>
+  </object>
+  <object id="55" name="door" type="door" x="704" y="880" width="16" height="16">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="act3b"/>
+   </properties>
+  </object>
+  <object id="57" name="treeB" type="treeB" x="1704" y="1576" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message2B" value="treeB2_message"/>
+   </properties>
+  </object>
+  <object id="58" name="treeB" type="treeB" x="1560" y="1576" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message3B" value="treeB3_message"/>
+   </properties>
+  </object>
+  <object id="59" name="treeB" type="treeB" x="1416" y="1576" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message4B" value="treeB4_message"/>
+   </properties>
+  </object>
+  <object id="60" name="treeB" type="treeB" x="1152" y="1184" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message5B" value="treeB5_message"/>
+   </properties>
+  </object>
+  <object id="61" name="treeB" type="treeB" x="976" y="1184" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message6B" value="treeB6_message"/>
+   </properties>
+  </object>
+  <object id="62" name="treeB" type="treeB" x="960" y="1184" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message7B" value="treeB7_message"/>
+   </properties>
+  </object>
+  <object id="63" name="treeB" type="treeB" x="904" y="1088" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message8B" value="treeB8_message"/>
+   </properties>
+  </object>
+  <object id="64" name="treeB" type="treeB" x="904" y="1072" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message9B" value="treeB9_message"/>
+   </properties>
+  </object>
+  <object id="65" name="treeB" type="treeB" x="904" y="1056" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message10B" value="treeB10_message"/>
+   </properties>
+  </object>
+  <object id="66" name="treeB" type="treeB" x="904" y="1040" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message11B" value="treeB11_message"/>
+   </properties>
+  </object>
+  <object id="67" name="treeB" type="treeB" x="904" y="1024" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message12B" value="treeB12_message"/>
+   </properties>
+  </object>
+  <object id="69" name="treeB" type="treeB" x="904" y="1008" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message13B" value="treeB13_message"/>
+   </properties>
+  </object>
+  <object id="70" name="treeB" type="treeB" x="904" y="992" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message14B" value="treeB14_message"/>
+   </properties>
+  </object>
+  <object id="71" name="treeB" type="treeB" x="904" y="976" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message15B" value="treeB15_message"/>
+   </properties>
+  </object>
+  <object id="72" name="treeB" type="treeB" x="904" y="960" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message16B" value="treeB16_message"/>
+   </properties>
+  </object>
+  <object id="73" name="treeB" type="treeB" x="904" y="944" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message17B" value="treeB17_message"/>
+   </properties>
+  </object>
+  <object id="74" name="treeB" type="treeB" x="904" y="928" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message18B" value="treeB18_message"/>
+   </properties>
+  </object>
+  <object id="75" name="treeB" type="treeB" x="1040" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message19B" value="treeB19_message"/>
+   </properties>
+  </object>
+  <object id="76" name="treeB" type="treeB" x="1104" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message20B" value="treeB20_message"/>
+   </properties>
+  </object>
+  <object id="77" name="treeB" type="treeB" x="1168" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message21B" value="treeB21_message"/>
+   </properties>
+  </object>
+  <object id="78" name="treeB" type="treeB" x="1264" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message22B" value="treeB22_message"/>
+   </properties>
+  </object>
+  <object id="79" name="treeB" type="treeB" x="1360" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message23B" value="treeB23_message"/>
+   </properties>
+  </object>
+  <object id="80" name="treeB" type="treeB" x="1424" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message24B" value="treeB24_message"/>
+   </properties>
+  </object>
+  <object id="81" name="treeB" type="treeB" x="1488" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message25B" value="treeB25_message"/>
+   </properties>
+  </object>
+  <object id="82" name="treeB" type="treeB" x="1640" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message26B" value="treeB26_message"/>
+   </properties>
+  </object>
+  <object id="83" name="treeB" type="treeB" x="1696" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message27B" value="treeB27_message"/>
+   </properties>
+  </object>
+  <object id="84" name="treeB" type="treeB" x="1752" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message28B" value="treeB28_message"/>
+   </properties>
+  </object>
+  <object id="85" name="treeB" type="treeB" x="1808" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message29B" value="treeB29_message"/>
+   </properties>
+  </object>
+  <object id="86" name="treeB" type="treeB" x="1864" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message30B" value="treeB30_message"/>
+   </properties>
+  </object>
+  <object id="87" name="treeB" type="treeB" x="1920" y="896" width="16" height="16">
+   <properties>
+    <property name="group" value="npcs"/>
+    <property name="message31B" value="treeB31_message"/>
    </properties>
   </object>
  </objectgroup>

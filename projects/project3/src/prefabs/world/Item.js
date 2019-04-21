@@ -14,6 +14,7 @@ class Item extends Prefab {
   }
 
   collect(item, player) {
+    console.log(this.name + " collected; stops player, creates message box, removes input listeners for 1s");
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
     player.stop();
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
@@ -34,6 +35,7 @@ class Item extends Prefab {
   }
   closable(){
     // after 1 second, reapplies inputs so the text box can be closed
+    console.log("talking input applied - can now close message box");
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
     this.destroy();
   }

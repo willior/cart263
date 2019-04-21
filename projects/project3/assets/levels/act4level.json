@@ -99,8 +99,6 @@
     "tree22_message": "assets/npc_messages/tree/tree22.txt",
     "tree23_message": "assets/npc_messages/tree/tree23.txt",
     "tree24_message": "assets/npc_messages/tree/tree24.txt",
-    "void_message": "assets/npc_messages/void.txt",
-    "sign3_message": "assets/npc_messages/sign3.txt",
     "clementine_message": "assets/npc_messages/clementine.txt",
     "percy_message": "assets/npc_messages/percy.txt",
     "gribs_message": "assets/npc_messages/gribs.txt",

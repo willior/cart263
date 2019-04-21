@@ -20,11 +20,12 @@ import House4 from '../prefabs/world/NPCs/House4';
 import Sign from '../prefabs/world/NPCs/Sign';
 import Water from '../prefabs/world/NPCs/Water';
 import Void from '../prefabs/world/NPCs/Void';
-import Tree from '../prefabs/world/NPCs/Tree';
 import Clementine from '../prefabs/world/NPCs/Clementine';
 import Percy from '../prefabs/world/NPCs/Percy';
 import Gribs from '../prefabs/world/NPCs/Gribs';
 import Jack from '../prefabs/world/NPCs/Jack';
+import Tree from '../prefabs/world/NPCs/Tree';
+import TreeB from '../prefabs/world/NPCs/TreeB';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
@@ -38,6 +39,7 @@ import Wheel from '../prefabs/world/Items/Wheel';
 import Synth from '../prefabs/world/Items/Synth';
 import Scope from '../prefabs/world/Items/Scope';
 import Astrolabe from '../prefabs/world/Items/Astrolabe';
+
 
 class WorldScene extends JSONLevelScene {
   constructor() {
@@ -59,12 +61,13 @@ class WorldScene extends JSONLevelScene {
       house1: House1.prototype.constructor,
       house4: House4.prototype.constructor,
       water: Water.prototype.constructor,
-      tree: Tree.prototype.constructor,
       void: Void.prototype.constructor,
       clementine: Clementine.prototype.constructor,
       percy: Percy.prototype.constructor,
       gribs: Gribs.prototype.constructor,
       jack: Jack.prototype.constructor,
+      tree: Tree.prototype.constructor,
+      treeB: TreeB.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
@@ -88,11 +91,10 @@ class WorldScene extends JSONLevelScene {
     this.pipeGot = false;
     this.specsGot = false;
     this.tomeGot = false;
-    this.treeIndex = 0;
-
   }
 
   preload() {
+    this.treeIndex = 0;
     for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
     }
@@ -110,6 +112,8 @@ class WorldScene extends JSONLevelScene {
   }
 
   create() {
+    // var rect;
+    // var graphics;
     this.map = this.add.tilemap(this.level_data.map.key);
     let tileset_index = 0;
     this.tilesets = {};
@@ -140,6 +144,11 @@ class WorldScene extends JSONLevelScene {
     this.events.on('collectPipe', () => {this.pipeGot = true;});
     this.events.on('collectSpecs', () => {this.specsGot = true;});
     this.events.on('collectTome', () => {this.tomeGot = true;});
+    this.events.on('collectAnkh', () => {this.ankhGot = true;});
+    this.events.on('collectWheel', () => {this.wheelGot = true;});
+    this.events.on('collectScope', () => {this.scopeGot = true;});
+    this.events.on('collectSynth', () => {this.synthGot = true;});
+    this.events.on('collectAstrolabe', () => {this.astrolabeGot = true;});
   }
 
   create_object (object) {
@@ -150,6 +159,11 @@ class WorldScene extends JSONLevelScene {
     if ((object.name === 'pipe')&&(this.pipeGot)) {return;}
     if ((object.name === 'specs')&&(this.specsGot)) {return;}
     if ((object.name === 'tome') && (this.tomeGot)) {return;}
+    if ((object.name === 'ankh') && (this.ankhGot)) {return;}
+    if ((object.name === 'wheel') && (this.wheelGot)) {return;}
+    if ((object.name === 'scope') && (this.scopeGot)) {return;}
+    if ((object.name === 'synth') && (this.synthGot)) {return;}
+    if ((object.name === 'astrolabe') && (this.astrolabeGot)) {return;}
 
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
