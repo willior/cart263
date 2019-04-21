@@ -55,6 +55,13 @@ class NPC extends Prefab {
     this.message22B = this.scene.cache.text.get(properties.message22B);
     this.message23B = this.scene.cache.text.get(properties.message23B);
     this.message24B = this.scene.cache.text.get(properties.message24B);
+    this.message25B = this.scene.cache.text.get(properties.message25B);
+    this.message26B = this.scene.cache.text.get(properties.message26B);
+    this.message27B = this.scene.cache.text.get(properties.message27B);
+    this.message28B = this.scene.cache.text.get(properties.message28B);
+    this.message29B = this.scene.cache.text.get(properties.message29B);
+    this.message30B = this.scene.cache.text.get(properties.message30B);
+    this.message31B = this.scene.cache.text.get(properties.message31B);
 
     this.body.immovable = true;
 
@@ -227,6 +234,7 @@ class NPC extends Prefab {
       }
       else if (this.scene.treeIndex == 10) {
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message11B});
+        this.scene.treeIndex++;
       }
       else if (this.scene.treeIndex == 11) {
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message12B});
