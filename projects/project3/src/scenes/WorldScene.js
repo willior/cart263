@@ -95,7 +95,7 @@ class WorldScene extends JSONLevelScene {
 
   preload() {
 
-    this.load.audio('act1audio','assets/audio/single.mp3');
+    this.load.audio('music1','assets/audio/single.mp3');
     this.load.audio('act2audio','assets/audio/garden.mp3');
     this.load.audio('act3audio','assets/audio/oncoming.mp3');
     this.load.audio('act4audio','assets/audio/victim_of_the_summer_sun.mp3');
@@ -114,13 +114,12 @@ class WorldScene extends JSONLevelScene {
   }
 
   create(){
-    let bgm;
     console.log(this.level_data.map.key)
     if (this.level_data.map.key === 'act1_level_tilemap') {
       console.log('playing music');
-      this.sound.play('act1audio');
-      // let bgm = this.sound.add('act1audio');
-      // bgm.sound.play();
+      // this.sound.play('act1audio');
+      var bgm = this.sound.add('music1');
+      bgm.play();
     }
     // var rect;
     // var graphics;
