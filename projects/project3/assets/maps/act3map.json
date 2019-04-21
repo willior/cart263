@@ -91,27 +91,6 @@
                 }, 
                 {
                  "height":16,
-                 "id":32,
-                 "name":"return",
-                 "properties":
-                    {
-                     "group":"returns",
-                     "previous_level":"act2b"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "previous_level":"string"
-                    },
-                 "rotation":0,
-                 "type":"return",
-                 "visible":true,
-                 "width":16,
-                 "x":0,
-                 "y":1424
-                }, 
-                {
-                 "height":16,
                  "id":34,
                  "name":"void",
                  "properties":
@@ -291,8 +270,8 @@
                  "type":"player",
                  "visible":true,
                  "width":16,
-                 "x":32,
-                 "y":1392
+                 "x":16,
+                 "y":1408
                 }, 
                 {
                  "height":16,
@@ -314,6 +293,27 @@
                  "width":16,
                  "x":1392,
                  "y":1728
+                }, 
+                {
+                 "height":16,
+                 "id":49,
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"act2b"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":16,
+                 "x":0,
+                 "y":1440
                 }],
          "opacity":1,
          "properties":
@@ -329,7 +329,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":49,
+ "nextobjectid":50,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

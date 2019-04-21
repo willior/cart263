@@ -10,6 +10,15 @@ class LoadingScene extends Phaser.Scene {
 
   preload() {
 
+    this.load.audio('musicHome','assets/audio/holophone_days.mp3');
+    this.load.audio('music1','assets/audio/single.mp3');
+    this.load.audio('music1B','assets/audio/alonetime.mp3');
+    this.load.audio('music2','assets/audio/garden.mp3');
+    this.load.audio('music3','assets/audio/oncoming.mp3');
+    this.load.audio('music4','assets/audio/victim_of_the_summer_sun.mp3');
+    this.load.audio('music5','assets/audio/completely_dead_inside.mp3');
+    this.load.audio('music6','assets/audio/pollution.mp3');
+
     let assets = this.level_data.assets;
     for (let asset_key in assets) {
       let asset = assets[asset_key];
