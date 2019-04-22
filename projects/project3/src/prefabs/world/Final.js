@@ -252,7 +252,7 @@ class Final extends Prefab {
     else if (this.scene.finalIndex == 31) {
         console.log('ending game.')
         // this.scene.scene.start('BootScene', {scene: 'end'});
-        game.scene.start('BootScene', {scene: 'end'});
+        this.scene.scene.start('BootScene', {scene: 'end'});
     }
 
     // this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
