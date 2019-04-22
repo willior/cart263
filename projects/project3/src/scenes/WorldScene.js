@@ -28,7 +28,7 @@ import Jack from '../prefabs/world/NPCs/Jack';
 import Tree from '../prefabs/world/NPCs/Tree';
 import TreeB from '../prefabs/world/NPCs/TreeB';
 import Final from '../prefabs/world/Final';
-import Flower from '../prefabs/world/NPCs/Flower';
+// import Flower from '../prefabs/world/NPCs/Flower';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
@@ -72,7 +72,7 @@ class WorldScene extends JSONLevelScene {
       tree: Tree.prototype.constructor,
       treeB: TreeB.prototype.constructor,
       final: Final.prototype.constructor,
-      flower: Flower.prototype.constructor,
+      // flower: Flower.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
