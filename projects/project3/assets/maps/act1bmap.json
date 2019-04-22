@@ -183,29 +183,6 @@
                 }, 
                 {
                  "height":16,
-                 "id":32,
-                 "name":"flower",
-                 "properties":
-                    {
-                     "group":"npcs",
-                     "message":"flower_message",
-                     "texture":"flower_spritesheet"
-                    },
-                 "propertytypes":
-                    {
-                     "group":"string",
-                     "message":"string",
-                     "texture":"string"
-                    },
-                 "rotation":0,
-                 "type":"flower",
-                 "visible":true,
-                 "width":16,
-                 "x":928,
-                 "y":576
-                }, 
-                {
-                 "height":16,
                  "id":33,
                  "name":"player",
                  "properties":
@@ -247,6 +224,29 @@
                  "width":16,
                  "x":736,
                  "y":136
+                }, 
+                {
+                 "height":16,
+                 "id":35,
+                 "name":"flower",
+                 "properties":
+                    {
+                     "group":"npcs",
+                     "message":"flower_message",
+                     "texture":"flower_spritesheet"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "message":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"flower",
+                 "visible":true,
+                 "width":16,
+                 "x":928,
+                 "y":576
                 }],
          "opacity":1,
          "properties":
@@ -262,7 +262,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":35,
+ "nextobjectid":36,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
