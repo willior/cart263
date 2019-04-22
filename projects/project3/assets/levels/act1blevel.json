@@ -54,13 +54,12 @@
       "frame_width": 16,
       "frame_height": 16
     },
-    "sleep_spritesheet": {
+    "flower_spritesheet": {
       "type": "spritesheet",
-      "source": "assets/images/sleep.png",
+      "source": "assets/images/flower.png",
       "frame_width": 16,
       "frame_height": 16
     }
-
   },
   "groups": [
     "players",
@@ -89,7 +88,7 @@
     "cat6_message": "assets/npc_messages/cat6.txt",
 
     "sign1_message": "assets/npc_messages/sign1.txt",
-    "sleep_message": "assets/npc_messages/sleep.txt",
+    "flower_message": "assets/npc_messages/flower.txt",
 
     "hourglass_message": "assets/npc_messages/hourglass.txt",
     "specs_message": "assets/npc_messages/specs.txt",

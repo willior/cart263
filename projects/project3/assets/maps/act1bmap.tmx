@@ -465,7 +465,7 @@
   </object>
   <object id="32" name="flower" type="flower" x="928" y="576" width="16" height="16">
    <properties>
-    <property name="group" value="items"/>
+    <property name="group" value="npcs"/>
     <property name="message" value="flower_message"/>
     <property name="texture" value="flower_spritesheet"/>
    </properties>

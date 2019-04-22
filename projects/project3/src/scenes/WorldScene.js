@@ -15,7 +15,7 @@ import Books from '../prefabs/world/NPCs/Books';
 import Note from '../prefabs/world/NPCs/Note';
 import Sleep from '../prefabs/world/NPCs/Sleep';
 import Stare from '../prefabs/world/NPCs/Stare';
-import Flower from '../prefabs/world/NPCs/Flower';
+
 import House1 from '../prefabs/world/NPCs/House1';
 import House4 from '../prefabs/world/NPCs/House4';
 import Sign from '../prefabs/world/NPCs/Sign';
@@ -28,6 +28,7 @@ import Jack from '../prefabs/world/NPCs/Jack';
 import Tree from '../prefabs/world/NPCs/Tree';
 import TreeB from '../prefabs/world/NPCs/TreeB';
 import Final from '../prefabs/world/Final';
+import Flower from '../prefabs/world/NPCs/Flower';
 
 import Item from '../prefabs/world/Item';
 import Hourglass from '../prefabs/world/Items/Hourglass';
@@ -60,7 +61,6 @@ class WorldScene extends JSONLevelScene {
       note: Note.prototype.constructor,
       sleep: Sleep.prototype.constructor,
       stare: Stare.prototype.constructor,
-      flower: Flower.prototype.constructor,
       house1: House1.prototype.constructor,
       house4: House4.prototype.constructor,
       water: Water.prototype.constructor,
@@ -72,6 +72,7 @@ class WorldScene extends JSONLevelScene {
       tree: Tree.prototype.constructor,
       treeB: TreeB.prototype.constructor,
       final: Final.prototype.constructor,
+      flower: Flower.prototype.constructor,
 
       item: Item.prototype.constructor,
       hourglass: Hourglass.prototype.constructor,
