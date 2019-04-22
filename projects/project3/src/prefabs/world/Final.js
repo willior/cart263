@@ -217,6 +217,7 @@ class Final extends Prefab {
     else if (this.scene.finalIndex == 23) {
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message24F});
       this.scene.finalIndex++;
+      this.scene.endMusic.stop();
     }
     else if (this.scene.finalIndex == 24) {
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message25F});
