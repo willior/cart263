@@ -56,4 +56,4 @@ game.scene.add('WorldScene', worldScene);
 // change the 'scene' to access different parts of the game:
 // title is the beginning of the game
 // then there's act1, act1b, act2, act2b, act3, act3b, act4, act4b
-game.scene.start('BootScene', {scene: 'act3'});
+game.scene.start('BootScene', {scene: 'act4b'});

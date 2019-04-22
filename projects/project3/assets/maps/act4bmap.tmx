@@ -423,10 +423,30 @@
   <object id="51" name="final" type="final" x="0" y="176" width="16" height="16">
    <properties>
     <property name="group" value="finals"/>
+    <property name="message10F" value="final10_message"/>
+    <property name="message11F" value="final11_message"/>
+    <property name="message12F" value="final12_message"/>
+    <property name="message13F" value="final13_message"/>
+    <property name="message14F" value="final14_message"/>
+    <property name="message15F" value="final15_message"/>
+    <property name="message16F" value="final16_message"/>
+    <property name="message17F" value="final17_message"/>
+    <property name="message18F" value="final18_message"/>
+    <property name="message19F" value="final19_message"/>
     <property name="message1F" value="final1_message"/>
+    <property name="message20F" value="final20_message"/>
+    <property name="message21F" value="final21_message"/>
+    <property name="message22F" value="final22_message"/>
+    <property name="message23F" value="final23_message"/>
+    <property name="message24F" value="final24_message"/>
     <property name="message2F" value="final2_message"/>
     <property name="message3F" value="final3_message"/>
     <property name="message4F" value="final4_message"/>
+    <property name="message5F" value="final5_message"/>
+    <property name="message6F" value="final6_message"/>
+    <property name="message7F" value="final7_message"/>
+    <property name="message8F" value="final8_message"/>
+    <property name="message9F" value="final9_message"/>
     <property name="messageNO" value="finalNO_message"/>
     <property name="texture" value="cat_spritesheet"/>
    </properties>

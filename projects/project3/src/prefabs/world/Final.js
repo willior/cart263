@@ -17,6 +17,21 @@ class Final extends Prefab {
     this.message7F = this.scene.cache.text.get(properties.message7F);
     this.message8F = this.scene.cache.text.get(properties.message8F);
     this.message9F = this.scene.cache.text.get(properties.message9F);
+    this.message10F = this.scene.cache.text.get(properties.message10F);
+    this.message11F = this.scene.cache.text.get(properties.message11F);
+    this.message12F = this.scene.cache.text.get(properties.message12F);
+    this.message13F = this.scene.cache.text.get(properties.message13F);
+    this.message14F = this.scene.cache.text.get(properties.message14F);
+    this.message15F = this.scene.cache.text.get(properties.message15F);
+    this.message16F = this.scene.cache.text.get(properties.message16F);
+    this.message17F = this.scene.cache.text.get(properties.message17F);
+    this.message18F = this.scene.cache.text.get(properties.message18F);
+    this.message19F = this.scene.cache.text.get(properties.message19F);
+    this.message20F = this.scene.cache.text.get(properties.message20F);
+    this.message21F = this.scene.cache.text.get(properties.message21F);
+    this.message22F = this.scene.cache.text.get(properties.message22F);
+    this.message23F = this.scene.cache.text.get(properties.message23F);
+    this.message24F = this.scene.cache.text.get(properties.message24F);
 
     this.body.immovable = true;
 
@@ -55,7 +70,7 @@ class Final extends Prefab {
     }
     else if ((this.scene.hourglassGot)&&(this.scene.finalIndex == 4)) {
       console.log('got hourglass, OK');
-      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message4Y});
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
       this.scene.finalIndex++;
     }
     else if ((!this.scene.hourglassGot)) {
@@ -63,18 +78,10 @@ class Final extends Prefab {
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
     }
     else if (this.scene.finalIndex == 5) {
-      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
-      this.scene.finalIndex++;
-    }
-    else if (this.scene.finalIndex == 5) {
-      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message5F});
-      this.scene.finalIndex++;
-    }
-    else if (this.scene.finalIndex == 6) {
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message6F});
       this.scene.finalIndex++;
     }
-    else if ((this.scene.hourglassGot)&&(this.scene.finalIndex == 7)) {
+    else if ((this.scene.specsGot)&&(this.scene.finalIndex == 6)) {
       console.log('got spectacles, OK');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message7F});
       this.scene.finalIndex++;
@@ -83,15 +90,71 @@ class Final extends Prefab {
       console.log('no specs, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
     }
-    else if (this.scene.finalIndex == 8) {
+    else if (this.scene.finalIndex == 7) {
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message8F});
       this.scene.finalIndex++;
     }
-    else if ((this.scene.tomeglassGot)&&(this.scene.finalIndex == 9)) {
+    else if ((this.scene.tomeGot)&&(this.scene.finalIndex == 8)) {
+      console.log('got tome, OK');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message9F});
       this.scene.finalIndex++;
     }
-
+    else if ((!this.scene.tomeGot)) {
+      console.log('no tome, returning');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+    }
+    else if (this.scene.finalIndex == 9) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message10F});
+      this.scene.finalIndex++;
+    }
+    else if ((this.scene.pipeGot)&&(this.scene.finalIndex == 10)) {
+      console.log('got pipe, OK');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message11F});
+      this.scene.finalIndex++;
+    }
+    else if (!this.scene.pipeGot) {
+      console.log('no pipe, returning');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+    }
+    else if (this.scene.finalIndex == 11) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message12F});
+      this.scene.finalIndex++;
+    }
+    else if ((this.scene.ankhGot)&&(this.scene.finalIndex == 12)) {
+      console.log('got ankh, OK');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message13F});
+      this.scene.finalIndex++;
+    }
+    else if (!this.scene.ankhGot) {
+      console.log('no ankh, returning');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+    }
+    else if (this.scene.finalIndex == 13) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message14F});
+      this.scene.finalIndex++;
+    }
+    else if ((this.scene.wheelGot)&&(this.scene.finalIndex == 14)) {
+      console.log('got wheel, OK');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message15F});
+      this.scene.finalIndex++;
+    }
+    else if (!this.scene.wheelGot) {
+      console.log('no wheel, returning');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+    }
+    else if (this.scene.finalIndex == 15) {
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message16F});
+      this.scene.finalIndex++;
+    }
+    else if ((this.scene.capGot)&&(this.scene.finalIndex == 16)) {
+      console.log('got cap, OK');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message17F});
+      this.scene.finalIndex++;
+    }
+    else if (!this.scene.capGot) {
+      console.log('no cap, returning');
+      this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+    }
 
     // this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
     // stops listening for key presses

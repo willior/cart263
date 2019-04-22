@@ -87,17 +87,28 @@ class WorldScene extends JSONLevelScene {
     // creating object const to hold message box text style
     // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
 
-    this.capGot = false;
-    this.fluteGot = false;
-    this.hourglassGot = false;
-    this.pipeGot = false;
-    this.specsGot = false;
-    this.tomeGot = false;
-    this.ankhGot = false;
-    this.wheelGot = false;
-    this.scopeGot = false;
-    this.synthGot = false;
-    this.astrolabeGot = false;
+    // this.capGot = false;
+    // this.fluteGot = false;
+    // this.hourglassGot = false;
+    // this.pipeGot = false;
+    // this.specsGot = false;
+    // this.tomeGot = false;
+    // this.ankhGot = false;
+    // this.wheelGot = false;
+    // this.scopeGot = false;
+    // this.synthGot = false;
+    // this.astrolabeGot = false;
+    this.capGot = true;
+    this.fluteGot = true;
+    this.hourglassGot = true;
+    this.pipeGot = true;
+    this.specsGot = true;
+    this.tomeGot = true;
+    this.ankhGot = true;
+    this.wheelGot = true;
+    this.scopeGot = true;
+    this.synthGot = true;
+    this.astrolabeGot = true;
   }
 
   preload() {
