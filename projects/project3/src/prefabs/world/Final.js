@@ -86,6 +86,7 @@ class Final extends Prefab {
     else if ((!this.scene.hourglassGot)) {
       console.log('no hourglass, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 5) {
@@ -100,6 +101,7 @@ class Final extends Prefab {
     else if ((!this.scene.specsGot)) {
       console.log('no specs, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 7) {
@@ -114,6 +116,7 @@ class Final extends Prefab {
     else if ((!this.scene.tomeGot)) {
       console.log('no tome, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 9) {
@@ -128,6 +131,7 @@ class Final extends Prefab {
     else if (!this.scene.pipeGot) {
       console.log('no pipe, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 11) {
@@ -142,6 +146,7 @@ class Final extends Prefab {
     else if (!this.scene.ankhGot) {
       console.log('no ankh, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 13) {
@@ -156,6 +161,7 @@ class Final extends Prefab {
     else if (!this.scene.wheelGot) {
       console.log('no wheel, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 15) {
@@ -170,6 +176,7 @@ class Final extends Prefab {
     else if (!this.scene.capGot) {
       console.log('no cap, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 17) {
@@ -184,6 +191,7 @@ class Final extends Prefab {
     else if (!this.scene.fluteGot) {
       console.log('no flute, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 19) {
@@ -198,6 +206,7 @@ class Final extends Prefab {
     else if (!this.scene.scopeGot) {
       console.log('no scope, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 21) {
@@ -212,6 +221,7 @@ class Final extends Prefab {
     else if (!this.scene.astrolabeGot) {
       console.log('no astrolabe, returning');
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.messageNO});
+      this.scene.endMusic.stop();
       this.scene.music.play({loop: true});
     }
     else if (this.scene.finalIndex == 23) {
