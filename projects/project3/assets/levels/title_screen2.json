@@ -19,10 +19,10 @@
     },
     "title_message": {
       "type": "text",
-      "position": {"x": 100, "y": 100},
+      "position": {"x": 200, "y": 180},
       "properties": {
         "text": "music by",
-        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "style": {"font": "20px LCD", "fill": "#ffffff"},
         "group": "texts"
       }
     },
@@ -30,8 +30,8 @@
       "type": "text",
       "position": {"x": 300, "y": 300},
       "properties": {
-        "text": "owen gildbride",
-        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "text": "owen gilbride",
+        "style": {"font": "20px LCD", "fill": "#ffffff"},
         "group": "texts"
       }
     }
