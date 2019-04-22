@@ -43,7 +43,6 @@ import Synth from '../prefabs/world/Items/Synth';
 import Scope from '../prefabs/world/Items/Scope';
 import Astrolabe from '../prefabs/world/Items/Astrolabe';
 
-
 class WorldScene extends JSONLevelScene {
   constructor() {
     super('WorldScene');
@@ -126,31 +125,6 @@ class WorldScene extends JSONLevelScene {
         url: 'node_modules/phaser-animated-tiles/dist/AnimatedTiles.js',
         sceneKey: 'tileAnimate'
     });
-
-    // if ((this.level_data.map.key === '1_level_tilemap')||(this.level_data.map.key === '2B_level_tilemap')) {
-    //   this.load.audio('musicHome','assets/audio/holophone_days.mp3');
-    // }
-    // else if (this.level_data.map.key === 'act1_level_tilemap') {
-    //   this.load.audio('music1','assets/audio/single.mp3');
-    // }
-    // else if (this.level_data.map.key === 'act1b_level_tilemap') {
-    //   this.load.audio('music1B','assets/audio/alonetime.mp3');
-    // }
-    // else if ((this.level_data.map.key === 'act2_level_tilemap')||(this.level_data.map.key === 'act2b_level_tilemap')) {
-    //   this.load.audio('music2','assets/audio/garden.mp3');
-    // }
-    // else if (this.level_data.map.key === 'act3_level_tilemap') {
-    //     this.load.audio('music3','assets/audio/oncoming.mp3');
-    // }
-    // else if (this.level_data.map.key === 'act4_level_tilemap') {
-    //   this.load.audio('music4','assets/audio/victim_of_the_summer_sun.mp3');
-    // }
-    // else if (this.level_data.map.key === 'act4b_level_tilemap') {
-    //   this.load.audio('music5','assets/audio/completely_dead_inside.mp3');
-    // }
-    // else if (this.level_data.map.key === 'act4b_level_tilemap') {
-    //   this.load.audio('music6','assets/audio/pollution.mp3');
-    // }
   }
 
   create(){
@@ -199,6 +173,12 @@ class WorldScene extends JSONLevelScene {
       this.music = music;
       music.play({loop: true});
 
+      var endMusic = this.sound.add('music6');
+      this.endMusic = endMusic;
+
+      var creditsMusic = this.sound.add('music7');
+      this.creditsMusic = creditsMusic;
+
     }
 
     // var rect;
@@ -221,8 +201,8 @@ class WorldScene extends JSONLevelScene {
         }
     }, this);
 
-    console.log(mapAnim);
-
+    // could not get tilemap animation to work
+    // console.log(mapAnim);
     // this.animatedTiles.init(mapAnim);
 
     super.create();

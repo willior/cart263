@@ -169,27 +169,6 @@ class NPC extends Prefab {
         this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message24});
         this.scene.treeIndex++;
       }
-
-      // let treeStyle = { fontFamily: 'Commodore', fontSize: '38px', fill: '#aadddd', wordWrap: true, align: 'left' };
-
-      // let textStart = this.add.text(this.game.canvas.width/2,100,'');
-
-      // var textStart = new Text(this,player.x,player.y+20,'hi', treeStyle);
-      // console.log(textStart);
-
-      // this.add.text(this,100,100,'hi');
-
-      // this.textHolder = "I know what you're thinking.";
-      //
-      // let index = 0;
-      // let interval = setInterval(() => {
-      //   textStart.textHolder += textHolder.charAt(index);
-      //   index++;
-      //   if (index === textHolder.length) {
-      //     clearInterval(interval);
-      //   }
-      // },50);
-
     }
 
     if (npc.name === 'treeB') {
@@ -326,10 +305,12 @@ class NPC extends Prefab {
     // for one second
     var closeTime = this.scene.time.delayedCall(1000, this.closable, [], this);
   }
+
   closable(){
     // after 1 second, reapplies inputs so the text box can be closed
     console.log("talking input applied - can now close message box");
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
+    // destroys object so can't be interacted with again
     if (this.name === 'treeB') {this.destroy();}
     // this.rect = Phaser.Geom.Rectangle(player.x+300, player.y+200, player.x+100, player.y+100);
     // this.graphics = this.add.graphics({ fillStyle: { color: 0xff0000 } });

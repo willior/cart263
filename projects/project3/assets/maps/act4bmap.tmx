@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="150" height="172" tilewidth="16" tileheight="16" infinite="0" nextobjectid="93">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="150" height="172" tilewidth="16" tileheight="16" infinite="0" nextobjectid="94">
  <tileset firstgid="1" name="map_tileset" tilewidth="16" tileheight="16" tilecount="180" columns="20">
   <image source="../images/tileset3s.png" width="320" height="144"/>
  </tileset>
@@ -439,7 +439,14 @@
     <property name="message22F" value="final22_message"/>
     <property name="message23F" value="final23_message"/>
     <property name="message24F" value="final24_message"/>
+    <property name="message25F" value="final25_message"/>
+    <property name="message26F" value="final26_message"/>
+    <property name="message27F" value="final27_message"/>
+    <property name="message28F" value="final28_message"/>
+    <property name="message29F" value="final29_message"/>
     <property name="message2F" value="final2_message"/>
+    <property name="message30F" value="final30_message"/>
+    <property name="message31F" value="final31_message"/>
     <property name="message3F" value="final3_message"/>
     <property name="message4F" value="final4_message"/>
     <property name="message5F" value="final5_message"/>
@@ -655,7 +662,7 @@
     <property name="message31B" value="treeB31_message"/>
    </properties>
   </object>
-  <object id="92" name="player" type="player" x="2320" y="992" width="16" height="16">
+  <object id="93" name="player" type="player" x="432" y="176" width="16" height="16">
    <properties>
     <property name="group" value="players"/>
     <property name="texture" value="player_spritesheet"/>

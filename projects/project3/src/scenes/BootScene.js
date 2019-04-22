@@ -63,7 +63,11 @@ class BootScene extends Phaser.Scene {
       act4b: {
         key: 'WorldScene',
         path: 'assets/levels/act4blevel.json'
-      }
+      },
+      end: {
+        key: 'EndScene',
+        path: 'assets/levels/end_screen.json'
+      },
     }
   }
   preload() {

@@ -248,7 +248,14 @@
                      "message22F":"final22_message",
                      "message23F":"final23_message",
                      "message24F":"final24_message",
+                     "message25F":"final25_message",
+                     "message26F":"final26_message",
+                     "message27F":"final27_message",
+                     "message28F":"final28_message",
+                     "message29F":"final29_message",
                      "message2F":"final2_message",
+                     "message30F":"final30_message",
+                     "message31F":"final31_message",
                      "message3F":"final3_message",
                      "message4F":"final4_message",
                      "message5F":"final5_message",
@@ -278,7 +285,14 @@
                      "message22F":"string",
                      "message23F":"string",
                      "message24F":"string",
+                     "message25F":"string",
+                     "message26F":"string",
+                     "message27F":"string",
+                     "message28F":"string",
+                     "message29F":"string",
                      "message2F":"string",
+                     "message30F":"string",
+                     "message31F":"string",
                      "message3F":"string",
                      "message4F":"string",
                      "message5F":"string",
@@ -1012,7 +1026,7 @@
                 }, 
                 {
                  "height":16,
-                 "id":92,
+                 "id":93,
                  "name":"player",
                  "properties":
                     {
@@ -1030,8 +1044,8 @@
                  "type":"player",
                  "visible":true,
                  "width":16,
-                 "x":2320,
-                 "y":992
+                 "x":432,
+                 "y":176
                 }],
          "opacity":1,
          "properties":
@@ -1066,7 +1080,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":93,
+ "nextobjectid":94,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
