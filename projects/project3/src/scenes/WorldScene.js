@@ -15,6 +15,7 @@ import Books from '../prefabs/world/NPCs/Books';
 import Note from '../prefabs/world/NPCs/Note';
 import Sleep from '../prefabs/world/NPCs/Sleep';
 import Stare from '../prefabs/world/NPCs/Stare';
+import Flower from '../prefabs/world/NPCs/Flower';
 import House1 from '../prefabs/world/NPCs/House1';
 import House4 from '../prefabs/world/NPCs/House4';
 import Sign from '../prefabs/world/NPCs/Sign';
@@ -59,6 +60,7 @@ class WorldScene extends JSONLevelScene {
       note: Note.prototype.constructor,
       sleep: Sleep.prototype.constructor,
       stare: Stare.prototype.constructor,
+      flower: Flower.prototype.constructor,
       house1: House1.prototype.constructor,
       house4: House4.prototype.constructor,
       water: Water.prototype.constructor,

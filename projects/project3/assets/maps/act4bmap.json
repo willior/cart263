@@ -1012,7 +1012,7 @@
                 }, 
                 {
                  "height":16,
-                 "id":89,
+                 "id":92,
                  "name":"player",
                  "properties":
                     {
@@ -1030,8 +1030,8 @@
                  "type":"player",
                  "visible":true,
                  "width":16,
-                 "x":1000,
-                 "y":176
+                 "x":2320,
+                 "y":992
                 }],
          "opacity":1,
          "properties":
@@ -1066,7 +1066,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":92,
+ "nextobjectid":93,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",

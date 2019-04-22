@@ -149,8 +149,13 @@
       "final22_message": "assets/npc_messages/final/final22.txt",
       "final23_message": "assets/npc_messages/final/final23.txt",
       "final24_message": "assets/npc_messages/final/final24.txt",
-
-
+      "final25_message": "assets/npc_messages/final/final25.txt",
+      "final26_message": "assets/npc_messages/final/final26.txt",
+      "final27_message": "assets/npc_messages/final/final27.txt",
+      "final28_message": "assets/npc_messages/final/final28.txt",
+      "final29_message": "assets/npc_messages/final/final29.txt",
+      "final30_message": "assets/npc_messages/final/final30.txt",
+      "final31_message": "assets/npc_messages/final/final31.txt",
 
       "finalNO_message": "assets/npc_messages/final/finalNO.txt"
   }

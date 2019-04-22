@@ -64,7 +64,7 @@
                  "visible":true,
                  "width":112,
                  "x":688,
-                 "y":136
+                 "y":0
                 }, 
                 {
                  "height":16,
@@ -385,6 +385,27 @@
                  "width":16,
                  "x":64,
                  "y":480
+                }, 
+                {
+                 "height":16,
+                 "id":32,
+                 "name":"door",
+                 "properties":
+                    {
+                     "group":"doors",
+                     "next_level":"screen2B"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "next_level":"string"
+                    },
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":16,
+                 "x":736,
+                 "y":136
                 }],
          "opacity":1,
          "properties":
@@ -400,7 +421,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":32,
+ "nextobjectid":33,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.5",
