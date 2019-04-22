@@ -1,11 +1,15 @@
 import Prefab from '../Prefab';
 import MessageBox from '../HUD/MessageBox';
-
+// NPC prefab
+// the .js files in the NPC folder are used specifically to create their animation
+// all the other NPC stuff is handled here
 class NPC extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
+    // storing NPC message
     this.message = this.scene.cache.text.get(properties.message);
-
+    // these are the individual messages of the Ancient Tree Spirit bring loaded
+    // i could have and definitely should have made the Tree its own class
     this.message1 = this.scene.cache.text.get(properties.message1);
     this.message2 = this.scene.cache.text.get(properties.message2);
     this.message3 = this.scene.cache.text.get(properties.message3);
@@ -63,12 +67,17 @@ class NPC extends Prefab {
     this.message30B = this.scene.cache.text.get(properties.message30B);
     this.message31B = this.scene.cache.text.get(properties.message31B);
 
+    // NPCs don't react to being bumped
     this.body.immovable = true;
 
+    // fires the talk function on collision with an NPC
     this.scene.physics.add.collider(this, this.scene.groups.players,
     this.talk, null, this);
   }
 
+  // talk function
+  // stops player, creates message box, displays text
+  // if talking to the tree, iterates in a disgusting manner through its text
   talk(npc, player) {
     player.stop();
     console.log('talking to NPC: ' + npc.name);
@@ -311,10 +320,8 @@ class NPC extends Prefab {
     console.log("talking input applied - can now close message box");
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
     // destroys object so can't be interacted with again
+    // during Tree telepathic communication
     if (this.name === 'treeB') {this.destroy();}
-    // this.rect = Phaser.Geom.Rectangle(player.x+300, player.y+200, player.x+100, player.y+100);
-    // this.graphics = this.add.graphics({ fillStyle: { color: 0xff0000 } });
-    // this.graphics.fillRectShape(rect);
   }
 }
 

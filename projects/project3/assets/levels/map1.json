@@ -35,6 +35,24 @@
       "source": "assets/images/hourglass.png",
       "frame_width": 16,
       "frame_height": 16
+    },
+    "title_message": {
+      "type": "text",
+      "position": {"x": 400, "y": 100},
+      "properties": {
+        "text": "music composed by",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    },
+    "start_message": {
+      "type": "text",
+      "position": {"x": 100, "y": 400},
+      "properties": {
+        "text": "owen gilbride (world3.tk)",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
     }
   },
   "groups": [
@@ -54,7 +72,7 @@
     "talking_user_input": "assets/user_inputs/talking_user_input.json"
   },
   "initial_user_input": "world_user_input",
-  
+
   "npc_messages": {
     "cat1_message": "assets/npc_messages/cat1.txt",
     "books_message": "assets/npc_messages/books.txt"

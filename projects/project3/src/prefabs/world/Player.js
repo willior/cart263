@@ -1,18 +1,22 @@
 import Prefab from '../Prefab';
-
+// you!
 class Player extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
+    // walking speed property is set in the Tiled map JSON file
     this.walking_speed = +properties.walking_speed;
+    // can move freely
     this.body.collideWorldBounds = false;
+    // except through blocked layers, assigned in the Tiled map JSON file
     this.scene.physics.add.collider(this, this.scene.layers.blocked);
-
+    // movement
     this.moving = {
       left: false,
       right: false,
       up: false,
       down: false
     };
+    // creating each animation once
     if (!this.scene.anims.anims.has('walking_down')) {
       this.scene.anims.create({
         key: 'walking_down',
@@ -47,13 +51,14 @@ class Player extends Prefab {
     }
     this.stopped_frames = [0, 0, 0, 1, 7]
 
+    // sets the camera to always follow and center on the player
     var camera1 = this.scene.cameras.main.setZoom(1.5);
     camera1.startFollow(this);
 
   }
 
   update() {
-
+    // plays correct animation based on movement direction
     if (this.body) {
       if (this.moving.left && this.body.velocity.x <= 0) {
         this.body.velocity.x = -this.walking_speed;
@@ -91,10 +96,12 @@ class Player extends Prefab {
       }
     }
   }
+  // retrives from user input which direction is being pressed and whether it's true or not
   change_movement(direction, move) {
     this.moving[direction] = move;
   }
 
+  // stop function called when interacting with NPC for example
   stop () {
     this.moving = {
       left: false,

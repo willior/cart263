@@ -3,6 +3,10 @@ class BootScene extends Phaser.Scene {
     super({
       key: 'BootScene'
     });
+    // levels object object used to change scenes
+    // stores level information in JSON files
+    // tells the loading scene which JSON file to load
+    // all maps or "acts" are built in the WorldScene
     this.levels = {
       title: {
         key: 'TitleScene',
@@ -70,13 +74,15 @@ class BootScene extends Phaser.Scene {
       },
     }
   }
+
+  // iterating through stored levels information
   preload() {
     for (let level_name in this.levels) {
       let level = this.levels[level_name];
       this.load.json(level_name, level.path);
     }
   }
-
+  // creating the appropriate data to be loaded
   create(data) {
     let level_data = this.cache.json.get(data.scene);
     this.scene.start('LoadingScene', {

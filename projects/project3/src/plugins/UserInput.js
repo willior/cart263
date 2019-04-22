@@ -5,6 +5,9 @@ class UserInput {
     this.enabled = false;
 
   }
+
+  // user input plugin sets the appropriate user input based on what's happening (either talking or moving on the world scene)
+  // learned how to do this from a tutorial from Zenva Academy
   set_input (user_input_data) {
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');

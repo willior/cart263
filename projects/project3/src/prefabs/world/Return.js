@@ -1,5 +1,5 @@
 import Prefab from '../Prefab';
-
+// basically the same as door
 class Return extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);

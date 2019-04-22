@@ -1,6 +1,8 @@
 import Prefab from '../Prefab';
 import MessageBox from '../HUD/MessageBox';
-
+// similar to NPC
+// all item behaviour is handled here
+// the .js files in the Items folder are for animations only
 class Item extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
@@ -19,7 +21,7 @@ class Item extends Prefab {
     player.stop();
     this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
 
-    // emits an for item collection if the name matches
+    // emits an event for item collection if the name matches the item
     if (this.name === 'cap') {this.scene.events.emit('collectCap');}
     if (this.name === 'flute') {this.scene.events.emit('collectFlute');}
     if (this.name === 'hourglass') {this.scene.events.emit('collectHourglass');}
@@ -31,7 +33,7 @@ class Item extends Prefab {
     if (this.name === 'scope') {this.scene.events.emit('collectScope');}
     if (this.name === 'synth') {this.scene.events.emit('collectSynth');}
     if (this.name === 'astrolabe') {this.scene.events.emit('collectAstrolabe');}
-    
+
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');

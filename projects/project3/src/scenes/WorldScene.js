@@ -15,7 +15,6 @@ import Books from '../prefabs/world/NPCs/Books';
 import Note from '../prefabs/world/NPCs/Note';
 import Sleep from '../prefabs/world/NPCs/Sleep';
 import Stare from '../prefabs/world/NPCs/Stare';
-
 import House1 from '../prefabs/world/NPCs/House1';
 import House4 from '../prefabs/world/NPCs/House4';
 import Sign from '../prefabs/world/NPCs/Sign';
@@ -43,10 +42,12 @@ import Synth from '../prefabs/world/Items/Synth';
 import Scope from '../prefabs/world/Items/Scope';
 import Astrolabe from '../prefabs/world/Items/Astrolabe';
 
+// the World Scene is the big steak of this game
+
 class WorldScene extends JSONLevelScene {
   constructor() {
     super('WorldScene');
-
+    // prefab class assignments for every object in the game (text boxes, world transition zones, NPCs, items, the player, etc.)
     this.prefab_classes = {
       text: TextPrefab.prototype.constructor,
       player: Player.prototype.constructor,
@@ -86,9 +87,8 @@ class WorldScene extends JSONLevelScene {
       scope: Scope.prototype.constructor,
       astrolabe: Astrolabe.prototype.constructor
     }
-    // creating object const to hold message box text style
-    // this.TEXT_STYLE = {font: "12px LCD", fill: "#FFFFFF"};
 
+    // variables for tracking artifact collection
     this.capGot = false;
     this.fluteGot = false;
     this.hourglassGot = false;
@@ -100,6 +100,8 @@ class WorldScene extends JSONLevelScene {
     this.scopeGot = false;
     this.synthGot = false;
     this.astrolabeGot = false;
+
+    // uncomment this to start with all artifacts
     // this.capGot = true;
     // this.fluteGot = true;
     // this.hourglassGot = true;
@@ -114,8 +116,10 @@ class WorldScene extends JSONLevelScene {
   }
 
   preload() {
+    // values to keep track of conversations
     this.treeIndex = 0;
     this.finalIndex = 0;
+    // iterates through the the NPC messages and loads their text files
     for (let npc_message_name in this.level_data.npc_messages) {
       this.load.text(npc_message_name, this.level_data.npc_messages[npc_message_name]);
     }
@@ -128,6 +132,9 @@ class WorldScene extends JSONLevelScene {
   }
 
   create(){
+
+    // BGM player
+    // loos at what tilemap is being used and plays music based on that
     if (this.level_data.map.key === '1_level_tilemap') {
       var music = this.sound.add('musicHome');
       this.music = music;
@@ -173,17 +180,15 @@ class WorldScene extends JSONLevelScene {
       this.music = music;
       music.play({loop: true});
 
+      // assigning variables for the end game music
       var endMusic = this.sound.add('music6');
       this.endMusic = endMusic;
-
       var creditsMusic = this.sound.add('music7');
       this.creditsMusic = creditsMusic;
 
     }
-
-    // var rect;
-    // var graphics;
-    let mapAnim = this.make.tilemap({key: this.level_data.map.key});
+    // let mapAnim = this.make.tilemap({key: this.level_data.map.key});
+    // creating the maps
     this.map = this.add.tilemap(this.level_data.map.key);
     let tileset_index = 0;
     this.tilesets = {};
@@ -196,7 +201,7 @@ class WorldScene extends JSONLevelScene {
     this.layers = {};
     this.map.layers.forEach(function (layer) {
         this.layers[layer.name] = this.map.createDynamicLayer(layer.name, this.tilesets[layer.properties.tileset]);
-        if (layer.properties.collision) { // collision layer
+        if (layer.properties.collision) { // checking for collision based on layer property set in Tiled
             this.map.setCollisionByExclusion([-1], true, layer.name);
         }
     }, this);
@@ -205,9 +210,11 @@ class WorldScene extends JSONLevelScene {
     // console.log(mapAnim);
     // this.animatedTiles.init(mapAnim);
 
-    super.create();
 
+    // creates everything
+    super.create();
     this.map.objects.forEach(function (object_layer) {
+      // object create function
         object_layer.objects.forEach(this.create_object, this);
     }, this);
 
@@ -239,11 +246,15 @@ class WorldScene extends JSONLevelScene {
     if ((object.name === 'synth') && (this.synthGot)) {return;}
     if ((object.name === 'astrolabe') && (this.astrolabeGot)) {return;}
 
+    // interpreting position values based on those in the  JSON Tiled maps
     let position = {x: object.x + (object.width / 2), y: object.y + (object.height / 2)};
     if (this.prefab_classes.hasOwnProperty(object.type)) {
+      // assigning objects to prefabs based on properties (cats, npcs, items, doors, etc.)
       let prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
     }
   }
+  // function for destroying message box
+  // reapplies world scene user input (player movement)
   end_talk() {
     this.current_message_box.destroy();
     this.user_input.set_input(this.user_inputs.world_user_input);

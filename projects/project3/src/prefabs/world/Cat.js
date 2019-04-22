@@ -1,16 +1,14 @@
 import Prefab from '../Prefab';
 import MessageBox from '../HUD/MessageBox';
-
+// basically just a copy of NPC, but the cat is its own class
 class Cat extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
-
+    // gets the appropriate message from Tiled JSON data
     this.message = this.scene.cache.text.get(properties.message);
-
     this.body.immovable = true;
-
     this.scene.physics.add.collider(this, this.scene.groups.players, this.talk, null, this);
-
+    // creates animation from spritesheet once
     if (!this.scene.anims.anims.has('cat_tail')) {
       this.scene.anims.create({
         key: 'cat_tail',
@@ -37,6 +35,7 @@ class Cat extends Prefab {
     console.log("talking input applied - can now close message box");
     this.scene.user_input.set_input(this.scene.user_inputs.talking_user_input);
   }
+  // animate
   update() {
     if (this.body) {
       this.anims.play('cat_tail', true);

@@ -1,17 +1,16 @@
 import Prefab from '../Prefab';
 import MessageBox from '../HUD/MessageBox';
-
+// class for the final conversation with Max
 class Final extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);
-
+    // loading aaalllll the messages
+    // there is a better way to do this using JSON but i didn't expect it to get this bad
     this.messageNO = this.scene.cache.text.get(properties.messageNO);
     this.message1F = this.scene.cache.text.get(properties.message1F);
     this.message2F = this.scene.cache.text.get(properties.message2F);
     this.message3F = this.scene.cache.text.get(properties.message3F);
-
     this.message4F = this.scene.cache.text.get(properties.message4F);
-
     this.message5F = this.scene.cache.text.get(properties.message5F);
     this.message6F = this.scene.cache.text.get(properties.message6F);
     this.message7F = this.scene.cache.text.get(properties.message7F);
@@ -56,11 +55,12 @@ class Final extends Prefab {
 
   talk(final, player) {
     console.log("talking to Final Max.");
-    console.log(this.scene.finalIndex);
-    console.log(this.scene.hourglassGot);
     player.stop();
     this.MESSAGE_BOX_POSITION = {x: (player.x-280), y: (player.y+20)};
 
+    // basically goes through Max's Final dialog, checking to see if you have the appropriate items to advance
+    // stops the regular music and plays something different
+    // if you don't have a required item, stops that music and goes back to the level BGM
     if (this.scene.finalIndex == 0) {
       this.scene.music.stop();
       this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message1F});
@@ -261,16 +261,16 @@ class Final extends Prefab {
     }
     else if (this.scene.finalIndex == 31) {
         console.log('ending game.')
-        // this.scene.scene.start('BootScene', {scene: 'end'});
         this.scene.scene.start('BootScene', {scene: 'end'});
     }
 
     // this.scene.current_message_box = new MessageBox(this.scene, this.name + '_message_box', this.MESSAGE_BOX_POSITION, {texture: 'message_box_image', group: 'hud', message: this.message});
+
     // stops listening for key presses
     this.scene.input.keyboard.removeAllListeners('keydown');
     this.scene.input.keyboard.removeAllListeners('keyup');
     // for one second
-    var closeTime = this.scene.time.delayedCall(20, this.closable, [], this);
+    var closeTime = this.scene.time.delayedCall(1000, this.closable, [], this);
   }
   closable(){
     // after 1 second, reapplies inputs so the text box can be closed

@@ -2,6 +2,8 @@ import JSONLevelScene from './JSONLevelScene';
 import Prefab from '../prefabs/Prefab';
 import TextPrefab from '../prefabs/TextPrefab';
 
+// the first scene in the game
+
 class TitleScene extends JSONLevelScene {
   constructor() {
     super('TitleScene');
@@ -12,6 +14,7 @@ class TitleScene extends JSONLevelScene {
     }
   }
 
+  // runs on user input; boots using data for 'screen1', your house
   start_game() {
     this.scene.start('BootScene', {scene: 'screen1'});
   }

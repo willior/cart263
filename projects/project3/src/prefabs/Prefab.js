@@ -1,4 +1,5 @@
 class Prefab extends Phaser.GameObjects.Sprite {
+  // prefabs are sprites; everything interactable you see, basically
   constructor(scene, name, position, properties) {
     super(scene, position.x, position.y, properties.texture, properties.frame);
 

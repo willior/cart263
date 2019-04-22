@@ -1,6 +1,7 @@
 import Prefab from '../Prefab';
 import TextPrefab from '../TextPrefab';
-
+// message box prefab
+// was going to add more UI elements but the rudimentary text box is the only one for now
 class MessageBox extends Prefab {
   constructor(scene, name, position, properties) {
     super(scene, name, position, properties);

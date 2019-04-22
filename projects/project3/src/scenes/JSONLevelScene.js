@@ -7,12 +7,16 @@ class JSONLevelScene extends Phaser.Scene {
     super({key: key});
   }
 
+  // passing the data to the level scene
+
   init (data) {
     this.level_data = data.level_data;
   }
 
+    // the umbrella "game scene" under which all the stuff takes place
+    // interprets properties in the json map files exported from Tiled
+    // assigns sprites
   create() {
-
     this.groups = {};
     this.level_data.groups.forEach(function (group_name) {
       this.groups[group_name] = this.physics.add.group();
@@ -30,7 +34,7 @@ class JSONLevelScene extends Phaser.Scene {
     this.user_input_data = this.cache.json.get(this.level_data.initial_user_input);
     this.user_input.set_input(this.user_input_data);
   }
-
+  // sprites update function: basically their animation
   update() {
     for (let sprite_name in this.sprites) {
       this.sprites[sprite_name].update();
