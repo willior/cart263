@@ -9,7 +9,7 @@ class Door extends Prefab {
   }
   enter() {
     console.log("entering " + this.next_level);
-    if((this.next_level === 'title3')||(this.next_level === 'act2')||(this.next_level === 'act2b')||(this.next_level === 'act3')||(this.next_level === 'act4')||(this.next_level === 'act4b')||(this.next_level === 'act1b')||(this.next_level === 'screen2B')){
+    if((this.next_level === 'title3')||(this.next_level === 'act2')||(this.next_level === 'act2b')||(this.next_level === 'act3')||(this.next_level === 'act4')||(this.next_level === 'act4b')||(this.next_level === 'act1b')||(this.next_level === 'screen2B')|(this.next_level === 'act1')){
       console.log('stopping music');
       this.scene.music.stop();
     }
