@@ -1,0 +1,162 @@
+{
+  "assets": {
+    "map_tileset": {
+      "type": "image",
+      "source": "assets/images/tileset3s.png"
+    },
+    "player_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/player.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "cat_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/cat.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "message_box_image": {
+      "type": "image",
+      "source": "assets/images/message_box.png"
+    },
+    "act4b_level_tilemap": {
+      "type": "tilemap",
+      "source": "assets/maps/act4bmap.json"
+    },
+    "sign_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/sign.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "stare_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/stare.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "synth_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/synth.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "scope_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/scope.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "ankh_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/ankh.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "wheel_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/wheel.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "astrolabe_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/astrolabe.png",
+      "frame_width": 16,
+      "frame_height": 16
+    }
+  },
+  "groups": [
+    "players",
+    "doors",
+    "returns",
+    "npcs",
+    "finals",
+    "items",
+    "hud"
+  ],
+  "map": {
+    "key": "act4b_level_tilemap",
+    "tilesets": ["map_tileset"]
+  },
+  "user_input": {
+    "world_user_input": "assets/user_inputs/world_map_user_input.json",
+    "talking_user_input": "assets/user_inputs/talking_user_input.json"
+  },
+  "initial_user_input": "world_user_input",
+  "npc_messages": {
+    "ankh_message": "assets/npc_messages/void.txt",
+    "wheel_message": "assets/npc_messages/wheel.txt",
+    "scope_message": "assets/npc_messages/scope.txt",
+    "synth_message": "assets/npc_messages/synth.txt",
+    "astrolabe_message": "assets/npc_messages/astrolabe.txt",
+    "sign3_message": "assets/npc_messages/sign3.txt",
+
+      "treeB1_message": "assets/npc_messages/tree/treeB1.txt",
+      "treeB2_message": "assets/npc_messages/tree/treeB2.txt",
+      "treeB3_message": "assets/npc_messages/tree/treeB3.txt",
+      "treeB4_message": "assets/npc_messages/tree/treeB4.txt",
+      "treeB5_message": "assets/npc_messages/tree/treeB5.txt",
+      "treeB6_message": "assets/npc_messages/tree/treeB6.txt",
+      "treeB7_message": "assets/npc_messages/tree/treeB7.txt",
+      "treeB8_message": "assets/npc_messages/tree/treeB8.txt",
+      "treeB9_message": "assets/npc_messages/tree/treeB9.txt",
+      "treeB10_message": "assets/npc_messages/tree/treeB10.txt",
+      "treeB11_message": "assets/npc_messages/tree/treeB11.txt",
+      "treeB12_message": "assets/npc_messages/tree/treeB12.txt",
+      "treeB13_message": "assets/npc_messages/tree/treeB13.txt",
+      "treeB14_message": "assets/npc_messages/tree/treeB14.txt",
+      "treeB15_message": "assets/npc_messages/tree/treeB15.txt",
+      "treeB16_message": "assets/npc_messages/tree/treeB16.txt",
+      "treeB17_message": "assets/npc_messages/tree/treeB17.txt",
+      "treeB18_message": "assets/npc_messages/tree/treeB18.txt",
+      "treeB19_message": "assets/npc_messages/tree/treeB19.txt",
+      "treeB20_message": "assets/npc_messages/tree/treeB20.txt",
+      "treeB21_message": "assets/npc_messages/tree/treeB21.txt",
+      "treeB22_message": "assets/npc_messages/tree/treeB22.txt",
+      "treeB23_message": "assets/npc_messages/tree/treeB23.txt",
+      "treeB24_message": "assets/npc_messages/tree/treeB24.txt",
+      "treeB25_message": "assets/npc_messages/tree/treeB25.txt",
+      "treeB26_message": "assets/npc_messages/tree/treeB26.txt",
+      "treeB27_message": "assets/npc_messages/tree/treeB27.txt",
+      "treeB28_message": "assets/npc_messages/tree/treeB28.txt",
+      "treeB29_message": "assets/npc_messages/tree/treeB29.txt",
+      "treeB30_message": "assets/npc_messages/tree/treeB30.txt",
+      "treeB31_message": "assets/npc_messages/tree/treeB31.txt",
+
+      "final1_message": "assets/npc_messages/final/final1.txt",
+      "final2_message": "assets/npc_messages/final/final2.txt",
+      "final3_message": "assets/npc_messages/final/final3.txt",
+      "final4_message": "assets/npc_messages/final/final4.txt",
+      "final5_message": "assets/npc_messages/final/final5.txt",
+      "final6_message": "assets/npc_messages/final/final6.txt",
+      "final7_message": "assets/npc_messages/final/final7.txt",
+      "final8_message": "assets/npc_messages/final/final8.txt",
+      "final9_message": "assets/npc_messages/final/final9.txt",
+      "final10_message": "assets/npc_messages/final/final10.txt",
+      "final11_message": "assets/npc_messages/final/final11.txt",
+      "final12_message": "assets/npc_messages/final/final12.txt",
+      "final13_message": "assets/npc_messages/final/final13.txt",
+      "final14_message": "assets/npc_messages/final/final14.txt",
+      "final15_message": "assets/npc_messages/final/final15.txt",
+      "final16_message": "assets/npc_messages/final/final16.txt",
+      "final17_message": "assets/npc_messages/final/final17.txt",
+      "final18_message": "assets/npc_messages/final/final18.txt",
+      "final19_message": "assets/npc_messages/final/final19.txt",
+      "final20_message": "assets/npc_messages/final/final20.txt",
+      "final21_message": "assets/npc_messages/final/final21.txt",
+      "final22_message": "assets/npc_messages/final/final22.txt",
+      "final23_message": "assets/npc_messages/final/final23.txt",
+      "final24_message": "assets/npc_messages/final/final24.txt",
+      "final25_message": "assets/npc_messages/final/final25.txt",
+      "final26_message": "assets/npc_messages/final/final26.txt",
+      "final27_message": "assets/npc_messages/final/final27.txt",
+      "final28_message": "assets/npc_messages/final/final28.txt",
+      "final29_message": "assets/npc_messages/final/final29.txt",
+      "final30_message": "assets/npc_messages/final/final30.txt",
+      "final31_message": "assets/npc_messages/final/final31.txt",
+
+      "finalNO_message": "assets/npc_messages/final/finalNO.txt"
+  }
+}

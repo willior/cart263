@@ -1,0 +1,70 @@
+{
+  "assets": {
+    "background_image": {
+      "type": "image",
+      "source": "assets/images/background.png"}
+  },
+  "groups": [
+    "background",
+    "texts"
+  ],
+  "sprites": {
+    "background": {
+      "type": "background",
+      "position": {"x": 320, "y": 240},
+      "properties": {
+        "texture": "background_image",
+        "group": "background"
+      }
+    },
+    "title_message": {
+      "type": "text",
+      "position": {"x": 70, "y": 100},
+      "properties": {
+        "text": "today seems like a good day",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    },
+    "title_message2": {
+      "type": "text",
+      "position": {"x": 100, "y": 150},
+      "properties": {
+        "text": "to go out and find some",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    },
+    "title_message3": {
+      "type": "text",
+      "position": {"x": 130, "y": 200},
+      "properties": {
+        "text": "ancient artifacts",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    },
+    "title_message4": {
+      "type": "text",
+      "position": {"x": 160, "y": 250},
+      "properties": {
+        "text": "i guess",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    },
+    "start_message": {
+      "type": "text",
+      "position": {"x": 200, "y": 350},
+      "properties": {
+        "text": "",
+        "style": {"font": "18px LCD", "fill": "#ffffff"},
+        "group": "texts"
+      }
+    }
+  },
+  "user_input": {
+    "title_user_input": "assets/user_inputs/title_user_input.json"
+  },
+  "initial_user_input": "title_user_input"
+}

@@ -1,0 +1,107 @@
+{
+  "assets": {
+    "ancientTree": {
+      "type": "image",
+      "source": "assets/images/tree.png"
+    },
+    "player_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/player.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "cat_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/cat.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "message_box_image": {
+      "type": "image",
+      "source": "assets/images/message_box.png"
+    },
+    "act4_level_tilemap": {
+      "type": "tilemap",
+      "source": "assets/maps/act4map.json"
+    },
+    "clementine_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/clementine.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "percy_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/percy.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "gribs_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/gribs.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "jack_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/jack.png",
+      "frame_width": 16,
+      "frame_height": 16
+    },
+    "tree_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/talk.png",
+      "frame_width": 16,
+      "frame_height": 16
+    }
+  },
+  "groups": [
+    "players",
+    "doors",
+    "returns",
+    "npcs",
+    "cats",
+    "items",
+    "hud"
+  ],
+  "map": {
+    "key": "act4_level_tilemap",
+    "tilesets": ["ancientTree"]
+  },
+  "user_input": {
+    "world_user_input": "assets/user_inputs/world_map_user_input.json",
+    "talking_user_input": "assets/user_inputs/talking_user_input.json"
+  },
+  "initial_user_input": "world_user_input",
+  "npc_messages": {
+    "cat11_message": "assets/npc_messages/cat11.txt",
+    "tree1_message": "assets/npc_messages/tree/tree1.txt",
+    "tree2_message": "assets/npc_messages/tree/tree2.txt",
+    "tree3_message": "assets/npc_messages/tree/tree3.txt",
+    "tree4_message": "assets/npc_messages/tree/tree4.txt",
+    "tree5_message": "assets/npc_messages/tree/tree5.txt",
+    "tree6_message": "assets/npc_messages/tree/tree6.txt",
+    "tree7_message": "assets/npc_messages/tree/tree7.txt",
+    "tree8_message": "assets/npc_messages/tree/tree8.txt",
+    "tree9_message": "assets/npc_messages/tree/tree9.txt",
+    "tree10_message": "assets/npc_messages/tree/tree10.txt",
+    "tree11_message": "assets/npc_messages/tree/tree11.txt",
+    "tree12_message": "assets/npc_messages/tree/tree12.txt",
+    "tree13_message": "assets/npc_messages/tree/tree13.txt",
+    "tree14_message": "assets/npc_messages/tree/tree14.txt",
+    "tree15_message": "assets/npc_messages/tree/tree15.txt",
+    "tree16_message": "assets/npc_messages/tree/tree16.txt",
+    "tree17_message": "assets/npc_messages/tree/tree17.txt",
+    "tree18_message": "assets/npc_messages/tree/tree18.txt",
+    "tree19_message": "assets/npc_messages/tree/tree19.txt",
+    "tree20_message": "assets/npc_messages/tree/tree20.txt",
+    "tree21_message": "assets/npc_messages/tree/tree21.txt",
+    "tree22_message": "assets/npc_messages/tree/tree22.txt",
+    "tree23_message": "assets/npc_messages/tree/tree23.txt",
+    "tree24_message": "assets/npc_messages/tree/tree24.txt",
+    "clementine_message": "assets/npc_messages/clementine.txt",
+    "percy_message": "assets/npc_messages/percy.txt",
+    "gribs_message": "assets/npc_messages/gribs.txt",
+    "jack_message": "assets/npc_messages/jack.txt"
+  }
+}
