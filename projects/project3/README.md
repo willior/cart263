@@ -10,7 +10,7 @@ Since I wanted to do everything from scratch, I knew I couldn't dream too big. A
 
 At this point, I had basically decided it was a 2D, top-down, adventure game. However, I did not want puzzles and I did not want any combat. I wanted it to be overtly silly but with a tinge of mystery - where silliness could be mysterious and where mystery could be absurd. Above all, it had to be minimalist.
 
-If you haven't played through it fully yet, I suggest you do so now so that you can form your own interpretation, and then read my intentions.
+If you haven't played through it fully yet, I suggest you do so now so that you can form your own interpretation, and then read my intentions. I estimate it takes about 20 minutes to play through.
 
 I don't know where the theme of "Ancient Artifacts" came from, and it doesn't matter. This was going to be a game about going out there and finding things, so I came up with some silly Ancient Artifacts like the Spectacles of Reality, and added little flavour text when you picked them up. I was doing this at the same time as I was designing my levels & world. I wrote the flavour text to be excessively profound in a way that I hope comes off as humourous as opposed to pretentious.
 

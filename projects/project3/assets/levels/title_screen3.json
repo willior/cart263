@@ -57,7 +57,7 @@
       "type": "text",
       "position": {"x": 200, "y": 350},
       "properties": {
-        "text": "a will graham-simpkins game",
+        "text": "",
         "style": {"font": "18px LCD", "fill": "#ffffff"},
         "group": "texts"
       }

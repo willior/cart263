@@ -21,16 +21,16 @@
       "type": "text",
       "position": {"x": 100, "y": 100},
       "properties": {
-        "text": "a game by",
+        "text": "music by",
         "style": {"font": "18px LCD", "fill": "#ffffff"},
         "group": "texts"
       }
     },
     "start_message": {
       "type": "text",
-      "position": {"x": 300, "y": 400},
+      "position": {"x": 300, "y": 300},
       "properties": {
-        "text": "will graham-simpkins",
+        "text": "owen gildbride",
         "style": {"font": "18px LCD", "fill": "#ffffff"},
         "group": "texts"
       }
