@@ -3,6 +3,7 @@ import TitleScene from './scenes/TitleScene';
 import TitleScene2 from './scenes/TitleScene2';
 import TitleScene3 from './scenes/TitleScene3';
 import WorldScene from './scenes/WorldScene';
+import EndScene from './scenes/EndScene';
 import BootScene from './scenes/BootScene';
 import LoadingScene from './scenes/LoadingScene';
 import JSONLevelScene from './scenes/JSONLevelScene';
@@ -14,6 +15,7 @@ let titleScene = new TitleScene();
 let titleScene2 = new TitleScene2();
 let titleScene3 = new TitleScene3();
 let worldScene = new WorldScene();
+let endScene = new EndScene();
 
 let config = {
   type: Phaser.AUTO,
@@ -51,9 +53,10 @@ game.scene.add('TitleScene2', titleScene2);
 game.scene.add('BootScene', bootScene);
 game.scene.add('LoadingScene', loadingScene);
 game.scene.add('TitleScene', titleScene);
+game.scene.add('EndScene', endScene);
 game.scene.add('WorldScene', worldScene);
 
 // change the 'scene' to access different parts of the game:
 // title is the beginning of the game
 // then there's act1, act1b, act2, act2b, act3, act3b, act4, act4b
-game.scene.start('BootScene', {scene: 'act4b'});
+game.scene.start('BootScene', {scene: 'end'});
